@@ -1,0 +1,55 @@
+{
+  "url": "http://dgp.cnpq.br/dgp/espelhogrupo/900016",
+  "espelho": {
+    "nome_grupo": "Núcleo de Estudos em Energias Renováveis",
+    "repercussoes": "Repercussões fictícias do grupo Grupo de Pesquisa em Energias Renováveis (espelho mock).",
+    "identificacao": {
+      "ano_de_formacao": "2016",
+      "lideres_do_grupo": [
+        "Yasmin Moreira Silva"
+      ]
+    },
+    "recursos_humanos": {
+      "pesquisadores": [
+        {
+          "nome": "Yasmin Moreira Silva",
+          "data_inclusao": "25/08/2016"
+        },
+        {
+          "nome": "Giovana Silva Batista",
+          "data_inclusao": "04/05/2017"
+        }
+      ],
+      "estudantes": [
+        {
+          "nome": "Nicolas Araújo Andrade",
+          "data_inclusao": "26/02/2024",
+          "nivel": "Graduação"
+        },
+        {
+          "nome": "Renan Gomes Martins",
+          "data_inclusao": "15/06/2024",
+          "nivel": "Graduação"
+        },
+        {
+          "nome": "Isabela Mendes Dias",
+          "data_inclusao": "07/02/2021",
+          "nivel": "Graduação"
+        }
+      ]
+    },
+    "linhas_de_pesquisa": {
+      "linhas": [
+        {
+          "nome_da_linha_de_pesquisa": "Engenharia Elétrica"
+        },
+        {
+          "nome_da_linha_de_pesquisa": "Administração"
+        },
+        {
+          "nome_da_linha_de_pesquisa": "sustentabilidade"
+        }
+      ]
+    }
+  }
+}

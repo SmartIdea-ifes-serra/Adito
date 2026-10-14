@@ -1,0 +1,55 @@
+{
+  "url": "http://dgp.cnpq.br/dgp/espelhogrupo/900003",
+  "espelho": {
+    "nome_grupo": "Grupo de Pesquisa em Gestão Pública",
+    "repercussoes": "Repercussões fictícias do grupo Grupo de Pesquisa em Gestão Pública (espelho mock).",
+    "identificacao": {
+      "ano_de_formacao": "2018",
+      "lideres_do_grupo": [
+        "Elisa Nunes Rocha"
+      ]
+    },
+    "recursos_humanos": {
+      "pesquisadores": [
+        {
+          "nome": "Elisa Nunes Rocha",
+          "data_inclusao": "28/12/2021"
+        },
+        {
+          "nome": "Alice Pacheco Gomes",
+          "data_inclusao": "06/12/2018"
+        }
+      ],
+      "estudantes": [
+        {
+          "nome": "Valéria Nunes Almeida",
+          "data_inclusao": "30/05/2024",
+          "nivel": "Graduação"
+        },
+        {
+          "nome": "Priscila Vieira Bragança",
+          "data_inclusao": "31/01/2024",
+          "nivel": "Graduação"
+        },
+        {
+          "nome": "Paula Miranda Fonseca",
+          "data_inclusao": "23/10/2020",
+          "nivel": "Graduação"
+        }
+      ]
+    },
+    "linhas_de_pesquisa": {
+      "linhas": [
+        {
+          "nome_da_linha_de_pesquisa": "Matemática"
+        },
+        {
+          "nome_da_linha_de_pesquisa": "otimização"
+        },
+        {
+          "nome_da_linha_de_pesquisa": "acessibilidade"
+        }
+      ]
+    }
+  }
+}

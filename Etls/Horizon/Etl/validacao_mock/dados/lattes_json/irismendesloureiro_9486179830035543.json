@@ -1,0 +1,123 @@
+{
+  "informacoes_pessoais": {
+    "nome_completo": "Íris Mendes Loureiro",
+    "id_lattes": "9486179830035543",
+    "texto_resumo": "Currículo fictício de Íris Mendes Loureiro, gerado para testes do ETL do Horizon.",
+    "nome_citacoes": "LOUREIRO, Í. M.;LOUREIRO, ÍRIS",
+    "atualizacao_cv": "21/11/2023",
+    "url": "http://lattes.cnpq.br/9486179830035543"
+  },
+  "premios_titulos": [],
+  "idiomas": [
+    {
+      "nome": "Inglês",
+      "le": "Pouco",
+      "escreve": "Bem",
+      "fala": "Razoavelmente",
+      "compreende": "Pouco"
+    }
+  ],
+  "atuacao_profissional": [
+    {
+      "instituicao": "Instituto Federal do Espírito Santo",
+      "ano_inicio": "2017",
+      "ano_fim": "Atual",
+      "vinculo": "Servidor Público",
+      "enquadramento": "Professor EBTT"
+    }
+  ],
+  "formacao_academica": [
+    {
+      "tipo": "Graduação em Física",
+      "nome_instituicao": "Instituto Tecnológico de Aeronáutica",
+      "ano_inicio": "1999",
+      "ano_conclusao": "2003"
+    },
+    {
+      "tipo": "Doutorado em Matemática",
+      "nome_instituicao": "Universidade Estadual de Campinas",
+      "ano_inicio": "2005",
+      "ano_conclusao": "2009",
+      "descricao": "Título: Contribuições para plataformas web em comunidades tradicionais, Ano de Obtenção: 2009. Orientador: André Coutinho Farias."
+    }
+  ],
+  "producao_bibliografica": {
+    "artigos_periodicos": [
+      {
+        "titulo": "Um estudo de dados abertos para a agricultura familiar (76)",
+        "ano": "2022",
+        "revista": "IEEE Latin America Transactions",
+        "volume": "35",
+        "paginas": "41-182",
+        "doi": "10.5555/mock.0076",
+        "autores": "PEIXOTO, G. R.; EXTERNO, F. M.; LOUREIRO, Í. M.; BORTOLINI, F. N."
+      },
+      {
+        "titulo": "Análise comparativa de algoritmos genéticos na indústria metalmecânica (77)",
+        "ano": "2018",
+        "revista": "Revista Brasileira de Ensino de Física",
+        "volume": "32",
+        "paginas": "76-148",
+        "doi": "10.5555/mock.0077",
+        "autores": "PEIXOTO, G. R.; EXTERNO, F. M.; LOUREIRO, Í. M.; BORTOLINI, F. N."
+      }
+    ],
+    "trabalhos_completos_congressos": []
+  },
+  "producao_tecnica": {},
+  "projetos_pesquisa": [
+    {
+      "nome": "Análise de microrredes em ambientes hospitalares",
+      "ano_inicio": "2020",
+      "ano_conclusao": "2021",
+      "descricao": [
+        "Descrição: Projeto fictício para teste do ETL. Situação: Concluído; Natureza: Pesquisa."
+      ],
+      "integrantes": [
+        {
+          "nome": "Íris Mendes Loureiro",
+          "papel": "Coordenador"
+        },
+        {
+          "nome": "Alice Duarte Nunes",
+          "papel": "Integrante"
+        },
+        {
+          "nome": "Natália Lopes Peixoto",
+          "papel": "Estudante"
+        }
+      ],
+      "financiadores": []
+    }
+  ],
+  "projetos_extensao": [],
+  "projetos_desenvolvimento": [],
+  "orientacoes": {
+    "concluidas": {
+      "iniciacao_cientifica": [
+        {
+          "titulo": "Orientação concluída mock irismendeslo 0",
+          "orientando": "Carla Prates Bezerra",
+          "ano": "2020",
+          "natureza": "Iniciação Científica"
+        },
+        {
+          "titulo": "Orientação concluída mock irismendeslo 1",
+          "orientando": "Nathan Ferreira Martins",
+          "ano": "2015",
+          "natureza": "Iniciação Científica"
+        }
+      ]
+    },
+    "em_andamento": {
+      "dissertacao_de_mestrado": [
+        {
+          "titulo": "Dissertação em andamento mock irismendeslo",
+          "orientando": "Isabela Dias Lima",
+          "ano_inicio": "2025",
+          "ano_conclusao": ""
+        }
+      ]
+    }
+  }
+}

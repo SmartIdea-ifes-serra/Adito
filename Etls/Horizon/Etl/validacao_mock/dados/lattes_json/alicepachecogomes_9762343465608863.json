@@ -1,0 +1,148 @@
+{
+  "informacoes_pessoais": {
+    "nome_completo": "Alice Pacheco Gomes",
+    "id_lattes": "9762343465608863",
+    "texto_resumo": "Currículo fictício de Alice Pacheco Gomes, gerado para testes do ETL do Horizon.",
+    "nome_citacoes": "GOMES, A. P.;GOMES, ALICE",
+    "atualizacao_cv": "02/01/2025",
+    "url": "http://lattes.cnpq.br/9762343465608863"
+  },
+  "premios_titulos": [
+    {
+      "descricao": "Menção honrosa fictícia 0 - Alice",
+      "ano": "2025"
+    },
+    {
+      "descricao": "Menção honrosa fictícia 1 - Alice",
+      "ano": "2015"
+    }
+  ],
+  "idiomas": [
+    {
+      "nome": "Francês",
+      "le": "Razoavelmente",
+      "escreve": "Bem",
+      "fala": "Razoavelmente",
+      "compreende": "Razoavelmente"
+    }
+  ],
+  "atuacao_profissional": [
+    {
+      "instituicao": "Instituto Federal do Espírito Santo",
+      "ano_inicio": "2012",
+      "ano_fim": "Atual",
+      "vinculo": "Servidor Público",
+      "enquadramento": "Professor EBTT"
+    },
+    {
+      "instituicao": "Mock Software Ltda",
+      "ano_inicio": "2003",
+      "ano_fim": "2008",
+      "vinculo": "Celetista"
+    }
+  ],
+  "formacao_academica": [
+    {
+      "tipo": "Graduação em Agronomia",
+      "nome_instituicao": "Universidade Federal do Rio de Janeiro",
+      "ano_inicio": "2005",
+      "ano_conclusao": "2009"
+    },
+    {
+      "tipo": "Doutorado em Engenharia Elétrica",
+      "nome_instituicao": "Instituto Tecnológico de Aeronáutica",
+      "ano_inicio": "2011",
+      "ano_conclusao": "2015",
+      "descricao": "Título: Contribuições para resíduos agroindustriais para a agricultura familiar, Ano de Obtenção: 2015. Orientador: Jorge Carvalho Moura."
+    }
+  ],
+  "producao_bibliografica": {
+    "artigos_periodicos": [
+      {
+        "titulo": "Um estudo de robôs móveis no ensino médio integrado (49)",
+        "ano": "2015",
+        "revista": "Química Nova",
+        "volume": "33",
+        "paginas": "70-123",
+        "doi": "10.5555/mock.0049",
+        "autores": "GOMES, A. P.; EXTERNO, F. M."
+      },
+      {
+        "titulo": "Avaliação experimental de compostos fenólicos em ambientes hospitalares (50)",
+        "ano": "2017",
+        "revista": "IEEE Latin America Transactions",
+        "volume": "24",
+        "paginas": "73-115",
+        "doi": "10.5555/mock.0050",
+        "autores": "GOMES, A. P.; EXTERNO, F. M."
+      }
+    ],
+    "trabalhos_completos_congressos": [
+      {
+        "titulo": "Relato de experiência com biofiltros (51)",
+        "ano": "2025",
+        "evento": "Jornada de Iniciação Científica do IFES",
+        "paginas": "6-15",
+        "autores": "GOMES, A. P."
+      }
+    ]
+  },
+  "producao_tecnica": {
+    "softwares_sem_patente": [
+      {
+        "titulo": "Software mock alicepache",
+        "ano": "2022"
+      }
+    ]
+  },
+  "projetos_pesquisa": [
+    {
+      "nome": "Monitoramento de plataformas web em ambientes hospitalares",
+      "ano_inicio": "2022",
+      "ano_conclusao": "Atual",
+      "descricao": [
+        "Descrição: Projeto fictício para teste do ETL. Situação: Em andamento; Natureza: Pesquisa."
+      ],
+      "integrantes": [
+        {
+          "nome": "Alice Pacheco Gomes",
+          "papel": "Coordenador"
+        },
+        {
+          "nome": "Bernardo Bortolini Teixeira",
+          "papel": "Integrante"
+        },
+        {
+          "nome": "Cecília Queiroz Costa",
+          "papel": "Estudante"
+        }
+      ],
+      "financiadores": [
+        {
+          "nome": "FAPES"
+        }
+      ]
+    }
+  ],
+  "projetos_extensao": [],
+  "projetos_desenvolvimento": [],
+  "orientacoes": {
+    "concluidas": {
+      "iniciacao_cientifica": [
+        {
+          "titulo": "Orientação concluída mock alicepacheco 0",
+          "orientando": "Beatriz Vieira Moreira",
+          "ano": "2018",
+          "natureza": "Iniciação Científica"
+        },
+        {
+          "titulo": "Orientação concluída mock alicepacheco 1",
+          "orientando": "Bruno Santos Rocha",
+          "ano": "2019",
+          "natureza": "Iniciação Científica"
+        }
+      ]
+    },
+    "em_andamento": {}
+  }
+}

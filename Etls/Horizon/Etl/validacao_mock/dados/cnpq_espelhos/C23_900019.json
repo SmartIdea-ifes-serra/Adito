@@ -1,0 +1,58 @@
+{
+  "url": "http://dgp.cnpq.br/dgp/espelhogrupo/900019",
+  "espelho": {
+    "nome_grupo": "Grupo de Pesquisa em Metrologia",
+    "repercussoes": "Repercussões fictícias do grupo Grupo de Pesquisa em Metrologia (espelho mock).",
+    "identificacao": {
+      "ano_de_formacao": "2021",
+      "lideres_do_grupo": [
+        "Olívia Valadares Guimarães"
+      ]
+    },
+    "recursos_humanos": {
+      "pesquisadores": [
+        {
+          "nome": "Olívia Valadares Guimarães",
+          "data_inclusao": "05/03/2017"
+        },
+        {
+          "nome": "Larissa Batista Miranda",
+          "data_inclusao": "25/06/2016"
+        }
+      ],
+      "estudantes": [
+        {
+          "nome": "Carla Guimarães Loureiro",
+          "data_inclusao": "14/05/2021",
+          "nivel": "Graduação"
+        },
+        {
+          "nome": "Quésia Zanetti Mendes",
+          "data_inclusao": "25/02/2025",
+          "nivel": "Graduação"
+        },
+        {
+          "nome": "Vinícius Campos Falqueto",
+          "data_inclusao": "12/07/2023",
+          "nivel": "Graduação"
+        }
+      ],
+      "egressos_pesquisadores": [
+        {
+          "nome": "João Almeida Lopes",
+          "data_inclusao": "10/04/2016"
+        }
+      ]
+    },
+    "linhas_de_pesquisa": {
+      "linhas": [
+        {
+          "nome_da_linha_de_pesquisa": "acessibilidade"
+        },
+        {
+          "nome_da_linha_de_pesquisa": "Engenharia Ambiental"
+        }
+      ]
+    }
+  }
+}

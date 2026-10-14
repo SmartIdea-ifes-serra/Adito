@@ -1,0 +1,110 @@
+{
+  "informacoes_pessoais": {
+    "nome_completo": "Wesley Silva Rocha",
+    "id_lattes": "9454744679840306",
+    "texto_resumo": "Currículo fictício de Wesley Silva Rocha, gerado para testes do ETL do Horizon.",
+    "nome_citacoes": "ROCHA, W. S.;ROCHA, WESLEY",
+    "atualizacao_cv": "27/08/2026",
+    "url": "http://lattes.cnpq.br/9454744679840306"
+  },
+  "premios_titulos": [],
+  "idiomas": [
+    {
+      "nome": "Italiano",
+      "le": "Razoavelmente",
+      "escreve": "Pouco",
+      "fala": "Pouco",
+      "compreende": "Razoavelmente"
+    },
+    {
+      "nome": "Alemão",
+      "le": "Bem",
+      "escreve": "Bem",
+      "fala": "Pouco",
+      "compreende": "Bem"
+    }
+  ],
+  "atuacao_profissional": [
+    {
+      "instituicao": "Instituto Federal do Espírito Santo",
+      "ano_inicio": "2008",
+      "ano_fim": "Atual",
+      "vinculo": "Servidor Público",
+      "enquadramento": "Professor EBTT"
+    }
+  ],
+  "formacao_academica": [
+    {
+      "tipo": "Graduação em Letras",
+      "nome_instituicao": "Universidade Federal de Minas Gerais",
+      "ano_inicio": "2002",
+      "ano_conclusao": "2006"
+    },
+    {
+      "tipo": "Doutorado em Química",
+      "nome_instituicao": "Universidade de São Paulo",
+      "ano_inicio": "2008",
+      "ano_conclusao": "2012",
+      "descricao": "Título: Contribuições para jogos educacionais no litoral capixaba, Ano de Obtenção: 2012. Orientador: Carla Rodrigues Falqueto."
+    }
+  ],
+  "producao_bibliografica": {
+    "artigos_periodicos": [
+      {
+        "titulo": "Análise comparativa de algoritmos genéticos para a agricultura familiar (42)",
+        "ano": "2018",
+        "revista": "Engenharia Sanitária e Ambiental",
+        "volume": "13",
+        "paginas": "84-153",
+        "doi": "10.5555/mock.0042",
+        "autores": "ZANETTI, F. V.; ROCHA, W. S.; EXTERNO, F. M.; ROCHA, E. N."
+      },
+      {
+        "titulo": "Avaliação experimental de robôs móveis em ambientes hospitalares (43)",
+        "ano": "2023",
+        "revista": "Engenharia Sanitária e Ambiental",
+        "volume": "29",
+        "paginas": "13-150",
+        "doi": "10.5555/mock.0043",
+        "autores": "ZANETTI, F. V.; ROCHA, W. S.; EXTERNO, F. M.; ROCHA, E. N."
+      }
+    ],
+    "trabalhos_completos_congressos": []
+  },
+  "producao_tecnica": {},
+  "projetos_pesquisa": [
+    {
+      "nome": "Implementação de algoritmos genéticos em bacias hidrográficas do ES",
+      "ano_inicio": "2020",
+      "ano_conclusao": "2022",
+      "descricao": [
+        "Descrição: Projeto fictício para teste do ETL. Situação: Concluído; Natureza: Pesquisa."
+      ],
+      "integrantes": [
+        {
+          "nome": "Wesley Silva Rocha",
+          "papel": "Coordenador"
+        },
+        {
+          "nome": "Priscila Cavalcanti Dias",
+          "papel": "Integrante"
+        },
+        {
+          "nome": "Yasmin Gomes Pereira",
+          "papel": "Estudante"
+        }
+      ],
+      "financiadores": [
+        {
+          "nome": "CNPq"
+        }
+      ]
+    }
+  ],
+  "projetos_extensao": [],
+  "projetos_desenvolvimento": [],
+  "orientacoes": {
+    "concluidas": {},
+    "em_andamento": {}
+  }
+}

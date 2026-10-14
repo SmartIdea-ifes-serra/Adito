@@ -1,0 +1,72 @@
+{
+  "informacoes_pessoais": {
+    "nome_completo": "Valéria Barbosa Fonseca",
+    "id_lattes": "9022008762281061",
+    "texto_resumo": "Currículo fictício de Valéria Barbosa Fonseca, gerado para testes do ETL do Horizon.",
+    "nome_citacoes": "FONSECA, V. B.;FONSECA, VALÉRIA",
+    "atualizacao_cv": "31/02/2024",
+    "url": "http://lattes.cnpq.br/9022008762281061"
+  },
+  "premios_titulos": [
+    {
+      "descricao": "Menção honrosa fictícia 0 - Valéria",
+      "ano": "2013"
+    },
+    {
+      "descricao": "Menção honrosa fictícia 1 - Valéria",
+      "ano": "2019"
+    }
+  ],
+  "idiomas": [
+    {
+      "nome": "Espanhol",
+      "le": "Razoavelmente",
+      "escreve": "Pouco",
+      "fala": "Bem",
+      "compreende": "Pouco"
+    },
+    {
+      "nome": "Alemão",
+      "le": "Pouco",
+      "escreve": "Razoavelmente",
+      "fala": "Pouco",
+      "compreende": "Pouco"
+    }
+  ],
+  "atuacao_profissional": [
+    {
+      "instituicao": "Instituto Federal do Espírito Santo",
+      "ano_inicio": "2011",
+      "ano_fim": "Atual",
+      "vinculo": "Servidor Público",
+      "enquadramento": "Professor EBTT"
+    }
+  ],
+  "formacao_academica": [
+    {
+      "tipo": "Graduação em Letras",
+      "nome_instituicao": "Universidade Federal de Minas Gerais",
+      "ano_inicio": "1998",
+      "ano_conclusao": "2002"
+    },
+    {
+      "tipo": "Doutorado em Ciências Biológicas",
+      "nome_instituicao": "Universidade Federal do Rio de Janeiro",
+      "ano_inicio": "2004",
+      "ano_conclusao": "2008",
+      "descricao": "Título: Contribuições para modelos preditivos em ambientes hospitalares, Ano de Obtenção: 2008. Orientador: Paula Tavares Oliveira."
+    }
+  ],
+  "producao_bibliografica": {
+    "artigos_periodicos": [],
+    "trabalhos_completos_congressos": []
+  },
+  "producao_tecnica": {},
+  "projetos_pesquisa": [],
+  "projetos_extensao": [],
+  "projetos_desenvolvimento": [],
+  "orientacoes": {
+    "concluidas": {},
+    "em_andamento": {}
+  }
+}

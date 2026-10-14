@@ -1,0 +1,114 @@
+{
+  "informacoes_pessoais": {
+    "nome_completo": "Helena Freitas Duarte",
+    "id_lattes": "9160269755515238",
+    "texto_resumo": "Currículo fictício de Helena Freitas Duarte, gerado para testes do ETL do Horizon.",
+    "nome_citacoes": "DUARTE, H. F.;DUARTE, HELENA",
+    "atualizacao_cv": "06/06/2025",
+    "url": "http://lattes.cnpq.br/9160269755515238"
+  },
+  "premios_titulos": [
+    {
+      "descricao": "Menção honrosa fictícia 0 - Helena",
+      "ano": "2023"
+    },
+    {
+      "descricao": "Menção honrosa fictícia 1 - Helena",
+      "ano": "2013"
+    }
+  ],
+  "idiomas": [
+    {
+      "nome": "Alemão",
+      "le": "Pouco",
+      "escreve": "Razoavelmente",
+      "fala": "Pouco",
+      "compreende": "Bem"
+    }
+  ],
+  "atuacao_profissional": [
+    {
+      "instituicao": "Instituto Federal do Espírito Santo",
+      "ano_inicio": "2015",
+      "ano_fim": "Atual",
+      "vinculo": "Servidor Público",
+      "enquadramento": "Professor EBTT"
+    },
+    {
+      "instituicao": "Mock Software Ltda",
+      "ano_inicio": "2005",
+      "ano_fim": "2008",
+      "vinculo": "Professor Visitante"
+    }
+  ],
+  "formacao_academica": [
+    {
+      "tipo": "Graduação em Química",
+      "nome_instituicao": "Universidade Federal do Rio de Janeiro",
+      "ano_inicio": "1996",
+      "ano_conclusao": "2000"
+    },
+    {
+      "tipo": "Doutorado em Engenharia Ambiental",
+      "nome_instituicao": "Universidade Federal do Rio de Janeiro",
+      "ano_inicio": "2002",
+      "ano_conclusao": "2006",
+      "descricao": "Título: Contribuições para jogos educacionais para a agricultura familiar, Ano de Obtenção: 2006. Orientador: Cecília Batista Siqueira."
+    }
+  ],
+  "producao_bibliografica": {
+    "artigos_periodicos": [
+      {
+        "titulo": "Uma abordagem de painéis solares no litoral capixaba (10)",
+        "ano": "2024",
+        "revista": "Química Nova",
+        "volume": "2",
+        "paginas": "71-104",
+        "doi": "10.5555/mock.0010",
+        "autores": "EXTERNO, F. M.; GOMES, A. P.; FERREIRA, V. T.; DUARTE, H. F."
+      },
+      {
+        "titulo": "Uma abordagem de materiais didáticos para cidades inteligentes (82)",
+        "ano": "2015",
+        "revista": "Engenharia Sanitária e Ambiental",
+        "volume": "21",
+        "paginas": "39-141",
+        "doi": "10.5555/mock.0082",
+        "autores": "LOUREIRO, T. B.; DUARTE, H. F."
+      }
+    ],
+    "trabalhos_completos_congressos": []
+  },
+  "producao_tecnica": {},
+  "projetos_pesquisa": [
+    {
+      "nome": "Otimização de resíduos agroindustriais no ensino médio integrado",
+      "ano_inicio": "2018",
+      "ano_conclusao": "2023",
+      "descricao": [
+        "Descrição: Projeto fictício para teste do ETL. Situação: Concluído; Natureza: Pesquisa."
+      ],
+      "integrantes": [
+        {
+          "nome": "Helena Freitas Duarte",
+          "papel": "Coordenador"
+        },
+        {
+          "nome": "Giovana Carvalho Batista",
+          "papel": "Integrante"
+        },
+        {
+          "nome": "Enzo Gomes Oliveira",
+          "papel": "Estudante"
+        }
+      ],
+      "financiadores": []
+    }
+  ],
+  "projetos_extensao": [],
+  "projetos_desenvolvimento": [],
+  "orientacoes": {
+    "concluidas": {},
+    "em_andamento": {}
+  }
+}

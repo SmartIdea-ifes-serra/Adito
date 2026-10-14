@@ -1,0 +1,128 @@
+{
+  "informacoes_pessoais": {
+    "nome_completo": "Elisa Rocha Queiroz",
+    "id_lattes": "9858061642605959",
+    "texto_resumo": "Currículo fictício de Elisa Rocha Queiroz, gerado para testes do ETL do Horizon.",
+    "nome_citacoes": "QUEIROZ, E. R.;QUEIROZ, ELISA",
+    "atualizacao_cv": "23/08/2024",
+    "url": "http://lattes.cnpq.br/9858061642605959"
+  },
+  "premios_titulos": [
+    {
+      "descricao": "Menção honrosa fictícia 0 - Elisa",
+      "ano": "2015"
+    },
+    {
+      "descricao": "Menção honrosa fictícia 1 - Elisa",
+      "ano": "2021"
+    }
+  ],
+  "idiomas": [
+    {
+      "nome": "Italiano",
+      "le": "Bem",
+      "escreve": "Bem",
+      "fala": "Bem",
+      "compreende": "Razoavelmente"
+    }
+  ],
+  "atuacao_profissional": [
+    {
+      "instituicao": "Instituto Federal do Espírito Santo",
+      "ano_inicio": "2017",
+      "ano_fim": "Atual",
+      "vinculo": "Servidor Público",
+      "enquadramento": "Professor EBTT"
+    },
+    {
+      "instituicao": "Secretaria Municipal de Saúde de Vitória",
+      "ano_inicio": "2005",
+      "ano_fim": "2010",
+      "vinculo": "Professor Visitante"
+    }
+  ],
+  "formacao_academica": [
+    {
+      "tipo": "Graduação em Química",
+      "nome_instituicao": "Universidade de São Paulo",
+      "ano_inicio": "2004",
+      "ano_conclusao": "2008"
+    },
+    {
+      "tipo": "Doutorado em Física",
+      "nome_instituicao": "Universidade de São Paulo",
+      "ano_inicio": "2010",
+      "ano_conclusao": "2014",
+      "descricao": "Título: Contribuições para plataformas web para acessibilidade, Ano de Obtenção: 2014. Orientador: Beatriz Ribeiro Cardoso."
+    }
+  ],
+  "producao_bibliografica": {
+    "artigos_periodicos": [
+      {
+        "titulo": "Análise comparativa de compostos fenólicos no ensino médio integrado (38)",
+        "ano": "2022",
+        "revista": "Revista Brasileira de Informática na Educação",
+        "volume": "26",
+        "paginas": "55-139",
+        "doi": "10.5555/mock.0038",
+        "autores": "EXTERNO, F. M.; SALES, P. C.; QUEIROZ, E. R.; ARAUJO, A. B."
+      }
+    ],
+    "trabalhos_completos_congressos": []
+  },
+  "producao_tecnica": {
+    "softwares_sem_patente": [
+      {
+        "titulo": "Software mock elisarocha",
+        "ano": "2025"
+      }
+    ]
+  },
+  "projetos_pesquisa": [
+    {
+      "nome": "Avaliação de plataformas web para cidades inteligentes",
+      "ano_inicio": "2021",
+      "ano_conclusao": "2024",
+      "descricao": [
+        "Descrição: Projeto fictício para teste do ETL. Situação: Concluído; Natureza: Pesquisa."
+      ],
+      "integrantes": [
+        {
+          "nome": "Elisa Rocha Queiroz",
+          "papel": "Coordenador"
+        },
+        {
+          "nome": "Giovana Guimarães Rodrigues",
+          "papel": "Integrante"
+        }
+      ],
+      "financiadores": [
+        {
+          "nome": "FAPES"
+        }
+      ]
+    }
+  ],
+  "projetos_extensao": [
+    {
+      "nome": "Extensão: Avaliação de resíduos agroindustriais na indústria metalmecânica",
+      "ano_inicio": "2021",
+      "ano_conclusao": "Atual",
+      "descricao": [
+        "Descrição: Projeto fictício para teste do ETL. Situação: Em andamento; Natureza: Pesquisa."
+      ],
+      "integrantes": [
+        {
+          "nome": "Elisa Rocha Queiroz",
+          "papel": "Coordenador"
+        }
+      ],
+      "financiadores": []
+    }
+  ],
+  "projetos_desenvolvimento": [],
+  "orientacoes": {
+    "concluidas": {},
+    "em_andamento": {}
+  }
+}

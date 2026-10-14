@@ -1,0 +1,129 @@
+{
+  "informacoes_pessoais": {
+    "nome_completo": "Giovana Silva Batista",
+    "id_lattes": "9187875723799759",
+    "texto_resumo": "Currículo fictício de Giovana Silva Batista, gerado para testes do ETL do Horizon.",
+    "nome_citacoes": "BATISTA, G. S.;BATISTA, GIOVANA",
+    "atualizacao_cv": "13/04/2023",
+    "url": "http://lattes.cnpq.br/9187875723799759"
+  },
+  "premios_titulos": [
+    {
+      "descricao": "Menção honrosa fictícia 0 - Giovana",
+      "ano": "2025"
+    },
+    {
+      "descricao": "Menção honrosa fictícia 1 - Giovana",
+      "ano": "2024"
+    }
+  ],
+  "idiomas": [
+    {
+      "nome": "Italiano",
+      "le": "Pouco",
+      "escreve": "Razoavelmente",
+      "fala": "Razoavelmente",
+      "compreende": "Pouco"
+    },
+    {
+      "nome": "Francês",
+      "le": "Pouco",
+      "escreve": "Bem",
+      "fala": "Razoavelmente",
+      "compreende": "Bem"
+    }
+  ],
+  "atuacao_profissional": [
+    {
+      "instituicao": "Instituto Federal do Espírito Santo",
+      "ano_inicio": "2016",
+      "ano_fim": "Atual",
+      "vinculo": "Servidor Público",
+      "enquadramento": "Professor EBTT"
+    },
+    {
+      "instituicao": "Prefeitura Municipal de Vila Velha",
+      "ano_inicio": "2006",
+      "ano_fim": "2010",
+      "vinculo": "Celetista"
+    }
+  ],
+  "formacao_academica": [
+    {
+      "tipo": "Graduação em Administração",
+      "nome_instituicao": "Universidade de São Paulo",
+      "ano_inicio": "2008",
+      "ano_conclusao": "2012"
+    },
+    {
+      "tipo": "Doutorado em Administração",
+      "nome_instituicao": "Instituto Tecnológico de Aeronáutica",
+      "ano_inicio": "2014",
+      "ano_conclusao": "2018",
+      "descricao": "Título: Contribuições para resíduos agroindustriais para cidades inteligentes, Ano de Obtenção: 2018. Orientador: Ana Brandão Almeida."
+    }
+  ],
+  "producao_bibliografica": {
+    "artigos_periodicos": [
+      {
+        "titulo": "Avaliação experimental de materiais didáticos na indústria metalmecânica (46)",
+        "ano": "2022",
+        "revista": "Journal of Mock Studies",
+        "volume": "28",
+        "paginas": "13-128",
+        "doi": "10.5555/mock.0046",
+        "autores": "BATISTA, G. S.; EXTERNO, F. M."
+      },
+      {
+        "titulo": "Uma abordagem de modelos preditivos em comunidades tradicionais (47)",
+        "ano": "2015",
+        "revista": "Revista Brasileira de Informática na Educação",
+        "volume": "26",
+        "paginas": "43-172",
+        "doi": "10.5555/mock.0047",
+        "autores": "BATISTA, G. S.; EXTERNO, F. M."
+      }
+    ],
+    "trabalhos_completos_congressos": [
+      {
+        "titulo": "Relato de experiência com algoritmos genéticos (48)",
+        "ano": "2025",
+        "evento": "Congresso Brasileiro de Automática",
+        "paginas": "6-20",
+        "autores": "BATISTA, G. S."
+      }
+    ]
+  },
+  "producao_tecnica": {},
+  "projetos_pesquisa": [
+    {
+      "nome": "Avaliação de sensores de baixo custo na indústria metalmecânica",
+      "ano_inicio": "2019",
+      "ano_conclusao": "Atual",
+      "descricao": [
+        "Descrição: Projeto fictício para teste do ETL. Situação: Em andamento; Natureza: Pesquisa."
+      ],
+      "integrantes": [
+        {
+          "nome": "Giovana Silva Batista",
+          "papel": "Coordenador"
+        },
+        {
+          "nome": "Mariana Falqueto Coelho",
+          "papel": "Integrante"
+        },
+        {
+          "nome": "Cecília Bortolini Mendes",
+          "papel": "Estudante"
+        }
+      ],
+      "financiadores": []
+    }
+  ],
+  "projetos_extensao": [],
+  "projetos_desenvolvimento": [],
+  "orientacoes": {
+    "concluidas": {},
+    "em_andamento": {}
+  }
+}

@@ -1,0 +1,59 @@
+{
+  "url": "http://dgp.cnpq.br/dgp/espelhogrupo/900018",
+  "espelho": {
+    "nome_grupo": "CNPq",
+    "repercussoes": "Repercussões fictícias do grupo Grupo de Pesquisa em Engenharia de Software (espelho mock).",
+    "identificacao": {
+      "data_de_formacao": "Anterior a março de 2010",
+      "lideres_do_grupo": [
+        "Vinícius Tavares Ferreira"
+      ]
+    },
+    "recursos_humanos": {
+      "pesquisadores": [
+        {
+          "nome": "Vinícius Tavares Ferreira",
+          "data_inclusao": "22/11/2018"
+        },
+        {
+          "nome": "Alice Bezerra Araújo",
+          "data_inclusao": "21/03/2016"
+        },
+        {
+          "nome": "João Brandão Macedo",
+          "data_inclusao": "08/05/2023"
+        }
+      ],
+      "estudantes": [
+        {
+          "nome": "Wesley Peixoto Barbosa",
+          "data_inclusao": "03/02/2023",
+          "nivel": "Graduação"
+        },
+        {
+          "nome": "Olívia Campos Zanetti",
+          "data_inclusao": "29/03/2021",
+          "nivel": "Graduação"
+        },
+        {
+          "nome": "Rafael Gomes Costa",
+          "data_inclusao": "21/08/2020",
+          "nivel": "Graduação"
+        }
+      ]
+    },
+    "linhas_de_pesquisa": {
+      "linhas": [
+        {
+          "nome_da_linha_de_pesquisa": "visão computacional"
+        },
+        {
+          "nome_da_linha_de_pesquisa": "eficiência energética"
+        },
+        {
+          "nome_da_linha_de_pesquisa": "Engenharia Ambiental"
+        }
+      ]
+    }
+  }
+}

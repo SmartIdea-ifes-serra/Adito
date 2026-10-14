@@ -1,0 +1,125 @@
+{
+  "informacoes_pessoais": {
+    "nome_completo": "Vinícius Tavares Ferreira",
+    "id_lattes": "9237919779474170",
+    "texto_resumo": "Currículo fictício de Vinícius Tavares Ferreira, gerado para testes do ETL do Horizon.",
+    "nome_citacoes": "FERREIRA, V. T.;FERREIRA, VINÍCIUS",
+    "atualizacao_cv": "19/12/2026",
+    "url": "http://lattes.cnpq.br/9237919779474170"
+  },
+  "premios_titulos": [
+    {
+      "descricao": "Menção honrosa fictícia 0 - Vinícius",
+      "ano": "2023"
+    }
+  ],
+  "idiomas": [
+    {
+      "nome": "Inglês",
+      "le": "Pouco",
+      "escreve": "Razoavelmente",
+      "fala": "Pouco",
+      "compreende": "Razoavelmente"
+    }
+  ],
+  "atuacao_profissional": [
+    {
+      "instituicao": "Instituto Federal do Espírito Santo",
+      "ano_inicio": "2008",
+      "ano_fim": "Atual",
+      "vinculo": "Servidor Público",
+      "enquadramento": "Professor EBTT"
+    },
+    {
+      "instituicao": "Prefeitura Municipal de Vila Velha",
+      "ano_inicio": "2005",
+      "ano_fim": "2007",
+      "vinculo": "Celetista"
+    }
+  ],
+  "formacao_academica": [
+    {
+      "tipo": "Graduação em Agronomia",
+      "nome_instituicao": "Universidade Federal do Rio de Janeiro",
+      "ano_inicio": "1995",
+      "ano_conclusao": "1999"
+    },
+    {
+      "tipo": "Doutorado em Química",
+      "nome_instituicao": "Universidade Federal de Minas Gerais",
+      "ano_inicio": "2001",
+      "ano_conclusao": "2005",
+      "descricao": "Título: Contribuições para sistemas embarcados no ensino médio integrado, Ano de Obtenção: 2005. Orientador: Gustavo Nunes Prates."
+    }
+  ],
+  "producao_bibliografica": {
+    "artigos_periodicos": [
+      {
+        "titulo": "Uma abordagem de microrredes para a agricultura familiar (13)",
+        "ano": "2025",
+        "revista": "IEEE Latin America Transactions",
+        "volume": "38",
+        "paginas": "21-180",
+        "doi": "10.5555/mock.0013",
+        "autores": "EXTERNO, F. M.; PINTO, F. B.; XAVIER, B. C.; FERREIRA, V. T."
+      },
+      {
+        "titulo": "Um estudo de biofiltros no ensino médio integrado (14)",
+        "ano": "2016",
+        "revista": "Revista Brasileira de Ensino de Física",
+        "volume": "40",
+        "paginas": "55-155",
+        "doi": "10.5555/mock.0014",
+        "autores": "EXTERNO, F. M.; PINTO, F. B.; XAVIER, B. C.; FERREIRA, V. T."
+      }
+    ],
+    "trabalhos_completos_congressos": []
+  },
+  "producao_tecnica": {},
+  "projetos_pesquisa": [
+    {
+      "nome": "Aplicação de algoritmos genéticos em ambientes hospitalares",
+      "ano_inicio": "2020",
+      "ano_conclusao": "Atual",
+      "descricao": [
+        "Descrição: Projeto fictício para teste do ETL. Situação: Em andamento; Natureza: Pesquisa."
+      ],
+      "integrantes": [
+        {
+          "nome": "Vinícius Tavares Ferreira",
+          "papel": "Coordenador"
+        },
+        {
+          "nome": "Cecília Rezende Pereira",
+          "papel": "Integrante"
+        }
+      ],
+      "financiadores": [
+        {
+          "nome": "CAPES"
+        }
+      ]
+    }
+  ],
+  "projetos_extensao": [],
+  "projetos_desenvolvimento": [],
+  "orientacoes": {
+    "concluidas": {
+      "iniciacao_cientifica": [
+        {
+          "titulo": "Orientação concluída mock viniciustava 0",
+          "orientando": "Tiago Nunes Pinto",
+          "ano": "2018",
+          "natureza": "Iniciação Científica"
+        },
+        {
+          "titulo": "Orientação concluída mock viniciustava 1",
+          "orientando": "Sabrina Rodrigues Mendes",
+          "ano": "2019",
+          "natureza": "Iniciação Científica"
+        }
+      ]
+    },
+    "em_andamento": {}
+  }
+}

@@ -1,0 +1,53 @@
+{
+  "url": "http://dgp.cnpq.br/dgp/espelhogrupo/900017",
+  "espelho": {
+    "nome_grupo": "Núcleo de Estudos em Tecnologias Assistivas",
+    "repercussoes": "Repercussões fictícias do grupo Grupo de Pesquisa em Tecnologias Assistivas (espelho mock).",
+    "identificacao": {
+      "ano_de_formacao": "2019",
+      "lideres_do_grupo": [
+        "Bruno Cavalcanti Xavier"
+      ]
+    },
+    "recursos_humanos": {
+      "pesquisadores": [
+        {
+          "nome": "Bruno Cavalcanti Xavier",
+          "data_inclusao": "26/09/2018"
+        },
+        {
+          "nome": "Beatriz Campos Moreira",
+          "data_inclusao": "24/11/2017"
+        },
+        {
+          "nome": "André Bragança Carvalho",
+          "data_inclusao": "10/07/2019"
+        }
+      ],
+      "estudantes": [
+        {
+          "nome": "Zélia Pacheco Rocha",
+          "data_inclusao": "14/05/2024",
+          "nivel": "Graduação"
+        },
+        {
+          "nome": "Marcelo Mendes Pereira",
+          "data_inclusao": "20/05/2020",
+          "nivel": "Graduação"
+        },
+        {
+          "nome": "Priscila Vieira Carvalho",
+          "data_inclusao": "17/07/2022",
+          "nivel": "Graduação"
+        }
+      ]
+    },
+    "linhas_de_pesquisa": {
+      "linhas": [
+        {
+          "nome_da_linha_de_pesquisa": "visão computacional"
+        }
+      ]
+    }
+  }
+}

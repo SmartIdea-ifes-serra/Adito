@@ -1,0 +1,55 @@
+{
+  "url": "http://dgp.cnpq.br/dgp/espelhogrupo/900013",
+  "espelho": {
+    "nome_grupo": "Grupo de Pesquisa em Empreendedorismo e Inovação",
+    "repercussoes": "Repercussões fictícias do grupo Grupo de Pesquisa em Empreendedorismo e Inovação (espelho mock).",
+    "identificacao": {
+      "ano_de_formacao": "2010",
+      "lideres_do_grupo": [
+        "Isabela Santos Araújo"
+      ]
+    },
+    "recursos_humanos": {
+      "pesquisadores": [
+        {
+          "nome": "Isabela Santos Araújo",
+          "data_inclusao": "25/11/2023"
+        },
+        {
+          "nome": "Elisa Duarte Bezerra",
+          "data_inclusao": "25/05/2017"
+        }
+      ],
+      "estudantes": [
+        {
+          "nome": "Yasmin Queiroz Duarte",
+          "data_inclusao": "05/04/2025",
+          "nivel": "Graduação"
+        },
+        {
+          "nome": "Débora Guimarães Araújo",
+          "data_inclusao": "01/10/2025",
+          "nivel": "Graduação"
+        },
+        {
+          "nome": "Paula Pacheco Miranda",
+          "data_inclusao": "07/04/2021",
+          "nivel": "Graduação"
+        }
+      ]
+    },
+    "linhas_de_pesquisa": {
+      "linhas": [
+        {
+          "nome_da_linha_de_pesquisa": "Letras"
+        },
+        {
+          "nome_da_linha_de_pesquisa": "Química"
+        },
+        {
+          "nome_da_linha_de_pesquisa": "robótica"
+        }
+      ]
+    }
+  }
+}

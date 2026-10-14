@@ -1,0 +1,113 @@
+{
+  "informacoes_pessoais": {
+    "nome_completo": "Wesley Mendes Dias",
+    "id_lattes": "9606308598677022",
+    "texto_resumo": "Currículo fictício de Wesley Mendes Dias, gerado para testes do ETL do Horizon.",
+    "nome_citacoes": "DIAS, W. M.;DIAS, WESLEY",
+    "atualizacao_cv": "28/09/2026",
+    "url": "http://lattes.cnpq.br/9606308598677022"
+  },
+  "premios_titulos": [
+    {
+      "descricao": "Menção honrosa fictícia 0 - Wesley",
+      "ano": "2020"
+    },
+    {
+      "descricao": "Menção honrosa fictícia 1 - Wesley",
+      "ano": "2025"
+    }
+  ],
+  "idiomas": [
+    {
+      "nome": "Francês",
+      "le": "Bem",
+      "escreve": "Bem",
+      "fala": "Razoavelmente",
+      "compreende": "Razoavelmente"
+    }
+  ],
+  "atuacao_profissional": [
+    {
+      "instituicao": "Instituto Federal do Espírito Santo",
+      "ano_inicio": "2008",
+      "ano_fim": "Atual",
+      "vinculo": "Servidor Público",
+      "enquadramento": "Professor EBTT"
+    }
+  ],
+  "formacao_academica": [
+    {
+      "tipo": "Graduação em Matemática",
+      "nome_instituicao": "Universidade Estadual de Campinas",
+      "ano_inicio": "1999",
+      "ano_conclusao": "2003"
+    },
+    {
+      "tipo": "Doutorado em Letras",
+      "nome_instituicao": "Universidade Federal do Rio de Janeiro",
+      "ano_inicio": "2005",
+      "ano_conclusao": "2009",
+      "descricao": "Título: Contribuições para sensores de baixo custo para acessibilidade, Ano de Obtenção: 2009. Orientador: Kauã Siqueira Pereira."
+    }
+  ],
+  "producao_bibliografica": {
+    "artigos_periodicos": [
+      {
+        "titulo": "Avaliação experimental de modelos preditivos no litoral capixaba (23)",
+        "ano": "2022",
+        "revista": "Revista Brasileira de Ensino de Física",
+        "volume": "2",
+        "paginas": "56-113",
+        "doi": "10.5555/mock.0023",
+        "autores": "EXTERNO, F. M.; DIAS, W. M."
+      },
+      {
+        "titulo": "Um estudo de robôs móveis na gestão escolar (24)",
+        "ano": "2016",
+        "revista": "Journal of Mock Studies",
+        "volume": "9",
+        "paginas": "80-134",
+        "doi": "10.5555/mock.0024",
+        "autores": "EXTERNO, F. M.; DIAS, W. M."
+      }
+    ],
+    "trabalhos_completos_congressos": []
+  },
+  "producao_tecnica": {},
+  "projetos_pesquisa": [
+    {
+      "nome": "Monitoramento de biofiltros para cidades inteligentes",
+      "ano_inicio": "2021",
+      "ano_conclusao": "2024",
+      "descricao": [
+        "Descrição: Projeto fictício para teste do ETL. Situação: Concluído; Natureza: Pesquisa."
+      ],
+      "integrantes": [
+        {
+          "nome": "Wesley Mendes Dias",
+          "papel": "Coordenador"
+        },
+        {
+          "nome": "Giovana Macedo Rezende",
+          "papel": "Integrante"
+        }
+      ],
+      "financiadores": []
+    }
+  ],
+  "projetos_extensao": [],
+  "projetos_desenvolvimento": [],
+  "orientacoes": {
+    "concluidas": {
+      "iniciacao_cientifica": [
+        {
+          "titulo": "Orientação concluída mock wesleymendes 0",
+          "orientando": "Cecília Carvalho Fonseca",
+          "ano": "2016",
+          "natureza": "Iniciação Científica"
+        }
+      ]
+    },
+    "em_andamento": {}
+  }
+}

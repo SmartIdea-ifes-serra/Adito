@@ -1,0 +1,123 @@
+{
+  "informacoes_pessoais": {
+    "nome_completo": "Fábio Nunes Bortolini",
+    "id_lattes": "9013703653476505",
+    "texto_resumo": "Currículo fictício de Fábio Nunes Bortolini, gerado para testes do ETL do Horizon.",
+    "nome_citacoes": "BORTOLINI, F. N.;BORTOLINI, FÁBIO",
+    "atualizacao_cv": "15/08/2026",
+    "url": "http://lattes.cnpq.br/9013703653476505"
+  },
+  "premios_titulos": [
+    {
+      "descricao": "Menção honrosa fictícia 0 - Fábio",
+      "ano": "2012"
+    },
+    {
+      "descricao": "Menção honrosa fictícia 1 - Fábio",
+      "ano": "2021"
+    }
+  ],
+  "idiomas": [
+    {
+      "nome": "Alemão",
+      "le": "Bem",
+      "escreve": "Bem",
+      "fala": "Bem",
+      "compreende": "Pouco"
+    }
+  ],
+  "atuacao_profissional": [
+    {
+      "instituicao": "Instituto Federal do Espírito Santo",
+      "ano_inicio": "2012",
+      "ano_fim": "Atual",
+      "vinculo": "Servidor Público",
+      "enquadramento": "Professor EBTT"
+    }
+  ],
+  "formacao_academica": [
+    {
+      "tipo": "Graduação em Letras",
+      "nome_instituicao": "Instituto Tecnológico de Aeronáutica",
+      "ano_inicio": "2001",
+      "ano_conclusao": "2005"
+    },
+    {
+      "tipo": "Doutorado em Matemática",
+      "nome_instituicao": "Instituto Tecnológico de Aeronáutica",
+      "ano_inicio": "2007",
+      "ano_conclusao": "2011",
+      "descricao": "Título: Contribuições para modelos preditivos na gestão escolar, Ano de Obtenção: 2011. Orientador: Wesley Mendes Brandão."
+    }
+  ],
+  "producao_bibliografica": {
+    "artigos_periodicos": [
+      {
+        "titulo": "Uma abordagem de materiais didáticos em comunidades tradicionais (27)",
+        "ano": "2022",
+        "revista": "Engenharia Sanitária e Ambiental",
+        "volume": "3",
+        "paginas": "39-172",
+        "doi": "10.5555/mock.0027",
+        "autores": "EXTERNO, F. M.; BORTOLINI, F. N."
+      }
+    ],
+    "trabalhos_completos_congressos": []
+  },
+  "producao_tecnica": {},
+  "projetos_pesquisa": [
+    {
+      "nome": "Otimização de algoritmos genéticos para cidades inteligentes",
+      "ano_inicio": "2023",
+      "ano_conclusao": "Atual",
+      "descricao": [
+        "Descrição: Projeto fictício para teste do ETL. Situação: Em andamento; Natureza: Pesquisa."
+      ],
+      "integrantes": [
+        {
+          "nome": "Fábio Nunes Bortolini",
+          "papel": "Coordenador"
+        },
+        {
+          "nome": "Bernardo Queiroz Mendes",
+          "papel": "Integrante"
+        }
+      ],
+      "financiadores": [
+        {
+          "nome": "FAPES"
+        }
+      ]
+    }
+  ],
+  "projetos_extensao": [],
+  "projetos_desenvolvimento": [],
+  "orientacoes": {
+    "concluidas": {
+      "iniciacao_cientifica": [
+        {
+          "titulo": "Orientação concluída mock fabionunesbo 0",
+          "orientando": "Natália Teixeira Brandão",
+          "ano": "2017",
+          "natureza": "Iniciação Científica"
+        },
+        {
+          "titulo": "Orientação concluída mock fabionunesbo 1",
+          "orientando": "Beatriz Dias Fonseca",
+          "ano": "2015",
+          "natureza": "Iniciação Científica"
+        }
+      ]
+    },
+    "em_andamento": {
+      "dissertacao_de_mestrado": [
+        {
+          "titulo": "Dissertação em andamento mock fabionunesbo",
+          "orientando": "Júlia Oliveira Dias",
+          "ano_inicio": "2025",
+          "ano_conclusao": ""
+        }
+      ]
+    }
+  }
+}

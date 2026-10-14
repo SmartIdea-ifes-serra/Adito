@@ -1,0 +1,48 @@
+{
+  "url": "http://dgp.cnpq.br/dgp/espelhogrupo/900101",
+  "espelho": {
+    "nome_grupo": "Grupo de Pesquisa em Oceanografia Costeira",
+    "repercussoes": "Repercussões fictícias do grupo Grupo de Pesquisa em Oceanografia Costeira (espelho mock).",
+    "identificacao": {
+      "ano_de_formacao": "2021",
+      "lideres_do_grupo": [
+        "Zélia Fonseca Santos"
+      ]
+    },
+    "recursos_humanos": {
+      "pesquisadores": [
+        {
+          "nome": "Zélia Fonseca Santos",
+          "data_inclusao": "10/07/2022"
+        }
+      ],
+      "estudantes": [
+        {
+          "nome": "Daniel Farias Santos",
+          "data_inclusao": "15/03/2024",
+          "nivel": "Graduação"
+        },
+        {
+          "nome": "Nathan Macedo Monteiro",
+          "data_inclusao": "05/01/2024",
+          "nivel": "Graduação"
+        },
+        {
+          "nome": "Gabriela Falqueto Rodrigues",
+          "data_inclusao": "02/01/2022",
+          "nivel": "Graduação"
+        }
+      ]
+    },
+    "linhas_de_pesquisa": {
+      "linhas": [
+        {
+          "nome_da_linha_de_pesquisa": "Letras"
+        },
+        {
+          "nome_da_linha_de_pesquisa": "Física"
+        }
+      ]
+    }
+  }
+}

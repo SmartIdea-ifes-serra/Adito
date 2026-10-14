@@ -1,0 +1,57 @@
+{
+  "url": "http://dgp.cnpq.br/dgp/espelhogrupo/900007",
+  "espelho": {
+    "nome_grupo": "Grupo de Pesquisa em Internet das Coisas",
+    "repercussoes": "Repercussões fictícias do grupo Grupo de Pesquisa em Internet das Coisas (espelho mock).",
+    "identificacao": {
+      "ano_de_formacao": "2022",
+      "lideres_do_grupo": [
+        "Pedro Carvalho Sales",
+        "Paula Gomes Falqueto"
+      ]
+    },
+    "recursos_humanos": {
+      "pesquisadores": [
+        {
+          "nome": "Pedro Carvalho Sales",
+          "data_inclusao": "08/12/2019"
+        },
+        {
+          "nome": "Paula Gomes Falqueto",
+          "data_inclusao": "02/03/2019"
+        },
+        {
+          "nome": "Rafael Teixeira Santos",
+          "data_inclusao": "17/09/2019"
+        }
+      ],
+      "estudantes": [
+        {
+          "nome": "Eduarda Falqueto Souza",
+          "data_inclusao": "28/03/2021",
+          "nivel": "Graduação"
+        },
+        {
+          "nome": "Marcelo Xavier Bezerra",
+          "data_inclusao": "22/08/2022",
+          "nivel": "Graduação"
+        },
+        {
+          "nome": "Mariana Cavalcanti Ribeiro",
+          "data_inclusao": "09/08/2024",
+          "nivel": "Graduação"
+        }
+      ]
+    },
+    "linhas_de_pesquisa": {
+      "linhas": [
+        {
+          "nome_da_linha_de_pesquisa": "Agronomia"
+        },
+        {
+          "nome_da_linha_de_pesquisa": "Letras"
+        }
+      ]
+    }
+  }
+}

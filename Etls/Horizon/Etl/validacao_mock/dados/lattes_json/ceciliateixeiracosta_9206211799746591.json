@@ -1,0 +1,36 @@
+{
+  "informacoes_pessoais": {
+    "nome_completo": "Cecília Teixeira Costa",
+    "id_lattes": "9206211799746591",
+    "texto_resumo": "Currículo fictício de Cecília Teixeira Costa, gerado para testes do ETL do Horizon.",
+    "nome_citacoes": "COSTA, C. T.;COSTA, CECÍLIA",
+    "atualizacao_cv": "03/04/2025",
+    "url": "http://lattes.cnpq.br/9206211799746591"
+  },
+  "premios_titulos": [],
+  "idiomas": [
+    {
+      "nome": "Espanhol",
+      "le": "Razoavelmente",
+      "escreve": "Bem",
+      "fala": "Bem",
+      "compreende": "Bem"
+    },
+    {
+      "nome": "Francês",
+      "le": "Bem",
+      "escreve": "Pouco",
+      "fala": "Bem",
+      "compreende": "Razoavelmente"
+    }
+  ],
+  "atuacao_profissional": [
+    {
+      "instituicao": "Instituto Federal do Espírito Santo",
+      "ano_inicio": "2012",
+      "ano_fim": "Atual",
+      "vinculo": "Servidor Público",
+      "enquadramento": "Professor EBTT"
+    },
+    {
+      "institui

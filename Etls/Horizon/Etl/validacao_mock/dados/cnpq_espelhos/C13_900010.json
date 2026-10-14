@@ -1,0 +1,57 @@
+{
+  "url": "http://dgp.cnpq.br/dgp/espelhogrupo/900010",
+  "espelho": {
+    "nome_grupo": "Grupo de Pesquisa em Linguagens e Culturas",
+    "repercussoes": "Repercussões fictícias do grupo Grupo de Pesquisa em Linguagens e Culturas (espelho mock).",
+    "identificacao": {
+      "ano_de_formacao": "2020",
+      "lideres_do_grupo": [
+        "Nicolas Almeida Carvalho",
+        "Rafael Pinto Falqueto"
+      ]
+    },
+    "recursos_humanos": {
+      "pesquisadores": [
+        {
+          "nome": "Nicolas Almeida Carvalho",
+          "data_inclusao": "05/01/2018"
+        },
+        {
+          "nome": "Rafael Pinto Falqueto",
+          "data_inclusao": "27/09/2022"
+        },
+        {
+          "nome": "Lívia Almeida Valadares",
+          "data_inclusao": "14/11/2020"
+        }
+      ],
+      "estudantes": [
+        {
+          "nome": "André Moura Mendes",
+          "data_inclusao": "15/03/2024",
+          "nivel": "Graduação"
+        },
+        {
+          "nome": "Paula Pacheco Miranda",
+          "data_inclusao": "28/12/2024",
+          "nivel": "Graduação"
+        },
+        {
+          "nome": "Otávio Rocha Moura",
+          "data_inclusao": "28/12/2022",
+          "nivel": "Graduação"
+        }
+      ]
+    },
+    "linhas_de_pesquisa": {
+      "linhas": [
+        {
+          "nome_da_linha_de_pesquisa": "Administração"
+        },
+        {
+          "nome_da_linha_de_pesquisa": "aprendizado de máquina"
+        }
+      ]
+    }
+  }
+}

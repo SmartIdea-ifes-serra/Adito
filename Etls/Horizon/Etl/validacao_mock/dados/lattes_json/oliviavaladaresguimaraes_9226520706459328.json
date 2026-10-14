@@ -1,0 +1,109 @@
+{
+  "informacoes_pessoais": {
+    "nome_completo": "Olívia Valadares Guimarães",
+    "id_lattes": "9226520706459328",
+    "texto_resumo": "Currículo fictício de Olívia Valadares Guimarães, gerado para testes do ETL do Horizon.",
+    "nome_citacoes": "GUIMARAES, O. V.;GUIMARAES, OLÍVIA",
+    "atualizacao_cv": "31/03/2024",
+    "url": "http://lattes.cnpq.br/9226520706459328"
+  },
+  "premios_titulos": [
+    {
+      "descricao": "Menção honrosa fictícia 0 - Olívia",
+      "ano": "2014"
+    }
+  ],
+  "idiomas": [
+    {
+      "nome": "Francês",
+      "le": "Pouco",
+      "escreve": "Razoavelmente",
+      "fala": "Razoavelmente",
+      "compreende": "Bem"
+    }
+  ],
+  "atuacao_profissional": [
+    {
+      "instituicao": "Instituto Federal do Espírito Santo",
+      "ano_inicio": "2014",
+      "ano_fim": "Atual",
+      "vinculo": "Servidor Público",
+      "enquadramento": "Professor EBTT"
+    }
+  ],
+  "formacao_academica": [
+    {
+      "tipo": "Graduação em Física",
+      "nome_instituicao": "Universidade Federal do Rio de Janeiro",
+      "ano_inicio": "2001",
+      "ano_conclusao": "2005"
+    },
+    {
+      "tipo": "Doutorado em Química",
+      "nome_instituicao": "Universidade Estadual de Campinas",
+      "ano_inicio": "2007",
+      "ano_conclusao": "2011",
+      "descricao": "Título: Contribuições para robôs móveis no ensino médio integrado, Ano de Obtenção: 2011. Orientador: Débora Monteiro Dias."
+    }
+  ],
+  "producao_bibliografica": {
+    "artigos_periodicos": [
+      {
+        "titulo": "Análise comparativa de redes neurais no ensino médio integrado (44)",
+        "ano": "2019",
+        "revista": "Revista Brasileira de Ensino de Física",
+        "volume": "31",
+        "paginas": "57-132",
+        "doi": "10.5555/mock.0044",
+        "autores": "EXTERNO, F. M.; GUIMARAES, O. V."
+      },
+      {
+        "titulo": "Uma abordagem de sistemas embarcados em ambientes hospitalares (45)",
+        "ano": "2017",
+        "revista": "Journal of Mock Studies",
+        "volume": "35",
+        "paginas": "20-108",
+        "doi": "10.5555/mock.0045",
+        "autores": "EXTERNO, F. M.; GUIMARAES, O. V."
+      }
+    ],
+    "trabalhos_completos_congressos": []
+  },
+  "producao_tecnica": {},
+  "projetos_pesquisa": [
+    {
+      "nome": "Modelagem de painéis solares para a agricultura familiar",
+      "ano_inicio": "2017",
+      "ano_conclusao": "2019",
+      "descricao": [
+        "Descrição: Projeto fictício para teste do ETL. Situação: Concluído; Natureza: Pesquisa."
+      ],
+      "integrantes": [
+        {
+          "nome": "Olívia Valadares Guimarães",
+          "papel": "Coordenador"
+        },
+        {
+          "nome": "Enzo Souza Bragança",
+          "papel": "Integrante"
+        }
+      ],
+      "financiadores": []
+    }
+  ],
+  "projetos_extensao": [],
+  "projetos_desenvolvimento": [],
+  "orientacoes": {
+    "concluidas": {
+      "iniciacao_cientifica": [
+        {
+          "titulo": "Orientação concluída mock oliviavalada 0",
+          "orientando": "Sofia Fonseca Bezerra",
+          "ano": "2015",
+          "natureza": "Iniciação Científica"
+        }
+      ]
+    },
+    "em_andamento": {}
+  }
+}

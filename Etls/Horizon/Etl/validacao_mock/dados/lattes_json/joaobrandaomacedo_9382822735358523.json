@@ -1,0 +1,117 @@
+{
+  "informacoes_pessoais": {
+    "nome_completo": "João Brandão Macedo",
+    "id_lattes": "9382822735358523",
+    "texto_resumo": "Currículo fictício de João Brandão Macedo, gerado para testes do ETL do Horizon.",
+    "nome_citacoes": "MACEDO, J. B.;MACEDO, JOÃO",
+    "atualizacao_cv": "21/04/2024",
+    "url": "http://lattes.cnpq.br/9382822735358523"
+  },
+  "premios_titulos": [
+    {
+      "descricao": "Menção honrosa fictícia 0 - João",
+      "ano": "2023"
+    }
+  ],
+  "idiomas": [
+    {
+      "nome": "Italiano",
+      "le": "Bem",
+      "escreve": "Razoavelmente",
+      "fala": "Pouco",
+      "compreende": "Bem"
+    },
+    {
+      "nome": "Francês",
+      "le": "Razoavelmente",
+      "escreve": "Razoavelmente",
+      "fala": "Pouco",
+      "compreende": "Pouco"
+    }
+  ],
+  "atuacao_profissional": [
+    {
+      "instituicao": "Instituto Federal do Espírito Santo",
+      "ano_inicio": "2010",
+      "ano_fim": "Atual",
+      "vinculo": "Servidor Público",
+      "enquadramento": "Professor EBTT"
+    },
+    {
+      "instituicao": "Secretaria Municipal de Saúde de Vitória",
+      "ano_inicio": "2005",
+      "ano_fim": "2008",
+      "vinculo": "Bolsista"
+    }
+  ],
+  "formacao_academica": [
+    {
+      "tipo": "Graduação em Educação",
+      "nome_instituicao": "Universidade Federal do Espírito Santo",
+      "ano_inicio": "2000",
+      "ano_conclusao": "2004"
+    },
+    {
+      "tipo": "Doutorado em Ciência da Computação",
+      "nome_instituicao": "Universidade Federal do Espírito Santo",
+      "ano_inicio": "2006",
+      "ano_conclusao": "2010",
+      "descricao": "Título: Contribuições para plataformas web no ensino médio integrado, Ano de Obtenção: 2010. Orientador: Nicolas Peixoto Santos."
+    }
+  ],
+  "producao_bibliografica": {
+    "artigos_periodicos": [
+      {
+        "titulo": "Uma abordagem de resíduos agroindustriais na indústria metalmecânica (57)",
+        "ano": "2025",
+        "revista": "Revista Brasileira de Informática na Educação",
+        "volume": "19",
+        "paginas": "56-134",
+        "doi": "10.5555/mock.0057",
+        "autores": "CARVALHO, N. A.; EXTERNO, F. M.; MACEDO, J. B.; FALQUETO, P. G."
+      },
+      {
+        "titulo": "Um estudo de algoritmos genéticos para acessibilidade (58)",
+        "ano": "2025",
+        "revista": "Revista Brasileira de Informática na Educação",
+        "volume": "7",
+        "paginas": "83-149",
+        "doi": "10.5555/mock.0058",
+        "autores": "CARVALHO, N. A.; EXTERNO, F. M.; MACEDO, J. B.; FALQUETO, P. G."
+      }
+    ],
+    "trabalhos_completos_congressos": []
+  },
+  "producao_tecnica": {},
+  "projetos_pesquisa": [
+    {
+      "nome": "Modelagem de redes neurais no ensino médio integrado",
+      "ano_inicio": "2018",
+      "ano_conclusao": "2022",
+      "descricao": [
+        "Descrição: Projeto fictício para teste do ETL. Situação: Concluído; Natureza: Pesquisa."
+      ],
+      "integrantes": [
+        {
+          "nome": "João Brandão Macedo",
+          "papel": "Coordenador"
+        },
+        {
+          "nome": "Bruno Xavier Campos",
+          "papel": "Integrante"
+        },
+        {
+          "nome": "Kauã Martins Teixeira",
+          "papel": "Estudante"
+        }
+      ],
+      "financiadores": []
+    }
+  ],
+  "projetos_extensao": [],
+  "projetos_desenvolvimento": [],
+  "orientacoes": {
+    "concluidas": {},
+    "em_andamento": {}
+  }
+}

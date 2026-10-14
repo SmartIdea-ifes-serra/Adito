@@ -1,0 +1,125 @@
+{
+  "informacoes_pessoais": {
+    "nome_completo": "Bruno Cavalcanti Xavier",
+    "id_lattes": "9951874515572794",
+    "texto_resumo": "Currículo fictício de Bruno Cavalcanti Xavier, gerado para testes do ETL do Horizon.",
+    "nome_citacoes": "XAVIER, B. C.;XAVIER, BRUNO",
+    "atualizacao_cv": "18/12/2024",
+    "url": "http://lattes.cnpq.br/9951874515572794"
+  },
+  "premios_titulos": [
+    {
+      "descricao": "Menção honrosa fictícia 0 - Bruno",
+      "ano": "2016"
+    },
+    {
+      "descricao": "Menção honrosa fictícia 1 - Bruno",
+      "ano": "2019"
+    }
+  ],
+  "idiomas": [
+    {
+      "nome": "Espanhol",
+      "le": "Pouco",
+      "escreve": "Razoavelmente",
+      "fala": "Razoavelmente",
+      "compreende": "Pouco"
+    },
+    {
+      "nome": "Francês",
+      "le": "Razoavelmente",
+      "escreve": "Bem",
+      "fala": "Pouco",
+      "compreende": "Pouco"
+    }
+  ],
+  "atuacao_profissional": [
+    {
+      "instituicao": "Instituto Federal do Espírito Santo",
+      "ano_inicio": "2011",
+      "ano_fim": "Atual",
+      "vinculo": "Servidor Público",
+      "enquadramento": "Professor EBTT"
+    }
+  ],
+  "formacao_academica": [
+    {
+      "tipo": "Graduação em Ciências Biológicas",
+      "nome_instituicao": "Instituto Tecnológico de Aeronáutica",
+      "ano_inicio": "2010",
+      "ano_conclusao": "2014"
+    },
+    {
+      "tipo": "Doutorado em Física",
+      "nome_instituicao": "Universidade Federal do Rio de Janeiro",
+      "ano_inicio": "2016",
+      "ano_conclusao": "2020",
+      "descricao": "Título: Contribuições para biofiltros para a agricultura familiar, Ano de Obtenção: 2020. Orientador: Renan Cavalcanti Martins."
+    }
+  ],
+  "producao_bibliografica": {
+    "artigos_periodicos": [
+      {
+        "titulo": "Análise comparativa de resíduos agroindustriais em ambientes hospitalares (30)",
+        "ano": "2025",
+        "revista": "Revista Brasileira de Ensino de Física",
+        "volume": "1",
+        "paginas": "5-91",
+        "doi": "10.5555/mock.0030",
+        "autores": "SILVA, Y. M.; EXTERNO, F. M.; XAVIER, B. C."
+      }
+    ],
+    "trabalhos_completos_congressos": []
+  },
+  "producao_tecnica": {},
+  "projetos_pesquisa": [
+    {
+      "nome": "Uso de microrredes para a agricultura familiar",
+      "ano_inicio": "2016",
+      "ano_conclusao": "Atual",
+      "descricao": [
+        "Descrição: Projeto fictício para teste do ETL. Situação: Em andamento; Natureza: Pesquisa."
+      ],
+      "integrantes": [
+        {
+          "nome": "Bruno Cavalcanti Xavier",
+          "papel": "Coordenador"
+        },
+        {
+          "nome": "Mateus Andrade Cavalcanti",
+          "papel": "Integrante"
+        },
+        {
+          "nome": "Zélia Ferreira Bezerra",
+          "papel": "Estudante"
+        }
+      ],
+      "financiadores": [
+        {
+          "nome": "CAPES"
+        }
+      ]
+    }
+  ],
+  "projetos_extensao": [],
+  "projetos_desenvolvimento": [],
+  "orientacoes": {
+    "concluidas": {
+      "iniciacao_cientifica": [
+        {
+          "titulo": "Orientação concluída mock brunocavalca 0",
+          "orientando": "Olívia Lima Pinto",
+          "ano": "2024",
+          "natureza": "Iniciação Científica"
+        },
+        {
+          "titulo": "Orientação concluída mock brunocavalca 1",
+          "orientando": "Gustavo Rocha Correia",
+          "ano": "2022",
+          "natureza": "Iniciação Científica"
+        }
+      ]
+    },
+    "em_andamento": {}
+  }
+}

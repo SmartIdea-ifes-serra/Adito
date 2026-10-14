@@ -1,0 +1,56 @@
+{
+  "informacoes_pessoais": {
+    "nome_completo": "Wesley Rocha Duarte",
+    "id_lattes": "9551587161959876",
+    "texto_resumo": "Currículo fictício de Wesley Rocha Duarte, gerado para testes do ETL do Horizon.",
+    "nome_citacoes": "DUARTE, W. R.;DUARTE, WESLEY",
+    "atualizacao_cv": "06/07/2023",
+    "url": "http://lattes.cnpq.br/9551587161959876"
+  },
+  "premios_titulos": [],
+  "idiomas": [
+    {
+      "nome": "Alemão",
+      "le": "Razoavelmente",
+      "escreve": "Razoavelmente",
+      "fala": "Bem",
+      "compreende": "Razoavelmente"
+    }
+  ],
+  "atuacao_profissional": [
+    {
+      "instituicao": "Instituto Federal do Espírito Santo",
+      "ano_inicio": "2010",
+      "ano_fim": "Atual",
+      "vinculo": "Servidor Público",
+      "enquadramento": "Professor EBTT"
+    }
+  ],
+  "formacao_academica": [
+    {
+      "tipo": "Graduação em Física",
+      "nome_instituicao": "Universidade Federal do Rio de Janeiro",
+      "ano_inicio": "1995",
+      "ano_conclusao": "1999"
+    },
+    {
+      "tipo": "Doutorado em Ciência da Computação",
+      "nome_instituicao": "Universidade Estadual de Campinas",
+      "ano_inicio": "2001",
+      "ano_conclusao": "2005",
+      "descricao": "Título: Contribuições para algoritmos genéticos para acessibilidade, Ano de Obtenção: 2005. Orientador: Enzo Farias Ramos."
+    }
+  ],
+  "producao_bibliografica": {
+    "artigos_periodicos": [],
+    "trabalhos_completos_congressos": []
+  },
+  "producao_tecnica": {},
+  "projetos_pesquisa": [],
+  "projetos_extensao": [],
+  "projetos_desenvolvimento": [],
+  "orientacoes": {
+    "concluidas": {},
+    "em_andamento": {}
+  }
+}
