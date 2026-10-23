@@ -6,8 +6,6 @@ Classes e atributos citados conforme os modelos Astah: SigPesq `ModeloSigpesqCop
 
 ## Mapa das ligações
 
-![Mapa das ligações entre SigPesq, Lattes, CNPq DGP e SRC](img/mapa-ligacoes.png)
-
 **Roteiro:**
 
 | # | Ligação | Cruza por | Resultado |
