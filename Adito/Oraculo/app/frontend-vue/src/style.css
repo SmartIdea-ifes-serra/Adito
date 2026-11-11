@@ -1,4 +1,3 @@
-@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@300;400;500;600;700&display=swap");
 @import "tailwindcss";
 @import "@nuxt/ui";
 
@@ -18,7 +17,7 @@
   --color-accent-hover: var(--accent-hover);
   --color-accent-light: var(--accent-light);
   /* Status — baseados na paleta institucional */
-  --color-success: #2B7A42;
+  --color-success: #23634A;
   --color-warning: #e65100;
   --color-error: #C50707;
   --color-border-subtle: var(--border-subtle);
@@ -37,7 +36,7 @@
 
   /* Sombras funcionais */
   --shadow-card: rgba(22, 70, 43, 0.06) 0px 0px 0px 1px, rgba(0, 0, 0, 0.04) 0px 1px 3px;
-  --shadow-card-hover: rgba(43, 122, 66, 0.14) 0px 0px 0px 1px, rgba(22, 70, 43, 0.08) 0px 6px 14px;
+  --shadow-card-hover: rgba(43, 122, 66, 0.12) 0px 0px 0px 1px, rgba(22, 70, 43, 0.05) 0px 4px 10px;
   --shadow-float: rgba(22, 70, 43, 0.08) 0px 4px 12px, rgba(22, 70, 43, 0.06) 0px 0px 0px 1px;
   /* Mantidos como alias para não quebrar usos legacy */
   --shadow-premium: rgba(22, 70, 43, 0.06) 0px 0px 0px 1px, rgba(0, 0, 0, 0.04) 0px 1px 3px;
@@ -47,41 +46,41 @@
 @layer base {
   :root {
     /* Tokens de Cores — Identidade Institucional IFES / ifeserralab */
-    --brand-dark:          #16462B;
-    --brand-primary:       #2B7A42;
-    --brand-secondary:     #749E30;
+    --brand-dark:          #173F35;
+    --brand-primary:       #23634A;
+    --brand-secondary:     #B98A3C;
     --brand-accent-danger: #C50707;
-    --neutral-dark:        #241920;
-    --bg-app:              #F8FBF8;
+    --neutral-dark:        #1F302B;
+    --bg-app:              #F6F7F2;
     --bg-surface:          #FFFFFF;
-    --border-subtle:       #E2E8DF;
+    --border-subtle:       #DDE5DD;
 
     /* Mapeamento semântico do app */
     --bg-primary:          var(--bg-app);
-    --bg-surface-elevated: #EFF4EF;
-    --border-standard:     #CBD5C7;
-    /* Tipografia principal em --neutral-dark para contraste WCAG AA */
+    --bg-surface-elevated: #EDF1E9;
+    --border-standard:     #BFCDBF;
+    /* Texto principal sobre as superfícies do tema. */
     --text-primary:        var(--neutral-dark);
-    --text-secondary:      #465249;
-    --text-muted:          #68756B;
+    --text-secondary:      #465C51;
+    --text-muted:          #607366;
     /* Sombras funcionais */
     --shadow-premium: rgba(22, 70, 43, 0.06) 0px 0px 0px 1px, rgba(0, 0, 0, 0.04) 0px 1px 3px;
     --shadow-elevated: rgba(22, 70, 43, 0.08) 0px 4px 12px, rgba(22, 70, 43, 0.06) 0px 0px 0px 1px;
 
     --accent:       var(--brand-primary);
-    --accent-hover: #1E5E3A;
-    --accent-light: #EAF3EC;
+    --accent-hover: #194D38;
+    --accent-light: #E5EEE4;
 
     --conv-selected: rgba(43, 122, 66, 0.10);
     --conv-hover:    rgba(43, 122, 66, 0.05);
   }
 
   .dark {
-    /* Modo escuro balanceado — baixa saturação nos fundos e elevação clara */
-    --bg-dark-base:        #111613;
-    --bg-dark-surface:     #1A221D;
+    /* Tema escuro com superfícies neutras e ações em verde. */
+    --bg-dark-base:        #121416;
+    --bg-dark-surface:     #1C1F23;
 
-    --brand-dark:          #12311F;
+    --brand-dark:          #171B20;
     --brand-primary:       #2B7A42;
     --brand-secondary:     #88B63B;
     --brand-accent-danger: #F04444;
@@ -89,16 +88,16 @@
     --bg-app:              var(--bg-dark-base);
     --bg-primary:          var(--bg-dark-base);
     --bg-surface:          var(--bg-dark-surface);
-    --bg-surface-elevated: #222C26;
+    --bg-surface-elevated: #262B31;
     /* Bordas sutis nos cards e separadores */
-    --border-subtle:       rgba(255, 255, 255, 0.08);
-    --border-standard:     rgba(54, 146, 81, 0.20);
+    --border-subtle:       rgba(255, 255, 255, 0.14);
+    --border-standard:     #46505B;
     /* Textos claros com contraste WCAG AA */
     --text-primary:        #F0F4F1;
     --text-secondary:      rgba(255, 255, 255, 0.72);
     --text-muted:          rgba(255, 255, 255, 0.54);
     /* Sombras dark com borda sutil clara */
-    --shadow-premium: rgba(255, 255, 255, 0.08) 0px 0px 0px 1px, rgba(0, 0, 0, 0.40) 0px 2px 6px;
+    --shadow-premium: rgba(255, 255, 255, 0.14) 0px 0px 0px 1px, rgba(0, 0, 0, 0.40) 0px 2px 6px;
     --shadow-elevated: rgba(54, 146, 81, 0.22) 0px 0px 0px 1px, rgba(0, 0, 0, 0.50) 0px 6px 20px;
 
     --accent:       #389653;
@@ -165,7 +164,7 @@
     color: var(--text-muted);
     font-size: 0.68rem;
     font-weight: 600;
-    letter-spacing: 0.14em;
+    letter-spacing: 0.09em;
     text-transform: uppercase;
   }
 }
@@ -175,7 +174,7 @@
   .premium-card {
     background: var(--bg-surface);
     border: 1px solid var(--border-subtle);
-    border-radius: 8px;
+    border-radius: 12px;
     box-shadow: var(--shadow-premium);
     transition: box-shadow 150ms ease, border-color 150ms ease;
   }
@@ -198,7 +197,7 @@
     background: var(--brand-primary);
     color: #ffffff;
     border: 1px solid rgba(255, 255, 255, 0.12);
-    border-radius: 6px;
+    border-radius: 8px;
     padding: 0.625rem 1rem;
     font-weight: 500;
     font-size: 0.875rem;
@@ -230,7 +229,7 @@
     background: transparent;
     color: var(--text-primary);
     border: 1px solid var(--border-standard);
-    border-radius: 6px;
+    border-radius: 8px;
     padding: 0.625rem 1rem;
     font-weight: 500;
     font-size: 0.875rem;
@@ -257,7 +256,7 @@
     background: var(--brand-primary);
     color: #ffffff;
     border: 1px solid transparent;
-    border-radius: 6px;
+    border-radius: 8px;
     padding: 0.625rem 1rem;
     font-weight: 500;
     font-size: 0.875rem;
@@ -287,4 +286,68 @@
 
 ::-webkit-scrollbar-thumb:hover {
   background: color-mix(in srgb, var(--text-secondary) 35%, transparent);
+}
+
+/* Padrões de interação compartilhados do Adito. */
+:where(button, a, input, select, textarea, summary):focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+}
+
+button:not(:disabled), summary { cursor: pointer; }
+button:disabled { cursor: not-allowed; }
+
+.adito-wordmark {
+  font-family: 'IBM Plex Sans', system-ui, sans-serif;
+  font-weight: 600;
+  letter-spacing: -0.055em;
+}
+
+.adito-topic {
+  min-height: 126px;
+  background: var(--bg-surface);
+  color: var(--text-primary);
+  border: 1px solid var(--border-subtle);
+  border-radius: 12px;
+  transition: border-color 160ms ease, background-color 160ms ease;
+}
+
+.adito-topic:hover { border-color: var(--accent); background: var(--bg-surface-elevated); }
+.adito-topic[aria-pressed="true"] { border-color: var(--accent); background: var(--accent-light); }
+
+/* Contraste dos cartões de áreas no tema escuro. */
+.dark .adito-topic {
+  background: #242930;
+  border-color: #56616D;
+  color: #F4F6F8;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.22);
+}
+
+.dark .adito-topic:hover {
+  background: #303740;
+  border-color: #9BA7B3;
+}
+
+.dark .adito-topic[aria-pressed="true"] {
+  background: #2D353E;
+  border-color: #68D388;
+  box-shadow: 0 0 0 1px #68D388;
+}
+
+.dark .adito-topic .text-text-muted { color: #C0CAD4; }
+
+.dark .adito-topic-icon {
+  background: #343C46;
+  border-color: #637080;
+  color: #E8EDF3;
+}
+
+.dark .adito-topic-icon svg { color: inherit; }
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
 }

@@ -1092,10 +1092,10 @@ const getChartPixelHeight = (item: any): number => {
     <div class="mb-8 flex flex-col items-start justify-between gap-6 border-b border-border-subtle pb-8 dark:border-white/5 sm:flex-row sm:items-center">
       <div>
         <h1 class="text-3xl font-semibold tracking-[-0.04em] text-primary dark:text-white md:text-4xl">
-          Meu Dashboard Pessoal
+          Meu painel
         </h1>
         <p class="mt-3 max-w-lg text-sm font-medium leading-relaxed text-text-secondary dark:text-gray-400 md:text-base">
-          Análises estratégicas fixadas a partir do <span class="text-accent font-bold">Chat</span> para acompanhamento em tempo real.
+          Acompanhe as análises de pesquisa e extensão salvas no <span class="text-accent font-semibold">chat</span>.
         </p>
 
         <!-- Presets de Layout -->

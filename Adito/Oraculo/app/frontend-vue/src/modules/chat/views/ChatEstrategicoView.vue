@@ -38,7 +38,7 @@ const { selectedId: selectedContextoId, loadContextos } = useContextos()
 // Conversa ainda não salva no backend: o contexto pode ser escolhido.
 const isNewConversation = computed(() => !!currentConvId.value?.startsWith('local-'))
 
-// Sem chave da Mistral o app abre, mas o chat fica desativado com o motivo à vista.
+// Sem chave do Gemini o app abre, mas o chat fica desativado com o motivo à vista.
 const { user } = useAuth()
 const llmConfigured = computed(() => !!user.value?.llm_configured)
 
@@ -99,16 +99,6 @@ const starterCategories = [
     ]
   },
   {
-    key: 'editais',
-    label: 'Editais e Bolsas',
-    subtitle: 'Fomento & Planos',
-    questions: [
-      'Quantos planos de trabalho e orientações estão vinculados a cada edital?',
-      'Qual o valor total investido em bolsas por programa e modalidade?',
-      'Qual a distribuição de estudantes bolsistas por curso e nível?'
-    ]
-  },
-  {
     key: 'pesquisadores',
     label: 'Pesquisadores',
     subtitle: 'Docentes & Orientações',
@@ -147,7 +137,7 @@ const sendQuestion = async (questionText?: string) => {
   const userInput = (questionText ?? input.value).trim()
   if (!userInput || isLoading.value) return
   if (!llmConfigured.value) {
-    showToast('Configure a chave da Mistral em Configurações para usar o chat.', 'error')
+    showToast('Configure a chave do Gemini em Configurações para usar o chat.', 'error')
     return
   }
 
@@ -412,7 +402,7 @@ const confirmDeleteConversation = async () => {
           class="mx-4 mt-2 flex items-center gap-2 rounded-lg border border-amber-200 bg-amber-50 px-3 py-2 text-xs text-amber-800 hover:bg-amber-100 dark:border-amber-500/20 dark:bg-amber-500/10 dark:text-amber-300"
         >
           <AlertCircle class="h-4 w-4 shrink-0" />
-          O chat está desativado: falta a chave da Mistral. Clique para configurar.
+          O chat está desativado: falta a chave do Gemini. Clique para configurar.
         </RouterLink>
         <ContextoSelector
           :is-new-conversation="isNewConversation"

@@ -66,7 +66,7 @@ onMounted(() => {
     <section class="rounded-xl border border-border-subtle bg-surface p-5 shadow-premium">
       <div class="mb-3 flex items-center gap-2">
         <KeyRound class="h-5 w-5 text-[var(--brand-primary)] dark:text-[#68d388]" />
-        <h2 class="font-semibold text-text-primary">Chave da Mistral</h2>
+        <h2 class="font-semibold text-text-primary">Chave do Gemini</h2>
         <span
           :class="[
             'ml-auto rounded-full border px-2.5 py-0.5 text-xs font-semibold',
@@ -80,12 +80,12 @@ onMounted(() => {
       </div>
 
       <p class="mb-4 text-sm text-text-secondary">
-        O chat usa a API da Mistral com a sua chave. Ela fica no cofre do sistema operacional
+        O chat usa a API do Gemini com a sua chave. Ela fica no cofre do sistema operacional
         (Secret Service no Linux, Gerenciador de Credenciais no Windows), nunca em arquivo do app.
       </p>
 
       <p v-if="!desktop" class="rounded-lg border border-amber-300/60 bg-amber-50/80 px-3 py-2 text-sm text-amber-800 dark:border-amber-500/30 dark:bg-amber-950/50 dark:text-amber-300">
-        A chave só pode ser configurada no app desktop. No navegador de desenvolvimento, use a variável MISTRAL_API_KEY do backend.
+        A chave só pode ser configurada no app desktop. No navegador de desenvolvimento, use a variável GEMINI_API_KEY do backend.
       </p>
 
       <p v-else-if="status && !status.store_available" class="flex items-start gap-2 text-sm text-[#C50707] dark:text-red-300">
@@ -99,7 +99,7 @@ onMounted(() => {
           type="password"
           autocomplete="off"
           spellcheck="false"
-          :placeholder="configured ? 'Nova chave (substitui a atual)' : 'Cole a sua chave da Mistral'"
+          :placeholder="configured ? 'Nova chave (substitui a atual)' : 'Cole a sua chave do Gemini'"
           class="min-w-0 flex-1 rounded-md border border-border-subtle bg-surface-elevated/60 px-3 py-2 text-sm text-text-primary placeholder:text-text-muted focus:border-[var(--brand-primary)] focus:outline-none focus:ring-2 focus:ring-[var(--brand-primary)]/20"
         />
         <button
@@ -132,7 +132,7 @@ onMounted(() => {
 
     <section class="rounded-xl border border-border-subtle bg-surface p-5 text-sm shadow-premium">
       <h2 class="mb-2 font-semibold text-text-primary">O que sai do seu computador</h2>
-      <p class="mb-2 text-text-secondary">Para responder, o app envia à Mistral:</p>
+      <p class="mb-2 text-text-secondary">Para responder, o app envia ao Gemini:</p>
       <ul class="mb-3 list-disc space-y-1 pl-5 text-text-secondary">
         <li>a pergunta que você digita (nomes escritos na pergunta também vão);</li>
         <li>o esquema das views do contexto, as regras e os exemplos, sem as colunas sensíveis;</li>

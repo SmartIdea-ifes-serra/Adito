@@ -80,13 +80,14 @@ const handleKeydown = (event: KeyboardEvent) => {
 <template>
   <div class="px-4 py-4 bg-transparent">
     <div class="mx-auto flex max-w-3xl flex-col">
-      <div class="relative flex items-end rounded-3xl bg-[var(--bg-surface)] border border-[var(--border-subtle)] shadow-sm transition-all focus-within:border-[var(--brand-primary)] focus-within:ring-2 focus-within:ring-[var(--brand-primary)]/20">
+      <div class="relative flex items-end rounded-2xl bg-[var(--bg-surface)] border border-[var(--border-subtle)] shadow-card transition-all focus-within:border-[var(--brand-primary)] focus-within:ring-2 focus-within:ring-[var(--brand-primary)]/20">
         <textarea
           ref="textareaRef"
           :value="modelValue"
           rows="1"
-          placeholder="Como posso ajudar em sua decisão estratégica hoje?"
-          class="min-h-[56px] w-full resize-none bg-transparent px-5 py-4 text-sm leading-relaxed text-[var(--neutral-dark)] outline-none placeholder:text-text-muted rounded-3xl"
+          aria-label="Pergunta sobre pesquisa e extensão"
+          placeholder="O que você quer consultar sobre pesquisa e extensão?"
+          class="min-h-[56px] w-full resize-none bg-transparent px-5 py-4 text-sm leading-relaxed text-[var(--neutral-dark)] outline-none placeholder:text-text-muted rounded-2xl"
           @input="handleInput"
           @keydown="handleKeydown"
         />
@@ -107,6 +108,7 @@ const handleKeydown = (event: KeyboardEvent) => {
             class="flex h-10 w-10 items-center justify-center rounded-full transition-all disabled:cursor-not-allowed disabled:bg-surface-elevated disabled:text-text-muted bg-[var(--brand-primary)] text-white hover:bg-[var(--brand-dark)]"
             @click="emit('send')"
             title="Enviar mensagem"
+            aria-label="Enviar mensagem"
           >
             <Loader2 v-if="loading" class="h-5 w-5 animate-spin" />
             <Send v-else class="h-4 w-4 ml-0.5" />

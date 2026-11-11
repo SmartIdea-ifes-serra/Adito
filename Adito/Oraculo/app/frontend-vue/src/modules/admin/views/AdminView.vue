@@ -37,9 +37,9 @@ import type { TrainingItem } from '@/modules/admin/components/TrainingItemCard.v
 const activeTab = ref<'governance' | 'etl' | 'audit' | 'system'>('governance')
 
 const tabs = [
-  { key: 'governance' as const, label: 'Governanca IA', icon: Brain },
+  { key: 'governance' as const, label: 'Base de conhecimento', icon: Brain },
   { key: 'audit' as const, label: 'Auditoria SQL', icon: Code2 },
-  { key: 'etl' as const, label: 'Preparar Dados', icon: RefreshCw },
+  { key: 'etl' as const, label: 'Contextos de dados', icon: RefreshCw },
   { key: 'system' as const, label: 'Sistema', icon: Server }
 ]
 
@@ -489,23 +489,25 @@ async function handleSync() {
     const stages: EtlTriggeredRun[] = contextos.map((ctx) => ({
       dagId: ctx.slug || ctx.pasta,
       label: ctx.nome || ctx.pasta,
-      dagRunId: !ctx.ativo
+      dagRunId: !ctx.ativo || ctx.erros?.length
         ? (ctx.erros || []).join(' ')
         : ctx.indexado
           ? `${ctx.rag_itens} itens de RAG, ${ctx.valores} valores`
-          : 'válido; sem indexação (falta a chave da Mistral)',
-      state: ctx.ativo && ctx.indexado ? 'success' : ctx.ativo ? 'pending' : 'failed',
+          : 'válido; sem indexação (falta a chave do Gemini)',
+      state: ctx.erros?.length || !ctx.ativo ? 'failed' : ctx.indexado ? 'success' : 'pending',
       triggeredAt
     }))
     const validos = contextos.filter((ctx) => ctx.ativo).length
+    const indexados = contextos.filter((ctx) => ctx.ativo && ctx.indexado).length
+    const falhou = contextos.some((ctx) => !ctx.ativo || ctx.erros?.length)
 
     etlLogs.value.unshift({
       id: Date.now(),
       timestamp: triggeredAt,
       message: data.chave_configurada
-        ? `${validos} de ${contextos.length} contexto(s) válidos e indexados.`
-        : `${validos} de ${contextos.length} contexto(s) válidos. Configure a chave da Mistral para indexar o RAG.`,
-      status: validos === contextos.length ? 'success' : 'error',
+        ? `${validos} de ${contextos.length} contexto(s) válidos; ${indexados} indexado(s).`
+        : `${validos} de ${contextos.length} contexto(s) válidos. Configure a chave do Gemini para indexar o RAG.`,
+      status: falhou ? 'error' : 'success',
       totalRecords: contextos.length,
       changedRecords: validos,
       rows: [],
@@ -682,7 +684,7 @@ onBeforeUnmount(() => {
             Administração
           </h1>
           <p class="max-w-2xl text-base text-text-secondary">
-            Gerencie o modelo de inteligência artificial, prepare dados analíticos e monitore a integridade do ecossistema ORACULO-ESX.
+            Carregue os contextos de pesquisa e extensão, gerencie o modelo de inteligência artificial e acompanhe os dados locais do Adito.
           </p>
         </div>
       </div>
@@ -1083,9 +1085,9 @@ onBeforeUnmount(() => {
                 <Database class="h-8 w-8 text-accent" stroke-width="1.5" />
               </div>
               <div class="space-y-1">
-                <h2 class="text-xl font-semibold text-text-primary">Carregar Contextos</h2>
+                <h2 class="text-xl font-semibold text-text-primary">Contextos de dados</h2>
                 <p class="max-w-xl text-sm text-text-secondary leading-relaxed">
-                  Valida os contextos da pasta de dados contra o dados.db e, com a chave da Mistral configurada,
+                  Valida os contextos da pasta de dados contra o dados.db e, com a chave do Gemini configurada,
                   gera o RAG (esquema, regras e exemplos) e o índice de valores de cada um.
                 </p>
               </div>
@@ -1093,14 +1095,14 @@ onBeforeUnmount(() => {
             <button
               :disabled="hasRunningEtl"
               :class="[
-                'btn-primary flex shrink-0 items-center gap-3 px-10 py-4 text-base shadow-xl active:scale-95',
+                'btn-primary flex shrink-0 items-center gap-3 px-5 py-3 text-sm',
                 hasRunningEtl ? 'opacity-50 cursor-not-allowed' : ''
               ]"
               @click="handleSync"
             >
               <Loader2 v-if="hasRunningEtl" class="h-5 w-5 animate-spin" />
               <RefreshCw v-else class="h-5 w-5" stroke-width="2.5" />
-              {{ hasRunningEtl ? 'Preparando...' : 'Preparar Dados' }}
+              {{ hasRunningEtl ? 'Indexando contextos…' : 'Carregar e indexar contextos' }}
             </button>
           </div>
         </div>
@@ -1112,7 +1114,7 @@ onBeforeUnmount(() => {
               <div class="p-2 bg-accent/10 rounded-lg">
                 <Clock class="h-5 w-5 text-accent" stroke-width="2" />
               </div>
-              <h2 class="text-lg font-semibold text-text-primary">Logs de Preparação</h2>
+              <h2 class="text-lg font-semibold text-text-primary">Histórico de carregamento</h2>
             </div>
 
             <!-- Filtro de Busca -->
@@ -1175,7 +1177,12 @@ onBeforeUnmount(() => {
                     v-if="log.status === 'error'"
                     class="rounded border border-red-100 bg-white px-4 py-3 text-sm text-red-600 dark:border-red-900/40 dark:bg-slate-900 dark:text-red-400"
                   >
-                    A preparação falhou. Verifique a conectividade com o PostgreSQL e a configuração do Gemini.
+                    {{ log.message }}
+                    <ul v-if="log.runs.length" class="mt-2 space-y-1">
+                      <li v-for="run in log.runs.filter(item => item.state === 'failed')" :key="run.dagId">
+                        {{ run.label }} — {{ run.dagRunId }}
+                      </li>
+                    </ul>
                   </div>
 
                   <!-- Sucesso -->
@@ -1512,7 +1519,7 @@ onBeforeUnmount(() => {
               </div>
               <div class="flex items-center justify-between text-xs">
                 <span class="text-text-secondary">Motor LLM</span>
-                <span class="text-text-primary">Mistral AI</span>
+                <span class="text-text-primary">Gemini AI</span>
               </div>
               <div class="flex items-center justify-between text-xs">
                 <span class="text-text-secondary">Vector Store</span>

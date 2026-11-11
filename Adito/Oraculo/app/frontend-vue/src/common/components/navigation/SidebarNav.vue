@@ -5,6 +5,7 @@ import { useRoute } from 'vue-router'
 import brandIcon from '@/common/assets/brand-icon.png'
 import {
   AreaChart,
+  Database,
   MessageSquare,
   Settings,
   KeyRound,
@@ -53,9 +54,9 @@ function closeSidebar() {
 
 const menuItems = [
   { icon: MessageSquare, label: 'Chat', path: '/chat' },
-  { icon: AreaChart, label: 'Meu Dashboard', path: '/meu-dashboard' },
-  // "Explorar Dados" fica fora do menu até ser refeita por contexto (filters.json); a rota /explorar continua.
-  { icon: Settings, label: 'Administracao', path: '/admin', adminOnly: true },
+  { icon: AreaChart, label: 'Meu painel', path: '/meu-dashboard' },
+  { icon: Database, label: 'Explorar dados', path: '/explorar' },
+  { icon: Settings, label: 'Administração', path: '/admin', adminOnly: true },
   { icon: KeyRound, label: 'Configurações', path: '/configuracoes' }
 ]
 
@@ -97,13 +98,10 @@ function toggleTheme() {
     <div class="border-b border-white/10 px-5 py-6">
       <div :class="['flex items-center', isEffectivelyCollapsed ? 'flex-col gap-5 justify-center' : 'justify-between']">
         <div class="flex items-center gap-3">
-          <img :src="brandIcon" alt="Logo" class="h-[34px] w-[34px] shrink-0 object-contain" />
+          <img :src="brandIcon" alt="Adito" class="h-[34px] w-[34px] shrink-0 object-contain" />
           <div v-if="!isEffectivelyCollapsed" class="relative animate-in fade-in duration-300">
-            <span class="absolute -top-[16px] left-0 flex items-center justify-center rounded-full border border-[var(--brand-secondary)]/70 bg-black/25 px-[5px] py-[2px] text-[8px] font-bold uppercase tracking-[0.1em] text-[#b8df6b] leading-none select-none whitespace-nowrap">
-              beta
-            </span>
-            <h1 class="text-[18px] font-semibold tracking-[-0.04em] text-white">
-              ORACULO-ESX
+            <h1 class="adito-wordmark text-[26px] leading-none text-white">
+              Adito
             </h1>
           </div>
         </div>
@@ -121,6 +119,7 @@ function toggleTheme() {
 
           <button
             v-if="isMobile"
+            aria-label="Fechar menu de navegação"
             class="rounded-lg bg-white/[0.06] p-2 text-white/75 transition-colors hover:bg-white/[0.12] md:hidden"
             @click="closeSidebar"
           >
@@ -130,13 +129,13 @@ function toggleTheme() {
       </div>
 
       <div v-if="!isEffectivelyCollapsed" class="mt-2.5 animate-in fade-in slide-in-from-left-4 duration-500">
-        <p class="text-[9px] font-bold uppercase tracking-[0.22em] text-white/60 whitespace-nowrap">
-          Inteligência Estratégica
+        <p class="text-[11px] font-medium tracking-[0.04em] text-white/60 whitespace-nowrap">
+          Pesquisa e extensão
         </p>
       </div>
     </div>
 
-    <nav :class="['no-scrollbar flex-1 overflow-y-auto py-6', isCollapsed ? 'px-2' : 'px-4']">
+    <nav aria-label="Navegação principal" :class="['no-scrollbar flex-1 overflow-y-auto py-6', isCollapsed ? 'px-2' : 'px-4']">
       <RouterLink
         v-for="item in visibleMenuItems"
         :key="item.path"
@@ -185,8 +184,8 @@ function toggleTheme() {
           <img v-else :src="user.avatar" alt="Avatar" class="h-full w-full object-cover">
         </div>
         <div v-if="!isEffectivelyCollapsed" class="animate-in fade-in min-w-0 flex-1 duration-300">
-          <p class="truncate text-sm font-medium text-white">{{ user?.name || user?.username || 'Usuario' }}</p>
-          <p class="truncate text-[10px] font-medium tracking-[0.03em] text-white/65">{{ user?.email || 'gestor@ifes.edu.br' }}</p>
+          <p class="truncate text-sm font-medium text-white">{{ user?.name || user?.username || 'Usuário local' }}</p>
+          <p class="truncate text-[10px] font-medium tracking-[0.03em] text-white/65">{{ user?.email || 'Consulta local de dados' }}</p>
         </div>
       </div>
 
@@ -205,7 +204,7 @@ function toggleTheme() {
     </div>
 
     <div v-if="!isEffectivelyCollapsed" class="border-t border-white/[0.06] bg-black/20 px-4 py-3 text-center text-[9px] font-semibold uppercase tracking-[0.1em] text-white/65">
-      FAPES • IFES • LEDS
+      IFES · Campus Serra
     </div>
   </aside>
 </template>

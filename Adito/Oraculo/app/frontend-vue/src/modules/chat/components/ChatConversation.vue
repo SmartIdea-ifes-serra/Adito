@@ -85,32 +85,35 @@ function select(key: string) {
     <div class="flex-1 overflow-y-auto p-4 min-h-[300px] bg-transparent md:p-6 scroll-fade-mask">
       <div
         v-if="messages.length === 1 && messages[0]?.id === 'welcome' && !loading"
-        class="mx-auto flex h-full max-w-xl flex-col items-center justify-center gap-6 text-center"
+        class="mx-auto flex min-h-full max-w-2xl flex-col items-center justify-center gap-8 py-6 text-center"
       >
-        <div class="flex flex-col items-center gap-3">
-          <img :src="brandIcon" class="h-12 w-12 opacity-90" />
-          <div>
-            <h4 class="text-lg font-semibold text-text-primary">Como posso ajudar?</h4>
-            <p class="mt-1 text-sm text-text-secondary">Escolha uma área institucional do IFES ou digite sua pergunta.</p>
+        <div class="flex max-w-lg flex-col items-center gap-4">
+          <div class="flex items-center gap-3 text-accent">
+            <img :src="brandIcon" alt="" class="h-11 w-11 object-contain" />
+            <span class="adito-wordmark text-4xl">Adito</span>
           </div>
+          <h1 class="text-2xl font-semibold leading-tight text-text-primary sm:text-3xl">
+            Explore a pesquisa e a extensão do Campus Serra
+          </h1>
+          <p class="text-sm leading-relaxed text-text-secondary">
+            Pergunte sobre os dados ou escolha uma área para começar.
+          </p>
         </div>
 
         <!-- Category grid -->
-        <div class="w-full grid grid-cols-2 sm:grid-cols-3 gap-3">
+        <div class="flex w-full flex-wrap justify-center gap-3">
           <button
             v-for="category in starterCategories"
             :key="category.key"
+            :aria-pressed="selected === category.key"
             :class="[
-              'group flex flex-col items-center gap-2 rounded-xl border px-3.5 py-4 transition-all duration-200',
-              selected === category.key
-                ? 'border-[var(--brand-primary)] bg-[var(--accent-light)] text-[var(--brand-primary)] shadow-sm -translate-y-0.5'
-                : 'border-[var(--border-subtle)] bg-[#FFFFFF] dark:bg-[var(--bg-surface)] text-[var(--neutral-dark)] hover:-translate-y-0.5 hover:border-[var(--brand-primary)]/45 hover:shadow-[var(--shadow-card-hover)]'
+              'adito-topic group flex w-[calc((100%_-_0.75rem)/2)] flex-col items-center justify-center gap-3 px-3.5 py-5 sm:w-[calc((100%_-_1.5rem)/3)]'
             ]"
             @click="select(category.key)"
           >
             <div
               :class="[
-                'flex h-9 w-9 items-center justify-center rounded-full border transition-colors duration-200',
+                'adito-topic-icon flex h-10 w-10 items-center justify-center rounded-lg border transition-colors duration-200',
                 selected === category.key
                   ? 'border-[var(--brand-primary)]/30 bg-[var(--brand-primary)]/15'
                   : 'border-[var(--brand-primary)]/12 bg-[var(--brand-primary)]/8 group-hover:border-[var(--brand-primary)]/25 group-hover:bg-[var(--brand-primary)]/12'
@@ -128,10 +131,10 @@ function select(key: string) {
               />
             </div>
             <div class="flex flex-col items-center gap-0.5">
-              <span class="text-xs font-semibold leading-tight">{{ category.label }}</span>
+              <span class="text-sm font-semibold leading-tight">{{ category.label }}</span>
               <span
                 v-if="category.subtitle"
-                class="text-[10px] text-text-muted leading-tight"
+                class="text-xs text-text-muted leading-relaxed"
               >
                 {{ category.subtitle }}
               </span>

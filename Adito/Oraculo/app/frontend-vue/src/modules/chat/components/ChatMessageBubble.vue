@@ -528,7 +528,7 @@ const chartSeries = computed(() => {
             </div>
             <img v-else :src="brandIcon" class="w-9 h-9" />
           </div>
-          <span class="font-semibold tracking-[-0.03em] text-primary dark:text-white">ORACULO-ESX</span>
+          <span class="font-semibold tracking-[-0.03em] text-primary dark:text-white">Adito</span>
         </div>
 
         <!-- Botão Copiar para AI -->
@@ -562,7 +562,7 @@ const chartSeries = computed(() => {
             <div class="flex-1">
               <div class="flex items-center gap-2 mb-1.5">
                 <img :src="brandIcon" class="w-4 h-4" />
-                <span class="text-sm font-semibold text-amber-800 dark:text-amber-500">ORACULO-ESX Exploratorio</span>
+                <span class="text-sm font-semibold text-amber-800 dark:text-amber-500">Adito · Exploração</span>
               </div>
               <p class="text-sm text-amber-700 dark:text-amber-400/90 mb-3 leading-relaxed">
                 {{ message.fallbackMessage || 'Nao encontrei os dados exatos para esta pergunta. Que tal tentar uma das opcoes abaixo?' }}
