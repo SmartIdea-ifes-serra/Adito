@@ -1,0 +1,82 @@
+2026-10-14 15:28:18.816 | INFO     | src.core.logic.person_matcher:preload_cache:39 - Pre-loading persons cache...
+2026-10-14 15:28:18.819 | INFO     | src.core.logic.person_matcher:preload_cache:68 - Loaded 0 persons and 0 emails into cache
+2026-10-14 15:28:19.052 | WARNING  | src.core.logic.strategies.sigpesq_projects:_parse_date:123 - Could not parse date: 31/02/2024
+2026-10-14 15:28:19.065 | WARNING  | src.core.logic.strategies.sigpesq_projects:_parse_date:123 - Could not parse date: 2024/13/45
+2026-10-14 15:28:19.489 | WARNING  | src.core.logic.strategies.base:_parse_date:105 - Could not parse date: 2025-13-01
+2026-10-14 15:28:19.489 | WARNING  | src.core.logic.strategies.base:_parse_date:105 - Could not parse date: abc
+2026-10-14 15:28:19.503 | WARNING  | src.core.logic.strategies.base:_parse_date:105 - Could not parse date: 31/02/2025
+2026-10-14 15:28:19.571 | INFO     | src.adapters.sources.cnpq_crawler:get_group_data:43 - Extracting data from CNPq Mirror: http://dgp.cnpq.br/dgp/espelhogrupo/900001
+2026-10-14 15:28:19.572 | INFO     | src.adapters.sources.cnpq_crawler:get_group_data:43 - Extracting data from CNPq Mirror: http://dgp.cnpq.br/dgp/espelhogrupo/900102
+2026-10-14 15:28:19.574 | INFO     | src.adapters.sources.cnpq_crawler:extract_members:56 - Available keys in raw data: ['nome_grupo', 'repercussoes', 'identificacao', 'recursos_humanos', 'linhas_de_pesquisa']
+2026-10-14 15:28:19.574 | INFO     | src.adapters.sources.cnpq_crawler:extract_members:61 - RH content keys: ['pesquisadores', 'estudantes']
+2026-10-14 15:28:19.582 | INFO     | src.adapters.sources.cnpq_crawler:get_group_data:43 - Extracting data from CNPq Mirror: http://dgp.cnpq.br/dgp/espelhogrupo/900003
+2026-10-14 15:28:19.582 | INFO     | src.adapters.sources.cnpq_crawler:extract_members:56 - Available keys in raw data: ['nome_grupo', 'repercussoes', 'identificacao', 'recursos_humanos', 'linhas_de_pesquisa']
+2026-10-14 15:28:19.582 | INFO     | src.adapters.sources.cnpq_crawler:extract_members:61 - RH content keys: ['pesquisadores', 'estudantes']
+2026-10-14 15:28:19.585 | INFO     | src.adapters.sources.cnpq_crawler:get_group_data:43 - Extracting data from CNPq Mirror: http://dgp.cnpq.br/dgp/espelhogrupo/900004
+2026-10-14 15:28:19.585 | INFO     | src.adapters.sources.cnpq_crawler:extract_members:56 - Available keys in raw data: ['nome_grupo', 'repercussoes', 'identificacao', 'recursos_humanos', 'linhas_de_pesquisa']
+2026-10-14 15:28:19.585 | INFO     | src.adapters.sources.cnpq_crawler:extract_members:61 - RH content keys: ['pesquisadores', 'estudantes', 'egressos_estudantes']
+2026-10-14 15:28:19.591 | INFO     | src.adapters.sources.cnpq_crawler:get_group_data:43 - Extracting data from CNPq Mirror: http://dgp.cnpq.br/dgp/espelhogrupo/900005
+2026-10-14 15:28:19.592 | INFO     | src.adapters.sources.cnpq_crawler:extract_members:56 - Available keys in raw data: ['nome_grupo', 'repercussoes', 'identificacao', 'recursos_humanos', 'linhas_de_pesquisa']
+2026-10-14 15:28:19.592 | INFO     | src.adapters.sources.cnpq_crawler:extract_members:61 - RH content keys: ['pesquisadores', 'estudantes']
+2026-10-14 15:28:19.599 | INFO     | src.adapters.sources.cnpq_crawler:get_group_data:43 - Extracting data from CNPq Mirror: http://dgp.cnpq.br/dgp/espelhogrupo/900006
+2026-10-14 15:28:19.599 | INFO     | src.adapters.sources.cnpq_crawler:extract_members:56 - Available keys in raw data: ['nome_grupo', 'repercussoes', 'identificacao', 'recursos_humanos', 'linhas_de_pesquisa']
+2026-10-14 15:28:19.599 | INFO     | src.adapters.sources.cnpq_crawler:extract_members:61 - RH content keys: ['pesquisadores', 'estudantes', 'tecnicos']
+2026-10-14 15:28:19.603 | INFO     | src.adapters.sources.cnpq_crawler:get_group_data:43 - Extracting data from CNPq Mirror: http://dgp.cnpq.br/dgp/espelhogrupo/900007
+2026-10-14 15:28:19.604 | INFO     | src.adapters.sources.cnpq_crawler:extract_members:56 - Available keys in raw data: ['nome_grupo', 'repercussoes', 'identificacao', 'recursos_humanos', 'linhas_de_pesquisa']
+2026-10-14 15:28:19.604 | INFO     | src.adapters.sources.cnpq_crawler:extract_members:61 - RH content keys: ['pesquisadores', 'estudantes']
+2026-10-14 15:28:19.608 | INFO     | src.adapters.sources.cnpq_crawler:get_group_data:43 - Extracting data from CNPq Mirror: http://dgp.cnpq.br/dgp/espelhogrupo/900008
+2026-10-14 15:28:19.608 | INFO     | src.adapters.sources.cnpq_crawler:extract_members:56 - Available keys in raw data: ['nome_grupo', 'repercussoes', 'identificacao', 'recursos_humanos', 'linhas_de_pesquisa']
+2026-10-14 15:28:19.608 | INFO     | src.adapters.sources.cnpq_crawler:extract_members:61 - RH content keys: ['pesquisadores', 'estudantes', 'tecnicos']
+2026-10-14 15:28:19.615 | INFO     | src.adapters.sources.cnpq_crawler:get_group_data:43 - Extracting data from CNPq Mirror: http://dgp.cnpq.br/dgp/espelhogrupo/900009
+2026-10-14 15:28:19.616 | INFO     | src.adapters.sources.cnpq_crawler:extract_members:56 - Available keys in raw data: ['nome_grupo', 'repercussoes', 'identificacao', 'recursos_humanos', 'linhas_de_pesquisa']
+2026-10-14 15:28:19.616 | INFO     | src.adapters.sources.cnpq_crawler:extract_members:61 - RH content keys: ['pesquisadores', 'estudantes', 'egressos_estudantes']
+2026-10-14 15:28:19.620 | INFO     | src.adapters.sources.cnpq_crawler:get_group_data:43 - Extracting data from CNPq Mirror: http://dgp.cnpq.br/dgp/espelhogrupo/900101
+2026-10-14 15:28:19.621 | INFO     | src.adapters.sources.cnpq_crawler:extract_members:56 - Available keys in raw data: ['nome_grupo', 'repercussoes', 'identificacao', 'recursos_humanos', 'linhas_de_pesquisa']
+2026-10-14 15:28:19.621 | INFO     | src.adapters.sources.cnpq_crawler:extract_members:61 - RH content keys: ['pesquisadores', 'estudantes']
+2026-10-14 15:28:19.624 | INFO     | src.adapters.sources.cnpq_crawler:get_group_data:43 - Extracting data from CNPq Mirror: http://dgp.cnpq.br/dgp/espelhogrupo/900010
+2026-10-14 15:28:19.625 | INFO     | src.adapters.sources.cnpq_crawler:extract_members:56 - Available keys in raw data: ['nome_grupo', 'repercussoes', 'identificacao', 'recursos_humanos', 'linhas_de_pesquisa']
+2026-10-14 15:28:19.625 | INFO     | src.adapters.sources.cnpq_crawler:extract_members:61 - RH content keys: ['pesquisadores', 'estudantes']
+2026-10-14 15:28:19.628 | INFO     | src.adapters.sources.cnpq_crawler:get_group_data:43 - Extracting data from CNPq Mirror: http://dgp.cnpq.br/dgp/espelhogrupo/900011
+2026-10-14 15:28:19.628 | INFO     | src.adapters.sources.cnpq_crawler:extract_members:56 - Available keys in raw data: ['nome_grupo', 'repercussoes', 'identificacao', 'recursos_humanos', 'linhas_de_pesquisa']
+2026-10-14 15:28:19.628 | INFO     | src.adapters.sources.cnpq_crawler:extract_members:61 - RH content keys: ['pesquisadores', 'estudantes']
+2026-10-14 15:28:19.631 | INFO     | src.adapters.sources.cnpq_crawler:get_group_data:43 - Extracting data from CNPq Mirror: http://dgp.cnpq.br/dgp/espelhogrupo/900012
+2026-10-14 15:28:19.631 | INFO     | src.adapters.sources.cnpq_crawler:extract_members:56 - Available keys in raw data: ['nome_grupo', 'repercussoes', 'identificacao', 'recursos_humanos', 'linhas_de_pesquisa']
+2026-10-14 15:28:19.631 | INFO     | src.adapters.sources.cnpq_crawler:extract_members:61 - RH content keys: ['pesquisadores', 'estudantes']
+2026-10-14 15:28:19.633 | INFO     | src.adapters.sources.cnpq_crawler:get_group_data:43 - Extracting data from CNPq Mirror: http://dgp.cnpq.br/dgp/espelhogrupo/900013
+2026-10-14 15:28:19.634 | INFO     | src.adapters.sources.cnpq_crawler:extract_members:56 - Available keys in raw data: ['nome_grupo', 'repercussoes', 'identificacao', 'recursos_humanos', 'linhas_de_pesquisa']
+2026-10-14 15:28:19.634 | INFO     | src.adapters.sources.cnpq_crawler:extract_members:61 - RH content keys: ['pesquisadores', 'estudantes']
+2026-10-14 15:28:19.637 | INFO     | src.adapters.sources.cnpq_crawler:get_group_data:43 - Extracting data from CNPq Mirror: http://dgp.cnpq.br/dgp/espelhogrupo/900014
+2026-10-14 15:28:19.637 | INFO     | src.adapters.sources.cnpq_crawler:extract_members:56 - Available keys in raw data: ['nome_grupo', 'repercussoes', 'identificacao', 'recursos_humanos', 'linhas_de_pesquisa']
+2026-10-14 15:28:19.637 | INFO     | src.adapters.sources.cnpq_crawler:extract_members:61 - RH content keys: ['pesquisadores', 'estudantes']
+2026-10-14 15:28:19.645 | INFO     | src.adapters.sources.cnpq_crawler:get_group_data:43 - Extracting data from CNPq Mirror: http://dgp.cnpq.br/dgp/espelhogrupo/900015
+2026-10-14 15:28:19.645 | INFO     | src.adapters.sources.cnpq_crawler:extract_members:56 - Available keys in raw data: ['nome_grupo', 'repercussoes', 'identificacao', 'recursos_humanos', 'linhas_de_pesquisa']
+2026-10-14 15:28:19.645 | INFO     | src.adapters.sources.cnpq_crawler:extract_members:61 - RH content keys: ['pesquisadores', 'estudantes', 'egressos_pesquisadores']
+2026-10-14 15:28:19.651 | INFO     | src.adapters.sources.cnpq_crawler:get_group_data:43 - Extracting data from CNPq Mirror: http://dgp.cnpq.br/dgp/espelhogrupo/900016
+2026-10-14 15:28:19.652 | INFO     | src.adapters.sources.cnpq_crawler:extract_members:56 - Available keys in raw data: ['nome_grupo', 'repercussoes', 'identificacao', 'recursos_humanos', 'linhas_de_pesquisa']
+2026-10-14 15:28:19.652 | INFO     | src.adapters.sources.cnpq_crawler:extract_members:61 - RH content keys: ['pesquisadores', 'estudantes']
+2026-10-14 15:28:19.655 | INFO     | src.adapters.sources.cnpq_crawler:get_group_data:43 - Extracting data from CNPq Mirror: http://dgp.cnpq.br/dgp/espelhogrupo/900017
+2026-10-14 15:28:19.656 | INFO     | src.adapters.sources.cnpq_crawler:extract_members:56 - Available keys in raw data: ['nome_grupo', 'repercussoes', 'identificacao', 'recursos_humanos', 'linhas_de_pesquisa']
+2026-10-14 15:28:19.656 | INFO     | src.adapters.sources.cnpq_crawler:extract_members:61 - RH content keys: ['pesquisadores', 'estudantes']
+2026-10-14 15:28:19.660 | INFO     | src.adapters.sources.cnpq_crawler:get_group_data:43 - Extracting data from CNPq Mirror: http://dgp.cnpq.br/dgp/espelhogrupo/900018
+2026-10-14 15:28:19.660 | INFO     | src.adapters.sources.cnpq_crawler:extract_members:56 - Available keys in raw data: ['nome_grupo', 'repercussoes', 'identificacao', 'recursos_humanos', 'linhas_de_pesquisa']
+2026-10-14 15:28:19.660 | INFO     | src.adapters.sources.cnpq_crawler:extract_members:61 - RH content keys: ['pesquisadores', 'estudantes']
+2026-10-14 15:28:19.663 | INFO     | src.adapters.sources.cnpq_crawler:get_group_data:43 - Extracting data from CNPq Mirror: http://dgp.cnpq.br/dgp/espelhogrupo/900019
+2026-10-14 15:28:19.663 | INFO     | src.adapters.sources.cnpq_crawler:extract_members:56 - Available keys in raw data: ['nome_grupo', 'repercussoes', 'identificacao', 'recursos_humanos', 'linhas_de_pesquisa']
+2026-10-14 15:28:19.663 | INFO     | src.adapters.sources.cnpq_crawler:extract_members:61 - RH content keys: ['pesquisadores', 'estudantes', 'egressos_pesquisadores']
+2026-10-14 15:28:19.669 | INFO     | src.adapters.sources.cnpq_crawler:get_group_data:43 - Extracting data from CNPq Mirror: http://dgp.cnpq.br/dgp/espelhogrupo/900020
+2026-10-14 15:28:19.669 | INFO     | src.adapters.sources.cnpq_crawler:extract_members:56 - Available keys in raw data: ['nome_grupo', 'repercussoes', 'identificacao', 'recursos_humanos', 'linhas_de_pesquisa']
+2026-10-14 15:28:19.669 | INFO     | src.adapters.sources.cnpq_crawler:extract_members:61 - RH content keys: ['pesquisadores', 'estudantes', 'tecnicos']
+2026-10-14 15:28:19.674 | INFO     | src.adapters.sources.cnpq_crawler:get_group_data:43 - Extracting data from CNPq Mirror: http://dgp.cnpq.br/dgp/espelhogrupo/900021
+2026-10-14 15:28:19.675 | INFO     | src.adapters.sources.cnpq_crawler:extract_members:56 - Available keys in raw data: ['nome_grupo', 'repercussoes', 'identificacao', 'recursos_humanos', 'linhas_de_pesquisa']
+2026-10-14 15:28:19.675 | INFO     | src.adapters.sources.cnpq_crawler:extract_members:61 - RH content keys: ['pesquisadores', 'estudantes']
+2026-10-14 15:28:19.679 | INFO     | src.adapters.sources.cnpq_crawler:get_group_data:43 - Extracting data from CNPq Mirror: http://dgp.cnpq.br/dgp/espelhogrupo/900022
+2026-10-14 15:28:19.679 | INFO     | src.adapters.sources.cnpq_crawler:extract_members:56 - Available keys in raw data: ['nome_grupo', 'repercussoes', 'identificacao', 'recursos_humanos', 'linhas_de_pesquisa']
+2026-10-14 15:28:19.679 | INFO     | src.adapters.sources.cnpq_crawler:extract_members:61 - RH content keys: ['pesquisadores', 'estudantes', 'tecnicos']
+2026-10-14 15:28:19.688 | INFO     | src.adapters.sources.cnpq_crawler:get_group_data:43 - Extracting data from CNPq Mirror: http://dgp.cnpq.br/dgp/espelhogrupo/900103
+2026-10-14 15:28:19.688 | INFO     | src.adapters.sources.cnpq_crawler:extract_members:56 - Available keys in raw data: ['nome_grupo', 'repercussoes', 'identificacao', 'recursos_humanos', 'linhas_de_pesquisa']
+2026-10-14 15:28:19.688 | INFO     | src.adapters.sources.cnpq_crawler:extract_members:61 - RH content keys: ['pesquisadores', 'estudantes', 'egressos']
+2026-10-14 15:28:19.694 | INFO     | src.adapters.sources.cnpq_crawler:get_group_data:43 - Extracting data from CNPq Mirror: http://dgp.cnpq.br/dgp/espelhogrupo/900023
+2026-10-14 15:28:19.695 | INFO     | src.adapters.sources.cnpq_crawler:extract_members:56 - Available keys in raw data: ['nome_grupo', 'repercussoes', 'identificacao', 'recursos_humanos', 'linhas_de_pesquisa']
+2026-10-14 15:28:19.695 | INFO     | src.adapters.sources.cnpq_crawler:extract_members:61 - RH content keys: ['pesquisadores', 'estudantes']
+2026-10-14 15:28:19.708 | INFO     | src.core.logic.person_matcher:preload_cache:39 - Pre-loading persons cache...
+2026-10-14 15:28:19.709 | INFO     | src.core.logic.person_matcher:preload_cache:68 - Loaded 207 persons and 99 emails into cache

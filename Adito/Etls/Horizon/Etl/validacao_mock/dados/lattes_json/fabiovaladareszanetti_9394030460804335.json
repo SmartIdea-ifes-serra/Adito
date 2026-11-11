@@ -1,0 +1,123 @@
+{
+  "informacoes_pessoais": {
+    "nome_completo": "Fábio Valadares Zanetti",
+    "id_lattes": "9394030460804335",
+    "texto_resumo": "Currículo fictício de Fábio Valadares Zanetti, gerado para testes do ETL do Horizon.",
+    "nome_citacoes": "ZANETTI, F. V.;ZANETTI, FÁBIO",
+    "atualizacao_cv": "05/06/2023",
+    "url": "http://lattes.cnpq.br/9394030460804335"
+  },
+  "premios_titulos": [
+    {
+      "descricao": "Menção honrosa fictícia 0 - Fábio",
+      "ano": "2025"
+    },
+    {
+      "descricao": "Menção honrosa fictícia 1 - Fábio",
+      "ano": "2024"
+    }
+  ],
+  "idiomas": [
+    {
+      "nome": "Francês",
+      "le": "Bem",
+      "escreve": "Razoavelmente",
+      "fala": "Razoavelmente",
+      "compreende": "Razoavelmente"
+    }
+  ],
+  "atuacao_profissional": [
+    {
+      "instituicao": "Instituto Federal do Espírito Santo",
+      "ano_inicio": "2017",
+      "ano_fim": "Atual",
+      "vinculo": "Servidor Público",
+      "enquadramento": "Professor EBTT"
+    }
+  ],
+  "formacao_academica": [
+    {
+      "tipo": "Graduação em Matemática",
+      "nome_instituicao": "Instituto Tecnológico de Aeronáutica",
+      "ano_inicio": "2005",
+      "ano_conclusao": "2009"
+    },
+    {
+      "tipo": "Doutorado em Ciência da Computação",
+      "nome_instituicao": "Instituto Tecnológico de Aeronáutica",
+      "ano_inicio": "2011",
+      "ano_conclusao": "2015",
+      "descricao": "Título: Contribuições para plataformas web para acessibilidade, Ano de Obtenção: 2015. Orientador: Daniel Correia Sales."
+    }
+  ],
+  "producao_bibliografica": {
+    "artigos_periodicos": [
+      {
+        "titulo": "Análise comparativa de dados abertos em bacias hidrográficas do ES (37)",
+        "ano": "2018",
+        "revista": "Engenharia Sanitária e Ambiental",
+        "volume": "12",
+        "paginas": "39-105",
+        "doi": "10.5555/mock.0037",
+        "autores": "EXTERNO, F. M.; ZANETTI, F. V."
+      }
+    ],
+    "trabalhos_completos_congressos": []
+  },
+  "producao_tecnica": {},
+  "projetos_pesquisa": [
+    {
+      "nome": "Uso de materiais didáticos na gestão escolar",
+      "ano_inicio": "2023",
+      "ano_conclusao": "2025",
+      "descricao": [
+        "Descrição: Projeto fictício para teste do ETL. Situação: Concluído; Natureza: Pesquisa."
+      ],
+      "integrantes": [
+        {
+          "nome": "Fábio Valadares Zanetti",
+          "papel": "Coordenador"
+        },
+        {
+          "nome": "Paula Prates Barbosa",
+          "papel": "Integrante"
+        }
+      ],
+      "financiadores": [
+        {
+          "nome": "CNPq"
+        }
+      ]
+    }
+  ],
+  "projetos_extensao": [],
+  "projetos_desenvolvimento": [],
+  "orientacoes": {
+    "concluidas": {
+      "iniciacao_cientifica": [
+        {
+          "titulo": "Orientação concluída mock fabiovaladar 0",
+          "orientando": "Sabrina Moreira Lopes",
+          "ano": "2018",
+          "natureza": "Iniciação Científica"
+        },
+        {
+          "titulo": "Orientação concluída mock fabiovaladar 1",
+          "orientando": "Mateus Macedo Tavares",
+          "ano": "2020",
+          "natureza": "Iniciação Científica"
+        }
+      ]
+    },
+    "em_andamento": {
+      "dissertacao_de_mestrado": [
+        {
+          "titulo": "Dissertação em andamento mock fabiovaladar",
+          "orientando": "Larissa Siqueira Pacheco",
+          "ano_inicio": "2025",
+          "ano_conclusao": ""
+        }
+      ]
+    }
+  }
+}

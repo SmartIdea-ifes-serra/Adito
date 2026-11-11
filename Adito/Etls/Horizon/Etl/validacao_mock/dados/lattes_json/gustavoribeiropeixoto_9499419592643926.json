@@ -1,0 +1,172 @@
+{
+  "informacoes_pessoais": {
+    "nome_completo": "Gustavo Ribeiro Peixoto",
+    "id_lattes": "9499419592643926",
+    "texto_resumo": "Currículo fictício de Gustavo Ribeiro Peixoto, gerado para testes do ETL do Horizon.",
+    "nome_citacoes": "PEIXOTO, G. R.;PEIXOTO, GUSTAVO",
+    "atualizacao_cv": "23/12/2024",
+    "url": "http://lattes.cnpq.br/9499419592643926"
+  },
+  "premios_titulos": [
+    {
+      "descricao": "Menção honrosa fictícia 0 - Gustavo",
+      "ano": "2016"
+    },
+    {
+      "descricao": "Menção honrosa fictícia 1 - Gustavo",
+      "ano": "2017"
+    }
+  ],
+  "idiomas": [
+    {
+      "nome": "Inglês",
+      "le": "Pouco",
+      "escreve": "Bem",
+      "fala": "Pouco",
+      "compreende": "Razoavelmente"
+    }
+  ],
+  "atuacao_profissional": [
+    {
+      "instituicao": "Instituto Federal do Espírito Santo",
+      "ano_inicio": "2009",
+      "ano_fim": "Atual",
+      "vinculo": "Servidor Público",
+      "enquadramento": "Professor EBTT"
+    },
+    {
+      "instituicao": "Mock Siderurgia S.A.",
+      "ano_inicio": "2003",
+      "ano_fim": "2010",
+      "vinculo": "Celetista"
+    }
+  ],
+  "formacao_academica": [
+    {
+      "tipo": "Graduação em Matemática",
+      "nome_instituicao": "Universidade Estadual de Campinas",
+      "ano_inicio": "2004",
+      "ano_conclusao": "2008"
+    },
+    {
+      "tipo": "Doutorado em Educação",
+      "nome_instituicao": "Universidade de São Paulo",
+      "ano_inicio": "2010",
+      "ano_conclusao": "2014",
+      "descricao": "Título: Contribuições para algoritmos genéticos na indústria metalmecânica, Ano de Obtenção: 2014. Orientador: Bruno Bragança Pacheco."
+    }
+  ],
+  "producao_bibliografica": {
+    "artigos_periodicos": [
+      {
+        "titulo": "Avaliação experimental de sistemas embarcados em ambientes hospitalares (15)",
+        "ano": "2021",
+        "revista": "Journal of Mock Studies",
+        "volume": "23",
+        "paginas": "66-177",
+        "doi": "10.5555/mock.0015",
+        "autores": "EXTERNO, F. M.; PEIXOTO, G. R.; FALQUETO, P. G.; ROCHA, W. S."
+      },
+      {
+        "titulo": "Uma abordagem de sensores de baixo custo no ensino médio integrado (16)",
+        "ano": "2021",
+        "revista": "Revista Brasileira de Ensino de Física",
+        "volume": "36",
+        "paginas": "65-131",
+        "doi": "10.5555/mock.0016",
+        "autores": "EXTERNO, F. M.; PEIXOTO, G. R.; FALQUETO, P. G.; ROCHA, W. S."
+      }
+    ],
+    "trabalhos_completos_congressos": [
+      {
+        "titulo": "Relato de experiência com resíduos agroindustriais (17)",
+        "ano": "2023",
+        "evento": "Congresso Brasileiro de Automática",
+        "paginas": "1-11",
+        "autores": "PEIXOTO, G. R."
+      }
+    ]
+  },
+  "producao_tecnica": {},
+  "projetos_pesquisa": [
+    {
+      "nome": "Uso de algoritmos genéticos em ambientes hospitalares",
+      "ano_inicio": "2016",
+      "ano_conclusao": "Atual",
+      "descricao": [
+        "Descrição: Projeto fictício para teste do ETL. Situação: Em andamento; Natureza: Pesquisa."
+      ],
+      "integrantes": [
+        {
+          "nome": "Gustavo Ribeiro Peixoto",
+          "papel": "Coordenador"
+        },
+        {
+          "nome": "Tiago Fonseca Rodrigues",
+          "papel": "Integrante"
+        },
+        {
+          "nome": "Tiago Dias Farias",
+          "papel": "Estudante"
+        }
+      ],
+      "financiadores": [
+        {
+          "nome": "CNPq"
+        }
+      ]
+    },
+    {
+      "nome": "Projeto mock com término previsto para 2027",
+      "ano_inicio": "2024",
+      "ano_conclusao": "2027",
+      "descricao": [
+        "Descrição: Projeto fictício para teste do ETL. Situação: Concluído; Natureza: Pesquisa."
+      ],
+      "integrantes": [
+        {
+          "nome": "Gustavo Ribeiro Peixoto",
+          "papel": "Coordenador"
+        }
+      ],
+      "financiadores": []
+    }
+  ],
+  "projetos_extensao": [
+    {
+      "nome": "Extensão: Aplicação de microrredes em bacias hidrográficas do ES",
+      "ano_inicio": "2016",
+      "ano_conclusao": "Atual",
+      "descricao": [
+        "Descrição: Projeto fictício para teste do ETL. Situação: Em andamento; Natureza: Pesquisa."
+      ],
+      "integrantes": [
+        {
+          "nome": "Gustavo Ribeiro Peixoto",
+          "papel": "Coordenador"
+        }
+      ],
+      "financiadores": []
+    }
+  ],
+  "projetos_desenvolvimento": [],
+  "orientacoes": {
+    "concluidas": {
+      "iniciacao_cientifica": [
+        {
+          "titulo": "Orientação concluída mock gustavoribei 0",
+          "orientando": "Gustavo Martins Peixoto",
+          "ano": "2021",
+          "natureza": "Iniciação Científica"
+        },
+        {
+          "titulo": "Orientação concluída mock gustavoribei 1",
+          "orientando": "Paula Tavares Vieira",
+          "ano": "2020",
+          "natureza": "Iniciação Científica"
+        }
+      ]
+    },
+    "em_andamento": {}
+  }
+}

@@ -1,0 +1,62 @@
+{
+  "informacoes_pessoais": {
+    "nome_completo": "Natália Coutinho Oliveira",
+    "id_lattes": "9345401626067461",
+    "texto_resumo": "Currículo fictício de Natália Coutinho Oliveira, gerado para testes do ETL do Horizon.",
+    "nome_citacoes": "OLIVEIRA, N. C.;OLIVEIRA, NATÁLIA",
+    "atualizacao_cv": "08/12/2025",
+    "url": "http://lattes.cnpq.br/9345401626067461"
+  },
+  "premios_titulos": [],
+  "idiomas": [
+    {
+      "nome": "Inglês",
+      "le": "Fluente",
+      "escreve": "",
+      "fala": "Bem",
+      "compreende": "RAZOAVELMENTE"
+    }
+  ],
+  "atuacao_profissional": [
+    {
+      "instituicao": "Instituto Federal do Espírito Santo",
+      "ano_inicio": "2014",
+      "ano_fim": "Atual",
+      "vinculo": "Servidor Público",
+      "enquadramento": "Professor EBTT"
+    },
+    {
+      "instituicao": "Prefeitura Municipal de Vila Velha",
+      "ano_inicio": "2006",
+      "ano_fim": "2009",
+      "vinculo": "Bolsista"
+    }
+  ],
+  "formacao_academica": [
+    {
+      "tipo": "Graduação em Ciência da Computação",
+      "nome_instituicao": "Universidade Federal do Espírito Santo",
+      "ano_inicio": "1995",
+      "ano_conclusao": "1999"
+    },
+    {
+      "tipo": "Doutorado em Educação",
+      "nome_instituicao": "Instituto Tecnológico de Aeronáutica",
+      "ano_inicio": "2001",
+      "ano_conclusao": "2005",
+      "descricao": "Título: Contribuições para robôs móveis no ensino médio integrado, Ano de Obtenção: 2005. Orientador: Kauã Souza Teixeira."
+    }
+  ],
+  "producao_bibliografica": {
+    "artigos_periodicos": [],
+    "trabalhos_completos_congressos": []
+  },
+  "producao_tecnica": {},
+  "projetos_pesquisa": [],
+  "projetos_extensao": [],
+  "projetos_desenvolvimento": [],
+  "orientacoes": {
+    "concluidas": {},
+    "em_andamento": {}
+  }
+}

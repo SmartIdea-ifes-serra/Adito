@@ -1,0 +1,140 @@
+{
+  "informacoes_pessoais": {
+    "nome_completo": "Pedro Santos Miranda",
+    "id_lattes": "9550875980199725",
+    "texto_resumo": "Currículo fictício de Pedro Santos Miranda, gerado para testes do ETL do Horizon.",
+    "nome_citacoes": "MIRANDA, P. S.;MIRANDA, PEDRO",
+    "atualizacao_cv": "17/02/2025",
+    "url": "http://lattes.cnpq.br/9550875980199725"
+  },
+  "premios_titulos": [
+    {
+      "descricao": "Menção honrosa fictícia 0 - Pedro",
+      "ano": "2025"
+    },
+    {
+      "descricao": "Menção honrosa fictícia 1 - Pedro",
+      "ano": "2017"
+    }
+  ],
+  "idiomas": [
+    {
+      "nome": "Alemão",
+      "le": "Pouco",
+      "escreve": "Razoavelmente",
+      "fala": "Bem",
+      "compreende": "Pouco"
+    }
+  ],
+  "atuacao_profissional": [
+    {
+      "instituicao": "Instituto Federal do Espírito Santo",
+      "ano_inicio": "2010",
+      "ano_fim": "Atual",
+      "vinculo": "Servidor Público",
+      "enquadramento": "Professor EBTT"
+    },
+    {
+      "instituicao": "Mock Software Ltda",
+      "ano_inicio": "2005",
+      "ano_fim": "2008",
+      "vinculo": "Professor Visitante"
+    }
+  ],
+  "formacao_academica": [
+    {
+      "tipo": "Graduação em Educação",
+      "nome_instituicao": "Universidade Federal do Espírito Santo",
+      "ano_inicio": "2008",
+      "ano_conclusao": "2012"
+    },
+    {
+      "tipo": "Doutorado em Engenharia de Controle e Automação",
+      "nome_instituicao": "Universidade Estadual de Campinas",
+      "ano_inicio": "2014",
+      "ano_conclusao": "2018",
+      "descricao": "Título: Contribuições para sistemas embarcados para a agricultura familiar, Ano de Obtenção: 2018. Orientador: João Brandão Macedo."
+    }
+  ],
+  "producao_bibliografica": {
+    "artigos_periodicos": [
+      {
+        "titulo": "Uma abordagem de redes neurais no litoral capixaba (20)",
+        "ano": "2022",
+        "revista": "Revista Brasileira de Ensino de Física",
+        "volume": "40",
+        "paginas": "72-105",
+        "doi": "10.5555/mock.0020",
+        "autores": "EXTERNO, F. M.; ZANETTI, F. V.; MIRANDA, P. S."
+      },
+      {
+        "titulo": "Avaliação experimental de jogos educacionais em ambientes hospitalares (21)",
+        "ano": "2018",
+        "revista": "Journal of Mock Studies",
+        "volume": "37",
+        "paginas": "76-151",
+        "doi": "10.5555/mock.0021",
+        "autores": "EXTERNO, F. M.; ZANETTI, F. V.; MIRANDA, P. S."
+      }
+    ],
+    "trabalhos_completos_congressos": [
+      {
+        "titulo": "Relato de experiência com robôs móveis (22)",
+        "ano": "2024",
+        "evento": "Congresso Mock de Engenharia",
+        "paginas": "8-19",
+        "autores": "MIRANDA, P. S."
+      }
+    ]
+  },
+  "producao_tecnica": {},
+  "projetos_pesquisa": [
+    {
+      "nome": "Aplicação de algoritmos genéticos na indústria metalmecânica",
+      "ano_inicio": "2018",
+      "ano_conclusao": "2022",
+      "descricao": [
+        "Descrição: Projeto fictício para teste do ETL. Situação: Concluído; Natureza: Pesquisa."
+      ],
+      "integrantes": [
+        {
+          "nome": "Pedro Santos Miranda",
+          "papel": "Coordenador"
+        },
+        {
+          "nome": "Enzo Guimarães Bortolini",
+          "papel": "Integrante"
+        },
+        {
+          "nome": "Carla Souza Correia",
+          "papel": "Estudante"
+        }
+      ],
+      "financiadores": []
+    }
+  ],
+  "projetos_extensao": [],
+  "projetos_desenvolvimento": [],
+  "orientacoes": {
+    "concluidas": {
+      "iniciacao_cientifica": [
+        {
+          "titulo": "Orientação concluída mock pedrosantosm 0",
+          "orientando": "Wesley Cavalcanti Ferreira",
+          "ano": "2024",
+          "natureza": "Iniciação Científica"
+        }
+      ]
+    },
+    "em_andamento": {
+      "dissertacao_de_mestrado": [
+        {
+          "titulo": "Dissertação em andamento mock pedrosantosm",
+          "orientando": "Nicolas Correia Ramos",
+          "ano_inicio": "2025",
+          "ano_conclusao": ""
+        }
+      ]
+    }
+  }
+}

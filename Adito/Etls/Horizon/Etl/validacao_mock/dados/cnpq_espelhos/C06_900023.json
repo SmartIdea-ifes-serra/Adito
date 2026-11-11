@@ -1,0 +1,64 @@
+{
+  "url": "http://dgp.cnpq.br/dgp/espelhogrupo/900023",
+  "espelho": {
+    "nome_grupo": "Grupo de Pesquisa em Automação Industrial",
+    "repercussoes": "Repercussões fictícias do grupo Grupo de Pesquisa em Automação Industrial (espelho mock).",
+    "identificacao": {
+      "ano_de_formacao": "2008",
+      "lideres_do_grupo": [
+        "Mateus Rezende Batista",
+        "Tiago Bortolini Loureiro"
+      ]
+    },
+    "recursos_humanos": {
+      "pesquisadores": [
+        {
+          "nome": "Mateus Rezende Batista",
+          "data_inclusao": "10/03/2016"
+        },
+        {
+          "nome": "Tiago Bortolini Loureiro",
+          "data_inclusao": "24/09/2019"
+        },
+        {
+          "nome": "Mateus Ramos Valadares",
+          "data_inclusao": "22/06/2016"
+        },
+        {
+          "nome": "Henrique Bortolini Monteiro",
+          "data_inclusao": "15/11/2021"
+        }
+      ],
+      "estudantes": [
+        {
+          "nome": "Lucas Falqueto Mendes",
+          "data_inclusao": "07/05/2023",
+          "nivel": "Graduação"
+        },
+        {
+          "nome": "Paula Miranda Fonseca",
+          "data_inclusao": "03/11/2022",
+          "nivel": "Graduação"
+        },
+        {
+          "nome": "Henrique Moura Valadares",
+          "data_inclusao": "19/02/2022",
+          "nivel": "Graduação"
+        }
+      ]
+    },
+    "linhas_de_pesquisa": {
+      "linhas": [
+        {
+          "nome_da_linha_de_pesquisa": "sustentabilidade"
+        },
+        {
+          "nome_da_linha_de_pesquisa": "Química"
+        },
+        {
+          "nome_da_linha_de_pesquisa": "Administração"
+        }
+      ]
+    }
+  }
+}

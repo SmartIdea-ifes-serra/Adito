@@ -1,0 +1,55 @@
+{
+  "url": "http://dgp.cnpq.br/dgp/espelhogrupo/900006",
+  "espelho": {
+    "nome_grupo": "Grupo de Pesquisa em Alimentos Funcionais",
+    "repercussoes": "Repercussões fictícias do grupo Grupo de Pesquisa em Alimentos Funcionais (espelho mock).",
+    "identificacao": {
+      "ano_de_formacao": "2020",
+      "lideres_do_grupo": [
+        "Gustavo Teixeira Brandão"
+      ]
+    },
+    "recursos_humanos": {
+      "pesquisadores": [
+        {
+          "nome": "Gustavo Teixeira Brandão",
+          "data_inclusao": "23/12/2021"
+        },
+        {
+          "nome": "Wesley Brandão Almeida",
+          "data_inclusao": "13/02/2015"
+        }
+      ],
+      "estudantes": [
+        {
+          "nome": "Yasmin Moura Dias",
+          "data_inclusao": "21/01/2020",
+          "nivel": "Graduação"
+        },
+        {
+          "nome": "Sofia Cavalcanti Moura",
+          "data_inclusao": "25/05/2020",
+          "nivel": "Graduação"
+        },
+        {
+          "nome": "Lívia Gomes Ferreira",
+          "data_inclusao": "24/07/2023",
+          "nivel": "Graduação"
+        }
+      ],
+      "tecnicos": [
+        {
+          "nome": "Thales Rocha Lopes",
+          "data_inclusao": "04/08/2023"
+        }
+      ]
+    },
+    "linhas_de_pesquisa": {
+      "linhas": [
+        {
+          "nome_da_linha_de_pesquisa": "Administração"
+        }
+      ]
+    }
+  }
+}

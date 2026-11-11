@@ -1,0 +1,121 @@
+{
+  "informacoes_pessoais": {
+    "nome_completo": "Tiago Bortolini Loureiro",
+    "id_lattes": "9633999033464316",
+    "texto_resumo": "Currículo fictício de Tiago Bortolini Loureiro, gerado para testes do ETL do Horizon.",
+    "nome_citacoes": "LOUREIRO, T. B.;LOUREIRO, TIAGO",
+    "atualizacao_cv": "08/06/2023",
+    "url": "http://lattes.cnpq.br/9633999033464316"
+  },
+  "premios_titulos": [],
+  "idiomas": [
+    {
+      "nome": "Italiano",
+      "le": "Razoavelmente",
+      "escreve": "Bem",
+      "fala": "Bem",
+      "compreende": "Pouco"
+    },
+    {
+      "nome": "Francês",
+      "le": "Razoavelmente",
+      "escreve": "Bem",
+      "fala": "Razoavelmente",
+      "compreende": "Pouco"
+    }
+  ],
+  "atuacao_profissional": [
+    {
+      "instituicao": "Instituto Federal do Espírito Santo",
+      "ano_inicio": "2013",
+      "ano_fim": "Atual",
+      "vinculo": "Servidor Público",
+      "enquadramento": "Professor EBTT"
+    }
+  ],
+  "formacao_academica": [
+    {
+      "tipo": "Graduação em Educação",
+      "nome_instituicao": "Universidade Federal de Minas Gerais",
+      "ano_inicio": "2001",
+      "ano_conclusao": "2005"
+    },
+    {
+      "tipo": "Doutorado em Ciências Biológicas",
+      "nome_instituicao": "Universidade Federal do Rio de Janeiro",
+      "ano_inicio": "2007",
+      "ano_conclusao": "2011",
+      "descricao": "Título: Contribuições para modelos preditivos para cidades inteligentes, Ano de Obtenção: 2011. Orientador: Wesley Mendes Rezende."
+    }
+  ],
+  "producao_bibliografica": {
+    "artigos_periodicos": [
+      {
+        "titulo": "Uma abordagem de resíduos agroindustriais no ensino médio integrado (8)",
+        "ano": "2025",
+        "revista": "Revista Brasileira de Ensino de Física",
+        "volume": "21",
+        "paginas": "14-200",
+        "doi": "10.5555/mock.0008",
+        "autores": "LOUREIRO, T. B.; SALES, P. C.; DUARTE, B. S.; EXTERNO, F. M."
+      },
+      {
+        "titulo": "Uma abordagem de materiais didáticos para cidades inteligentes (82)",
+        "ano": "2015",
+        "revista": "Engenharia Sanitária e Ambiental",
+        "volume": "21",
+        "paginas": "39-141",
+        "doi": "10.5555/mock.0082",
+        "autores": "LOUREIRO, T. B.; DUARTE, H. F."
+      }
+    ],
+    "trabalhos_completos_congressos": [
+      {
+        "titulo": "Relato de experiência com materiais didáticos (9)",
+        "ano": "2016",
+        "evento": "Congresso Mock de Engenharia",
+        "paginas": "4-17",
+        "autores": "LOUREIRO, T. B."
+      }
+    ]
+  },
+  "producao_tecnica": {
+    "softwares_sem_patente": [
+      {
+        "titulo": "Software mock tiagoborto",
+        "ano": "2023"
+      }
+    ]
+  },
+  "projetos_pesquisa": [
+    {
+      "nome": "Desenvolvimento de painéis solares em ambientes hospitalares",
+      "ano_inicio": "2020",
+      "ano_conclusao": "Atual",
+      "descricao": [
+        "Descrição: Projeto fictício para teste do ETL. Situação: Em andamento; Natureza: Pesquisa."
+      ],
+      "integrantes": [
+        {
+          "nome": "Tiago Bortolini Loureiro",
+          "papel": "Coordenador"
+        },
+        {
+          "nome": "Cecília Zanetti Andrade",
+          "papel": "Integrante"
+        }
+      ],
+      "financiadores": [
+        {
+          "nome": "CAPES"
+        }
+      ]
+    }
+  ],
+  "projetos_extensao": [],
+  "projetos_desenvolvimento": [],
+  "orientacoes": {
+    "concluidas": {},
+    "em_andamento": {}
+  }
+}

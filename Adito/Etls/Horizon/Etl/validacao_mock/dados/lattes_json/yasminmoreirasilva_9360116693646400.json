@@ -1,0 +1,139 @@
+{
+  "informacoes_pessoais": {
+    "nome_completo": "Yasmin Moreira Silva",
+    "id_lattes": "9360116693646400",
+    "texto_resumo": "Currículo fictício de Yasmin Moreira Silva, gerado para testes do ETL do Horizon.",
+    "nome_citacoes": "SILVA, Y. M.;SILVA, YASMIN",
+    "atualizacao_cv": "03/10/2026",
+    "url": "http://lattes.cnpq.br/9360116693646400"
+  },
+  "premios_titulos": [
+    {
+      "descricao": "Menção honrosa fictícia 0 - Yasmin",
+      "ano": "2015"
+    },
+    {
+      "descricao": "Menção honrosa fictícia 1 - Yasmin",
+      "ano": "2014"
+    }
+  ],
+  "idiomas": [
+    {
+      "nome": "Inglês",
+      "le": "Bem",
+      "escreve": "Bem",
+      "fala": "Razoavelmente",
+      "compreende": "Razoavelmente"
+    }
+  ],
+  "atuacao_profissional": [
+    {
+      "instituicao": "Instituto Federal do Espírito Santo",
+      "ano_inicio": "2014",
+      "ano_fim": "Atual",
+      "vinculo": "Servidor Público",
+      "enquadramento": "Professor EBTT"
+    },
+    {
+      "instituicao": "Mock Siderurgia S.A.",
+      "ano_inicio": "2006",
+      "ano_fim": "2009",
+      "vinculo": "Colaborador"
+    }
+  ],
+  "formacao_academica": [
+    {
+      "tipo": "Graduação em Matemática",
+      "nome_instituicao": "Universidade de São Paulo",
+      "ano_inicio": "2009",
+      "ano_conclusao": "2013"
+    },
+    {
+      "tipo": "Doutorado em Educação",
+      "nome_instituicao": "Universidade Federal do Espírito Santo",
+      "ano_inicio": "2015",
+      "ano_conclusao": "2019",
+      "descricao": "Título: Contribuições para biofiltros em comunidades tradicionais, Ano de Obtenção: 2019. Orientador: Eduarda Vieira Pinto."
+    }
+  ],
+  "producao_bibliografica": {
+    "artigos_periodicos": [
+      {
+        "titulo": "Uma abordagem de robôs móveis para acessibilidade (1)",
+        "ano": "2024",
+        "revista": "Engenharia Sanitária e Ambiental",
+        "volume": "23",
+        "paginas": "66-184",
+        "doi": "10.5555/mock.0001",
+        "autores": "SILVA, Y. M.; BEZERRA, E. D.; SALES, Y. P.; EXTERNO, F. M."
+      }
+    ],
+    "trabalhos_completos_congressos": []
+  },
+  "producao_tecnica": {},
+  "projetos_pesquisa": [
+    {
+      "nome": "Implementação de painéis solares em ambientes hospitalares",
+      "ano_inicio": "2018",
+      "ano_conclusao": "2024",
+      "descricao": [
+        "Descrição: Projeto fictício para teste do ETL. Situação: Concluído; Natureza: Pesquisa."
+      ],
+      "integrantes": [
+        {
+          "nome": "Yasmin Moreira Silva",
+          "papel": "Coordenador"
+        },
+        {
+          "nome": "Sofia Farias Lima",
+          "papel": "Integrante"
+        }
+      ],
+      "financiadores": [
+        {
+          "nome": "CNPq"
+        }
+      ]
+    },
+    {
+      "nome": "Desenvolvimento de jogos educacionais no ensino médio integrado",
+      "ano_inicio": "2026",
+      "ano_conclusao": "Atual",
+      "descricao": [
+        "Descrição: Projeto fictício para teste do ETL. Situação: Em andamento; Natureza: Pesquisa."
+      ],
+      "integrantes": [
+        {
+          "nome": "Yasmin Moreira Silva",
+          "papel": "Coordenador"
+        },
+        {
+          "nome": "Otávio Correia Loureiro",
+          "papel": "Integrante"
+        }
+      ],
+      "financiadores": []
+    }
+  ],
+  "projetos_extensao": [],
+  "projetos_desenvolvimento": [],
+  "orientacoes": {
+    "concluidas": {
+      "iniciacao_cientifica": [
+        {
+          "titulo": "Orientação concluída mock yasminmoreir 0",
+          "orientando": "Natália Sales Oliveira",
+          "ano": "2022",
+          "natureza": "Iniciação Científica"
+        },
+        {
+          "titulo": "Orientação concluída mock yasminmoreir 1",
+          "orientando": "Thales Coutinho Zanetti",
+          "ano": "2019",
+          "natureza": "Iniciação Científica"
+        }
+      ]
+    },
+    "em_andamento": {}
+  }
+}

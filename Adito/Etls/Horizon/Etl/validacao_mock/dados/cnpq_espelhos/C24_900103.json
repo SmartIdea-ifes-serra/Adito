@@ -1,0 +1,63 @@
+{
+  "url": "http://dgp.cnpq.br/dgp/espelhogrupo/900103",
+  "espelho": {
+    "nome_grupo": "Grupo de Pesquisa em Patrimônio Histórico",
+    "repercussoes": "Repercussões fictícias do grupo Grupo de Pesquisa em Patrimônio Histórico (espelho mock).",
+    "identificacao": {
+      "ano_de_formacao": "2016",
+      "lideres_do_grupo": [
+        "Jorge Rocha Fonseca"
+      ]
+    },
+    "recursos_humanos": {
+      "pesquisadores": [
+        {
+          "nome": "Jorge Rocha Fonseca",
+          "data_inclusao": "02/11/2022"
+        },
+        {
+          "nome": "Daniel Batista Carvalho",
+          "data_inclusao": "32/13/2019"
+        }
+      ],
+      "estudantes": [
+        {
+          "nome": "Yasmin Moura Ribeiro",
+          "data_inclusao": "14/05/2023",
+          "nivel": "Graduação"
+        },
+        {
+          "nome": "Mateus Souza Bortolini",
+          "data_inclusao": "05/12/2020",
+          "nivel": "Graduação"
+        },
+        {
+          "nome": "ui-button",
+          "data_inclusao": "01/01/2020"
+        },
+        {
+          "nome": "   ",
+          "data_inclusao": "01/01/2020"
+        }
+      ],
+      "egressos": [
+        {
+          "nome": "Quésia Moreira Ramos",
+          "data_inclusao": "05/05/2017",
+          "data_egresso": "Não informada",
+          "nivel": "Doutorado"
+        }
+      ]
+    },
+    "linhas_de_pesquisa": {
+      "linhas": [
+        {
+          "nome_da_linha_de_pesquisa": "Matemática"
+        },
+        {
+          "nome_da_linha_de_pesquisa": "otimização"
+        }
+      ]
+    }
+  }
+}

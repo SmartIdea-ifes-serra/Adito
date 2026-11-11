@@ -1,0 +1,207 @@
+{
+ "execucao": "principal",
+ "schema": "mock_validacao",
+ "com_sonda": false,
+ "arquivos_lattes": 49,
+ "status": "concluida",
+ "segundos": 2.2,
+ "passos_registrados": [
+  "Recriando o schema 'mock_validacao' (recarga completa)...",
+  "SigPesq grupos: /home/vitoria/Downloads/Adito-main/Etls/Horizon/Etl/validacao_mock/dados/sigpesq/research_group/Relatorio_mock_grupos.xlsx",
+  "SigPesq projetos: /home/vitoria/Downloads/Adito-main/Etls/Horizon/Etl/validacao_mock/dados/sigpesq/research_projects/Relatorio_mock_projetos.xlsx",
+  "SigPesq bolsistas: 3 planilha(s)",
+  "CNPq (campus: todos)...",
+  "Lattes: 47 currículo(s)",
+  "Enriquecimento pelos documentos PJ..."
+ ],
+ "relatorio_carga": {
+  "inicio": "2026-10-14T15:28:15",
+  "fim": "2026-10-14T15:28:17",
+  "contagens": {
+   "grupos_sigpesq": {
+    "lideres": 36,
+    "grupos_criados": 26,
+    "pulados": 2,
+    "grupos_repetidos": 1,
+    "concluido": 1
+   },
+   "projetos_sigpesq": {
+    "projeto_pesquisa_criadas": 72,
+    "descartado:valor_aprovado": 31,
+    "nao_aprovados": 2,
+    "descartado:grupo_pesquisa_externo": 6,
+    "pulados": 2,
+    "grupos_criados_pelo_projeto": 2,
+    "projeto_pesquisa_atualizadas": 1,
+    "concluido": 1
+   },
+   "bolsistas_sigpesq": {
+    "orientacao_criadas": 114,
+    "pulados": 7,
+    "descartado:dados_cancelamento": 2,
+    "projetos_pai_provisorios": 1,
+    "orientacao_atualizadas": 1,
+    "projetos_pai_recalculados": 5,
+    "concluido": 1
+   },
+   "cnpq": {
+    "pulados": 1,
+    "membros": 143,
+    "linhas_de_pesquisa": 43,
+    "grupos_sincronizados": 24,
+    "membros_com_fim_atualizado": 1,
+    "a_revisar": 2,
+    "concluido": 1
+   },
+   "lattes_pessoas": {
+    "pulados": 3,
+    "donos": 46,
+    "perfis": 44,
+    "a_revisar": 1,
+    "concluido": 1
+   },
+   "lattes_curriculos": {
+    "pulados": 3,
+    "premios": 55,
+    "proficiencias": 67,
+    "vinculos": 62,
+    "descartado:detalhes_da_atuacao_profissional": 62,
+    "formacoes": 95,
+    "artigos": 84,
+    "coautores": 56,
+    "projeto_pesquisa_criadas": 43,
+    "producoes_tecnicas": 9,
+    "projeto_extensao_criadas": 10,
+    "projeto_pesquisa_juntadas": 2,
+    "concluido": 1
+   },
+   "lattes_orientacoes": {
+    "pulados": 1,
+    "orientacao_criadas": 59,
+    "descartado:tipo_e_instituicao": 60,
+    "orientacao_juntadas": 1,
+    "concluido": 1
+   },
+   "enriquecimento_pj": {
+    "documentos": 0,
+    "disputas_descartadas": 0,
+    "sem_par": 0,
+    "concluido": 1
+   }
+  },
+  "pendencias": [
+   {
+    "passo": "grupos_sigpesq",
+    "motivo": "grupo sem nome",
+    "registro": "linha 6"
+   },
+   {
+    "passo": "grupos_sigpesq",
+    "motivo": "URL CNPq não gravada: já é de outro grupo",
+    "registro": "Grupo de Pesquisa em Arte e Tecnologia"
+   },
+   {
+    "passo": "projetos_sigpesq",
+    "motivo": "projeto sem título",
+    "registro": "linha 18"
+   },
+   {
+    "passo": "projetos_sigpesq",
+    "motivo": "projeto sem título",
+    "registro": "linha 23"
+   },
+   {
+    "passo": "bolsistas_sigpesq",
+    "motivo": "bolsista sem nome/e-mail ou plano sem título",
+    "registro": "linha 5"
+   },
+   {
+    "passo": "bolsistas_sigpesq",
+    "motivo": "bolsista sem nome/e-mail ou plano sem título",
+    "registro": "linha 10"
+   },
+   {
+    "passo": "bolsistas_sigpesq",
+    "motivo": "bolsista sem nome/e-mail ou plano sem título",
+    "registro": "linha 15"
+   },
+   {
+    "passo": "bolsistas_sigpesq",
+    "motivo": "bolsista sem nome/e-mail ou plano sem título",
+    "registro": "linha 30"
+   },
+   {
+    "passo": "bolsistas_sigpesq",
+    "motivo": "bolsista sem nome/e-mail ou plano sem título",
+    "registro": "linha 35"
+   },
+   {
+    "passo": "bolsistas_sigpesq",
+    "motivo": "bolsa sem financiador",
+    "registro": "PIBIC em Simulação computacional de jogos educacionais em bacias hidrográficas do ES"
+   },
+   {
+    "passo": "bolsistas_sigpesq",
+    "motivo": "bolsa sem financiador",
+    "registro": "PIBITI em Prototipação de redes neurais para acessibilidade"
+   },
+   {
+    "passo": "cnpq",
+    "motivo": "falha ao ler o espelho do CNPq",
+    "registro": "Grupo de Pesquisa em Geotecnologias"
+   },
+   {
+    "passo": "lattes_pessoas",
+    "motivo": "ValueError: currículo sem nome",
+    "registro": "Lattes 9985977712983104"
+   },
+   {
+    "passo": "lattes_pessoas",
+    "motivo": "perfil Lattes sem resumo",
+    "registro": "Felipe Farias Miranda"
+   },
+   {
+    "passo": "lattes_pessoas",
+    "motivo": "perfil Lattes sem data de atualização",
+    "registro": "Valéria Barbosa Fonseca"
+   },
+   {
+    "passo": "lattes_curriculos",
+    "motivo": "dono do currículo não carregado",
+    "registro": "9985977712983104"
+   },
+   {
+    "passo": "lattes_curriculos",
+    "motivo": "artigo sem título",
+    "registro": "Karina Ribeiro Rocha"
+   },
+   {
+    "passo": "lattes_curriculos",
+    "motivo": "atuação profissional sem tipo de vínculo",
+    "registro": "Mock Consultoria Ltda (Vinícius Pereira Falqueto)"
+   },
+   {
+    "passo": "lattes_orientacoes",
+    "motivo": "dono do currículo não carregado",
+    "registro": "9985977712983104"
+   }
+  ],
+  "revisar": [
+   {
+    "passo": "cnpq",
+    "motivo": "egresso sem data de fim no CNPq",
+    "registro": "João Almeida Lopes em Grupo de Pesquisa em Metrologia"
+   },
+   {
+    "passo": "cnpq",
+    "motivo": "egresso sem data de fim no CNPq",
+    "registro": "Quésia Moreira Ramos em Grupo de Pesquisa em Patrimônio Histórico"
+   },
+   {
+    "passo": "lattes_pessoas",
+    "motivo": "homônimo de pessoa com outro Lattes (9556539287401075)",
+    "registro": "Beatriz Santos Duarte (9556539287401076)"
+   }
+  ]
+ }
+}

@@ -1,0 +1,113 @@
+{
+  "informacoes_pessoais": {
+    "nome_completo": "Karina Loureiro Vieira",
+    "id_lattes": "9032271613663623",
+    "texto_resumo": "Currículo fictício de Karina Loureiro Vieira, gerado para testes do ETL do Horizon.",
+    "nome_citacoes": "VIEIRA, K. L.;VIEIRA, KARINA",
+    "atualizacao_cv": "13/03/2024",
+    "url": "http://lattes.cnpq.br/9032271613663623"
+  },
+  "premios_titulos": [
+    {
+      "descricao": "Menção honrosa fictícia 0 - Karina",
+      "ano": "2021"
+    }
+  ],
+  "idiomas": [
+    {
+      "nome": "Alemão",
+      "le": "Razoavelmente",
+      "escreve": "Pouco",
+      "fala": "Bem",
+      "compreende": "Bem"
+    }
+  ],
+  "atuacao_profissional": [
+    {
+      "instituicao": "Instituto Federal do Espírito Santo",
+      "ano_inicio": "2010",
+      "ano_fim": "Atual",
+      "vinculo": "Servidor Público",
+      "enquadramento": "Professor EBTT"
+    },
+    {
+      "instituicao": "Mock Siderurgia S.A.",
+      "ano_inicio": "2004",
+      "ano_fim": "2009",
+      "vinculo": "Celetista"
+    }
+  ],
+  "formacao_academica": [
+    {
+      "tipo": "Graduação em Física",
+      "nome_instituicao": "Universidade Estadual de Campinas",
+      "ano_inicio": "1997",
+      "ano_conclusao": "2001"
+    },
+    {
+      "tipo": "Doutorado em Engenharia Ambiental",
+      "nome_instituicao": "Universidade Federal do Espírito Santo",
+      "ano_inicio": "2003",
+      "ano_conclusao": "2007",
+      "descricao": "Título: Contribuições para microrredes para a agricultura familiar, Ano de Obtenção: 2007. Orientador: Vinícius Tavares Falqueto."
+    }
+  ],
+  "producao_bibliografica": {
+    "artigos_periodicos": [
+      {
+        "titulo": "Análise comparativa de redes neurais em comunidades tradicionais (33)",
+        "ano": "2019",
+        "revista": "Engenharia Sanitária e Ambiental",
+        "volume": "28",
+        "paginas": "63-170",
+        "doi": "10.5555/mock.0033",
+        "autores": "VIEIRA, K. L.; EXTERNO, F. M.; BORTOLINI, F. N."
+      }
+    ],
+    "trabalhos_completos_congressos": []
+  },
+  "producao_tecnica": {
+    "softwares_sem_patente": [
+      {
+        "titulo": "Software mock karinalour",
+        "ano": "2023"
+      }
+    ]
+  },
+  "projetos_pesquisa": [
+    {
+      "nome": "Implementação de compostos fenólicos no litoral capixaba",
+      "ano_inicio": "2019",
+      "ano_conclusao": "Atual",
+      "descricao": [
+        "Descrição: Projeto fictício para teste do ETL. Situação: Em andamento; Natureza: Pesquisa."
+      ],
+      "integrantes": [
+        {
+          "nome": "Karina Loureiro Vieira",
+          "papel": "Coordenador"
+        },
+        {
+          "nome": "André Farias Araújo",
+          "papel": "Integrante"
+        }
+      ],
+      "financiadores": []
+    }
+  ],
+  "projetos_extensao": [],
+  "projetos_desenvolvimento": [],
+  "orientacoes": {
+    "concluidas": {
+      "iniciacao_cientifica": [
+        {
+          "titulo": "Orientação concluída mock karinalourei 0",
+          "orientando": "João Ribeiro Cardoso",
+          "ano": "2016",
+          "natureza": "Iniciação Científica"
+        }
+      ]
+    },
+    "em_andamento": {}
+  }
+}

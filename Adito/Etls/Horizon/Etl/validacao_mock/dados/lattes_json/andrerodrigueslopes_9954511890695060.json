@@ -1,0 +1,125 @@
+{
+  "informacoes_pessoais": {
+    "nome_completo": "André Rodrigues Lopes",
+    "id_lattes": "9954511890695060",
+    "texto_resumo": "Currículo fictício de André Rodrigues Lopes, gerado para testes do ETL do Horizon.",
+    "nome_citacoes": "LOPES, A. R.;LOPES, ANDRÉ",
+    "atualizacao_cv": "14/11/2024",
+    "url": "http://lattes.cnpq.br/9954511890695060"
+  },
+  "premios_titulos": [
+    {
+      "descricao": "Menção honrosa fictícia 0 - André",
+      "ano": "2014"
+    }
+  ],
+  "idiomas": [
+    {
+      "nome": "Espanhol",
+      "le": "Bem",
+      "escreve": "Bem",
+      "fala": "Razoavelmente",
+      "compreende": "Bem"
+    },
+    {
+      "nome": "Alemão",
+      "le": "Razoavelmente",
+      "escreve": "Bem",
+      "fala": "Bem",
+      "compreende": "Razoavelmente"
+    }
+  ],
+  "atuacao_profissional": [
+    {
+      "instituicao": "Instituto Federal do Espírito Santo",
+      "ano_inicio": "2012",
+      "ano_fim": "Atual",
+      "vinculo": "Servidor Público",
+      "enquadramento": "Professor EBTT"
+    }
+  ],
+  "formacao_academica": [
+    {
+      "tipo": "Graduação em Administração",
+      "nome_instituicao": "Universidade Federal do Espírito Santo",
+      "ano_inicio": "1996",
+      "ano_conclusao": "2000"
+    },
+    {
+      "tipo": "Doutorado em Ciência da Computação",
+      "nome_instituicao": "Universidade Federal do Espírito Santo",
+      "ano_inicio": "2002",
+      "ano_conclusao": "2006",
+      "descricao": "Título: Contribuições para microrredes na indústria metalmecânica, Ano de Obtenção: 2006. Orientador: Gabriela Lopes Bragança."
+    }
+  ],
+  "producao_bibliografica": {
+    "artigos_periodicos": [
+      {
+        "titulo": "Um estudo de microrredes na indústria metalmecânica (80)",
+        "ano": "2018",
+        "revista": "Journal of Mock Studies",
+        "volume": "3",
+        "paginas": "28-113",
+        "doi": "10.5555/mock.0080",
+        "autores": "LOPES, A. R.; MIRANDA, Y. B.; EXTERNO, F. M."
+      }
+    ],
+    "trabalhos_completos_congressos": [
+      {
+        "titulo": "Relato de experiência com materiais didáticos (81)",
+        "ano": "2020",
+        "evento": "Congresso Mock de Engenharia",
+        "paginas": "1-20",
+        "autores": "LOPES, A. R."
+      }
+    ]
+  },
+  "producao_tecnica": {},
+  "projetos_pesquisa": [
+    {
+      "nome": "Desenvolvimento de materiais didáticos para cidades inteligentes",
+      "ano_inicio": "2016",
+      "ano_conclusao": "2019",
+      "descricao": [
+        "Descrição: Projeto fictício para teste do ETL. Situação: Concluído; Natureza: Pesquisa."
+      ],
+      "integrantes": [
+        {
+          "nome": "André Rodrigues Lopes",
+          "papel": "Coordenador"
+        },
+        {
+          "nome": "Isabela Cavalcanti Souza",
+          "papel": "Integrante"
+        },
+        {
+          "nome": "Priscila Duarte Bezerra",
+          "papel": "Estudante"
+        }
+      ],
+      "financiadores": []
+    }
+  ],
+  "projetos_extensao": [],
+  "projetos_desenvolvimento": [],
+  "orientacoes": {
+    "concluidas": {
+      "iniciacao_cientifica": [
+        {
+          "titulo": "Orientação concluída mock andrerodrigu 0",
+          "orientando": "Priscila Batista Zanetti",
+          "ano": "2021",
+          "natureza": "Iniciação Científica"
+        },
+        {
+          "titulo": "Orientação concluída mock andrerodrigu 1",
+          "orientando": "Kauã Loureiro Mendes",
+          "ano": "2021",
+          "natureza": "Iniciação Científica"
+        }
+      ]
+    },
+    "em_andamento": {}
+  }
+}

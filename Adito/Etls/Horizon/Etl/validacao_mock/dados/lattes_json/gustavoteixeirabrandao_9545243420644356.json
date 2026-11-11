@@ -1,0 +1,115 @@
+{
+  "informacoes_pessoais": {
+    "nome_completo": "Gustavo Teixeira Brandão",
+    "id_lattes": "9545243420644356",
+    "texto_resumo": "Currículo fictício de Gustavo Teixeira Brandão, gerado para testes do ETL do Horizon.",
+    "nome_citacoes": "BRANDAO, G. T.;BRANDAO, GUSTAVO",
+    "atualizacao_cv": "04/11/2025",
+    "url": "http://lattes.cnpq.br/9545243420644356"
+  },
+  "premios_titulos": [
+    {
+      "descricao": "Menção honrosa fictícia 0 - Gustavo",
+      "ano": "2016"
+    }
+  ],
+  "idiomas": [
+    {
+      "nome": "Espanhol",
+      "le": "Pouco",
+      "escreve": "Razoavelmente",
+      "fala": "Pouco",
+      "compreende": "Pouco"
+    },
+    {
+      "nome": "Alemão",
+      "le": "Bem",
+      "escreve": "Pouco",
+      "fala": "Razoavelmente",
+      "compreende": "Pouco"
+    }
+  ],
+  "atuacao_profissional": [
+    {
+      "instituicao": "Instituto Federal do Espírito Santo",
+      "ano_inicio": "2011",
+      "ano_fim": "Atual",
+      "vinculo": "Servidor Público",
+      "enquadramento": "Professor EBTT"
+    }
+  ],
+  "formacao_academica": [
+    {
+      "tipo": "Graduação em Ciência da Computação",
+      "nome_instituicao": "Universidade Federal do Espírito Santo",
+      "ano_inicio": "1996",
+      "ano_conclusao": "2000"
+    },
+    {
+      "tipo": "Doutorado em Engenharia Elétrica",
+      "nome_instituicao": "Universidade Estadual de Campinas",
+      "ano_inicio": "2002",
+      "ano_conclusao": "2006",
+      "descricao": "Título: Contribuições para sistemas embarcados no litoral capixaba, Ano de Obtenção: 2006. Orientador: Valéria Rocha Pacheco."
+    }
+  ],
+  "producao_bibliografica": {
+    "artigos_periodicos": [
+      {
+        "titulo": "Avaliação experimental de compostos fenólicos em ambientes hospitalares (25)",
+        "ano": "2023",
+        "revista": "Revista Brasileira de Ensino de Física",
+        "volume": "25",
+        "paginas": "36-159",
+        "doi": "10.5555/mock.0025",
+        "autores": "BRANDAO, G. T.; EXTERNO, F. M."
+      },
+      {
+        "titulo": "Uma abordagem de painéis solares na gestão escolar (26)",
+        "ano": "2020",
+        "revista": "Revista Brasileira de Informática na Educação",
+        "volume": "24",
+        "paginas": "75-187",
+        "doi": "10.5555/mock.0026",
+        "autores": "BRANDAO, G. T.; EXTERNO, F. M."
+      }
+    ],
+    "trabalhos_completos_congressos": []
+  },
+  "producao_tecnica": {},
+  "projetos_pesquisa": [
+    {
+      "nome": "Aplicação de dados abertos para a agricultura familiar",
+      "ano_inicio": "2021",
+      "ano_conclusao": "2025",
+      "descricao": [
+        "Descrição: Projeto fictício para teste do ETL. Situação: Concluído; Natureza: Pesquisa."
+      ],
+      "integrantes": [
+        {
+          "nome": "Gustavo Teixeira Brandão",
+          "papel": "Coordenador"
+        },
+        {
+          "nome": "Renan Peixoto Silva",
+          "papel": "Integrante"
+        },
+        {
+          "nome": "Enzo Gomes Oliveira",
+          "papel": "Estudante"
+        }
+      ],
+      "financiadores": [
+        {
+          "nome": "CNPq"
+        }
+      ]
+    }
+  ],
+  "projetos_extensao": [],
+  "projetos_desenvolvimento": [],
+  "orientacoes": {
+    "concluidas": {},
+    "em_andamento": {}
+  }
+}

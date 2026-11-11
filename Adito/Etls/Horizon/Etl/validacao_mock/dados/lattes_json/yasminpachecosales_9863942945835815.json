@@ -1,0 +1,139 @@
+{
+  "informacoes_pessoais": {
+    "nome_completo": "Yasmin Pacheco Sales",
+    "id_lattes": "9863942945835815",
+    "texto_resumo": "Currículo fictício de Yasmin Pacheco Sales, gerado para testes do ETL do Horizon.",
+    "nome_citacoes": "SALES, Y. P.;SALES, YASMIN",
+    "atualizacao_cv": "13/09/2026",
+    "url": "http://lattes.cnpq.br/9863942945835815"
+  },
+  "premios_titulos": [],
+  "idiomas": [
+    {
+      "nome": "Espanhol",
+      "le": "Bem",
+      "escreve": "Pouco",
+      "fala": "Bem",
+      "compreende": "Pouco"
+    }
+  ],
+  "atuacao_profissional": [
+    {
+      "instituicao": "Instituto Federal do Espírito Santo",
+      "ano_inicio": "2013",
+      "ano_fim": "Atual",
+      "vinculo": "Servidor Público",
+      "enquadramento": "Professor EBTT"
+    }
+  ],
+  "formacao_academica": [
+    {
+      "tipo": "Graduação em Química",
+      "nome_instituicao": "Universidade Federal do Espírito Santo",
+      "ano_inicio": "1997",
+      "ano_conclusao": "2001"
+    },
+    {
+      "tipo": "Doutorado em Engenharia de Controle e Automação",
+      "nome_instituicao": "Universidade Federal de Minas Gerais",
+      "ano_inicio": "2003",
+      "ano_conclusao": "2007",
+      "descricao": "Título: Contribuições para biofiltros na gestão escolar, Ano de Obtenção: 2007. Orientador: Rafael Zanetti Bortolini."
+    }
+  ],
+  "producao_bibliografica": {
+    "artigos_periodicos": [
+      {
+        "titulo": "Análise comparativa de sensores de baixo custo na gestão escolar (63)",
+        "ano": "2025",
+        "revista": "Engenharia Sanitária e Ambiental",
+        "volume": "18",
+        "paginas": "47-120",
+        "doi": "10.5555/mock.0063",
+        "autores": "ZANETTI, F. V.; SALES, Y. P.; EXTERNO, F. M.; XAVIER, B. C."
+      },
+      {
+        "titulo": "Avaliação experimental de modelos preditivos em comunidades tradicionais (64)",
+        "ano": "2020",
+        "revista": "Química Nova",
+        "volume": "24",
+        "paginas": "15-181",
+        "doi": "10.5555/mock.0064",
+        "autores": "ZANETTI, F. V.; SALES, Y. P.; EXTERNO, F. M.; XAVIER, B. C."
+      }
+    ],
+    "trabalhos_completos_congressos": []
+  },
+  "producao_tecnica": {},
+  "projetos_pesquisa": [
+    {
+      "nome": "Modelagem de resíduos agroindustriais no ensino médio integrado",
+      "ano_inicio": "2022",
+      "ano_conclusao": "Atual",
+      "descricao": [
+        "Descrição: Projeto fictício para teste do ETL. Situação: Em andamento; Natureza: Pesquisa."
+      ],
+      "integrantes": [
+        {
+          "nome": "Yasmin Pacheco Sales",
+          "papel": "Coordenador"
+        },
+        {
+          "nome": "Daniel Teixeira Silva",
+          "papel": "Integrante"
+        }
+      ],
+      "financiadores": [
+        {
+          "nome": "CNPq"
+        }
+      ]
+    }
+  ],
+  "projetos_extensao": [
+    {
+      "nome": "Extensão: Análise de modelos preditivos na indústria metalmecânica",
+      "ano_inicio": "2022",
+      "ano_conclusao": "Atual",
+      "descricao": [
+        "Descrição: Projeto fictício para teste do ETL. Situação: Em andamento; Natureza: Pesquisa."
+      ],
+      "integrantes": [
+        {
+          "nome": "Yasmin Pacheco Sales",
+          "papel": "Coordenador"
+        }
+      ],
+      "financiadores": []
+    }
+  ],
+  "projetos_desenvolvimento": [],
+  "orientacoes": {
+    "concluidas": {
+      "iniciacao_cientifica": [
+        {
+          "titulo": "Orientação concluída mock yasminpachec 0",
+          "orientando": "Gabriela Guimarães Brandão",
+          "ano": "2024",
+          "natureza": "Iniciação Científica"
+        },
+        {
+          "titulo": "Orientação concluída mock yasminpachec 1",
+          "orientando": "Débora Rezende Carvalho",
+          "ano": "2017",
+          "natureza": "Iniciação Científica"
+        }
+      ]
+    },
+    "em_andamento": {
+      "dissertacao_de_mestrado": [
+        {
+          "titulo": "Dissertação em andamento mock yasminpachec",
+          "orientando": "Helena Campos Falqueto",
+          "ano_inicio": "2025",
+          "ano_conclusao": ""
+        }
+      ]
+    }
+  }
+}

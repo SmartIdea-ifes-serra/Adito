@@ -1,0 +1,61 @@
+{
+  "informacoes_pessoais": {
+    "nome_completo": "Beatriz Santos Duarte",
+    "id_lattes": "9556539287401076",
+    "texto_resumo": "Currículo fictício de Beatriz Santos Duarte, gerado para testes do ETL do Horizon.",
+    "nome_citacoes": "HOMONIMO, X. Y.",
+    "atualizacao_cv": "06/03/2025",
+    "url": "http://lattes.cnpq.br/9556539287401076"
+  },
+  "premios_titulos": [
+    {
+      "descricao": "Menção honrosa fictícia 0 - Beatriz",
+      "ano": "2013"
+    }
+  ],
+  "idiomas": [
+    {
+      "nome": "Italiano",
+      "le": "Bem",
+      "escreve": "Razoavelmente",
+      "fala": "Bem",
+      "compreende": "Bem"
+    }
+  ],
+  "atuacao_profissional": [
+    {
+      "instituicao": "Instituto Federal do Espírito Santo",
+      "ano_inicio": "2015",
+      "ano_fim": "Atual",
+      "vinculo": "Servidor Público",
+      "enquadramento": "Professor EBTT"
+    }
+  ],
+  "formacao_academica": [
+    {
+      "tipo": "Graduação em Administração",
+      "nome_instituicao": "Universidade Federal do Rio de Janeiro",
+      "ano_inicio": "2000",
+      "ano_conclusao": "2004"
+    },
+    {
+      "tipo": "Doutorado em Administração",
+      "nome_instituicao": "Universidade Federal de Minas Gerais",
+      "ano_inicio": "2006",
+      "ano_conclusao": "2010",
+      "descricao": "Título: Contribuições para sensores de baixo custo em ambientes hospitalares, Ano de Obtenção: 2010. Orientador: Lívia Falqueto Andrade."
+    }
+  ],
+  "producao_bibliografica": {
+    "artigos_periodicos": [],
+    "trabalhos_completos_congressos": []
+  },
+  "producao_tecnica": {},
+  "projetos_pesquisa": [],
+  "projetos_extensao": [],
+  "projetos_desenvolvimento": [],
+  "orientacoes": {
+    "concluidas": {},
+    "em_andamento": {}
+  }
+}

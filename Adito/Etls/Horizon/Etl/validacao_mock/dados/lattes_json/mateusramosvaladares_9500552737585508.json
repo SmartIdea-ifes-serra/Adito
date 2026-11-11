@@ -1,0 +1,113 @@
+{
+  "informacoes_pessoais": {
+    "nome_completo": "Mateus Ramos Valadares",
+    "id_lattes": "9500552737585508",
+    "texto_resumo": "Currículo fictício de Mateus Ramos Valadares, gerado para testes do ETL do Horizon.",
+    "nome_citacoes": "VALADARES, M. R.;VALADARES, MATEUS",
+    "atualizacao_cv": "29/12/2026",
+    "url": "http://lattes.cnpq.br/9500552737585508"
+  },
+  "premios_titulos": [
+    {
+      "descricao": "Menção honrosa fictícia 0 - Mateus",
+      "ano": "2021"
+    }
+  ],
+  "idiomas": [
+    {
+      "nome": "Italiano",
+      "le": "Pouco",
+      "escreve": "Bem",
+      "fala": "Bem",
+      "compreende": "Bem"
+    }
+  ],
+  "atuacao_profissional": [
+    {
+      "instituicao": "Instituto Federal do Espírito Santo",
+      "ano_inicio": "2018",
+      "ano_fim": "Atual",
+      "vinculo": "Servidor Público",
+      "enquadramento": "Professor EBTT"
+    }
+  ],
+  "formacao_academica": [
+    {
+      "tipo": "Graduação em Engenharia Elétrica",
+      "nome_instituicao": "Universidade Federal do Espírito Santo",
+      "ano_inicio": "2009",
+      "ano_conclusao": "2013"
+    },
+    {
+      "tipo": "Doutorado em Ciência da Computação",
+      "nome_instituicao": "Universidade Federal do Espírito Santo",
+      "ano_inicio": "2015",
+      "ano_conclusao": "2019",
+      "descricao": "Título: Contribuições para plataformas web para acessibilidade, Ano de Obtenção: 2019. Orientador: Gabriela Nunes Moura."
+    }
+  ],
+  "producao_bibliografica": {
+    "artigos_periodicos": [
+      {
+        "titulo": "Uma abordagem de materiais didáticos em ambientes hospitalares (68)",
+        "ano": "2015",
+        "revista": "Engenharia Sanitária e Ambiental",
+        "volume": "32",
+        "paginas": "79-98",
+        "doi": "10.5555/mock.0068",
+        "autores": "EXTERNO, F. M.; VALADARES, M. R.; DIAS, W. M."
+      }
+    ],
+    "trabalhos_completos_congressos": []
+  },
+  "producao_tecnica": {
+    "softwares_sem_patente": [
+      {
+        "titulo": "Software mock mateusramo",
+        "ano": "2025"
+      }
+    ]
+  },
+  "projetos_pesquisa": [
+    {
+      "nome": "Uso de modelos preditivos na gestão escolar",
+      "ano_inicio": "2017",
+      "ano_conclusao": "2025",
+      "descricao": [
+        "Descrição: Projeto fictício para teste do ETL. Situação: Concluído; Natureza: Pesquisa."
+      ],
+      "integrantes": [
+        {
+          "nome": "Mateus Ramos Valadares",
+          "papel": "Coordenador"
+        },
+        {
+          "nome": "Henrique Pereira Oliveira",
+          "papel": "Integrante"
+        }
+      ],
+      "financiadores": []
+    }
+  ],
+  "projetos_extensao": [],
+  "projetos_desenvolvimento": [],
+  "orientacoes": {
+    "concluidas": {
+      "iniciacao_cientifica": [
+        {
+          "titulo": "Orientação concluída mock mateusramosv 0",
+          "orientando": "Natália Dias Bragança",
+          "ano": "2024",
+          "natureza": "Iniciação Científica"
+        },
+        {
+          "titulo": "Orientação concluída mock mateusramosv 1",
+          "orientando": "Ana Teixeira Nunes",
+          "ano": "2021",
+          "natureza": "Iniciação Científica"
+        }
+      ]
+    },
+    "em_andamento": {}
+  }
+}

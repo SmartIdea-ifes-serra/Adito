@@ -1,0 +1,60 @@
+{
+  "url": "http://dgp.cnpq.br/dgp/espelhogrupo/900009",
+  "espelho": {
+    "nome_grupo": "Grupo de Pesquisa em Agroecologia",
+    "repercussoes": "Repercussões fictícias do grupo Grupo de Pesquisa em Agroecologia (espelho mock).",
+    "identificacao": {
+      "ano_de_formacao": "2012",
+      "lideres_do_grupo": [
+        "Wesley Mendes Dias"
+      ]
+    },
+    "recursos_humanos": {
+      "pesquisadores": [
+        {
+          "nome": "Wesley Mendes Dias",
+          "data_inclusao": "18/07/2021"
+        },
+        {
+          "nome": "Bernardo Carvalho Xavier",
+          "data_inclusao": "08/11/2017"
+        }
+      ],
+      "estudantes": [
+        {
+          "nome": "Henrique Lima Moura",
+          "data_inclusao": "23/08/2025",
+          "nivel": "Graduação"
+        },
+        {
+          "nome": "Íris Queiroz Bortolini",
+          "data_inclusao": "08/08/2021",
+          "nivel": "Graduação"
+        },
+        {
+          "nome": "Beatriz Tavares Rodrigues",
+          "data_inclusao": "23/12/2025",
+          "nivel": "Graduação"
+        }
+      ],
+      "egressos_estudantes": [
+        {
+          "nome": "Karina Mendes Miranda",
+          "data_inclusao": "01/03/2019",
+          "data_egresso": "28/02/2021",
+          "nivel": "Mestrado"
+        }
+      ]
+    },
+    "linhas_de_pesquisa": {
+      "linhas": [
+        {
+          "nome_da_linha_de_pesquisa": "extensão tecnológica"
+        },
+        {
+          "nome_da_linha_de_pesquisa": "Engenharia Elétrica"
+        }
+      ]
+    }
+  }
+}

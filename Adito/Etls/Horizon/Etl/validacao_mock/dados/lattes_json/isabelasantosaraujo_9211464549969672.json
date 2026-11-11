@@ -1,0 +1,124 @@
+{
+  "informacoes_pessoais": {
+    "nome_completo": "Isabela Santos Araújo",
+    "id_lattes": "9211464549969672",
+    "texto_resumo": "Currículo fictício de Isabela Santos Araújo, gerado para testes do ETL do Horizon.",
+    "nome_citacoes": "ARAUJO, I. S.;ARAUJO, ISABELA",
+    "atualizacao_cv": "22/12/2025",
+    "url": "http://lattes.cnpq.br/9211464549969672"
+  },
+  "premios_titulos": [
+    {
+      "descricao": "Menção honrosa fictícia 0 - Isabela",
+      "ano": "2017"
+    }
+  ],
+  "idiomas": [
+    {
+      "nome": "Francês",
+      "le": "Bem",
+      "escreve": "Razoavelmente",
+      "fala": "Bem",
+      "compreende": "Bem"
+    },
+    {
+      "nome": "Espanhol",
+      "le": "Razoavelmente",
+      "escreve": "Bem",
+      "fala": "Razoavelmente",
+      "compreende": "Razoavelmente"
+    }
+  ],
+  "atuacao_profissional": [
+    {
+      "instituicao": "Instituto Federal do Espírito Santo",
+      "ano_inicio": "2008",
+      "ano_fim": "Atual",
+      "vinculo": "Servidor Público",
+      "enquadramento": "Professor EBTT"
+    }
+  ],
+  "formacao_academica": [
+    {
+      "tipo": "Graduação em Engenharia de Controle e Automação",
+      "nome_instituicao": "Universidade Estadual de Campinas",
+      "ano_inicio": "1996",
+      "ano_conclusao": "2000"
+    },
+    {
+      "tipo": "Doutorado em Educação",
+      "nome_instituicao": "Instituto Tecnológico de Aeronáutica",
+      "ano_inicio": "2002",
+      "ano_conclusao": "2006",
+      "descricao": "Título: Contribuições para microrredes para acessibilidade, Ano de Obtenção: 2006. Orientador: Henrique Mendes Bezerra."
+    }
+  ],
+  "producao_bibliografica": {
+    "artigos_periodicos": [
+      {
+        "titulo": "Um estudo de redes neurais para cidades inteligentes (18)",
+        "ano": "2019",
+        "revista": "Journal of Mock Studies",
+        "volume": "27",
+        "paginas": "10-195",
+        "doi": "10.5555/mock.0018",
+        "autores": "ARAUJO, I. S.; ROCHA, E. N.; ARAUJO, A. B.; EXTERNO, F. M."
+      },
+      {
+        "titulo": "Uma abordagem de resíduos agroindustriais na gestão escolar (19)",
+        "ano": "2021",
+        "revista": "Journal of Mock Studies",
+        "volume": "10",
+        "paginas": "4-117",
+        "doi": "10.5555/mock.0019",
+        "autores": "ARAUJO, I. S.; ROCHA, E. N.; ARAUJO, A. B.; EXTERNO, F. M."
+      }
+    ],
+    "trabalhos_completos_congressos": []
+  },
+  "producao_tecnica": {},
+  "projetos_pesquisa": [
+    {
+      "nome": "Otimização de modelos preditivos no ensino médio integrado",
+      "ano_inicio": "2017",
+      "ano_conclusao": "Atual",
+      "descricao": [
+        "Descrição: Projeto fictício para teste do ETL. Situação: Em andamento; Natureza: Pesquisa."
+      ],
+      "integrantes": [
+        {
+          "nome": "Isabela Santos Araújo",
+          "papel": "Coordenador"
+        },
+        {
+          "nome": "Zélia Costa Rocha",
+          "papel": "Integrante"
+        },
+        {
+          "nome": "Fábio Coutinho Valadares",
+          "papel": "Estudante"
+        }
+      ],
+      "financiadores": [
+        {
+          "nome": "CNPq"
+        }
+      ]
+    }
+  ],
+  "projetos_extensao": [],
+  "projetos_desenvolvimento": [],
+  "orientacoes": {
+    "concluidas": {},
+    "em_andamento": {
+      "iniciacao_cientifica": [
+        {
+          "titulo": "Orientação em andamento mock só com ano",
+          "orientando": "Valéria Moreira Costa",
+          "ano": "2025",
+          "natureza": "Iniciação Científica"
+        }
+      ]
+    }
+  }
+}

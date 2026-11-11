@@ -1,0 +1,150 @@
+{
+  "informacoes_pessoais": {
+    "nome_completo": "Yasmin Bragança Miranda",
+    "id_lattes": "9643409593464117",
+    "texto_resumo": "Currículo fictício de Yasmin Bragança Miranda, gerado para testes do ETL do Horizon.",
+    "nome_citacoes": "MIRANDA, Y. B.;MIRANDA, YASMIN",
+    "atualizacao_cv": "12/10/2026",
+    "url": "http://lattes.cnpq.br/9643409593464117"
+  },
+  "premios_titulos": [],
+  "idiomas": [
+    {
+      "nome": "Italiano",
+      "le": "Pouco",
+      "escreve": "Pouco",
+      "fala": "Razoavelmente",
+      "compreende": "Razoavelmente"
+    }
+  ],
+  "atuacao_profissional": [
+    {
+      "instituicao": "Instituto Federal do Espírito Santo",
+      "ano_inicio": "2014",
+      "ano_fim": "Atual",
+      "vinculo": "Servidor Público",
+      "enquadramento": "Professor EBTT"
+    }
+  ],
+  "formacao_academica": [
+    {
+      "tipo": "Graduação em Química",
+      "nome_instituicao": "Universidade Federal de Minas Gerais",
+      "ano_inicio": "2000",
+      "ano_conclusao": "2004"
+    },
+    {
+      "tipo": "Doutorado em Agronomia",
+      "nome_instituicao": "Universidade Estadual de Campinas",
+      "ano_inicio": "2006",
+      "ano_conclusao": "2010",
+      "descricao": "Título: Contribuições para algoritmos genéticos em comunidades tradicionais, Ano de Obtenção: 2010. Orientador: Helena Freitas Duarte."
+    }
+  ],
+  "producao_bibliografica": {
+    "artigos_periodicos": [
+      {
+        "titulo": "Análise comparativa de sistemas embarcados para cidades inteligentes (2)",
+        "ano": "2019",
+        "revista": "Journal of Mock Studies",
+        "volume": "40",
+        "paginas": "31-165",
+        "doi": "10.5555/mock.0002",
+        "autores": "SILVA, Y. M.; MIRANDA, Y. B.; EXTERNO, F. M."
+      },
+      {
+        "titulo": "Avaliação experimental de algoritmos genéticos para cidades inteligentes (3)",
+        "ano": "2019",
+        "revista": "Revista Brasileira de Ensino de Física",
+        "volume": "37",
+        "paginas": "6-165",
+        "doi": "10.5555/mock.0003",
+        "autores": "SILVA, Y. M.; MIRANDA, Y. B.; EXTERNO, F. M."
+      }
+    ],
+    "trabalhos_completos_congressos": [
+      {
+        "titulo": "Relato de experiência com algoritmos genéticos (4)",
+        "ano": "2019",
+        "evento": "Jornada de Iniciação Científica do IFES",
+        "paginas": "1-19",
+        "autores": "MIRANDA, Y. B."
+      }
+    ]
+  },
+  "producao_tecnica": {},
+  "projetos_pesquisa": [
+    {
+      "nome": "Análise de materiais didáticos para acessibilidade",
+      "ano_inicio": "2022",
+      "ano_conclusao": "2024",
+      "descricao": [
+        "Descrição: Projeto fictício para teste do ETL. Situação: Concluído; Natureza: Pesquisa."
+      ],
+      "integrantes": [
+        {
+          "nome": "Yasmin Bragança Miranda",
+          "papel": "Coordenador"
+        },
+        {
+          "nome": "Hugo Dias Oliveira",
+          "papel": "Integrante"
+        },
+        {
+          "nome": "Giovana Pacheco Ribeiro",
+          "papel": "Estudante"
+        }
+      ],
+      "financiadores": [
+        {
+          "nome": "CNPq"
+        }
+      ]
+    },
+    {
+      "nome": "Projeto compartilhado mock entre dois currículos",
+      "ano_inicio": "2021",
+      "ano_conclusao": "2023",
+      "descricao": [
+        "Descrição: Projeto fictício para teste do ETL. Situação: Concluído; Natureza: Pesquisa."
+      ],
+      "integrantes": [
+        {
+          "nome": "Yasmin Bragança Miranda",
+          "papel": "Coordenador"
+        },
+        {
+          "nome": "Elisa Nunes Rocha",
+          "papel": "Integrante"
+        }
+      ],
+      "financiadores": [
+        {
+          "nome": "FAPES"
+        }
+      ]
+    }
+  ],
+  "projetos_extensao": [
+    {
+      "nome": "Extensão: Avaliação de dados abertos na indústria metalmecânica",
+      "ano_inicio": "2022",
+      "ano_conclusao": "Atual",
+      "descricao": [
+        "Descrição: Projeto fictício para teste do ETL. Situação: Em andamento; Natureza: Pesquisa."
+      ],
+      "integrantes": [
+        {
+          "nome": "Yasmin Bragança Miranda",
+          "papel": "Coordenador"
+        }
+      ],
+      "financiadores": []
+    }
+  ],
+  "projetos_desenvolvimento": [],
+  "orientacoes": {
+    "concluidas": {},
+    "em_andamento": {}
+  }
+}

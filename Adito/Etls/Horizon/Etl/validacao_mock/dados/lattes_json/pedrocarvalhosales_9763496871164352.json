@@ -1,0 +1,115 @@
+{
+  "informacoes_pessoais": {
+    "nome_completo": "Pedro Carvalho Sales",
+    "id_lattes": "9763496871164352",
+    "texto_resumo": "Currículo fictício de Pedro Carvalho Sales, gerado para testes do ETL do Horizon.",
+    "nome_citacoes": "SALES, P. C.;SALES, PEDRO",
+    "atualizacao_cv": "17/11/2026",
+    "url": "http://lattes.cnpq.br/9763496871164352"
+  },
+  "premios_titulos": [
+    {
+      "descricao": "Menção honrosa fictícia 0 - Pedro",
+      "ano": "2012"
+    }
+  ],
+  "idiomas": [
+    {
+      "nome": "Francês",
+      "le": "Pouco",
+      "escreve": "Bem",
+      "fala": "Razoavelmente",
+      "compreende": "Bem"
+    },
+    {
+      "nome": "Espanhol",
+      "le": "Razoavelmente",
+      "escreve": "Pouco",
+      "fala": "Bem",
+      "compreende": "Pouco"
+    }
+  ],
+  "atuacao_profissional": [
+    {
+      "instituicao": "Instituto Federal do Espírito Santo",
+      "ano_inicio": "2008",
+      "ano_fim": "Atual",
+      "vinculo": "Servidor Público",
+      "enquadramento": "Professor EBTT"
+    }
+  ],
+  "formacao_academica": [
+    {
+      "tipo": "Graduação em Engenharia Ambiental",
+      "nome_instituicao": "Universidade Federal do Rio de Janeiro",
+      "ano_inicio": "2000",
+      "ano_conclusao": "2004"
+    },
+    {
+      "tipo": "Doutorado em Engenharia Ambiental",
+      "nome_instituicao": "Universidade Estadual de Campinas",
+      "ano_inicio": "2006",
+      "ano_conclusao": "2010",
+      "descricao": "Título: Contribuições para jogos educacionais em bacias hidrográficas do ES, Ano de Obtenção: 2010. Orientador: Larissa Moreira Ferreira."
+    }
+  ],
+  "producao_bibliografica": {
+    "artigos_periodicos": [
+      {
+        "titulo": "Uma abordagem de resíduos agroindustriais em ambientes hospitalares (11)",
+        "ano": "2024",
+        "revista": "IEEE Latin America Transactions",
+        "volume": "11",
+        "paginas": "40-137",
+        "doi": "10.5555/mock.0011",
+        "autores": "SALES, P. C.; EXTERNO, F. M.; BORTOLINI, F. N."
+      }
+    ],
+    "trabalhos_completos_congressos": []
+  },
+  "producao_tecnica": {},
+  "projetos_pesquisa": [
+    {
+      "nome": "Análise de algoritmos genéticos em bacias hidrográficas do ES",
+      "ano_inicio": "2017",
+      "ano_conclusao": "2019",
+      "descricao": [
+        "Descrição: Projeto fictício para teste do ETL. Situação: Concluído; Natureza: Pesquisa."
+      ],
+      "integrantes": [
+        {
+          "nome": "Pedro Carvalho Sales",
+          "papel": "Coordenador"
+        },
+        {
+          "nome": "Diego Rezende Guimarães",
+          "papel": "Integrante"
+        },
+        {
+          "nome": "Tiago Andrade Barbosa",
+          "papel": "Estudante"
+        }
+      ],
+      "financiadores": [
+        {
+          "nome": "CAPES"
+        }
+      ]
+    }
+  ],
+  "projetos_extensao": [],
+  "projetos_desenvolvimento": [],
+  "orientacoes": {
+    "concluidas": {
+      "iniciacao_cientifica": [
+        {
+          "titulo": "Testes experimentais com biofiltros na gestão escolar",
+          "orientando": "Cecília Martins Mendes",
+          "ano": "2021",
+          "natureza": "Iniciação Científica"
+        }
+      ]
+    },
+    "em_andamento": {}
+  }
+}

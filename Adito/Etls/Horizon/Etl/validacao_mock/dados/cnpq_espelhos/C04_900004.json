@@ -1,0 +1,68 @@
+{
+  "url": "http://dgp.cnpq.br/dgp/espelhogrupo/900004",
+  "espelho": {
+    "nome_grupo": "Grupo de Pesquisa em Biotecnologia",
+    "repercussoes": "Repercussões fictícias do grupo Grupo de Pesquisa em Biotecnologia (espelho mock).",
+    "identificacao": {
+      "ano_de_formacao": "2016",
+      "lideres_do_grupo": [
+        "Alice Queiroz Prates",
+        "Wesley Silva Rocha"
+      ]
+    },
+    "recursos_humanos": {
+      "pesquisadores": [
+        {
+          "nome": "Alice Queiroz Prates",
+          "data_inclusao": "26/06/2016"
+        },
+        {
+          "nome": "Wesley Silva Rocha",
+          "data_inclusao": "02/03/2019"
+        },
+        {
+          "nome": "Fábio Moreira Pereira",
+          "data_inclusao": "04/04/2019"
+        }
+      ],
+      "estudantes": [
+        {
+          "nome": "Paula Pacheco Miranda",
+          "data_inclusao": "30/11/2020",
+          "nivel": "Graduação"
+        },
+        {
+          "nome": "Rafael Gomes Costa",
+          "data_inclusao": "03/07/2023",
+          "nivel": "Graduação"
+        },
+        {
+          "nome": "Tiago Sales Gomes",
+          "data_inclusao": "02/05/2025",
+          "nivel": "Graduação"
+        }
+      ],
+      "egressos_estudantes": [
+        {
+          "nome": "Wesley Teixeira Pereira",
+          "data_inclusao": "01/03/2019",
+          "data_egresso": "28/02/2021",
+          "nivel": "Mestrado"
+        }
+      ]
+    },
+    "linhas_de_pesquisa": {
+      "linhas": [
+        {
+          "nome_da_linha_de_pesquisa": "Letras"
+        },
+        {
+          "nome_da_linha_de_pesquisa": "aprendizado de máquina"
+        },
+        {
+          "nome_da_linha_de_pesquisa": "Educação"
+        }
+      ]
+    }
+  }
+}

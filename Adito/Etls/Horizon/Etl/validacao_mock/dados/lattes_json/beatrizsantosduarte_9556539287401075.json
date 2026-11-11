@@ -1,0 +1,153 @@
+{
+  "informacoes_pessoais": {
+    "nome_completo": "Beatriz Santos Duarte",
+    "id_lattes": "9556539287401075",
+    "texto_resumo": "Currículo fictício de Beatriz Santos Duarte, gerado para testes do ETL do Horizon.",
+    "nome_citacoes": "DUARTE, B. S.;DUARTE, BEATRIZ",
+    "atualizacao_cv": "01/01/2023",
+    "url": "http://lattes.cnpq.br/9556539287401075"
+  },
+  "premios_titulos": [
+    {
+      "descricao": "Menção honrosa fictícia 0 - Beatriz",
+      "ano": "2014"
+    },
+    {
+      "descricao": "Menção honrosa fictícia 1 - Beatriz",
+      "ano": "2022"
+    }
+  ],
+  "idiomas": [
+    {
+      "nome": "Alemão",
+      "le": "Pouco",
+      "escreve": "Razoavelmente",
+      "fala": "Bem",
+      "compreende": "Bem"
+    }
+  ],
+  "atuacao_profissional": [
+    {
+      "instituicao": "Instituto Federal do Espírito Santo",
+      "ano_inicio": "2012",
+      "ano_fim": "Atual",
+      "vinculo": "Servidor Público",
+      "enquadramento": "Professor EBTT"
+    },
+    {
+      "instituicao": "Prefeitura Municipal de Vila Velha",
+      "ano_inicio": "2004",
+      "ano_fim": "2010",
+      "vinculo": "Colaborador"
+    }
+  ],
+  "formacao_academica": [
+    {
+      "tipo": "Graduação em Engenharia Ambiental",
+      "nome_instituicao": "Universidade Estadual de Campinas",
+      "ano_inicio": "2006",
+      "ano_conclusao": "2010"
+    },
+    {
+      "tipo": "Doutorado em Física",
+      "nome_instituicao": "Universidade Federal de Minas Gerais",
+      "ano_inicio": "2012",
+      "ano_conclusao": "2016",
+      "descricao": "Título: Contribuições para algoritmos genéticos em bacias hidrográficas do ES, Ano de Obtenção: 2016. Orientador: Eduarda Ferreira Prates."
+    }
+  ],
+  "producao_bibliografica": {
+    "artigos_periodicos": [
+      {
+        "titulo": "Uma abordagem de redes neurais para cidades inteligentes (71)",
+        "ano": "2019",
+        "revista": "Revista Brasileira de Informática na Educação",
+        "volume": "28",
+        "paginas": "70-103",
+        "doi": "10.5555/mock.0071",
+        "autores": "DUARTE, B. S.; EXTERNO, F. M."
+      },
+      {
+        "titulo": "Um estudo de sensores de baixo custo em comunidades tradicionais (72)",
+        "ano": "2025",
+        "revista": "IEEE Latin America Transactions",
+        "volume": "34",
+        "paginas": "22-114",
+        "doi": "10.5555/mock.0072",
+        "autores": "DUARTE, B. S.; EXTERNO, F. M."
+      }
+    ],
+    "trabalhos_completos_congressos": [
+      {
+        "titulo": "Relato de experiência com microrredes (73)",
+        "ano": "2020",
+        "evento": "Simpósio Brasileiro de Informática na Educação",
+        "paginas": "5-18",
+        "autores": "DUARTE, B. S."
+      }
+    ]
+  },
+  "producao_tecnica": {},
+  "projetos_pesquisa": [
+    {
+      "nome": "Uso de sistemas embarcados no litoral capixaba",
+      "ano_inicio": "2018",
+      "ano_conclusao": "2024",
+      "descricao": [
+        "Descrição: Projeto fictício para teste do ETL. Situação: Concluído; Natureza: Pesquisa."
+      ],
+      "integrantes": [
+        {
+          "nome": "Beatriz Santos Duarte",
+          "papel": "Coordenador"
+        },
+        {
+          "nome": "Eduarda Cavalcanti Bragança",
+          "papel": "Integrante"
+        }
+      ],
+      "financiadores": [
+        {
+          "nome": "CNPq"
+        }
+      ]
+    }
+  ],
+  "projetos_extensao": [
+    {
+      "nome": "Extensão: Modelagem de redes neurais na indústria metalmecânica",
+      "ano_inicio": "2018",
+      "ano_conclusao": "Atual",
+      "descricao": [
+        "Descrição: Projeto fictício para teste do ETL. Situação: Em andamento; Natureza: Pesquisa."
+      ],
+      "integrantes": [
+        {
+          "nome": "Beatriz Santos Duarte",
+          "papel": "Coordenador"
+        }
+      ],
+      "financiadores": []
+    }
+  ],
+  "projetos_desenvolvimento": [],
+  "orientacoes": {
+    "concluidas": {
+      "iniciacao_cientifica": [
+        {
+          "titulo": "Orientação concluída mock beatrizsanto 0",
+          "orientando": "Sofia Rocha Mendes",
+          "ano": "2021",
+          "natureza": "Iniciação Científica"
+        },
+        {
+          "titulo": "Orientação concluída mock beatrizsanto 1",
+          "orientando": "Beatriz Costa Almeida",
+          "ano": "2015",
+          "natureza": "Iniciação Científica"
+        }
+      ]
+    },
+    "em_andamento": {}
+  }
+}

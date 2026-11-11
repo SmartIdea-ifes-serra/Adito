@@ -1,0 +1,79 @@
+{
+  "informacoes_pessoais": {
+    "nome_completo": "Vinícius Pereira Falqueto",
+    "id_lattes": "9163112344825720",
+    "texto_resumo": "Currículo fictício de Vinícius Pereira Falqueto, gerado para testes do ETL do Horizon.",
+    "nome_citacoes": "FALQUETO, V. P.;FALQUETO, VINÍCIUS",
+    "atualizacao_cv": "22/09/2026",
+    "url": "http://lattes.cnpq.br/9163112344825720"
+  },
+  "premios_titulos": [],
+  "idiomas": [
+    {
+      "nome": "Inglês",
+      "le": "Razoavelmente",
+      "escreve": "Pouco",
+      "fala": "Razoavelmente",
+      "compreende": "Pouco"
+    },
+    {
+      "nome": "Espanhol",
+      "le": "Razoavelmente",
+      "escreve": "Bem",
+      "fala": "Razoavelmente",
+      "compreende": "Pouco"
+    }
+  ],
+  "atuacao_profissional": [
+    {
+      "instituicao": "Instituto Federal do Espírito Santo",
+      "ano_inicio": "2016",
+      "ano_fim": "Atual",
+      "vinculo": "Servidor Público",
+      "enquadramento": "Professor EBTT"
+    },
+    {
+      "instituicao": "Mock Consultoria Ltda",
+      "ano_inicio": "2001",
+      "ano_fim": "2003"
+    }
+  ],
+  "formacao_academica": [
+    {
+      "tipo": "Graduação em Administração",
+      "nome_instituicao": "Universidade Estadual de Campinas",
+      "ano_inicio": "2002",
+      "ano_conclusao": "2006"
+    },
+    {
+      "tipo": "Doutorado em Matemática",
+      "nome_instituicao": "Universidade de São Paulo",
+      "ano_inicio": "2008",
+      "ano_conclusao": "2012",
+      "descricao": "Título: Contribuições para jogos educacionais na gestão escolar, Ano de Obtenção: 2012. Orientador: Vinícius Nunes Pinto."
+    },
+    {
+      "tipo": "Especialização em Gestão Pública",
+      "nome_instituicao": null
+    },
+    {
+      "tipo": "Mestrado em Educação",
+      "nome_instituicao": "Universidade de São Paulo",
+      "ano_inicio": "2004",
+      "ano_conclusao": "2006",
+      "descricao": "Título: Avaliação formativa, Ano de Obtenção: 2006. Coorientador: Henrique Souza Loureiro."
+    }
+  ],
+  "producao_bibliografica": {
+    "artigos_periodicos": [],
+    "trabalhos_completos_congressos": []
+  },
+  "producao_tecnica": {},
+  "projetos_pesquisa": [],
+  "projetos_extensao": [],
+  "projetos_desenvolvimento": [],
+  "orientacoes": {
+    "concluidas": {},
+    "em_andamento": {}
+  }
+}

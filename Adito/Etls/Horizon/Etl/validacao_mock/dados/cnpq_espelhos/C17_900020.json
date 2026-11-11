@@ -1,0 +1,62 @@
+{
+  "url": "http://dgp.cnpq.br/dgp/espelhogrupo/900020",
+  "espelho": {
+    "nome_grupo": "Grupo de Pesquisa em Redes e Sistemas Distribuídos",
+    "repercussoes": "Repercussões fictícias do grupo Grupo de Pesquisa em Redes e Sistemas Distribuídos (espelho mock).",
+    "identificacao": {
+      "ano_de_formacao": "2016",
+      "lideres_do_grupo": [
+        "Fábio Valadares Zanetti"
+      ]
+    },
+    "recursos_humanos": {
+      "pesquisadores": [
+        {
+          "nome": "Fábio Valadares Zanetti",
+          "data_inclusao": "15/01/2022"
+        },
+        {
+          "nome": "Otávio Barbosa Correia",
+          "data_inclusao": "25/03/2023"
+        },
+        {
+          "nome": "Caio Correia Pereira",
+          "data_inclusao": "24/03/2018"
+        }
+      ],
+      "estudantes": [
+        {
+          "nome": "Alice Ferreira Miranda",
+          "data_inclusao": "28/07/2022",
+          "nivel": "Graduação"
+        },
+        {
+          "nome": "Giovana Coelho Araújo",
+          "data_inclusao": "13/04/2025",
+          "nivel": "Graduação"
+        },
+        {
+          "nome": "Giovana Pacheco Ribeiro",
+          "data_inclusao": "14/05/2024",
+          "nivel": "Graduação"
+        }
+      ],
+      "tecnicos": [
+        {
+          "nome": "Helena Fonseca Siqueira",
+          "data_inclusao": "09/11/2024"
+        }
+      ]
+    },
+    "linhas_de_pesquisa": {
+      "linhas": [
+        {
+          "nome_da_linha_de_pesquisa": "Ciências Biológicas"
+        },
+        {
+          "nome_da_linha_de_pesquisa": "otimização"
+        }
+      ]
+    }
+  }
+}

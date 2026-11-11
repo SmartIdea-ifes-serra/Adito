@@ -1,0 +1,144 @@
+{
+  "informacoes_pessoais": {
+    "nome_completo": "Ana Moreira Rezende",
+    "id_lattes": "9578941297238781",
+    "texto_resumo": "Currículo fictício de Ana Moreira Rezende, gerado para testes do ETL do Horizon.",
+    "nome_citacoes": "REZENDE, A. M.;REZENDE, ANA",
+    "atualizacao_cv": "03/07/2026",
+    "url": "http://lattes.cnpq.br/9578941297238781"
+  },
+  "premios_titulos": [
+    {
+      "descricao": "Menção honrosa fictícia 0 - Ana",
+      "ano": "2014"
+    },
+    {
+      "descricao": "Menção honrosa fictícia 1 - Ana",
+      "ano": "2025"
+    }
+  ],
+  "idiomas": [
+    {
+      "nome": "Alemão",
+      "le": "Razoavelmente",
+      "escreve": "Razoavelmente",
+      "fala": "Razoavelmente",
+      "compreende": "Bem"
+    },
+    {
+      "nome": "Inglês",
+      "le": "Bem",
+      "escreve": "Bem",
+      "fala": "Razoavelmente",
+      "compreende": "Razoavelmente"
+    }
+  ],
+  "atuacao_profissional": [
+    {
+      "instituicao": "Instituto Federal do Espírito Santo",
+      "ano_inicio": "2014",
+      "ano_fim": "Atual",
+      "vinculo": "Servidor Público",
+      "enquadramento": "Professor EBTT"
+    }
+  ],
+  "formacao_academica": [
+    {
+      "tipo": "Graduação em Ciências Biológicas",
+      "nome_instituicao": "Universidade Federal de Minas Gerais",
+      "ano_inicio": "1999",
+      "ano_conclusao": "2003"
+    },
+    {
+      "tipo": "Doutorado em Engenharia Ambiental",
+      "nome_instituicao": "Universidade Federal de Minas Gerais",
+      "ano_inicio": "2005",
+      "ano_conclusao": "2009",
+      "descricao": "Título: Contribuições para redes neurais na gestão escolar, Ano de Obtenção: 2009. Orientador: Sofia Xavier Oliveira."
+    },
+    {
+      "tipo": "Mestrado em Engenharia Elétrica",
+      "nome_instituicao": "Universidade Federal do Espírito Santo",
+      "ano_inicio": "2008",
+      "ano_conclusao": "2010",
+      "descricao": "Título: Controle preditivo de microrredes, Ano de Obtenção: 2010. Orientador: Caio Loureiro Ribeiro. Coorientador: Priscila Santos Queiroz."
+    }
+  ],
+  "producao_bibliografica": {
+    "artigos_periodicos": [
+      {
+        "titulo": "Avaliação experimental de plataformas web em ambientes hospitalares (12)",
+        "ano": "2017",
+        "revista": "IEEE Latin America Transactions",
+        "volume": "40",
+        "paginas": "34-160",
+        "doi": "10.5555/mock.0012",
+        "autores": "EXTERNO, F. M.; REZENDE, A. M."
+      }
+    ],
+    "trabalhos_completos_congressos": []
+  },
+  "producao_tecnica": {},
+  "projetos_pesquisa": [
+    {
+      "nome": "Modelagem de microrredes para acessibilidade",
+      "ano_inicio": "2016",
+      "ano_conclusao": "Atual",
+      "descricao": [
+        "Descrição: Projeto fictício para teste do ETL. Situação: Em andamento; Natureza: Pesquisa."
+      ],
+      "integrantes": [
+        {
+          "nome": "Ana Moreira Rezende",
+          "papel": "Coordenador"
+        },
+        {
+          "nome": "Igor Carvalho Pereira",
+          "papel": "Integrante"
+        }
+      ],
+      "financiadores": [
+        {
+          "nome": "CAPES"
+        }
+      ]
+    }
+  ],
+  "projetos_extensao": [
+    {
+      "nome": "Extensão: Avaliação de modelos preditivos no ensino médio integrado",
+      "ano_inicio": "2016",
+      "ano_conclusao": "Atual",
+      "descricao": [
+        "Descrição: Projeto fictício para teste do ETL. Situação: Em andamento; Natureza: Pesquisa."
+      ],
+      "integrantes": [
+        {
+          "nome": "Ana Moreira Rezende",
+          "papel": "Coordenador"
+        }
+      ],
+      "financiadores": []
+    }
+  ],
+  "projetos_desenvolvimento": [],
+  "orientacoes": {
+    "concluidas": {
+      "iniciacao_cientifica": [
+        {
+          "titulo": "Orientação concluída mock anamoreirare 0",
+          "orientando": "Mariana Macedo Miranda",
+          "ano": "2017",
+          "natureza": "Iniciação Científica"
+        },
+        {
+          "titulo": "Orientação concluída mock anamoreirare 1",
+          "orientando": "Íris Bortolini Moura",
+          "ano": "2017",
+          "natureza": "Iniciação Científica"
+        }
+      ]
+    },
+    "em_andamento": {}
+  }
+}

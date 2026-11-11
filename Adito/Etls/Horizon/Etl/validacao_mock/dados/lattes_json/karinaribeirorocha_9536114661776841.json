@@ -1,0 +1,100 @@
+{
+  "informacoes_pessoais": {
+    "nome_completo": "Karina Ribeiro Rocha",
+    "id_lattes": "9536114661776841",
+    "texto_resumo": "Currículo fictício de Karina Ribeiro Rocha, gerado para testes do ETL do Horizon.",
+    "nome_citacoes": "ROCHA, K. R.;ROCHA, KARINA",
+    "atualizacao_cv": "28/10/2025",
+    "url": "http://lattes.cnpq.br/9536114661776841"
+  },
+  "premios_titulos": [
+    {
+      "descricao": "Menção honrosa fictícia 0 - Karina",
+      "ano": "2018"
+    }
+  ],
+  "idiomas": [
+    {
+      "nome": "Inglês",
+      "le": "Bem",
+      "escreve": "Pouco",
+      "fala": "Pouco",
+      "compreende": "Bem"
+    }
+  ],
+  "atuacao_profissional": [
+    {
+      "instituicao": "Instituto Federal do Espírito Santo",
+      "ano_inicio": "2014",
+      "ano_fim": "Atual",
+      "vinculo": "Servidor Público",
+      "enquadramento": "Professor EBTT"
+    }
+  ],
+  "formacao_academica": [
+    {
+      "tipo": "Graduação em Engenharia de Controle e Automação",
+      "nome_instituicao": "Universidade Estadual de Campinas",
+      "ano_inicio": "1998",
+      "ano_conclusao": "2002"
+    },
+    {
+      "tipo": "Doutorado em Engenharia Ambiental",
+      "nome_instituicao": "Instituto Tecnológico de Aeronáutica",
+      "ano_inicio": "2004",
+      "ano_conclusao": "2008",
+      "descricao": "Título: Contribuições para algoritmos genéticos em ambientes hospitalares, Ano de Obtenção: 2008. Orientador: Mateus Souza Ribeiro."
+    }
+  ],
+  "producao_bibliografica": {
+    "artigos_periodicos": [
+      {
+        "titulo": "",
+        "ano": "2021",
+        "revista": "Revista Brasileira de Informática na Educação",
+        "volume": "3",
+        "paginas": "17-101",
+        "doi": "10.5555/mock.0083",
+        "autores": "ROCHA, K. R."
+      },
+      {
+        "titulo": "Um estudo de algoritmos genéticos para a agricultura familiar (84)",
+        "ano": "",
+        "revista": "Journal of Mock Studies",
+        "volume": "2",
+        "paginas": "29-125",
+        "doi": "10.5555/mock.0084",
+        "autores": "ROCHA, K. R."
+      },
+      {
+        "titulo": "Avaliação experimental de sistemas embarcados em bacias hidrográficas do ES (85)",
+        "ano": "2024",
+        "revista": null,
+        "volume": "22",
+        "paginas": "67-144",
+        "doi": null,
+        "autores": "ROCHA, K. R."
+      }
+    ],
+    "trabalhos_completos_congressos": []
+  },
+  "producao_tecnica": {},
+  "projetos_pesquisa": [
+    {
+      "nome": "Projeto mock sem integrantes",
+      "ano_inicio": "2022",
+      "ano_conclusao": "Atual",
+      "descricao": [
+        "Descrição: Projeto fictício para teste do ETL. Situação: Em andamento; Natureza: Pesquisa."
+      ],
+      "integrantes": [],
+      "financiadores": []
+    }
+  ],
+  "projetos_extensao": [],
+  "projetos_desenvolvimento": [],
+  "orientacoes": {
+    "concluidas": {},
+    "em_andamento": {}
+  }
+}

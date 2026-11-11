@@ -1,0 +1,52 @@
+{
+  "url": "http://dgp.cnpq.br/dgp/espelhogrupo/900011",
+  "espelho": {
+    "nome_grupo": "Núcleo de Estudos em Saúde Coletiva",
+    "repercussoes": "Repercussões fictícias do grupo Grupo de Pesquisa em Saúde Coletiva (espelho mock).",
+    "identificacao": {
+      "ano_de_formacao": "2021",
+      "lideres_do_grupo": [
+        "Ana Moreira Rezende"
+      ]
+    },
+    "recursos_humanos": {
+      "pesquisadores": [
+        {
+          "nome": "Ana Moreira Rezende",
+          "data_inclusao": "06/08/2017"
+        },
+        {
+          "nome": "Fábio Brandão Pinto",
+          "data_inclusao": "06/10/2016"
+        }
+      ],
+      "estudantes": [
+        {
+          "nome": "Lívia Gomes Ferreira",
+          "data_inclusao": "08/07/2022",
+          "nivel": "Graduação"
+        },
+        {
+          "nome": "Isabela Prates Martins",
+          "data_inclusao": "21/09/2025",
+          "nivel": "Graduação"
+        },
+        {
+          "nome": "Henrique Lima Moura",
+          "data_inclusao": "28/02/2024",
+          "nivel": "Graduação"
+        }
+      ]
+    },
+    "linhas_de_pesquisa": {
+      "linhas": [
+        {
+          "nome_da_linha_de_pesquisa": "Química"
+        },
+        {
+          "nome_da_linha_de_pesquisa": "Matemática"
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,151 @@
+{
+  "informacoes_pessoais": {
+    "nome_completo": "Alice Bezerra Araújo",
+    "id_lattes": "9325519198677524",
+    "texto_resumo": "Currículo fictício de Alice Bezerra Araújo, gerado para testes do ETL do Horizon.",
+    "nome_citacoes": "ARAUJO, A. B.;ARAUJO, ALICE",
+    "atualizacao_cv": "15/07/2024",
+    "url": "http://lattes.cnpq.br/9325519198677524"
+  },
+  "premios_titulos": [
+    {
+      "descricao": "Menção honrosa fictícia 0 - Alice",
+      "ano": "2017"
+    },
+    {
+      "descricao": "Menção honrosa fictícia 1 - Alice",
+      "ano": "2025"
+    }
+  ],
+  "idiomas": [
+    {
+      "nome": "Italiano",
+      "le": "Bem",
+      "escreve": "Razoavelmente",
+      "fala": "Pouco",
+      "compreende": "Razoavelmente"
+    },
+    {
+      "nome": "Francês",
+      "le": "Bem",
+      "escreve": "Pouco",
+      "fala": "Pouco",
+      "compreende": "Bem"
+    }
+  ],
+  "atuacao_profissional": [
+    {
+      "instituicao": "Instituto Federal do Espírito Santo",
+      "ano_inicio": "2017",
+      "ano_fim": "Atual",
+      "vinculo": "Servidor Público",
+      "enquadramento": "Professor EBTT"
+    }
+  ],
+  "formacao_academica": [
+    {
+      "tipo": "Graduação em Agronomia",
+      "nome_instituicao": "Universidade Federal do Espírito Santo",
+      "ano_inicio": "2001",
+      "ano_conclusao": "2005"
+    },
+    {
+      "tipo": "Doutorado em Engenharia de Controle e Automação",
+      "nome_instituicao": "Universidade Estadual de Campinas",
+      "ano_inicio": "2007",
+      "ano_conclusao": "2011",
+      "descricao": "Título: Contribuições para painéis solares no ensino médio integrado, Ano de Obtenção: 2011. Orientador: Eduarda Moura Cardoso."
+    }
+  ],
+  "producao_bibliografica": {
+    "artigos_periodicos": [
+      {
+        "titulo": "Análise comparativa de sistemas embarcados na gestão escolar (54)",
+        "ano": "2016",
+        "revista": "Química Nova",
+        "volume": "3",
+        "paginas": "38-194",
+        "doi": "10.5555/mock.0054",
+        "autores": "EXTERNO, F. M.; MIRANDA, Y. B.; ARAUJO, A. B."
+      },
+      {
+        "titulo": "Avaliação experimental de algoritmos genéticos para acessibilidade (55)",
+        "ano": "2020",
+        "revista": "IEEE Latin America Transactions",
+        "volume": "35",
+        "paginas": "59-93",
+        "doi": "10.5555/mock.0055",
+        "autores": "EXTERNO, F. M.; MIRANDA, Y. B.; ARAUJO, A. B."
+      }
+    ],
+    "trabalhos_completos_congressos": [
+      {
+        "titulo": "Relato de experiência com plataformas web (56)",
+        "ano": "2020",
+        "evento": "Simpósio Brasileiro de Informática na Educação",
+        "paginas": "9-18",
+        "autores": "ARAUJO, A. B."
+      }
+    ]
+  },
+  "producao_tecnica": {},
+  "projetos_pesquisa": [
+    {
+      "nome": "Estudo de resíduos agroindustriais na gestão escolar",
+      "ano_inicio": "2018",
+      "ano_conclusao": "Atual",
+      "descricao": [
+        "Descrição: Projeto fictício para teste do ETL. Situação: Em andamento; Natureza: Pesquisa."
+      ],
+      "integrantes": [
+        {
+          "nome": "Alice Bezerra Araújo",
+          "papel": "Coordenador"
+        },
+        {
+          "nome": "André Queiroz Zanetti",
+          "papel": "Integrante"
+        },
+        {
+          "nome": "Caio Moreira Correia",
+          "papel": "Estudante"
+        }
+      ],
+      "financiadores": [
+        {
+          "nome": "CNPq"
+        }
+      ]
+    }
+  ],
+  "projetos_extensao": [],
+  "projetos_desenvolvimento": [],
+  "orientacoes": {
+    "concluidas": {
+      "iniciacao_cientifica": [
+        {
+          "titulo": "Orientação concluída mock alicebezerra 0",
+          "orientando": "Enzo Xavier Teixeira",
+          "ano": "2017",
+          "natureza": "Iniciação Científica"
+        },
+        {
+          "titulo": "Orientação concluída mock alicebezerra 1",
+          "orientando": "Isabela Loureiro Moura",
+          "ano": "2017",
+          "natureza": "Iniciação Científica"
+        }
+      ]
+    },
+    "em_andamento": {
+      "dissertacao_de_mestrado": [
+        {
+          "titulo": "Dissertação em andamento mock alicebezerra",
+          "orientando": "Vitor Ribeiro Tavares",
+          "ano_inicio": "2025",
+          "ano_conclusao": ""
+        }
+      ]
+    }
+  }
+}

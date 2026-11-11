@@ -1,0 +1,156 @@
+{
+  "informacoes_pessoais": {
+    "nome_completo": "Priscila Pacheco Monteiro",
+    "id_lattes": "9507737536607347",
+    "texto_resumo": "Currículo fictício de Priscila Pacheco Monteiro, gerado para testes do ETL do Horizon.",
+    "nome_citacoes": "MONTEIRO, P. P.;MONTEIRO, PRISCILA",
+    "atualizacao_cv": "16/11/2023",
+    "url": "http://lattes.cnpq.br/9507737536607347"
+  },
+  "premios_titulos": [
+    {
+      "descricao": "Menção honrosa fictícia 0 - Priscila",
+      "ano": "2010"
+    }
+  ],
+  "idiomas": [
+    {
+      "nome": "Francês",
+      "le": "Razoavelmente",
+      "escreve": "Pouco",
+      "fala": "Bem",
+      "compreende": "Bem"
+    },
+    {
+      "nome": "Espanhol",
+      "le": "Bem",
+      "escreve": "Bem",
+      "fala": "Razoavelmente",
+      "compreende": "Pouco"
+    }
+  ],
+  "atuacao_profissional": [
+    {
+      "instituicao": "Instituto Federal do Espírito Santo",
+      "ano_inicio": "2015",
+      "ano_fim": "Atual",
+      "vinculo": "Servidor Público",
+      "enquadramento": "Professor EBTT"
+    },
+    {
+      "instituicao": "Prefeitura Municipal de Vila Velha",
+      "ano_inicio": "2007",
+      "ano_fim": "2009",
+      "vinculo": "Celetista"
+    }
+  ],
+  "formacao_academica": [
+    {
+      "tipo": "Graduação em Física",
+      "nome_instituicao": "Instituto Tecnológico de Aeronáutica",
+      "ano_inicio": "2000",
+      "ano_conclusao": "2004"
+    },
+    {
+      "tipo": "Doutorado em Química",
+      "nome_instituicao": "Instituto Tecnológico de Aeronáutica",
+      "ano_inicio": "2006",
+      "ano_conclusao": "2010",
+      "descricao": "Título: Contribuições para modelos preditivos na indústria metalmecânica, Ano de Obtenção: 2010. Orientador: Diego Mendes Andrade."
+    }
+  ],
+  "producao_bibliografica": {
+    "artigos_periodicos": [
+      {
+        "titulo": "Avaliação experimental de sistemas embarcados em ambientes hospitalares (65)",
+        "ano": "2021",
+        "revista": "IEEE Latin America Transactions",
+        "volume": "8",
+        "paginas": "69-127",
+        "doi": "10.5555/mock.0065",
+        "autores": "EXTERNO, F. M.; MONTEIRO, P. P."
+      },
+      {
+        "titulo": "Análise comparativa de redes neurais em comunidades tradicionais (66)",
+        "ano": "2015",
+        "revista": "Revista Brasileira de Ensino de Física",
+        "volume": "21",
+        "paginas": "41-150",
+        "doi": "10.5555/mock.0066",
+        "autores": "EXTERNO, F. M.; MONTEIRO, P. P."
+      }
+    ],
+    "trabalhos_completos_congressos": [
+      {
+        "titulo": "Relato de experiência com jogos educacionais (67)",
+        "ano": "2017",
+        "evento": "Congresso Mock de Engenharia",
+        "paginas": "7-16",
+        "autores": "MONTEIRO, P. P."
+      }
+    ]
+  },
+  "producao_tecnica": {},
+  "projetos_pesquisa": [
+    {
+      "nome": "Monitoramento de compostos fenólicos em comunidades tradicionais",
+      "ano_inicio": "2023",
+      "ano_conclusao": "2025",
+      "descricao": [
+        "Descrição: Projeto fictício para teste do ETL. Situação: Concluído; Natureza: Pesquisa."
+      ],
+      "integrantes": [
+        {
+          "nome": "Priscila Pacheco Monteiro",
+          "papel": "Coordenador"
+        },
+        {
+          "nome": "Sabrina Cavalcanti Tavares",
+          "papel": "Integrante"
+        }
+      ],
+      "financiadores": [
+        {
+          "nome": "FAPES"
+        }
+      ]
+    }
+  ],
+  "projetos_extensao": [
+    {
+      "nome": "Extensão: Monitoramento de dados abertos em comunidades tradicionais",
+      "ano_inicio": "2023",
+      "ano_conclusao": "Atual",
+      "descricao": [
+        "Descrição: Projeto fictício para teste do ETL. Situação: Em andamento; Natureza: Pesquisa."
+      ],
+      "integrantes": [
+        {
+          "nome": "Priscila Pacheco Monteiro",
+          "papel": "Coordenador"
+        }
+      ],
+      "financiadores": []
+    }
+  ],
+  "projetos_desenvolvimento": [],
+  "orientacoes": {
+    "concluidas": {
+      "iniciacao_cientifica": [
+        {
+          "titulo": "Orientação concluída mock priscilapach 0",
+          "orientando": "Yasmin Correia Macedo",
+          "ano": "2015",
+          "natureza": "Iniciação Científica"
+        },
+        {
+          "titulo": "Orientação concluída mock priscilapach 1",
+          "orientando": "Renan Oliveira Teixeira",
+          "ano": "2021",
+          "natureza": "Iniciação Científica"
+        }
+      ]
+    },
+    "em_andamento": {}
+  }
+}

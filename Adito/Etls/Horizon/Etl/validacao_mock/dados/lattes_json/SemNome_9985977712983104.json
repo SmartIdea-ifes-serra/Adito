@@ -1,0 +1,60 @@
+{
+  "informacoes_pessoais": {
+    "id_lattes": "9985977712983104",
+    "texto_resumo": "Currículo fictício de Cecília Brandão Souza, gerado para testes do ETL do Horizon.",
+    "nome_citacoes": "SOUZA, C. B.;SOUZA, CECÍLIA",
+    "atualizacao_cv": "23/03/2025",
+    "url": "http://lattes.cnpq.br/9985977712983104"
+  },
+  "premios_titulos": [
+    {
+      "descricao": "Menção honrosa fictícia 0 - Cecília",
+      "ano": "2025"
+    }
+  ],
+  "idiomas": [
+    {
+      "nome": "Alemão",
+      "le": "Razoavelmente",
+      "escreve": "Razoavelmente",
+      "fala": "Pouco",
+      "compreende": "Pouco"
+    }
+  ],
+  "atuacao_profissional": [
+    {
+      "instituicao": "Instituto Federal do Espírito Santo",
+      "ano_inicio": "2016",
+      "ano_fim": "Atual",
+      "vinculo": "Servidor Público",
+      "enquadramento": "Professor EBTT"
+    }
+  ],
+  "formacao_academica": [
+    {
+      "tipo": "Graduação em Administração",
+      "nome_instituicao": "Universidade Estadual de Campinas",
+      "ano_inicio": "1997",
+      "ano_conclusao": "2001"
+    },
+    {
+      "tipo": "Doutorado em Educação",
+      "nome_instituicao": "Universidade Federal do Espírito Santo",
+      "ano_inicio": "2003",
+      "ano_conclusao": "2007",
+      "descricao": "Título: Contribuições para sistemas embarcados na indústria metalmecânica, Ano de Obtenção: 2007. Orientador: Mateus Batista Freitas."
+    }
+  ],
+  "producao_bibliografica": {
+    "artigos_periodicos": [],
+    "trabalhos_completos_congressos": []
+  },
+  "producao_tecnica": {},
+  "projetos_pesquisa": [],
+  "projetos_extensao": [],
+  "projetos_desenvolvimento": [],
+  "orientacoes": {
+    "concluidas": {},
+    "em_andamento": {}
+  }
+}

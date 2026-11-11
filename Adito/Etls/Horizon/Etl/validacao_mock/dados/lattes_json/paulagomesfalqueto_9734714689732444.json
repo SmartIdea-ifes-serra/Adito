@@ -1,0 +1,123 @@
+{
+  "informacoes_pessoais": {
+    "nome_completo": "Paula Gomes Falqueto",
+    "id_lattes": "9734714689732444",
+    "texto_resumo": "Currículo fictício de Paula Gomes Falqueto, gerado para testes do ETL do Horizon.",
+    "nome_citacoes": "FALQUETO, P. G.;FALQUETO, PAULA",
+    "atualizacao_cv": "12/07/2023",
+    "url": "http://lattes.cnpq.br/9734714689732444"
+  },
+  "premios_titulos": [
+    {
+      "descricao": "Menção honrosa fictícia 0 - Paula",
+      "ano": "2019"
+    }
+  ],
+  "idiomas": [
+    {
+      "nome": "Italiano",
+      "le": "Pouco",
+      "escreve": "Pouco",
+      "fala": "Bem",
+      "compreende": "Bem"
+    },
+    {
+      "nome": "Alemão",
+      "le": "Pouco",
+      "escreve": "Razoavelmente",
+      "fala": "Bem",
+      "compreende": "Bem"
+    }
+  ],
+  "atuacao_profissional": [
+    {
+      "instituicao": "Instituto Federal do Espírito Santo",
+      "ano_inicio": "2012",
+      "ano_fim": "Atual",
+      "vinculo": "Servidor Público",
+      "enquadramento": "Professor EBTT"
+    }
+  ],
+  "formacao_academica": [
+    {
+      "tipo": "Graduação em Engenharia de Controle e Automação",
+      "nome_instituicao": "Instituto Tecnológico de Aeronáutica",
+      "ano_inicio": "2006",
+      "ano_conclusao": "2010"
+    },
+    {
+      "tipo": "Doutorado em Química",
+      "nome_instituicao": "Universidade de São Paulo",
+      "ano_inicio": "2012",
+      "ano_conclusao": "2016",
+      "descricao": "Título: Contribuições para resíduos agroindustriais em comunidades tradicionais, Ano de Obtenção: 2016. Orientador: Nathan Barbosa Ramos."
+    }
+  ],
+  "producao_bibliografica": {
+    "artigos_periodicos": [
+      {
+        "titulo": "Uma abordagem de microrredes na gestão escolar (31)",
+        "ano": "2017",
+        "revista": "IEEE Latin America Transactions",
+        "volume": "31",
+        "paginas": "31-136",
+        "doi": "10.5555/mock.0031",
+        "autores": "EXTERNO, F. M.; FALQUETO, P. G."
+      }
+    ],
+    "trabalhos_completos_congressos": [
+      {
+        "titulo": "Relato de experiência com biofiltros (32)",
+        "ano": "2023",
+        "evento": "Simpósio Brasileiro de Informática na Educação",
+        "paginas": "6-15",
+        "autores": "FALQUETO, P. G."
+      }
+    ]
+  },
+  "producao_tecnica": {},
+  "projetos_pesquisa": [
+    {
+      "nome": "Aplicação de compostos fenólicos no ensino médio integrado",
+      "ano_inicio": "2021",
+      "ano_conclusao": "2023",
+      "descricao": [
+        "Descrição: Projeto fictício para teste do ETL. Situação: Concluído; Natureza: Pesquisa."
+      ],
+      "integrantes": [
+        {
+          "nome": "Paula Gomes Falqueto",
+          "papel": "Coordenador"
+        },
+        {
+          "nome": "Júlia Oliveira Pereira",
+          "papel": "Integrante"
+        },
+        {
+          "nome": "Igor Teixeira Costa",
+          "papel": "Estudante"
+        }
+      ],
+      "financiadores": [
+        {
+          "nome": "FAPES"
+        }
+      ]
+    }
+  ],
+  "projetos_extensao": [],
+  "projetos_desenvolvimento": [],
+  "orientacoes": {
+    "concluidas": {
+      "iniciacao_cientifica": [
+        {
+          "titulo": "Orientação concluída mock paulagomesfa 0",
+          "orientando": "Júlia Souza Cardoso",
+          "ano": "2018",
+          "natureza": "Iniciação Científica"
+        }
+      ]
+    },
+    "em_andamento": {}
+  }
+}

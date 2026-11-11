@@ -1,0 +1,151 @@
+{
+  "informacoes_pessoais": {
+    "nome_completo": "Jorge Andrade Cavalcanti",
+    "id_lattes": "9144592884828570",
+    "texto_resumo": "Currículo fictício de Jorge Andrade Cavalcanti, gerado para testes do ETL do Horizon.",
+    "nome_citacoes": "CAVALCANTI, J. A.;CAVALCANTI, JORGE",
+    "atualizacao_cv": "19/02/2023",
+    "url": "http://lattes.cnpq.br/9144592884828570"
+  },
+  "premios_titulos": [
+    {
+      "descricao": "Menção honrosa fictícia 0 - Jorge",
+      "ano": "2024"
+    }
+  ],
+  "idiomas": [
+    {
+      "nome": "Alemão",
+      "le": "Bem",
+      "escreve": "Pouco",
+      "fala": "Razoavelmente",
+      "compreende": "Razoavelmente"
+    },
+    {
+      "nome": "Francês",
+      "le": "Razoavelmente",
+      "escreve": "Pouco",
+      "fala": "Pouco",
+      "compreende": "Razoavelmente"
+    }
+  ],
+  "atuacao_profissional": [
+    {
+      "instituicao": "Instituto Federal do Espírito Santo",
+      "ano_inicio": "2015",
+      "ano_fim": "Atual",
+      "vinculo": "Servidor Público",
+      "enquadramento": "Professor EBTT"
+    }
+  ],
+  "formacao_academica": [
+    {
+      "tipo": "Graduação em Engenharia Ambiental",
+      "nome_instituicao": "Universidade Federal do Espírito Santo",
+      "ano_inicio": "2010",
+      "ano_conclusao": "2014"
+    },
+    {
+      "tipo": "Doutorado em Ciência da Computação",
+      "nome_instituicao": "Universidade Federal de Minas Gerais",
+      "ano_inicio": "2016",
+      "ano_conclusao": "2020",
+      "descricao": "Título: Contribuições para plataformas web em comunidades tradicionais, Ano de Obtenção: 2020. Orientador: Vitor Sales Campos."
+    }
+  ],
+  "producao_bibliografica": {
+    "artigos_periodicos": [
+      {
+        "titulo": "Avaliação experimental de plataformas web em comunidades tradicionais (34)",
+        "ano": "2019",
+        "revista": "Revista Brasileira de Informática na Educação",
+        "volume": "13",
+        "paginas": "67-192",
+        "doi": "10.5555/mock.0034",
+        "autores": "CAVALCANTI, J. A.; PEIXOTO, G. R.; EXTERNO, F. M."
+      },
+      {
+        "titulo": "Avaliação experimental de modelos preditivos no litoral capixaba (35)",
+        "ano": "2022",
+        "revista": "Engenharia Sanitária e Ambiental",
+        "volume": "35",
+        "paginas": "29-136",
+        "doi": "10.5555/mock.0035",
+        "autores": "CAVALCANTI, J. A.; PEIXOTO, G. R.; EXTERNO, F. M."
+      }
+    ],
+    "trabalhos_completos_congressos": [
+      {
+        "titulo": "Relato de experiência com algoritmos genéticos (36)",
+        "ano": "2025",
+        "evento": "Congresso Mock de Engenharia",
+        "paginas": "5-19",
+        "autores": "CAVALCANTI, J. A."
+      }
+    ]
+  },
+  "producao_tecnica": {
+    "softwares_sem_patente": [
+      {
+        "titulo": "Software mock jorgeandra",
+        "ano": "2019"
+      }
+    ]
+  },
+  "projetos_pesquisa": [
+    {
+      "nome": "Otimização de painéis solares para a agricultura familiar",
+      "ano_inicio": "2022",
+      "ano_conclusao": "Atual",
+      "descricao": [
+        "Descrição: Projeto fictício para teste do ETL. Situação: Em andamento; Natureza: Pesquisa."
+      ],
+      "integrantes": [
+        {
+          "nome": "Jorge Andrade Cavalcanti",
+          "papel": "Coordenador"
+        },
+        {
+          "nome": "Vitor Ramos Peixoto",
+          "papel": "Integrante"
+        },
+        {
+          "nome": "Ana Campos Bortolini",
+          "papel": "Estudante"
+        }
+      ],
+      "financiadores": []
+    }
+  ],
+  "projetos_extensao": [
+    {
+      "nome": "Extensão: Monitoramento de robôs móveis em bacias hidrográficas do ES",
+      "ano_inicio": "2022",
+      "ano_conclusao": "Atual",
+      "descricao": [
+        "Descrição: Projeto fictício para teste do ETL. Situação: Em andamento; Natureza: Pesquisa."
+      ],
+      "integrantes": [
+        {
+          "nome": "Jorge Andrade Cavalcanti",
+          "papel": "Coordenador"
+        }
+      ],
+      "financiadores": []
+    }
+  ],
+  "projetos_desenvolvimento": [],
+  "orientacoes": {
+    "concluidas": {},
+    "em_andamento": {
+      "dissertacao_de_mestrado": [
+        {
+          "titulo": "Dissertação em andamento mock jorgeandrade",
+          "orientando": "Larissa Xavier Brandão",
+          "ano_inicio": "2025",
+          "ano_conclusao": ""
+        }
+      ]
+    }
+  }
+}

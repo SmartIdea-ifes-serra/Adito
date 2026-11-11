@@ -1,0 +1,56 @@
+{
+  "informacoes_pessoais": {
+    "nome_completo": "Felipe Farias Miranda",
+    "id_lattes": "9208529018381454",
+    "texto_resumo": "",
+    "nome_citacoes": "MIRANDA, F. F.;MIRANDA, FELIPE",
+    "atualizacao_cv": "29/10/2025",
+    "url": "http://lattes.cnpq.br/9208529018381454"
+  },
+  "premios_titulos": [],
+  "idiomas": [
+    {
+      "nome": "Italiano",
+      "le": "Pouco",
+      "escreve": "Pouco",
+      "fala": "Razoavelmente",
+      "compreende": "Razoavelmente"
+    }
+  ],
+  "atuacao_profissional": [
+    {
+      "instituicao": "Instituto Federal do Espírito Santo",
+      "ano_inicio": "2009",
+      "ano_fim": "Atual",
+      "vinculo": "Servidor Público",
+      "enquadramento": "Professor EBTT"
+    }
+  ],
+  "formacao_academica": [
+    {
+      "tipo": "Graduação em Engenharia Ambiental",
+      "nome_instituicao": "Instituto Tecnológico de Aeronáutica",
+      "ano_inicio": "1996",
+      "ano_conclusao": "2000"
+    },
+    {
+      "tipo": "Doutorado em Engenharia Ambiental",
+      "nome_instituicao": "Universidade Federal de Minas Gerais",
+      "ano_inicio": "2002",
+      "ano_conclusao": "2006",
+      "descricao": "Título: Contribuições para microrredes no ensino médio integrado, Ano de Obtenção: 2006. Orientador: Jorge Andrade Cavalcanti."
+    }
+  ],
+  "producao_bibliografica": {
+    "artigos_periodicos": [],
+    "trabalhos_completos_congressos": []
+  },
+  "producao_tecnica": {},
+  "projetos_pesquisa": [],
+  "projetos_extensao": [],
+  "projetos_desenvolvimento": [],
+  "orientacoes": {
+    "concluidas": {},
+    "em_andamento": {}
+  }
+}

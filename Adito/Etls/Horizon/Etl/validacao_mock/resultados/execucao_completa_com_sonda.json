@@ -1,0 +1,183 @@
+{
+ "execucao": "completa_com_sonda",
+ "schema": "mock_completa",
+ "com_sonda": true,
+ "arquivos_lattes": 50,
+ "status": "interrompida",
+ "erro": "AttributeError: 'int' object has no attribute 'isdigit'",
+ "traceback": "Traceback (most recent call last):\n  File \"/home/vitoria/Downloads/Adito-main/Etls/Horizon/Etl/validacao_mock/executar_etl_mock.py\", line 92, in main\n    executar_carga(conexao, relatorio, config, adaptador_cnpq=CnpqCrawlerAdapter(),\n    ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n                   registrar=lambda m: (passos.append(m), print(\"  >\", m)))\n                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/vitoria/Downloads/Adito-main/Etls/Horizon/Etl/src/core/logic/carga/pipeline.py\", line 111, in executar_carga\n    CarregadorLattes(contexto).carregar(curriculos)\n    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^\n  File \"/home/vitoria/Downloads/Adito-main/Etls/Horizon/Etl/src/core/logic/carga/lattes.py\", line 118, in carregar\n    self.carregar_curriculos(curriculos)\n    ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^\n  File \"/home/vitoria/Downloads/Adito-main/Etls/Horizon/Etl/src/core/logic/carga/lattes.py\", line 220, in carregar_curriculos\n    self._projetos(curriculo, *dono)\n    ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^\n  File \"/home/vitoria/Downloads/Adito-main/Etls/Horizon/Etl/src/core/logic/carga/lattes.py\", line 356, in _projetos\n    projetos = self._parser.parse_research_projects(curriculo.dados)\n  File \"/home/vitoria/Downloads/Adito-main/Etls/Horizon/Etl/src/adapters/sources/lattes_parser.py\", line 42, in parse_research_projects\n    return self._parse_generic_projects(\n           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~^\n        data, \"projetos_pesquisa\", \"Research Project\"\n        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n    )\n    ^\n  File \"/home/vitoria/Downloads/Adito-main/Etls/Horizon/Etl/src/adapters/sources/lattes_parser.py\", line 336, in _parse_generic_projects\n    if start_year_str and start_year_str.isdigit()\n                          ^^^^^^^^^^^^^^^^^^^^^^\nAttributeError: 'int' object has no attribute 'isdigit'\n",
+ "segundos": 1.7,
+ "passos_registrados": [
+  "Recriando o schema 'mock_completa' (recarga completa)...",
+  "SigPesq grupos: /home/vitoria/Downloads/Adito-main/Etls/Horizon/Etl/validacao_mock/dados/sigpesq/research_group/Relatorio_mock_grupos.xlsx",
+  "SigPesq projetos: /home/vitoria/Downloads/Adito-main/Etls/Horizon/Etl/validacao_mock/dados/sigpesq/research_projects/Relatorio_mock_projetos.xlsx",
+  "SigPesq bolsistas: 3 planilha(s)",
+  "CNPq (campus: todos)...",
+  "Lattes: 48 currículo(s)"
+ ],
+ "relatorio_carga": {
+  "inicio": "2026-10-14T15:28:18",
+  "fim": "2026-10-14T15:28:20",
+  "contagens": {
+   "grupos_sigpesq": {
+    "lideres": 36,
+    "grupos_criados": 26,
+    "pulados": 2,
+    "grupos_repetidos": 1,
+    "concluido": 1
+   },
+   "projetos_sigpesq": {
+    "projeto_pesquisa_criadas": 72,
+    "descartado:valor_aprovado": 31,
+    "nao_aprovados": 2,
+    "descartado:grupo_pesquisa_externo": 6,
+    "pulados": 2,
+    "grupos_criados_pelo_projeto": 2,
+    "projeto_pesquisa_atualizadas": 1,
+    "concluido": 1
+   },
+   "bolsistas_sigpesq": {
+    "orientacao_criadas": 114,
+    "pulados": 7,
+    "descartado:dados_cancelamento": 2,
+    "projetos_pai_provisorios": 1,
+    "orientacao_atualizadas": 1,
+    "projetos_pai_recalculados": 5,
+    "concluido": 1
+   },
+   "cnpq": {
+    "pulados": 1,
+    "membros": 143,
+    "linhas_de_pesquisa": 43,
+    "grupos_sincronizados": 24,
+    "membros_com_fim_atualizado": 1,
+    "a_revisar": 2,
+    "concluido": 1
+   },
+   "lattes_pessoas": {
+    "pulados": 3,
+    "donos": 47,
+    "perfis": 45,
+    "a_revisar": 1,
+    "concluido": 1
+   },
+   "lattes_curriculos": {
+    "pulados": 2,
+    "premios": 44,
+    "proficiencias": 51,
+    "vinculos": 47,
+    "descartado:detalhes_da_atuacao_profissional": 47,
+    "formacoes": 71,
+    "artigos": 62,
+    "coautores": 38,
+    "projeto_pesquisa_criadas": 33,
+    "producoes_tecnicas": 8,
+    "projeto_extensao_criadas": 7
+   }
+  },
+  "pendencias": [
+   {
+    "passo": "grupos_sigpesq",
+    "motivo": "grupo sem nome",
+    "registro": "linha 6"
+   },
+   {
+    "passo": "grupos_sigpesq",
+    "motivo": "URL CNPq não gravada: já é de outro grupo",
+    "registro": "Grupo de Pesquisa em Arte e Tecnologia"
+   },
+   {
+    "passo": "projetos_sigpesq",
+    "motivo": "projeto sem título",
+    "registro": "linha 18"
+   },
+   {
+    "passo": "projetos_sigpesq",
+    "motivo": "projeto sem título",
+    "registro": "linha 23"
+   },
+   {
+    "passo": "bolsistas_sigpesq",
+    "motivo": "bolsista sem nome/e-mail ou plano sem título",
+    "registro": "linha 5"
+   },
+   {
+    "passo": "bolsistas_sigpesq",
+    "motivo": "bolsista sem nome/e-mail ou plano sem título",
+    "registro": "linha 10"
+   },
+   {
+    "passo": "bolsistas_sigpesq",
+    "motivo": "bolsista sem nome/e-mail ou plano sem título",
+    "registro": "linha 15"
+   },
+   {
+    "passo": "bolsistas_sigpesq",
+    "motivo": "bolsista sem nome/e-mail ou plano sem título",
+    "registro": "linha 30"
+   },
+   {
+    "passo": "bolsistas_sigpesq",
+    "motivo": "bolsista sem nome/e-mail ou plano sem título",
+    "registro": "linha 35"
+   },
+   {
+    "passo": "bolsistas_sigpesq",
+    "motivo": "bolsa sem financiador",
+    "registro": "PIBIC em Simulação computacional de jogos educacionais em bacias hidrográficas do ES"
+   },
+   {
+    "passo": "bolsistas_sigpesq",
+    "motivo": "bolsa sem financiador",
+    "registro": "PIBITI em Prototipação de redes neurais para acessibilidade"
+   },
+   {
+    "passo": "cnpq",
+    "motivo": "falha ao ler o espelho do CNPq",
+    "registro": "Grupo de Pesquisa em Geotecnologias"
+   },
+   {
+    "passo": "lattes_pessoas",
+    "motivo": "ValueError: currículo sem nome",
+    "registro": "Lattes 9985977712983104"
+   },
+   {
+    "passo": "lattes_pessoas",
+    "motivo": "perfil Lattes sem resumo",
+    "registro": "Felipe Farias Miranda"
+   },
+   {
+    "passo": "lattes_pessoas",
+    "motivo": "perfil Lattes sem data de atualização",
+    "registro": "Valéria Barbosa Fonseca"
+   },
+   {
+    "passo": "lattes_curriculos",
+    "motivo": "dono do currículo não carregado",
+    "registro": "9985977712983104"
+   },
+   {
+    "passo": "lattes_curriculos",
+    "motivo": "artigo sem título",
+    "registro": "Karina Ribeiro Rocha"
+   }
+  ],
+  "revisar": [
+   {
+    "passo": "cnpq",
+    "motivo": "egresso sem data de fim no CNPq",
+    "registro": "João Almeida Lopes em Grupo de Pesquisa em Metrologia"
+   },
+   {
+    "passo": "cnpq",
+    "motivo": "egresso sem data de fim no CNPq",
+    "registro": "Quésia Moreira Ramos em Grupo de Pesquisa em Patrimônio Histórico"
+   },
+   {
+    "passo": "lattes_pessoas",
+    "motivo": "homônimo de pessoa com outro Lattes (9556539287401075)",
+    "registro": "Beatriz Santos Duarte (9556539287401076)"
+   }
+  ]
+ }
+}

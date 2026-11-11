@@ -1,0 +1,53 @@
+{
+  "url": "http://dgp.cnpq.br/dgp/espelhogrupo/900014",
+  "espelho": {
+    "nome_grupo": "Grupo de Pesquisa em Mobilidade Urbana",
+    "repercussoes": "Repercussões fictícias do grupo Grupo de Pesquisa em Mobilidade Urbana (espelho mock).",
+    "identificacao": {
+      "ano_de_formacao": "2011",
+      "lideres_do_grupo": [
+        "Helena Freitas Duarte"
+      ]
+    },
+    "recursos_humanos": {
+      "pesquisadores": [
+        {
+          "nome": "Helena Freitas Duarte",
+          "data_inclusao": "28/04/2019"
+        },
+        {
+          "nome": "Fábio Batista Bezerra",
+          "data_inclusao": "10/02/2017"
+        },
+        {
+          "nome": "Nicolas Ferreira Correia",
+          "data_inclusao": "01/01/2015"
+        }
+      ],
+      "estudantes": [
+        {
+          "nome": "Bruno Queiroz Moreira",
+          "data_inclusao": "15/09/2023",
+          "nivel": "Graduação"
+        },
+        {
+          "nome": "Caio Nunes Santos",
+          "data_inclusao": "02/10/2020",
+          "nivel": "Graduação"
+        },
+        {
+          "nome": "Mariana Rodrigues Farias",
+          "data_inclusao": "06/08/2025",
+          "nivel": "Graduação"
+        }
+      ]
+    },
+    "linhas_de_pesquisa": {
+      "linhas": [
+        {
+          "nome_da_linha_de_pesquisa": "sensores"
+        }
+      ]
+    }
+  }
+}

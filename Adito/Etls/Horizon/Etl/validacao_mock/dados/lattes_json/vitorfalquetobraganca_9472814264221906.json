@@ -1,0 +1,127 @@
+{
+  "informacoes_pessoais": {
+    "nome_completo": "Vitor Falqueto Bragança",
+    "id_lattes": "9472814264221906",
+    "texto_resumo": "Currículo fictício de Vitor Falqueto Bragança, gerado para testes do ETL do Horizon.",
+    "nome_citacoes": "BRAGANCA, V. F.;BRAGANCA, VITOR",
+    "atualizacao_cv": "25/11/2024",
+    "url": "http://lattes.cnpq.br/9472814264221906"
+  },
+  "premios_titulos": [
+    {
+      "descricao": "Menção honrosa fictícia 0 - Vitor",
+      "ano": "2022"
+    },
+    {
+      "descricao": "Menção honrosa fictícia 1 - Vitor",
+      "ano": "2022"
+    }
+  ],
+  "idiomas": [
+    {
+      "nome": "Inglês",
+      "le": "Bem",
+      "escreve": "Bem",
+      "fala": "Pouco",
+      "compreende": "Pouco"
+    },
+    {
+      "nome": "Italiano",
+      "le": "Razoavelmente",
+      "escreve": "Razoavelmente",
+      "fala": "Pouco",
+      "compreende": "Bem"
+    }
+  ],
+  "atuacao_profissional": [
+    {
+      "instituicao": "Instituto Federal do Espírito Santo",
+      "ano_inicio": "2011",
+      "ano_fim": "Atual",
+      "vinculo": "Servidor Público",
+      "enquadramento": "Professor EBTT"
+    }
+  ],
+  "formacao_academica": [
+    {
+      "tipo": "Graduação em Administração",
+      "nome_instituicao": "Universidade Federal do Rio de Janeiro",
+      "ano_inicio": "2002",
+      "ano_conclusao": "2006"
+    },
+    {
+      "tipo": "Doutorado em Engenharia Ambiental",
+      "nome_instituicao": "Universidade de São Paulo",
+      "ano_inicio": "2008",
+      "ano_conclusao": "2012",
+      "descricao": "Título: Contribuições para robôs móveis em bacias hidrográficas do ES, Ano de Obtenção: 2012. Orientador: Lívia Araújo Queiroz."
+    }
+  ],
+  "producao_bibliografica": {
+    "artigos_periodicos": [
+      {
+        "titulo": "Um estudo de biofiltros para cidades inteligentes (74)",
+        "ano": "2021",
+        "revista": "Revista Brasileira de Informática na Educação",
+        "volume": "22",
+        "paginas": "33-180",
+        "doi": "10.5555/mock.0074",
+        "autores": "BRAGANCA, V. F.; DIAS, W. M.; EXTERNO, F. M.; CARVALHO, N. A."
+      }
+    ],
+    "trabalhos_completos_congressos": [
+      {
+        "titulo": "Relato de experiência com plataformas web (75)",
+        "ano": "2019",
+        "evento": "Jornada de Iniciação Científica do IFES",
+        "paginas": "2-16",
+        "autores": "BRAGANCA, V. F."
+      }
+    ]
+  },
+  "producao_tecnica": {},
+  "projetos_pesquisa": [
+    {
+      "nome": "Estudo de modelos preditivos no litoral capixaba",
+      "ano_inicio": "2020",
+      "ano_conclusao": "2022",
+      "descricao": [
+        "Descrição: Projeto fictício para teste do ETL. Situação: Concluído; Natureza: Pesquisa."
+      ],
+      "integrantes": [
+        {
+          "nome": "Vitor Falqueto Bragança",
+          "papel": "Coordenador"
+        },
+        {
+          "nome": "Carla Rocha Freitas",
+          "papel": "Integrante"
+        },
+        {
+          "nome": "Thales Loureiro Bezerra",
+          "papel": "Estudante"
+        }
+      ],
+      "financiadores": [
+        {
+          "nome": "CAPES"
+        }
+      ]
+    }
+  ],
+  "projetos_extensao": [],
+  "projetos_desenvolvimento": [],
+  "orientacoes": {
+    "concluidas": {},
+    "em_andamento": {
+      "dissertacao_de_mestrado": [
+        {
+          "titulo": "Dissertação em andamento mock vitorfalquet",
+          "orientando": "Cecília Ribeiro Brandão",
+          "ano_inicio": "2025",
+          "ano_conclusao": ""
+        }
+      ]
+    }
+  }
+}

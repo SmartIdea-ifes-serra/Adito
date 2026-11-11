@@ -1,0 +1,138 @@
+{
+  "informacoes_pessoais": {
+    "nome_completo": "Elisa Duarte Bezerra",
+    "id_lattes": "9117132265300702",
+    "texto_resumo": "Currículo fictício de Elisa Duarte Bezerra, gerado para testes do ETL do Horizon.",
+    "nome_citacoes": "BEZERRA, E. D.;BEZERRA, ELISA",
+    "atualizacao_cv": "27/09/2024",
+    "url": "http://lattes.cnpq.br/9117132265300702"
+  },
+  "premios_titulos": [],
+  "idiomas": [
+    {
+      "nome": "Espanhol",
+      "le": "Razoavelmente",
+      "escreve": "Bem",
+      "fala": "Razoavelmente",
+      "compreende": "Bem"
+    },
+    {
+      "nome": "Italiano",
+      "le": "Razoavelmente",
+      "escreve": "Razoavelmente",
+      "fala": "Bem",
+      "compreende": "Bem"
+    }
+  ],
+  "atuacao_profissional": [
+    {
+      "instituicao": "Instituto Federal do Espírito Santo",
+      "ano_inicio": "2009",
+      "ano_fim": "Atual",
+      "vinculo": "Servidor Público",
+      "enquadramento": "Professor EBTT"
+    },
+    {
+      "instituicao": "Mock Siderurgia S.A.",
+      "ano_inicio": "2006",
+      "ano_fim": "2008",
+      "vinculo": "Professor Visitante"
+    }
+  ],
+  "formacao_academica": [
+    {
+      "tipo": "Graduação em Física",
+      "nome_instituicao": "Instituto Tecnológico de Aeronáutica",
+      "ano_inicio": "1996",
+      "ano_conclusao": "2000"
+    },
+    {
+      "tipo": "Doutorado em Ciência da Computação",
+      "nome_instituicao": "Universidade Federal do Rio de Janeiro",
+      "ano_inicio": "2002",
+      "ano_conclusao": "2006",
+      "descricao": "Título: Contribuições para biofiltros em comunidades tradicionais, Ano de Obtenção: 2006. Orientador: Wesley Campos Pinto."
+    }
+  ],
+  "producao_bibliografica": {
+    "artigos_periodicos": [
+      {
+        "titulo": "Análise comparativa de resíduos agroindustriais para cidades inteligentes (59)",
+        "ano": "2019",
+        "revista": "Journal of Mock Studies",
+        "volume": "35",
+        "paginas": "84-91",
+        "doi": "10.5555/mock.0059",
+        "autores": "EXTERNO, F. M.; BEZERRA, E. D.; REZENDE, A. M."
+      }
+    ],
+    "trabalhos_completos_congressos": []
+  },
+  "producao_tecnica": {
+    "softwares_sem_patente": [
+      {
+        "titulo": "Software mock elisaduart",
+        "ano": "2021"
+      }
+    ]
+  },
+  "projetos_pesquisa": [
+    {
+      "nome": "Análise de materiais didáticos em bacias hidrográficas do ES",
+      "ano_inicio": "2022",
+      "ano_conclusao": "Atual",
+      "descricao": [
+        "Descrição: Projeto fictício para teste do ETL. Situação: Em andamento; Natureza: Pesquisa."
+      ],
+      "integrantes": [
+        {
+          "nome": "Elisa Duarte Bezerra",
+          "papel": "Coordenador"
+        },
+        {
+          "nome": "Giovana Martins Tavares",
+          "papel": "Integrante"
+        },
+        {
+          "nome": "Gustavo Coutinho Lima",
+          "papel": "Estudante"
+        }
+      ],
+      "financiadores": [
+        {
+          "nome": "CAPES"
+        }
+      ]
+    }
+  ],
+  "projetos_extensao": [],
+  "projetos_desenvolvimento": [],
+  "orientacoes": {
+    "concluidas": {
+      "iniciacao_cientifica": [
+        {
+          "titulo": "Orientação concluída mock elisaduarteb 0",
+          "orientando": "Rafael Bezerra Souza",
+          "ano": "2017",
+          "natureza": "Iniciação Científica"
+        },
+        {
+          "titulo": "Orientação concluída mock elisaduarteb 1",
+          "orientando": "Helena Oliveira Bragança",
+          "ano": "2016",
+          "natureza": "Iniciação Científica"
+        }
+      ]
+    },
+    "em_andamento": {
+      "dissertacao_de_mestrado": [
+        {
+          "titulo": "Dissertação em andamento mock elisaduarteb",
+          "orientando": "Larissa Almeida Moreira",
+          "ano_inicio": "2025",
+          "ano_conclusao": ""
+        }
+      ]
+    }
+  }
+}

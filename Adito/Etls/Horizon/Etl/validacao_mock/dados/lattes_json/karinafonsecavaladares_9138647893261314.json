@@ -1,0 +1,143 @@
+{
+  "informacoes_pessoais": {
+    "nome_completo": "Karina Fonseca Valadares",
+    "id_lattes": "9138647893261314",
+    "texto_resumo": "Currículo fictício de Karina Fonseca Valadares, gerado para testes do ETL do Horizon.",
+    "nome_citacoes": "VALADARES, K. F.;VALADARES, KARINA",
+    "atualizacao_cv": "02/04/2026",
+    "url": "http://lattes.cnpq.br/9138647893261314"
+  },
+  "premios_titulos": [
+    {
+      "descricao": "Menção honrosa fictícia 0 - Karina",
+      "ano": "2022"
+    },
+    {
+      "descricao": "Menção honrosa fictícia 1 - Karina",
+      "ano": "2021"
+    }
+  ],
+  "idiomas": [
+    {
+      "nome": "Italiano",
+      "le": "Bem",
+      "escreve": "Bem",
+      "fala": "Pouco",
+      "compreende": "Razoavelmente"
+    }
+  ],
+  "atuacao_profissional": [
+    {
+      "instituicao": "Instituto Federal do Espírito Santo",
+      "ano_inicio": "2012",
+      "ano_fim": "Atual",
+      "vinculo": "Servidor Público",
+      "enquadramento": "Professor EBTT"
+    }
+  ],
+  "formacao_academica": [
+    {
+      "tipo": "Graduação em Educação",
+      "nome_instituicao": "Universidade Federal do Rio de Janeiro",
+      "ano_inicio": "2007",
+      "ano_conclusao": "2011"
+    },
+    {
+      "tipo": "Doutorado em Educação",
+      "nome_instituicao": "Instituto Tecnológico de Aeronáutica",
+      "ano_inicio": "2013",
+      "ano_conclusao": "2017",
+      "descricao": "Título: Contribuições para resíduos agroindustriais no ensino médio integrado, Ano de Obtenção: 2017. Orientador: Sabrina Macedo Cardoso."
+    }
+  ],
+  "producao_bibliografica": {
+    "artigos_periodicos": [
+      {
+        "titulo": "Análise comparativa de redes neurais para cidades inteligentes (78)",
+        "ano": "2016",
+        "revista": "Revista Brasileira de Ensino de Física",
+        "volume": "30",
+        "paginas": "30-181",
+        "doi": "10.5555/mock.0078",
+        "autores": "EXTERNO, F. M.; ROCHA, E. N.; VALADARES, K. F."
+      }
+    ],
+    "trabalhos_completos_congressos": [
+      {
+        "titulo": "Relato de experiência com materiais didáticos (79)",
+        "ano": "2023",
+        "evento": "Simpósio Brasileiro de Informática na Educação",
+        "paginas": "8-12",
+        "autores": "VALADARES, K. F."
+      }
+    ]
+  },
+  "producao_tecnica": {
+    "softwares_sem_patente": [
+      {
+        "titulo": "Software mock karinafons",
+        "ano": "2018"
+      }
+    ]
+  },
+  "projetos_pesquisa": [
+    {
+      "nome": "Otimização de algoritmos genéticos em comunidades tradicionais",
+      "ano_inicio": "2023",
+      "ano_conclusao": "2025",
+      "descricao": [
+        "Descrição: Projeto fictício para teste do ETL. Situação: Concluído; Natureza: Pesquisa."
+      ],
+      "integrantes": [
+        {
+          "nome": "Karina Fonseca Valadares",
+          "papel": "Coordenador"
+        },
+        {
+          "nome": "Alice Almeida Loureiro",
+          "papel": "Integrante"
+        },
+        {
+          "nome": "Júlia Andrade Carvalho",
+          "papel": "Estudante"
+        }
+      ],
+      "financiadores": [
+        {
+          "nome": "FAPES"
+        }
+      ]
+    }
+  ],
+  "projetos_extensao": [
+    {
+      "nome": "Extensão: Otimização de robôs móveis para acessibilidade",
+      "ano_inicio": "2023",
+      "ano_conclusao": "Atual",
+      "descricao": [
+        "Descrição: Projeto fictício para teste do ETL. Situação: Em andamento; Natureza: Pesquisa."
+      ],
+      "integrantes": [
+        {
+          "nome": "Karina Fonseca Valadares",
+          "papel": "Coordenador"
+        }
+      ],
+      "financiadores": []
+    }
+  ],
+  "projetos_desenvolvimento": [],
+  "orientacoes": {
+    "concluidas": {
+      "iniciacao_cientifica": [
+        {
+          "titulo": "Orientação concluída mock karinafonsec 0",
+          "orientando": "Tiago Martins Rodrigues",
+          "ano": "2020",
+          "natureza": "Iniciação Científica"
+        }
+      ]
+    },
+    "em_andamento": {}
+  }
+}

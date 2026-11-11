@@ -1,0 +1,301 @@
+id,fonte,arquivo,tipo_caso,cenario
+G01,sigpesq_grupos,sigpesq/research_group/Relatorio_mock_grupos.xlsx,valido,grupo completo
+G02,sigpesq_grupos,sigpesq/research_group/Relatorio_mock_grupos.xlsx,valido,grupo completo
+G03,sigpesq_grupos,sigpesq/research_group/Relatorio_mock_grupos.xlsx,valido,grupo completo
+G04,sigpesq_grupos,sigpesq/research_group/Relatorio_mock_grupos.xlsx,valido,grupo completo
+G05,sigpesq_grupos,sigpesq/research_group/Relatorio_mock_grupos.xlsx,valido,grupo completo
+G24,sigpesq_grupos,sigpesq/research_group/Relatorio_mock_grupos.xlsx,excecao,grupo sem nome (Nome vazio)
+G06,sigpesq_grupos,sigpesq/research_group/Relatorio_mock_grupos.xlsx,valido,grupo completo
+G07,sigpesq_grupos,sigpesq/research_group/Relatorio_mock_grupos.xlsx,valido,grupo completo
+G08,sigpesq_grupos,sigpesq/research_group/Relatorio_mock_grupos.xlsx,valido,grupo completo
+G09,sigpesq_grupos,sigpesq/research_group/Relatorio_mock_grupos.xlsx,valido,grupo completo
+G25,sigpesq_grupos,sigpesq/research_group/Relatorio_mock_grupos.xlsx,excecao,grupo sem unidade (vai para Campus Desconhecido)
+G10,sigpesq_grupos,sigpesq/research_group/Relatorio_mock_grupos.xlsx,valido,grupo completo
+G11,sigpesq_grupos,sigpesq/research_group/Relatorio_mock_grupos.xlsx,valido,grupo completo
+G12,sigpesq_grupos,sigpesq/research_group/Relatorio_mock_grupos.xlsx,valido,grupo completo
+G13,sigpesq_grupos,sigpesq/research_group/Relatorio_mock_grupos.xlsx,valido,grupo completo
+G26,sigpesq_grupos,sigpesq/research_group/Relatorio_mock_grupos.xlsx,excecao,URL do CNPq duplicada (já é do G01)
+G14,sigpesq_grupos,sigpesq/research_group/Relatorio_mock_grupos.xlsx,valido,grupo completo
+G15,sigpesq_grupos,sigpesq/research_group/Relatorio_mock_grupos.xlsx,valido,grupo completo
+G16,sigpesq_grupos,sigpesq/research_group/Relatorio_mock_grupos.xlsx,valido,grupo completo
+G17,sigpesq_grupos,sigpesq/research_group/Relatorio_mock_grupos.xlsx,valido,grupo completo
+G27,sigpesq_grupos,sigpesq/research_group/Relatorio_mock_grupos.xlsx,excecao,"grupo repetido (mesmo nome do G02 em caixa alta e sem acento, URL nova)"
+G18,sigpesq_grupos,sigpesq/research_group/Relatorio_mock_grupos.xlsx,valido,grupo completo
+G19,sigpesq_grupos,sigpesq/research_group/Relatorio_mock_grupos.xlsx,valido,grupo completo
+G20,sigpesq_grupos,sigpesq/research_group/Relatorio_mock_grupos.xlsx,valido,grupo completo
+G21,sigpesq_grupos,sigpesq/research_group/Relatorio_mock_grupos.xlsx,valido,grupo completo
+G22,sigpesq_grupos,sigpesq/research_group/Relatorio_mock_grupos.xlsx,valido,grupo completo
+G28,sigpesq_grupos,sigpesq/research_group/Relatorio_mock_grupos.xlsx,excecao,líderes sem e-mail e líder só com e-mail (sem nome)
+G23,sigpesq_grupos,sigpesq/research_group/Relatorio_mock_grupos.xlsx,valido,grupo completo
+P01,sigpesq_projetos,sigpesq/research_projects/Relatorio_mock_projetos.xlsx,valido,projeto aprovado completo
+P02,sigpesq_projetos,sigpesq/research_projects/Relatorio_mock_projetos.xlsx,valido,projeto aprovado completo
+P03,sigpesq_projetos,sigpesq/research_projects/Relatorio_mock_projetos.xlsx,valido,projeto aprovado completo
+P62,sigpesq_projetos,sigpesq/research_projects/Relatorio_mock_projetos.xlsx,excecao,parecer Reprovado (não deve entrar)
+P04,sigpesq_projetos,sigpesq/research_projects/Relatorio_mock_projetos.xlsx,valido,projeto aprovado completo
+P05,sigpesq_projetos,sigpesq/research_projects/Relatorio_mock_projetos.xlsx,valido,projeto aprovado completo
+P06,sigpesq_projetos,sigpesq/research_projects/Relatorio_mock_projetos.xlsx,valido,projeto aprovado completo
+P07,sigpesq_projetos,sigpesq/research_projects/Relatorio_mock_projetos.xlsx,valido,projeto aprovado completo
+P63,sigpesq_projetos,sigpesq/research_projects/Relatorio_mock_projetos.xlsx,excecao,parecer Em análise (não deve entrar)
+P08,sigpesq_projetos,sigpesq/research_projects/Relatorio_mock_projetos.xlsx,valido,projeto aprovado completo
+P09,sigpesq_projetos,sigpesq/research_projects/Relatorio_mock_projetos.xlsx,valido,projeto aprovado completo
+P10,sigpesq_projetos,sigpesq/research_projects/Relatorio_mock_projetos.xlsx,valido,projeto aprovado completo
+P64,sigpesq_projetos,sigpesq/research_projects/Relatorio_mock_projetos.xlsx,excecao,parecer 'Não aprovado' (não deve entrar)
+P11,sigpesq_projetos,sigpesq/research_projects/Relatorio_mock_projetos.xlsx,valido,projeto aprovado completo
+P12,sigpesq_projetos,sigpesq/research_projects/Relatorio_mock_projetos.xlsx,valido,projeto aprovado completo
+P13,sigpesq_projetos,sigpesq/research_projects/Relatorio_mock_projetos.xlsx,valido,projeto aprovado completo
+P14,sigpesq_projetos,sigpesq/research_projects/Relatorio_mock_projetos.xlsx,valido,projeto aprovado completo
+P65,sigpesq_projetos,sigpesq/research_projects/Relatorio_mock_projetos.xlsx,excecao,projeto sem título
+P15,sigpesq_projetos,sigpesq/research_projects/Relatorio_mock_projetos.xlsx,valido,projeto aprovado completo
+P16,sigpesq_projetos,sigpesq/research_projects/Relatorio_mock_projetos.xlsx,valido,projeto aprovado completo
+P17,sigpesq_projetos,sigpesq/research_projects/Relatorio_mock_projetos.xlsx,valido,projeto aprovado completo
+P18,sigpesq_projetos,sigpesq/research_projects/Relatorio_mock_projetos.xlsx,valido,projeto aprovado completo
+P66,sigpesq_projetos,sigpesq/research_projects/Relatorio_mock_projetos.xlsx,excecao,título só com espaços
+P19,sigpesq_projetos,sigpesq/research_projects/Relatorio_mock_projetos.xlsx,valido,projeto aprovado completo
+P20,sigpesq_projetos,sigpesq/research_projects/Relatorio_mock_projetos.xlsx,valido,projeto aprovado completo
+P21,sigpesq_projetos,sigpesq/research_projects/Relatorio_mock_projetos.xlsx,valido,projeto aprovado completo
+P22,sigpesq_projetos,sigpesq/research_projects/Relatorio_mock_projetos.xlsx,valido,projeto aprovado completo
+P67,sigpesq_projetos,sigpesq/research_projects/Relatorio_mock_projetos.xlsx,excecao,data de início inválida (31/02/2024)
+P23,sigpesq_projetos,sigpesq/research_projects/Relatorio_mock_projetos.xlsx,valido,projeto aprovado completo
+P24,sigpesq_projetos,sigpesq/research_projects/Relatorio_mock_projetos.xlsx,valido,projeto aprovado completo
+P25,sigpesq_projetos,sigpesq/research_projects/Relatorio_mock_projetos.xlsx,valido,projeto aprovado completo
+P68,sigpesq_projetos,sigpesq/research_projects/Relatorio_mock_projetos.xlsx,excecao,data de fim em formato inválido (2024/13/45)
+P26,sigpesq_projetos,sigpesq/research_projects/Relatorio_mock_projetos.xlsx,valido,projeto aprovado completo
+P27,sigpesq_projetos,sigpesq/research_projects/Relatorio_mock_projetos.xlsx,valido,projeto aprovado completo
+P28,sigpesq_projetos,sigpesq/research_projects/Relatorio_mock_projetos.xlsx,valido,projeto aprovado completo
+P29,sigpesq_projetos,sigpesq/research_projects/Relatorio_mock_projetos.xlsx,valido,projeto aprovado completo
+P69,sigpesq_projetos,sigpesq/research_projects/Relatorio_mock_projetos.xlsx,excecao,data de fim anterior à data de início
+P30,sigpesq_projetos,sigpesq/research_projects/Relatorio_mock_projetos.xlsx,valido,projeto aprovado completo
+P31,sigpesq_projetos,sigpesq/research_projects/Relatorio_mock_projetos.xlsx,valido,projeto aprovado completo
+P32,sigpesq_projetos,sigpesq/research_projects/Relatorio_mock_projetos.xlsx,valido,projeto aprovado completo
+P33,sigpesq_projetos,sigpesq/research_projects/Relatorio_mock_projetos.xlsx,valido,projeto aprovado completo
+P70,sigpesq_projetos,sigpesq/research_projects/Relatorio_mock_projetos.xlsx,excecao,"campus de execução inválido ('ES', até 3 letras)"
+P34,sigpesq_projetos,sigpesq/research_projects/Relatorio_mock_projetos.xlsx,valido,projeto aprovado completo
+P35,sigpesq_projetos,sigpesq/research_projects/Relatorio_mock_projetos.xlsx,valido,projeto aprovado completo
+P36,sigpesq_projetos,sigpesq/research_projects/Relatorio_mock_projetos.xlsx,valido,projeto aprovado completo
+P71,sigpesq_projetos,sigpesq/research_projects/Relatorio_mock_projetos.xlsx,excecao,grupo de pesquisa inexistente (é criado pelo projeto)
+P37,sigpesq_projetos,sigpesq/research_projects/Relatorio_mock_projetos.xlsx,valido,projeto aprovado completo
+P38,sigpesq_projetos,sigpesq/research_projects/Relatorio_mock_projetos.xlsx,valido,projeto aprovado completo
+P39,sigpesq_projetos,sigpesq/research_projects/Relatorio_mock_projetos.xlsx,valido,projeto aprovado completo
+P40,sigpesq_projetos,sigpesq/research_projects/Relatorio_mock_projetos.xlsx,valido,projeto aprovado completo
+P72,sigpesq_projetos,sigpesq/research_projects/Relatorio_mock_projetos.xlsx,excecao,grupo inexistente e campus vazio (grupo vai para Reitoria)
+P41,sigpesq_projetos,sigpesq/research_projects/Relatorio_mock_projetos.xlsx,valido,projeto aprovado completo
+P42,sigpesq_projetos,sigpesq/research_projects/Relatorio_mock_projetos.xlsx,valido,projeto aprovado completo
+P43,sigpesq_projetos,sigpesq/research_projects/Relatorio_mock_projetos.xlsx,valido,projeto aprovado completo
+P44,sigpesq_projetos,sigpesq/research_projects/Relatorio_mock_projetos.xlsx,valido,projeto aprovado completo
+P75,sigpesq_projetos,sigpesq/research_projects/Relatorio_mock_projetos.xlsx,excecao,parecer vazio (entra com situação desconhecida)
+P45,sigpesq_projetos,sigpesq/research_projects/Relatorio_mock_projetos.xlsx,valido,projeto aprovado completo
+P46,sigpesq_projetos,sigpesq/research_projects/Relatorio_mock_projetos.xlsx,valido,projeto aprovado completo
+P47,sigpesq_projetos,sigpesq/research_projects/Relatorio_mock_projetos.xlsx,valido,projeto aprovado completo
+P48,sigpesq_projetos,sigpesq/research_projects/Relatorio_mock_projetos.xlsx,valido,projeto aprovado completo
+P76,sigpesq_projetos,sigpesq/research_projects/Relatorio_mock_projetos.xlsx,excecao,coordenador vazio
+P49,sigpesq_projetos,sigpesq/research_projects/Relatorio_mock_projetos.xlsx,valido,projeto aprovado completo
+P50,sigpesq_projetos,sigpesq/research_projects/Relatorio_mock_projetos.xlsx,valido,projeto aprovado completo
+P51,sigpesq_projetos,sigpesq/research_projects/Relatorio_mock_projetos.xlsx,valido,projeto aprovado completo
+P52,sigpesq_projetos,sigpesq/research_projects/Relatorio_mock_projetos.xlsx,valido,projeto aprovado completo
+P53,sigpesq_projetos,sigpesq/research_projects/Relatorio_mock_projetos.xlsx,valido,projeto aprovado completo
+P54,sigpesq_projetos,sigpesq/research_projects/Relatorio_mock_projetos.xlsx,valido,projeto aprovado completo
+P55,sigpesq_projetos,sigpesq/research_projects/Relatorio_mock_projetos.xlsx,valido,projeto aprovado completo
+P73,sigpesq_projetos,sigpesq/research_projects/Relatorio_mock_projetos.xlsx,excecao,"código repetido (mesmo Id do P05, título e datas novos)"
+P56,sigpesq_projetos,sigpesq/research_projects/Relatorio_mock_projetos.xlsx,valido,projeto aprovado completo
+P57,sigpesq_projetos,sigpesq/research_projects/Relatorio_mock_projetos.xlsx,valido,projeto aprovado completo
+P58,sigpesq_projetos,sigpesq/research_projects/Relatorio_mock_projetos.xlsx,valido,projeto aprovado completo
+P74,sigpesq_projetos,sigpesq/research_projects/Relatorio_mock_projetos.xlsx,excecao,projeto sem código (Id vazio)
+P59,sigpesq_projetos,sigpesq/research_projects/Relatorio_mock_projetos.xlsx,valido,projeto aprovado completo
+P77,sigpesq_projetos,sigpesq/research_projects/Relatorio_mock_projetos.xlsx,excecao,título com mais de 255 caracteres e nomes com acento/caixa/espaços diferentes
+P60,sigpesq_projetos,sigpesq/research_projects/Relatorio_mock_projetos.xlsx,valido,projeto aprovado completo
+P61,sigpesq_projetos,sigpesq/research_projects/Relatorio_mock_projetos.xlsx,valido,projeto aprovado completo
+B001,sigpesq_bolsistas,sigpesq/advisorships/2024/Relatorio_mock_bolsistas_2024.xlsx,valido,plano de trabalho com bolsa
+B002,sigpesq_bolsistas,sigpesq/advisorships/2024/Relatorio_mock_bolsistas_2024.xlsx,valido,plano de trabalho com bolsa
+B003,sigpesq_bolsistas,sigpesq/advisorships/2024/Relatorio_mock_bolsistas_2024.xlsx,valido,plano de trabalho com bolsa
+B004,sigpesq_bolsistas,sigpesq/advisorships/2024/Relatorio_mock_bolsistas_2024.xlsx,valido,plano de trabalho com bolsa
+B097,sigpesq_bolsistas,sigpesq/advisorships/2024/Relatorio_mock_bolsistas_2024.xlsx,excecao,orientado sem nome e sem e-mail
+B005,sigpesq_bolsistas,sigpesq/advisorships/2024/Relatorio_mock_bolsistas_2024.xlsx,valido,título do plano igual ao do projeto (recebe sufixo | Orientacao)
+B006,sigpesq_bolsistas,sigpesq/advisorships/2024/Relatorio_mock_bolsistas_2024.xlsx,valido,plano de trabalho com bolsa
+B007,sigpesq_bolsistas,sigpesq/advisorships/2024/Relatorio_mock_bolsistas_2024.xlsx,valido,plano de trabalho com bolsa
+B008,sigpesq_bolsistas,sigpesq/advisorships/2024/Relatorio_mock_bolsistas_2024.xlsx,valido,plano de trabalho com bolsa
+B098,sigpesq_bolsistas,sigpesq/advisorships/2024/Relatorio_mock_bolsistas_2024.xlsx,excecao,orientado sem nome e sem e-mail (só espaços)
+B009,sigpesq_bolsistas,sigpesq/advisorships/2024/Relatorio_mock_bolsistas_2024.xlsx,valido,plano de trabalho com bolsa
+B010,sigpesq_bolsistas,sigpesq/advisorships/2024/Relatorio_mock_bolsistas_2024.xlsx,valido,plano de trabalho com bolsa
+B011,sigpesq_bolsistas,sigpesq/advisorships/2024/Relatorio_mock_bolsistas_2024.xlsx,valido,plano que termina depois do projeto (estende o fim do projeto pai)
+B012,sigpesq_bolsistas,sigpesq/advisorships/2024/Relatorio_mock_bolsistas_2024.xlsx,valido,plano de trabalho com bolsa
+B099,sigpesq_bolsistas,sigpesq/advisorships/2024/Relatorio_mock_bolsistas_2024.xlsx,excecao,"orientado sem nome e sem e-mail, sem programa"
+B013,sigpesq_bolsistas,sigpesq/advisorships/2024/Relatorio_mock_bolsistas_2024.xlsx,valido,plano de trabalho com bolsa
+B014,sigpesq_bolsistas,sigpesq/advisorships/2024/Relatorio_mock_bolsistas_2024.xlsx,valido,plano de trabalho com bolsa
+B015,sigpesq_bolsistas,sigpesq/advisorships/2024/Relatorio_mock_bolsistas_2024.xlsx,valido,título do plano igual ao do projeto (recebe sufixo | Orientacao)
+B016,sigpesq_bolsistas,sigpesq/advisorships/2024/Relatorio_mock_bolsistas_2024.xlsx,valido,plano de trabalho com bolsa
+B100,sigpesq_bolsistas,sigpesq/advisorships/2024/Relatorio_mock_bolsistas_2024.xlsx,excecao,"orientado sem nome, e-mail de aluno já cadastrado"
+B017,sigpesq_bolsistas,sigpesq/advisorships/2024/Relatorio_mock_bolsistas_2024.xlsx,valido,plano de trabalho com bolsa
+B018,sigpesq_bolsistas,sigpesq/advisorships/2024/Relatorio_mock_bolsistas_2024.xlsx,valido,plano de trabalho com bolsa
+B019,sigpesq_bolsistas,sigpesq/advisorships/2024/Relatorio_mock_bolsistas_2024.xlsx,valido,plano de trabalho com bolsa
+B020,sigpesq_bolsistas,sigpesq/advisorships/2024/Relatorio_mock_bolsistas_2024.xlsx,valido,plano de trabalho com bolsa
+B101,sigpesq_bolsistas,sigpesq/advisorships/2024/Relatorio_mock_bolsistas_2024.xlsx,excecao,"orientado sem nome, e-mail novo"
+B021,sigpesq_bolsistas,sigpesq/advisorships/2024/Relatorio_mock_bolsistas_2024.xlsx,valido,plano de trabalho com bolsa
+B022,sigpesq_bolsistas,sigpesq/advisorships/2024/Relatorio_mock_bolsistas_2024.xlsx,valido,plano que termina depois do projeto (estende o fim do projeto pai)
+B023,sigpesq_bolsistas,sigpesq/advisorships/2024/Relatorio_mock_bolsistas_2024.xlsx,valido,plano de trabalho com bolsa
+B024,sigpesq_bolsistas,sigpesq/advisorships/2024/Relatorio_mock_bolsistas_2024.xlsx,valido,plano de trabalho com bolsa
+B102,sigpesq_bolsistas,sigpesq/advisorships/2024/Relatorio_mock_bolsistas_2024.xlsx,excecao,plano sem título (TituloPT vazio)
+B025,sigpesq_bolsistas,sigpesq/advisorships/2024/Relatorio_mock_bolsistas_2024.xlsx,valido,título do plano igual ao do projeto (recebe sufixo | Orientacao)
+B026,sigpesq_bolsistas,sigpesq/advisorships/2024/Relatorio_mock_bolsistas_2024.xlsx,valido,plano de trabalho com bolsa
+B027,sigpesq_bolsistas,sigpesq/advisorships/2024/Relatorio_mock_bolsistas_2024.xlsx,valido,plano de trabalho com bolsa
+B028,sigpesq_bolsistas,sigpesq/advisorships/2024/Relatorio_mock_bolsistas_2024.xlsx,valido,plano de trabalho com bolsa
+B103,sigpesq_bolsistas,sigpesq/advisorships/2024/Relatorio_mock_bolsistas_2024.xlsx,excecao,plano sem título (TituloPT só espaços)
+B029,sigpesq_bolsistas,sigpesq/advisorships/2024/Relatorio_mock_bolsistas_2024.xlsx,valido,plano de trabalho com bolsa
+B030,sigpesq_bolsistas,sigpesq/advisorships/2024/Relatorio_mock_bolsistas_2024.xlsx,valido,plano de trabalho com bolsa
+B031,sigpesq_bolsistas,sigpesq/advisorships/2024/Relatorio_mock_bolsistas_2024.xlsx,valido,plano de trabalho com bolsa
+B032,sigpesq_bolsistas,sigpesq/advisorships/2024/Relatorio_mock_bolsistas_2024.xlsx,valido,plano de trabalho com bolsa
+B104,sigpesq_bolsistas,sigpesq/advisorships/2024/Relatorio_mock_bolsistas_2024.xlsx,excecao,bolsa cancelada (Cancelado=Sim)
+B033,sigpesq_bolsistas,sigpesq/advisorships/2025/Relatorio_mock_bolsistas_2025.xlsx,valido,plano que termina depois do projeto (estende o fim do projeto pai)
+B034,sigpesq_bolsistas,sigpesq/advisorships/2025/Relatorio_mock_bolsistas_2025.xlsx,valido,plano de trabalho com bolsa
+B035,sigpesq_bolsistas,sigpesq/advisorships/2025/Relatorio_mock_bolsistas_2025.xlsx,valido,título do plano igual ao do projeto (recebe sufixo | Orientacao)
+B036,sigpesq_bolsistas,sigpesq/advisorships/2025/Relatorio_mock_bolsistas_2025.xlsx,valido,plano de trabalho com bolsa
+B105,sigpesq_bolsistas,sigpesq/advisorships/2025/Relatorio_mock_bolsistas_2025.xlsx,excecao,bolsa cancelada (Cancelado=1)
+B037,sigpesq_bolsistas,sigpesq/advisorships/2025/Relatorio_mock_bolsistas_2025.xlsx,valido,plano de trabalho com bolsa
+B038,sigpesq_bolsistas,sigpesq/advisorships/2025/Relatorio_mock_bolsistas_2025.xlsx,valido,plano de trabalho com bolsa
+B039,sigpesq_bolsistas,sigpesq/advisorships/2025/Relatorio_mock_bolsistas_2025.xlsx,valido,plano de trabalho com bolsa
+B040,sigpesq_bolsistas,sigpesq/advisorships/2025/Relatorio_mock_bolsistas_2025.xlsx,valido,plano de trabalho com bolsa
+B106,sigpesq_bolsistas,sigpesq/advisorships/2025/Relatorio_mock_bolsistas_2025.xlsx,excecao,bolsa sem agência financiadora
+B041,sigpesq_bolsistas,sigpesq/advisorships/2025/Relatorio_mock_bolsistas_2025.xlsx,valido,plano de trabalho com bolsa
+B042,sigpesq_bolsistas,sigpesq/advisorships/2025/Relatorio_mock_bolsistas_2025.xlsx,valido,plano de trabalho com bolsa
+B043,sigpesq_bolsistas,sigpesq/advisorships/2025/Relatorio_mock_bolsistas_2025.xlsx,valido,plano de trabalho com bolsa
+B044,sigpesq_bolsistas,sigpesq/advisorships/2025/Relatorio_mock_bolsistas_2025.xlsx,valido,plano que começa antes do projeto (antecipa o início do pai)
+B107,sigpesq_bolsistas,sigpesq/advisorships/2025/Relatorio_mock_bolsistas_2025.xlsx,excecao,bolsa sem agência financiadora (PIBITI)
+B045,sigpesq_bolsistas,sigpesq/advisorships/2025/Relatorio_mock_bolsistas_2025.xlsx,valido,título do plano igual ao do projeto (recebe sufixo | Orientacao)
+B046,sigpesq_bolsistas,sigpesq/advisorships/2025/Relatorio_mock_bolsistas_2025.xlsx,valido,plano de trabalho com bolsa
+B047,sigpesq_bolsistas,sigpesq/advisorships/2025/Relatorio_mock_bolsistas_2025.xlsx,valido,plano de trabalho com bolsa
+B048,sigpesq_bolsistas,sigpesq/advisorships/2025/Relatorio_mock_bolsistas_2025.xlsx,valido,plano de trabalho com bolsa
+B108,sigpesq_bolsistas,sigpesq/advisorships/2025/Relatorio_mock_bolsistas_2025.xlsx,excecao,"valor com separador de milhar (1.200,00)"
+B049,sigpesq_bolsistas,sigpesq/advisorships/2025/Relatorio_mock_bolsistas_2025.xlsx,valido,plano de trabalho com bolsa
+B050,sigpesq_bolsistas,sigpesq/advisorships/2025/Relatorio_mock_bolsistas_2025.xlsx,valido,plano de trabalho com bolsa
+B051,sigpesq_bolsistas,sigpesq/advisorships/2025/Relatorio_mock_bolsistas_2025.xlsx,valido,plano de trabalho com bolsa
+B052,sigpesq_bolsistas,sigpesq/advisorships/2025/Relatorio_mock_bolsistas_2025.xlsx,valido,plano de trabalho com bolsa
+B109,sigpesq_bolsistas,sigpesq/advisorships/2025/Relatorio_mock_bolsistas_2025.xlsx,excecao,"valor com símbolo de moeda (R$ 750,00)"
+B053,sigpesq_bolsistas,sigpesq/advisorships/2025/Relatorio_mock_bolsistas_2025.xlsx,valido,plano de trabalho com bolsa
+B054,sigpesq_bolsistas,sigpesq/advisorships/2025/Relatorio_mock_bolsistas_2025.xlsx,valido,plano de trabalho com bolsa
+B055,sigpesq_bolsistas,sigpesq/advisorships/2025/Relatorio_mock_bolsistas_2025.xlsx,valido,plano que começa antes do projeto (antecipa o início do pai)
+B056,sigpesq_bolsistas,sigpesq/advisorships/2025/Relatorio_mock_bolsistas_2025.xlsx,valido,plano de trabalho com bolsa
+B110,sigpesq_bolsistas,sigpesq/advisorships/2025/Relatorio_mock_bolsistas_2025.xlsx,excecao,"valor diferente para a mesma bolsa PIBIC/CNPq (850,00)"
+B057,sigpesq_bolsistas,sigpesq/advisorships/2025/Relatorio_mock_bolsistas_2025.xlsx,valido,plano de trabalho com bolsa
+B058,sigpesq_bolsistas,sigpesq/advisorships/2025/Relatorio_mock_bolsistas_2025.xlsx,valido,plano de trabalho com bolsa
+B059,sigpesq_bolsistas,sigpesq/advisorships/2025/Relatorio_mock_bolsistas_2025.xlsx,valido,plano de trabalho com bolsa
+B060,sigpesq_bolsistas,sigpesq/advisorships/2025/Relatorio_mock_bolsistas_2025.xlsx,valido,plano de trabalho com bolsa
+B111,sigpesq_bolsistas,sigpesq/advisorships/2025/Relatorio_mock_bolsistas_2025.xlsx,excecao,valor não numérico ('a definir')
+B061,sigpesq_bolsistas,sigpesq/advisorships/2025/Relatorio_mock_bolsistas_2025.xlsx,valido,plano de trabalho com bolsa
+B062,sigpesq_bolsistas,sigpesq/advisorships/2025/Relatorio_mock_bolsistas_2025.xlsx,valido,plano de trabalho com bolsa
+B063,sigpesq_bolsistas,sigpesq/advisorships/2025/Relatorio_mock_bolsistas_2025.xlsx,valido,plano de trabalho com bolsa
+B064,sigpesq_bolsistas,sigpesq/advisorships/2025/Relatorio_mock_bolsistas_2025.xlsx,valido,plano de trabalho com bolsa
+B112,sigpesq_bolsistas,sigpesq/advisorships/2025/Relatorio_mock_bolsistas_2025.xlsx,excecao,projeto pai inexistente (CodPJ 7999)
+B065,sigpesq_bolsistas,sigpesq/advisorships/2026/Relatorio_mock_bolsistas_2026.xlsx,valido,plano de trabalho com bolsa
+B066,sigpesq_bolsistas,sigpesq/advisorships/2026/Relatorio_mock_bolsistas_2026.xlsx,valido,plano de trabalho com bolsa
+B067,sigpesq_bolsistas,sigpesq/advisorships/2026/Relatorio_mock_bolsistas_2026.xlsx,valido,plano de trabalho com bolsa
+B068,sigpesq_bolsistas,sigpesq/advisorships/2026/Relatorio_mock_bolsistas_2026.xlsx,valido,plano de trabalho com bolsa
+B113,sigpesq_bolsistas,sigpesq/advisorships/2026/Relatorio_mock_bolsistas_2026.xlsx,excecao,segundo plano do mesmo projeto pai inexistente (CodPJ 7999)
+B069,sigpesq_bolsistas,sigpesq/advisorships/2026/Relatorio_mock_bolsistas_2026.xlsx,valido,plano de trabalho com bolsa
+B070,sigpesq_bolsistas,sigpesq/advisorships/2026/Relatorio_mock_bolsistas_2026.xlsx,valido,plano de trabalho com bolsa
+B071,sigpesq_bolsistas,sigpesq/advisorships/2026/Relatorio_mock_bolsistas_2026.xlsx,valido,plano de trabalho com bolsa
+B072,sigpesq_bolsistas,sigpesq/advisorships/2026/Relatorio_mock_bolsistas_2026.xlsx,valido,plano de trabalho com bolsa
+B114,sigpesq_bolsistas,sigpesq/advisorships/2026/Relatorio_mock_bolsistas_2026.xlsx,excecao,sem projeto pai (CodPJ e TituloPJ vazios)
+B073,sigpesq_bolsistas,sigpesq/advisorships/2026/Relatorio_mock_bolsistas_2026.xlsx,valido,plano de trabalho com bolsa
+B074,sigpesq_bolsistas,sigpesq/advisorships/2026/Relatorio_mock_bolsistas_2026.xlsx,valido,plano de trabalho com bolsa
+B075,sigpesq_bolsistas,sigpesq/advisorships/2026/Relatorio_mock_bolsistas_2026.xlsx,valido,plano de trabalho com bolsa
+B076,sigpesq_bolsistas,sigpesq/advisorships/2026/Relatorio_mock_bolsistas_2026.xlsx,valido,plano de trabalho com bolsa
+B115,sigpesq_bolsistas,sigpesq/advisorships/2026/Relatorio_mock_bolsistas_2026.xlsx,excecao,datas em formato inválido (2025-13-01 / abc)
+B077,sigpesq_bolsistas,sigpesq/advisorships/2026/Relatorio_mock_bolsistas_2026.xlsx,valido,plano de trabalho com bolsa
+B078,sigpesq_bolsistas,sigpesq/advisorships/2026/Relatorio_mock_bolsistas_2026.xlsx,valido,plano de trabalho com bolsa
+B079,sigpesq_bolsistas,sigpesq/advisorships/2026/Relatorio_mock_bolsistas_2026.xlsx,valido,plano de trabalho com bolsa
+B080,sigpesq_bolsistas,sigpesq/advisorships/2026/Relatorio_mock_bolsistas_2026.xlsx,valido,plano de trabalho com bolsa
+B116,sigpesq_bolsistas,sigpesq/advisorships/2026/Relatorio_mock_bolsistas_2026.xlsx,excecao,data de início inexistente (31/02/2025)
+B081,sigpesq_bolsistas,sigpesq/advisorships/2026/Relatorio_mock_bolsistas_2026.xlsx,valido,plano de trabalho com bolsa
+B082,sigpesq_bolsistas,sigpesq/advisorships/2026/Relatorio_mock_bolsistas_2026.xlsx,valido,plano de trabalho com bolsa
+B083,sigpesq_bolsistas,sigpesq/advisorships/2026/Relatorio_mock_bolsistas_2026.xlsx,valido,plano de trabalho com bolsa
+B084,sigpesq_bolsistas,sigpesq/advisorships/2026/Relatorio_mock_bolsistas_2026.xlsx,valido,plano de trabalho com bolsa
+B117,sigpesq_bolsistas,sigpesq/advisorships/2026/Relatorio_mock_bolsistas_2026.xlsx,excecao,mesmo aluno com e-mail em maiúsculas
+B085,sigpesq_bolsistas,sigpesq/advisorships/2026/Relatorio_mock_bolsistas_2026.xlsx,valido,plano de trabalho com bolsa
+B086,sigpesq_bolsistas,sigpesq/advisorships/2026/Relatorio_mock_bolsistas_2026.xlsx,valido,plano de trabalho com bolsa
+B087,sigpesq_bolsistas,sigpesq/advisorships/2026/Relatorio_mock_bolsistas_2026.xlsx,valido,plano de trabalho com bolsa
+B088,sigpesq_bolsistas,sigpesq/advisorships/2026/Relatorio_mock_bolsistas_2026.xlsx,valido,plano de trabalho com bolsa
+B118,sigpesq_bolsistas,sigpesq/advisorships/2026/Relatorio_mock_bolsistas_2026.xlsx,excecao,mesmo aluno (mesmo e-mail) com nome escrito diferente
+B089,sigpesq_bolsistas,sigpesq/advisorships/2026/Relatorio_mock_bolsistas_2026.xlsx,valido,plano de trabalho com bolsa
+B090,sigpesq_bolsistas,sigpesq/advisorships/2026/Relatorio_mock_bolsistas_2026.xlsx,valido,plano de trabalho com bolsa
+B091,sigpesq_bolsistas,sigpesq/advisorships/2026/Relatorio_mock_bolsistas_2026.xlsx,valido,plano de trabalho com bolsa
+B092,sigpesq_bolsistas,sigpesq/advisorships/2026/Relatorio_mock_bolsistas_2026.xlsx,valido,plano de trabalho com bolsa
+B119,sigpesq_bolsistas,sigpesq/advisorships/2026/Relatorio_mock_bolsistas_2026.xlsx,excecao,"linha repetida do B020 (mesmo CodPT, fim alterado)"
+B093,sigpesq_bolsistas,sigpesq/advisorships/2026/Relatorio_mock_bolsistas_2026.xlsx,valido,plano de trabalho com bolsa
+B094,sigpesq_bolsistas,sigpesq/advisorships/2026/Relatorio_mock_bolsistas_2026.xlsx,valido,plano de trabalho com bolsa
+B095,sigpesq_bolsistas,sigpesq/advisorships/2026/Relatorio_mock_bolsistas_2026.xlsx,valido,plano de trabalho com bolsa
+B096,sigpesq_bolsistas,sigpesq/advisorships/2026/Relatorio_mock_bolsistas_2026.xlsx,valido,plano de trabalho com bolsa
+B120,sigpesq_bolsistas,sigpesq/advisorships/2026/Relatorio_mock_bolsistas_2026.xlsx,excecao,"título do plano igual ao de outro plano (B007), código diferente"
+C01,cnpq_espelhos,cnpq_espelhos/C01_900012.json,valido,espelho completo
+C02,cnpq_espelhos,cnpq_espelhos/C02_900011.json,valido,espelho com nome oficial diferente (grupo é renomeado)
+C03,cnpq_espelhos,cnpq_espelhos/C03_900022.json,valido,espelho completo
+C04,cnpq_espelhos,cnpq_espelhos/C04_900004.json,valido,espelho completo
+C05,cnpq_espelhos,cnpq_espelhos/C05_900005.json,valido,espelho com líder que não está no SigPesq
+C06,cnpq_espelhos,cnpq_espelhos/C06_900023.json,valido,espelho completo
+C07,cnpq_espelhos,cnpq_espelhos/C07_900008.json,valido,espelho completo
+C08,cnpq_espelhos,cnpq_espelhos/C08_900003.json,valido,espelho completo
+C09,cnpq_espelhos,cnpq_espelhos/C09_900016.json,valido,espelho com nome oficial diferente (grupo é renomeado)
+C10,cnpq_espelhos,cnpq_espelhos/C10_900007.json,valido,espelho completo
+C11,cnpq_espelhos,cnpq_espelhos/C11_900006.json,valido,espelho completo
+C12,cnpq_espelhos,cnpq_espelhos/C12_900009.json,valido,espelho completo
+C13,cnpq_espelhos,cnpq_espelhos/C13_900010.json,valido,espelho completo
+C14,cnpq_espelhos,cnpq_espelhos/C14_900017.json,valido,espelho com nome oficial diferente (grupo é renomeado)
+C15,cnpq_espelhos,cnpq_espelhos/C15_900021.json,valido,espelho com líder que não está no SigPesq
+C16,cnpq_espelhos,cnpq_espelhos/C16_900102.json,valido,espelho completo
+C17,cnpq_espelhos,cnpq_espelhos/C17_900020.json,valido,espelho completo
+C18,cnpq_espelhos,cnpq_espelhos/C18_900014.json,valido,espelho completo
+C19,cnpq_espelhos,cnpq_espelhos/C19_900101.json,valido,espelho completo
+C20,cnpq_espelhos,cnpq_espelhos/C20_900013.json,valido,espelho completo
+C21,cnpq_espelhos,cnpq_espelhos/C21_900001.json,excecao,espelho indisponível (erro de rede simulado)
+C22,cnpq_espelhos,cnpq_espelhos/C22_900018.json,excecao,nome do grupo 'CNPq' (ignorado) e formação 'Anterior a março de 2010'
+C23,cnpq_espelhos,cnpq_espelhos/C23_900019.json,excecao,egresso sem data de saída (vai para revisão)
+C24,cnpq_espelhos,cnpq_espelhos/C24_900103.json,excecao,"nomes-placeholder, data inválida e egresso com data 'Não informada'"
+C25,cnpq_espelhos,cnpq_espelhos/C25_900015.json,excecao,mesma pessoa como pesquisador ativo e egresso (data de fim atualizada)
+L01,lattes,lattes_json/yasminmoreirasilva_9360116693646400.json,valido,projeto com o mesmo título de um projeto do SigPesq (é juntado)
+L02,lattes,lattes_json/yasminbragancamiranda_9643409593464117.json,valido,projeto presente em dois currículos (uma iniciativa só)
+L03,lattes,lattes_json/elisanunesrocha_9990203713735011.json,valido,projeto presente em dois currículos (uma iniciativa só)
+L04,lattes,lattes_json/tiagobortoliniloureiro_9633999033464316.json,valido,artigo com o mesmo DOI em dois currículos (uma produção só)
+L05,lattes,lattes_json/helenafreitasduarte_9160269755515238.json,valido,artigo com o mesmo DOI em dois currículos (uma produção só)
+L06,lattes,lattes_json/pedrocarvalhosales_9763496871164352.json,valido,orientação com o mesmo título de um plano do SigPesq (é juntada)
+L07,lattes,lattes_json/anamoreirarezende_9578941297238781.json,valido,formação com orientador e coorientador
+L08,lattes,lattes_json/viniciustavaresferreira_9237919779474170.json,valido,vínculos com IFES (reaproveita a organização) e órgão público
+L09,lattes,lattes_json/gustavoribeiropeixoto_9499419592643926.json,valido,projeto com ano de conclusão no futuro (2027)
+L10,lattes,lattes_json/isabelasantosaraujo_9211464549969672.json,valido,orientação em andamento só com 'ano' (ano de início no Lattes)
+L11,lattes,lattes_json/pedrosantosmiranda_9550875980199725.json,valido,currículo completo
+L12,lattes,lattes_json/wesleymendesdias_9606308598677022.json,valido,currículo completo
+L13,lattes,lattes_json/gustavoteixeirabrandao_9545243420644356.json,valido,currículo completo
+L14,lattes,lattes_json/fabionunesbortolini_9013703653476505.json,valido,currículo completo
+L15,lattes,lattes_json/mateusrezendebatista_9689419433825532.json,valido,currículo completo
+L16,lattes,lattes_json/brunocavalcantixavier_9951874515572794.json,valido,currículo completo
+L17,lattes,lattes_json/paulagomesfalqueto_9734714689732444.json,valido,currículo completo
+L18,lattes,lattes_json/karinaloureirovieira_9032271613663623.json,valido,currículo completo
+L19,lattes,lattes_json/jorgeandradecavalcanti_9144592884828570.json,valido,currículo completo
+L20,lattes,lattes_json/fabiovaladareszanetti_9394030460804335.json,valido,currículo completo
+L21,lattes,lattes_json/elisarochaqueiroz_9858061642605959.json,valido,currículo completo
+L22,lattes,lattes_json/nicolasalmeidacarvalho_9174965166035386.json,valido,currículo completo
+L23,lattes,lattes_json/wesleysilvarocha_9454744679840306.json,valido,currículo completo
+L24,lattes,lattes_json/oliviavaladaresguimaraes_9226520706459328.json,valido,currículo completo
+L25,lattes,lattes_json/giovanasilvabatista_9187875723799759.json,valido,currículo completo
+L26,lattes,lattes_json/alicepachecogomes_9762343465608863.json,valido,currículo completo
+L27,lattes,lattes_json/fabiobrandaopinto_9244315052979364.json,valido,currículo completo
+L28,lattes,lattes_json/alicebezerraaraujo_9325519198677524.json,valido,currículo completo
+L29,lattes,lattes_json/joaobrandaomacedo_9382822735358523.json,valido,currículo completo
+L30,lattes,lattes_json/elisaduartebezerra_9117132265300702.json,valido,currículo completo
+L31,lattes,lattes_json/bernardocarvalhoxavier_9795580753661791.json,valido,currículo completo
+L32,lattes,lattes_json/yasminpachecosales_9863942945835815.json,valido,currículo completo
+L33,lattes,lattes_json/priscilapachecomonteiro_9507737536607347.json,valido,currículo completo
+L34,lattes,lattes_json/mateusramosvaladares_9500552737585508.json,valido,currículo completo
+L35,lattes,lattes_json/henriquebortolinimonteiro_9614618535553613.json,valido,currículo completo
+L36,lattes,lattes_json/beatrizsantosduarte_9556539287401075.json,valido,currículo completo
+L37,lattes,lattes_json/vitorfalquetobraganca_9472814264221906.json,valido,currículo completo
+L38,lattes,lattes_json/irismendesloureiro_9486179830035543.json,valido,currículo completo
+L39,lattes,lattes_json/karinafonsecavaladares_9138647893261314.json,valido,currículo completo
+L40,lattes,lattes_json/andrerodrigueslopes_9954511890695060.json,valido,currículo completo
+L41,lattes,lattes_json/felipefariasmiranda_9208529018381454.json,excecao,currículo sem resumo (perfil pulado)
+L42,lattes,lattes_json/valeriabarbosafonseca_9022008762281061.json,excecao,data de atualização inválida (31/02/2024)
+L43,lattes,lattes_json/beatrizsantosduarte_9556539287401076.json,excecao,homônimo do L36 com outro ID Lattes (vai para revisão)
+L44,lattes,lattes_json/SemNome_9985977712983104.json,excecao,currículo sem nome
+L45,lattes,lattes_json/ceciliateixeiracosta_9206211799746591.json,excecao,JSON malformado (arquivo truncado)
+L46,lattes,lattes_json/curriculo_mock_sem_id.json,excecao,arquivo sem ID Lattes no nome
+L47,lattes,lattes_json/karinaribeirorocha_9536114661776841.json,excecao,artigos sem título/ano/revista e projeto sem integrantes
+L48,lattes,lattes_json/nataliacoutinhooliveira_9345401626067461.json,excecao,"idioma com níveis fora do padrão (Fluente, vazio, caixa alta)"
+L49,lattes,lattes_json/viniciuspereirafalqueto_9163112344825720.json,excecao,"atuação sem vínculo, formação sem instituição/ano, só coorientador"
+L50,lattes,lattes_json/pedromendesrezende_9575622297129903.json,excecao,ano do projeto como número (2020) em vez de texto

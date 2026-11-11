@@ -1,0 +1,55 @@
+{
+  "url": "http://dgp.cnpq.br/dgp/espelhogrupo/900021",
+  "espelho": {
+    "nome_grupo": "Grupo de Pesquisa em Ensino de Matemática",
+    "repercussoes": "Repercussões fictícias do grupo Grupo de Pesquisa em Ensino de Matemática (espelho mock).",
+    "identificacao": {
+      "ano_de_formacao": "2017",
+      "lideres_do_grupo": [
+        "Fábio Nunes Bortolini",
+        "Pedro Santos Miranda",
+        "Giovana Carvalho Lopes"
+      ]
+    },
+    "recursos_humanos": {
+      "pesquisadores": [
+        {
+          "nome": "Fábio Nunes Bortolini",
+          "data_inclusao": "09/04/2023"
+        },
+        {
+          "nome": "Pedro Santos Miranda",
+          "data_inclusao": "29/09/2016"
+        },
+        {
+          "nome": "Priscila Pacheco Monteiro",
+          "data_inclusao": "24/09/2021"
+        }
+      ],
+      "estudantes": [
+        {
+          "nome": "Quésia Ferreira Oliveira",
+          "data_inclusao": "19/11/2020",
+          "nivel": "Graduação"
+        },
+        {
+          "nome": "Priscila Vieira Carvalho",
+          "data_inclusao": "02/02/2025",
+          "nivel": "Graduação"
+        },
+        {
+          "nome": "Zélia Ferreira Bezerra",
+          "data_inclusao": "01/01/2023",
+          "nivel": "Graduação"
+        }
+      ]
+    },
+    "linhas_de_pesquisa": {
+      "linhas": [
+        {
+          "nome_da_linha_de_pesquisa": "Letras"
+        }
+      ]
+    }
+  }
+}

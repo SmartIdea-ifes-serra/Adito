@@ -1,0 +1,84 @@
+{
+  "informacoes_pessoais": {
+    "nome_completo": "Pedro Mendes Rezende",
+    "id_lattes": "9575622297129903",
+    "texto_resumo": "Currículo fictício de Pedro Mendes Rezende, gerado para testes do ETL do Horizon.",
+    "nome_citacoes": "REZENDE, P. M.;REZENDE, PEDRO",
+    "atualizacao_cv": "30/10/2026",
+    "url": "http://lattes.cnpq.br/9575622297129903"
+  },
+  "premios_titulos": [
+    {
+      "descricao": "Menção honrosa fictícia 0 - Pedro",
+      "ano": "2023"
+    }
+  ],
+  "idiomas": [
+    {
+      "nome": "Francês",
+      "le": "Pouco",
+      "escreve": "Pouco",
+      "fala": "Razoavelmente",
+      "compreende": "Pouco"
+    },
+    {
+      "nome": "Alemão",
+      "le": "Razoavelmente",
+      "escreve": "Bem",
+      "fala": "Razoavelmente",
+      "compreende": "Razoavelmente"
+    }
+  ],
+  "atuacao_profissional": [
+    {
+      "instituicao": "Instituto Federal do Espírito Santo",
+      "ano_inicio": "2017",
+      "ano_fim": "Atual",
+      "vinculo": "Servidor Público",
+      "enquadramento": "Professor EBTT"
+    }
+  ],
+  "formacao_academica": [
+    {
+      "tipo": "Graduação em Ciências Biológicas",
+      "nome_instituicao": "Universidade Federal do Rio de Janeiro",
+      "ano_inicio": "2010",
+      "ano_conclusao": "2014"
+    },
+    {
+      "tipo": "Doutorado em Matemática",
+      "nome_instituicao": "Universidade Federal do Rio de Janeiro",
+      "ano_inicio": "2016",
+      "ano_conclusao": "2020",
+      "descricao": "Título: Contribuições para dados abertos em comunidades tradicionais, Ano de Obtenção: 2020. Orientador: Daniel Rodrigues Costa."
+    }
+  ],
+  "producao_bibliografica": {
+    "artigos_periodicos": [],
+    "trabalhos_completos_congressos": []
+  },
+  "producao_tecnica": {},
+  "projetos_pesquisa": [
+    {
+      "nome": "Projeto mock com ano numérico",
+      "ano_inicio": 2020,
+      "ano_conclusao": "2022",
+      "descricao": [
+        "Descrição: Projeto fictício para teste do ETL. Situação: Concluído; Natureza: Pesquisa."
+      ],
+      "integrantes": [
+        {
+          "nome": "Pedro Mendes Rezende",
+          "papel": "Coordenador"
+        }
+      ],
+      "financiadores": []
+    }
+  ],
+  "projetos_extensao": [],
+  "projetos_desenvolvimento": [],
+  "orientacoes": {
+    "concluidas": {},
+    "em_andamento": {}
+  }
+}

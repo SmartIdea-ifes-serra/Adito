@@ -1,0 +1,58 @@
+{
+  "url": "http://dgp.cnpq.br/dgp/espelhogrupo/900005",
+  "espelho": {
+    "nome_grupo": "Grupo de Pesquisa em Educação Inclusiva",
+    "repercussoes": "Repercussões fictícias do grupo Grupo de Pesquisa em Educação Inclusiva (espelho mock).",
+    "identificacao": {
+      "ano_de_formacao": "2013",
+      "lideres_do_grupo": [
+        "Kauã Silva Valadares",
+        "Gustavo Campos Pinto",
+        "Valéria Almeida Vieira"
+      ]
+    },
+    "recursos_humanos": {
+      "pesquisadores": [
+        {
+          "nome": "Kauã Silva Valadares",
+          "data_inclusao": "18/10/2020"
+        },
+        {
+          "nome": "Gustavo Campos Pinto",
+          "data_inclusao": "25/02/2023"
+        },
+        {
+          "nome": "Diego Araújo Correia",
+          "data_inclusao": "07/04/2020"
+        }
+      ],
+      "estudantes": [
+        {
+          "nome": "Vitor Silva Queiroz",
+          "data_inclusao": "27/03/2021",
+          "nivel": "Graduação"
+        },
+        {
+          "nome": "Tiago Andrade Barbosa",
+          "data_inclusao": "09/10/2023",
+          "nivel": "Graduação"
+        },
+        {
+          "nome": "Lívia Silva Santos",
+          "data_inclusao": "09/08/2020",
+          "nivel": "Graduação"
+        }
+      ]
+    },
+    "linhas_de_pesquisa": {
+      "linhas": [
+        {
+          "nome_da_linha_de_pesquisa": "dados abertos"
+        },
+        {
+          "nome_da_linha_de_pesquisa": "metodologias ativas"
+        }
+      ]
+    }
+  }
+}
