@@ -22,22 +22,22 @@ O modelo está estruturado em **9 classes conceituais**, **5 tipos enumerados (e
 ```mermaid
 flowchart TD
     %% Classes Principais
-    AC["Acao<br/><i>(Ação Central)</i>"]
-    AT["Atividade<br/><i>(Módulo Operacional)</i>"]
-    RP["RegistroParticipante<br/><i>(Público-Alvo)</i>"]
-    ME["MembroEquipeExecucao<br/><i>(Equipe Executora)</i>"]
-    PES["Pessoa<br/><i>(Indivíduo Físico)</i>"]
+    AC["Acao (Ação Central)"]
+    AT["Atividade (Módulo Operacional)"]
+    RP["RegistroParticipante (Público-Alvo)"]
+    ME["MembroEquipeExecucao (Equipe Executora)"]
+    PES["Pessoa (Indivíduo Físico)"]
     
     %% Domínios e Entidades Organizacionais
     CAM["Campus"]
     FOM["Fomento"]
-    TA["TipoAcao<br/><i>«enum»</i>"]
-    NAT["Natureza<br/><i>«enum»</i>"]
-    ATP["AreaTematicaPrincipal<br/><i>«enum»</i>"]
+    TA["TipoAcao (Enum)"]
+    NAT["Natureza (Enum)"]
+    ATP["AreaTematicaPrincipal (Enum)"]
     TAT["TipoAtividade"]
     FUNC["Funcao"]
-    VINC["Vinculo<br/><i>«enum»</i>"]
-    SIT["Situacao<br/><i>«enum»</i>"]
+    VINC["Vinculo (Enum)"]
+    SIT["Situacao (Enum)"]
 
     %% Relacionamentos de Ação
     AC -->|1..* : 0..*| CAM
