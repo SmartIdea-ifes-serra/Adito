@@ -202,6 +202,35 @@ carregados mesmo sem chave do Gemini. O DDL PostgreSQL em `../scripts/sql/` docu
 o modelo unificado. Para consultá-lo nesta versão, disponibilize suas relações no
 `dados.db` e no contexto correspondente.
 
+### Demonstração com dados fictícios do Adito
+
+O contexto `contexts/exemplo-adito` oferece 60 iniciativas (36 pesquisas e 24 ações
+de extensão), 120 produções, 12 pesquisadores, 6 grupos e dimensões de área, campus
+e ano. Todos os indicadores são fictícios. Os arquivos incluem regras de negócio
+e 15 exemplos de perguntas correspondentes às cinco áreas da entrada do chat.
+
+Para preparar uma instalação nova no Linux, execute a partir de `app`.
+Os comandos usam o diretório padrão de dados do aplicativo.
+
+```bash
+.venv/bin/python scripts/gerar_dados_demo_adito.py ~/.local/share/oraculo-esx/dados.db
+mkdir -p ~/.local/share/oraculo-esx/contexts
+cp -r contexts/exemplo-adito ~/.local/share/oraculo-esx/contexts/
+cd backend/api
+../../.venv/bin/python manage.py load_context ~/.local/share/oraculo-esx/contexts/exemplo-adito
+```
+
+O gerador cria um arquivo novo e recusa substituir uma base existente. Se você
+configurou `ORACULO_DATA_DIR` ou `ORACULO_DADOS_DB`, ajuste os destinos conforme
+essas variáveis. Após iniciar o backend, selecione **Adito — dados fictícios** em
+**Explorar dados**. Para preparar o chat com Gemini, use **Administração →
+Contextos de dados → Carregar e indexar contextos**, com a chave configurada.
+
+Experimente perguntar “Quantos projetos de pesquisa estão cadastrados por área
+de conhecimento?” ou “Qual a distribuição de pesquisadores por titulação
+acadêmica?”. O gráfico de frequência em Explorar dados pode agrupar as
+iniciativas por `tipo`, `ano`, `status` ou `area_conhecimento`.
+
 ---
 
 ## 5. Problemas comuns

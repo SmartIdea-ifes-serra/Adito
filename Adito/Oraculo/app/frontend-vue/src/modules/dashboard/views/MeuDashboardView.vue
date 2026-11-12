@@ -1204,13 +1204,20 @@ const getChartPixelHeight = (item: any): number => {
         />
 
         <!-- Header -->
-        <div :class="['group/header flex shrink-0 items-start justify-between border-b border-border-subtle bg-surface/40 p-5 dark:border-white/5', isEditingLayout ? 'cursor-move' : '']">
+        <div :class="[
+          'group/header flex shrink-0 items-start justify-between border-b border-border-subtle bg-surface/40 dark:border-white/5',
+          item.widget.chart_type === 'metric_card' ? 'px-4 py-3' : 'p-5',
+          isEditingLayout ? 'cursor-move' : ''
+        ]">
           <div class="pr-4 overflow-hidden flex-1 flex items-start gap-2">
             <div v-if="isEditingLayout" class="mt-1 opacity-40 hover:opacity-100 transition-opacity">
               <GripVertical class="h-4 w-4 text-text-muted" />
             </div>
             <div class="overflow-hidden">
-              <h3 class="mb-1.5 flex items-center gap-2 text-base font-semibold leading-tight text-primary dark:text-white md:text-lg">
+              <h3
+                class="mb-1.5 flex items-center gap-2 font-semibold leading-tight text-primary dark:text-white"
+                :class="item.widget.chart_type === 'metric_card' ? 'text-sm' : 'text-base md:text-lg'"
+              >
                 <span class="truncate">{{ item.widget.title }}</span>
                 <CheckCircle2 v-if="item.widget.status === 'OK'" class="w-4 h-4 text-green-500 shrink-0" title="Sincronizado" />
                 <RefreshCw v-if="item.widget.status === 'STALE'" class="w-4 h-4 text-amber-500 shrink-0" title="Frio (No Cache)" />
@@ -1251,10 +1258,10 @@ const getChartPixelHeight = (item: any): number => {
 
           <div
             v-else-if="item.widget.chart_type === 'metric_card'"
-            class="flex flex-col items-center justify-center p-6 h-full w-full"
+            class="dashboard-metric flex h-full w-full flex-col items-center justify-center gap-1.5 px-3 py-2 text-center"
           >
-            <p class="eyebrow mb-2">Metrica</p>
-            <h3 class="text-3xl font-semibold tracking-tight text-primary dark:text-white md:text-4xl">
+            <p class="text-[10px] font-medium tracking-wide text-text-muted">Métrica</p>
+            <h3 class="dashboard-metric-value font-semibold tracking-tight text-text-primary tabular-nums">
               {{ Object.values(widgetData[item.widget.id][0])[0] }}
             </h3>
           </div>
@@ -1408,6 +1415,18 @@ const getChartPixelHeight = (item: any): number => {
 </template>
 
 <style scoped>
+.dashboard-metric {
+  container-type: inline-size;
+}
+
+.dashboard-metric-value {
+  max-width: 100%;
+  font-size: 1.5rem;
+  font-size: clamp(1.125rem, 7cqi, 1.5rem);
+  line-height: 1.2;
+  overflow-wrap: anywhere;
+}
+
 @keyframes shimmer {
   0% {
     transform: translateX(-100%);

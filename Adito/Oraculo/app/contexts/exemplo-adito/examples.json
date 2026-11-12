@@ -1,0 +1,62 @@
+[
+  {
+    "question": "Quantos projetos de pesquisa estão cadastrados por área de conhecimento?",
+    "sql": "SELECT area_conhecimento, COUNT(*) AS projetos FROM demo_fato_iniciativa WHERE tipo = 'Pesquisa' GROUP BY area_conhecimento ORDER BY projetos DESC"
+  },
+  {
+    "question": "Quais pesquisadores coordenam mais projetos de pesquisa ativos?",
+    "sql": "SELECT coordenador, COUNT(*) AS projetos_ativos FROM demo_fato_iniciativa WHERE tipo = 'Pesquisa' AND status = 'Em andamento' GROUP BY coordenador ORDER BY projetos_ativos DESC LIMIT 10"
+  },
+  {
+    "question": "Qual a distribuição de projetos de pesquisa por campus e natureza?",
+    "sql": "SELECT campus, natureza, COUNT(*) AS projetos FROM demo_fato_iniciativa WHERE tipo = 'Pesquisa' GROUP BY campus, natureza ORDER BY projetos DESC"
+  },
+  {
+    "question": "Quantas ações e atividades de extensão foram registradas por área?",
+    "sql": "SELECT area_conhecimento, COUNT(*) AS acoes FROM demo_fato_iniciativa WHERE tipo = 'Extensão' GROUP BY area_conhecimento ORDER BY acoes DESC"
+  },
+  {
+    "question": "Qual o total de participantes certificados nas atividades de extensão?",
+    "sql": "SELECT SUM(certificados) AS participacoes_certificadas FROM demo_fato_iniciativa WHERE tipo = 'Extensão'"
+  },
+  {
+    "question": "Quais ações de extensão possuem maior carga horária acumulada?",
+    "sql": "SELECT titulo, carga_horaria FROM demo_fato_iniciativa WHERE tipo = 'Extensão' ORDER BY carga_horaria DESC LIMIT 10"
+  },
+  {
+    "question": "Quais grupos de pesquisa estão certificados no diretório do CNPq?",
+    "sql": "SELECT grupo, area_conhecimento, lider FROM demo_dim_grupo WHERE situacao = 'Certificado' ORDER BY grupo"
+  },
+  {
+    "question": "Quantas linhas de pesquisa e membros ativos existem por grupo?",
+    "sql": "SELECT grupo, linhas_pesquisa, membros_ativos FROM demo_dim_grupo ORDER BY membros_ativos DESC"
+  },
+  {
+    "question": "Qual a evolução de criação dos grupos de pesquisa por ano?",
+    "sql": "SELECT ano_formacao, COUNT(*) AS grupos FROM demo_dim_grupo GROUP BY ano_formacao ORDER BY ano_formacao"
+  },
+  {
+    "question": "Qual a evolução anual de artigos publicados e trabalhos em eventos?",
+    "sql": "SELECT ano, tipo, COUNT(*) AS producoes FROM demo_fato_producao WHERE tipo IN ('Artigo', 'Trabalho em evento') GROUP BY ano, tipo ORDER BY ano, tipo"
+  },
+  {
+    "question": "Quantos livros, capítulos e patentes foram registrados pelos pesquisadores?",
+    "sql": "SELECT tipo, COUNT(*) AS producoes FROM demo_fato_producao WHERE tipo IN ('Livro', 'Capítulo', 'Patente') GROUP BY tipo ORDER BY producoes DESC"
+  },
+  {
+    "question": "Quais grandes áreas concentram o maior volume de produção científica?",
+    "sql": "SELECT grande_area, COUNT(*) AS producoes FROM demo_fato_producao GROUP BY grande_area ORDER BY producoes DESC LIMIT 10"
+  },
+  {
+    "question": "Qual a distribuição de pesquisadores por titulação acadêmica?",
+    "sql": "SELECT titulacao, COUNT(*) AS pesquisadores FROM demo_dim_pesquisador GROUP BY titulacao ORDER BY pesquisadores DESC"
+  },
+  {
+    "question": "Quantas orientações concluídas e em andamento constam nos currículos?",
+    "sql": "SELECT SUM(orientacoes_concluidas) AS concluidas, SUM(orientacoes_em_andamento) AS em_andamento FROM demo_dim_pesquisador"
+  },
+  {
+    "question": "Quais pesquisadores possuem bolsa de produtividade ou mais orientações?",
+    "sql": "SELECT pesquisador, bolsa_produtividade, orientacoes_concluidas + orientacoes_em_andamento AS orientacoes FROM demo_dim_pesquisador ORDER BY bolsa_produtividade DESC, orientacoes DESC LIMIT 10"
+  }
+]

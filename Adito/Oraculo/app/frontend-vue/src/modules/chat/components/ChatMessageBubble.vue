@@ -2,7 +2,7 @@
 import { computed, onMounted, onBeforeUnmount, ref } from 'vue'
 import VueApexCharts from 'vue3-apexcharts'
 import { ArrowLeftRight, Code, Database, Lightbulb, Pin, Copy, Check, Minimize2 } from 'lucide-vue-next'
-import brandIcon from '@/common/assets/brand-icon.png'
+import BrandIcon from '@/common/components/BrandIcon.vue'
 import type { ApexOptions } from 'apexcharts'
 import type { ChatMessage, FieldFormat } from '@/modules/chat/types'
 import { renderMarkdown } from '@/modules/chat/utils/markdown'
@@ -523,10 +523,10 @@ const chartSeries = computed(() => {
         <div class="flex items-center gap-2">
           <div class="w-10 h-10 flex items-center justify-center relative">
             <div v-if="message.isLoading" class="loading-brand-wrapper">
-              <img :src="brandIcon" class="w-8 h-8 relative z-10" />
+              <BrandIcon alt="" class="relative z-10 h-8 w-8" />
               <div class="loading-brand-ring" />
             </div>
-            <img v-else :src="brandIcon" class="w-9 h-9" />
+            <BrandIcon v-else alt="" class="h-9 w-9" />
           </div>
           <span class="font-semibold tracking-[-0.03em] text-primary dark:text-white">Adito</span>
         </div>
@@ -561,7 +561,7 @@ const chartSeries = computed(() => {
           <div class="flex items-start gap-2">
             <div class="flex-1">
               <div class="flex items-center gap-2 mb-1.5">
-                <img :src="brandIcon" class="w-4 h-4" />
+                <BrandIcon alt="" class="h-4 w-4" />
                 <span class="text-sm font-semibold text-amber-800 dark:text-amber-500">Adito · Exploração</span>
               </div>
               <p class="text-sm text-amber-700 dark:text-amber-400/90 mb-3 leading-relaxed">

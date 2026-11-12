@@ -15,7 +15,7 @@ import {
   Percent,
   ArrowRight
 } from 'lucide-vue-next'
-import brandIcon from '@/common/assets/brand-icon.png'
+import BrandIcon from '@/common/components/BrandIcon.vue'
 import type { ChatMessage, Conversation } from '@/modules/chat/types'
 import ChatMessageBubble from '@/modules/chat/components/ChatMessageBubble.vue'
 
@@ -70,7 +70,7 @@ function select(key: string) {
   <div class="relative flex h-full flex-1 flex-col overflow-hidden transition-colors bg-transparent">
     <div class="lg:hidden sticky top-0 z-20 flex items-center justify-between border-b border-border-subtle bg-surface/92 px-4 py-3 backdrop-blur-md shadow-sm">
       <div class="flex items-center gap-2 overflow-hidden">
-        <img :src="brandIcon" class="h-4 w-4 shrink-0" />
+        <BrandIcon alt="" class="h-4 w-4" />
         <h2 class="truncate text-xs font-semibold text-primary">{{ currentConversation?.title }}</h2>
       </div>
       <button
@@ -88,8 +88,8 @@ function select(key: string) {
         class="mx-auto flex min-h-full max-w-2xl flex-col items-center justify-center gap-8 py-6 text-center"
       >
         <div class="flex max-w-lg flex-col items-center gap-4">
-          <div class="flex items-center gap-3 text-accent">
-            <img :src="brandIcon" alt="" class="h-11 w-11 object-contain" />
+          <div class="flex items-center gap-2 text-accent">
+            <BrandIcon alt="" class="h-11 w-11" />
             <span class="adito-wordmark text-4xl">Adito</span>
           </div>
           <h1 class="text-2xl font-semibold leading-tight text-text-primary sm:text-3xl">

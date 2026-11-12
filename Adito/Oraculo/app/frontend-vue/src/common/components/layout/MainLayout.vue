@@ -3,7 +3,7 @@ import { ref } from 'vue'
 import SidebarNav from '@/common/components/navigation/SidebarNav.vue'
 import { Menu } from 'lucide-vue-next'
 
-import brandIcon from '@/common/assets/brand-icon.png'
+import BrandIcon from '@/common/components/BrandIcon.vue'
 
 const isSidebarOpen = ref(false)
 
@@ -15,8 +15,8 @@ function toggleSidebar() {
 <template>
   <div class="flex h-screen overflow-hidden bg-primary text-primary">
     <header class="md:hidden fixed top-0 left-0 right-0 z-50 flex h-16 items-center justify-between border-b border-border-subtle bg-surface/95 px-5 backdrop-blur-md">
-      <div class="flex items-center gap-3">
-        <img :src="brandIcon" alt="Adito" class="h-8 w-8 object-contain" />
+      <div class="flex items-center gap-2">
+        <BrandIcon class="h-8 w-8" />
         <h1 class="text-xl font-semibold tracking-[-0.04em] text-primary">Adito</h1>
       </div>
 

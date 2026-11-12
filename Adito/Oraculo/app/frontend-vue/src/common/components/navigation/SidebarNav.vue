@@ -2,7 +2,7 @@
 import { ref, computed, onMounted } from 'vue'
 import { useAuth } from '@/modules/auth/composables/useAuth'
 import { useRoute } from 'vue-router'
-import brandIcon from '@/common/assets/brand-icon.png'
+import BrandIcon from '@/common/components/BrandIcon.vue'
 import {
   AreaChart,
   Database,
@@ -97,8 +97,8 @@ function toggleTheme() {
   >
     <div class="border-b border-white/10 px-5 py-6">
       <div :class="['flex items-center', isEffectivelyCollapsed ? 'flex-col gap-5 justify-center' : 'justify-between']">
-        <div class="flex items-center gap-3">
-          <img :src="brandIcon" alt="Adito" class="h-[34px] w-[34px] shrink-0 object-contain" />
+        <div class="flex items-center gap-2">
+          <BrandIcon class="h-[34px] w-[34px]" />
           <div v-if="!isEffectivelyCollapsed" class="relative animate-in fade-in duration-300">
             <h1 class="adito-wordmark text-[26px] leading-none text-white">
               Adito
