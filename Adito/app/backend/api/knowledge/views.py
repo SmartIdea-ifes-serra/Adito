@@ -1,10 +1,8 @@
-import os
-
-from langchain_mistralai import MistralAIEmbeddings
 from rest_framework import status, viewsets
 from rest_framework.permissions import IsAdminUser, IsAuthenticated
 from rest_framework.response import Response
 
+from agents.config import get_embeddings
 from .models import KnowledgeItem
 from .serializers import KnowledgeTrainingSerializer, KnowledgeTrainingWriteSerializer
 
@@ -16,11 +14,8 @@ TYPE_TO_ITEM_TYPE = {
 }
 
 
-def _get_embedder() -> MistralAIEmbeddings:
-    return MistralAIEmbeddings(
-        model=os.environ.get("MISTRAL_EMBEDDING_MODEL", "mistral-embed"),
-        api_key=os.environ.get("MISTRAL_API_KEY"),
-    )
+def _get_embedder():
+    return get_embeddings()
 
 
 def _embedding_text(item_type: str, question: str, content: str) -> str:

@@ -139,7 +139,7 @@ const sendQuestion = async (questionText?: string) => {
   const userInput = (questionText ?? input.value).trim()
   if (!userInput || isLoading.value) return
   if (!llmConfigured.value) {
-    showToast('Configure a chave da Mistral em Configurações para usar o chat.', 'error')
+    showToast('Configure a chave da API do Gemini em Configurações para usar o chat.', 'error')
     return
   }
 
@@ -404,7 +404,7 @@ const confirmDeleteConversation = async () => {
           class="mx-4 mt-2 flex items-center gap-2 rounded-lg border border-amber-200 bg-amber-50 px-3 py-2 text-xs text-amber-800 hover:bg-amber-100 dark:border-amber-500/20 dark:bg-amber-500/10 dark:text-amber-300"
         >
           <AlertCircle class="h-4 w-4 shrink-0" />
-          O chat está desativado: falta a chave da Mistral. Clique para configurar.
+          O chat está desativado: falta a chave da API do Gemini. Clique para configurar.
         </RouterLink>
         <ContextoSelector
           :is-new-conversation="isNewConversation"

@@ -1,12 +1,9 @@
 from langchain_core.messages import SystemMessage, HumanMessage
-from langchain_mistralai import ChatMistralAI
 from .state import MultiAgentState
 from .models import RouterDecision
-from agents.config import ORCHESTRATOR_SYSTEM_PROMPT, MISTRAL_MODEL, MISTRAL_API_KEY
+from agents.config import ORCHESTRATOR_SYSTEM_PROMPT, get_chat_llm
 
 mcp_tools = []
-
-llm = ChatMistralAI(model=MISTRAL_MODEL, api_key=MISTRAL_API_KEY, temperature=0.0)
 
 
 async def orchestrator_node(state: MultiAgentState):
@@ -15,6 +12,7 @@ async def orchestrator_node(state: MultiAgentState):
     tools_desc = "\n".join([f"- {t.name}: {t.description}" for t in mcp_tools]) if mcp_tools else "Nenhuma ferramenta externa disponível."
     system_prompt = ORCHESTRATOR_SYSTEM_PROMPT.format(tools_desc=tools_desc)
 
+    llm = get_chat_llm(temperature=0.0)
     structured_llm = llm.with_structured_output(RouterDecision, method="function_calling")
 
     # Envia o histórico recente como contexto + a última mensagem como pergunta atual.

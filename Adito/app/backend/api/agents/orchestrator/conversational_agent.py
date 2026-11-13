@@ -1,9 +1,6 @@
-from langchain_mistralai import ChatMistralAI
 from langchain_core.messages import SystemMessage, HumanMessage
 from .state import MultiAgentState
-from agents.config import MISTRAL_MODEL, MISTRAL_API_KEY, CONVERSATIONAL_SYSTEM_PROMPT
-
-llm = ChatMistralAI(model=MISTRAL_MODEL, api_key=MISTRAL_API_KEY, temperature=0.0)
+from agents.config import CONVERSATIONAL_SYSTEM_PROMPT, get_chat_llm
 
 
 async def conversational_node(state: MultiAgentState):
@@ -20,6 +17,7 @@ async def conversational_node(state: MultiAgentState):
     all_messages = [SystemMessage(content=system_content)] + history
     print(f"[Conversational] Recebidas {len(history)} msg(s) do histórico. Instrução: {instruction[:80]!r}")
 
+    llm = get_chat_llm(temperature=0.0)
     response = await llm.ainvoke(all_messages)
     print(f"[Conversational] Resposta gerada ({len(response.text)} chars): {response.text[:120]!r}")
 

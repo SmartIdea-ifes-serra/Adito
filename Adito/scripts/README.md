@@ -71,3 +71,25 @@ python3 popular_banco.py --so-gerar                    # só gera o SQL e o rela
 - **Onde ficam as saídas:** o SQL e o relatório (`carga_banco.sql`, `carga_banco_relatorio.json`) vão para `<etl>/saida/`, fora deste repositório, porque têm nomes de pessoas.
 - **Ligações inferidas (documentadas):** a ação do SRC só traz a grande área, então `acao.id_area_conhecimento` aponta para uma área com o nome da grande área; o Ifes e seus campi, em qualquer grafia das fontes, viram uma única organização (campus com `id_organizacao_pai` = Ifes); líder de grupo do SigPesq ganha a unidade do grupo, coordenador de projeto o campus do projeto e orientado sem campus o campus de execução; o nível do bolsista sai do programa (Pibic-Jr/EM = ensino médio, demais = graduação) quando o CNPq não informa.
 - **CNPq:** grupo no DGP (situação, datas, repercussões, endereço e site), membros ativos e egressos, líderes, linhas de pesquisa e grande área, para os grupos que também estão no SigPesq.
+
+---
+
+## 🦆 Gerar o Banco Analítico DuckDB OLAP (`gerar_duckdb.py`)
+
+`gerar_duckdb.py` lê `Adito/etl/saida/json/manifesto.json` e os 41 arquivos `<tabela>.json`, recria o schema `unificado` com tipagem explícita no DuckDB e **materializa as 6 tabelas fato (`CREATE TABLE main.vfact_*_resolved AS SELECT ...`)** definidas em `Docs/Fatos/PropostaFatos.md` em formato colunar nativo para máxima velocidade OLAP no Adito.
+
+```bash
+# Gera Adito/app/data/dados.duckdb e valida as contagens das 41 tabelas base e das 6 tabelas fato
+../app/.venv/bin/python gerar_duckdb.py
+
+# Ou especificando um caminho customizado de saída
+../app/.venv/bin/python gerar_duckdb.py --saida /caminho/para/dados.duckdb
+```
+
+Tabelas fato materializadas no schema `main` (e expostas como views equivalentes em `unificado`):
+- `vfact_extensao_acao_resolved` (`207` linhas)
+- `vfact_extensao_participacao_resolved` (`6.741` linhas)
+- `vfact_projeto_pesquisa_resolved` (`236` linhas)
+- `vfact_orientacao_bolsa_resolved` (`1.203` linhas)
+- `vfact_producao_cientifica_resolved` (`1.232` linhas)
+- `vfact_grupo_pesquisa_membro_resolved` (`553` linhas)

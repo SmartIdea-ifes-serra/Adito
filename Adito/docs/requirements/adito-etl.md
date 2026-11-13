@@ -1,9 +1,9 @@
-# Requirements — ETL do Adito (extração e cruzamento)
+# Requirements — ETL e Banco Analítico DuckDB OLAP do Adito
 
-**Status:** REQUIREMENTS_READY (aprovado em 2026-11-10)
-**Discovery de origem:** `docs/discovery/adito.md` (rev. 4, PROBLEM_READY)
+**Status:** REQUIREMENTS_READY (rev. 2 aprovada em 2026-11-13)
+**Discovery de origem:** `docs/discovery/adito.md` (rev. 5, PROBLEM_READY)
 **Classificacao de Processo:** NORMAL PROCESS
-**Recorte:** só o ETL em `etl/`, fases de extração e cruzamento. A montagem do pacote (Parquet, `abrir.sql`, `manifesto.json`) e as adaptações do app para o DuckDB ficam para outro documento de requisitos.
+**Recorte:** ETL em `etl/` (fases de extração e cruzamento) + geração do banco analítico DuckDB OLAP (`Adito/scripts/gerar_duckdb.py` com as 6 tabelas fato materializadas `vfact_*_resolved`) + adaptação do `Adito/app/backend/` para DuckDB e contexto `pesquisa-extensao-ifes`.
 
 ## Intent Summary
 
@@ -32,6 +32,13 @@ A equipe de dados roda, na própria máquina, um extrator por fonte que baixa o 
 - **FR12** — O cruzamento grava as ligações que não são de pessoa: grupo SigPesq ↔ CNPq pelo id de 16 dígitos do espelho e orientação SigPesq ↔ Lattes por título normalizado + orientador normalizado.
 - **FR13** — O cruzamento gera `etl/trabalho/relatorio_cruzamento.md` com: pessoas por fonte, pares ligados por par de fontes, nomes sem par em cada fonte e nomes ambíguos não ligados (com as ocorrências de cada um).
 
+### Banco Analítico DuckDB OLAP e Adaptação do Adito (rev. 2)
+- **FR14** — O script `Adito/scripts/gerar_duckdb.py` lê `Adito/etl/saida/json/manifesto.json` e os 41 arquivos `<tabela>.json`, cria o arquivo `Adito/app/data/dados.duckdb` (ou caminho configurado via `--saida` / `ORACULO_DADOS_DB`) de forma idempotente, carrega as 41 tabelas no schema `unificado` com os tipos mapeados do `manifesto.json` e valida a contagem de linhas de cada tabela.
+- **FR15** — O `gerar_duckdb.py` executa os 6 SQLs de `Docs/Fatos/PropostaFatos.md` e **materializa as 6 tabelas fato (`CREATE TABLE main.vfact_*_resolved AS SELECT ...`)** em formato colunar no schema `main` do DuckDB (além de views equivalentes em `unificado.vfact_*_resolved`), validando ao final as contagens exatas (`vfact_extensao_acao_resolved=207`, `vfact_extensao_participacao_resolved=6741`, `vfact_projeto_pesquisa_resolved=236`, `vfact_orientacao_bolsa_resolved=1203`, `vfact_producao_cientifica_resolved=1232`, `vfact_grupo_pesquisa_membro_resolved=553`).
+- **FR16** — A camada analítica de `Adito/app/backend/` (`core/datastore.py`, `core/contexts.py`, `analytics_index/services.py` e `dashboard/views.py`) conecta ao `dados.duckdb` em modo somente-leitura (`read_only=True`), mantendo `app.db` em SQLite para o Django e o checkpointer do LangGraph, e provendo compatibilidade de linhas/dicionários e introspecção de colunas (`view_columns`) no DuckDB.
+- **FR17** — O validador de segurança SQL (`agents/bi_agent/sql_security.py`, `agent.py`, `graph.py`, `tool.py`, `nodes/sql_validator.py`) opera no dialeto `duckdb` (`sqlglot`), permitindo apenas consultas `SELECT` sobre as 6 tabelas fato declaradas em `allowed_tables`, bloqueando comandos de escrita/sistema (`COPY`, `ATTACH`, `DETACH`, `INSTALL`, `LOAD`, `PRAGMA`, `SET`, `CALL`, `EXPORT`, `IMPORT`), funções de leitura de arquivos externos (`read_csv*`, `read_parquet*`, `read_json*`, `parquet_scan`, `iceberg_scan`, `delta_scan`) e referências às `sensitive_columns` (`*cpf*`, `*email*`).
+- **FR18** — O contexto `Adito/app/contexts/pesquisa-extensao-ifes/` é criado com `views.json` (6 tabelas fato, `sensitive_columns`, `embed_columns`, `local_search_columns`, `llm_row_limit: 50`), `rules.md` (regras de grão N:N, `COUNT(DISTINCT ...)`, orçamento vs. bolsa, códigos `'NI'`) e `examples.json` (exemplos pergunta → SQL DuckDB sem nomes reais de pessoas), enquanto `Adito/app/contexts/exemplo-vendas/views.json` permanece desativado (`"ativo": false`, suportado por `load_context_dir`).
+
 ## Business / Domain Rules
 
 - **BR01** — Nenhum arquivo do ETL guarda CPF, e-mail, telefone, fax, celular ou data de nascimento. *(Rev. 2026-11-11, decisão do usuário: além do nome, entra o endereço profissional do Lattes, sem telefone, e o endereço do grupo no CNPq; informações de contato continuam fora.)* Os extratores descartam esses campos na coleta, guardando só as colunas de uma **lista de permitidas** por fonte (nome mais campos não pessoais, como situação, função e carga horária). Coluna nova que não está na lista é descartada e avisada.
@@ -40,6 +47,9 @@ A equipe de dados roda, na própria máquina, um extrator por fonte que baixa o 
 - **BR04** — Ordem de execução: o SigPesq roda antes do CNPq (as URLs de espelho vêm dele). SRC e Lattes não dependem de outra fonte.
 - **BR05** — O id opaco de pessoa não carrega CPF, e-mail nem hash deles.
 - **BR06** — O código é copiado para `etl/` sem alterar os repositórios SRCEtl e horizon_etl. O README do `etl/` registra o repositório e o commit de origem de cada extrator.
+- **BR07** — As 6 tabelas fato no DuckDB (`vfact_*_resolved`) são materializadas como tabelas físicas colunares (`CREATE TABLE`) no schema `main` para máxima velocidade de leitura OLAP sem `JOIN` em tempo de execução.
+- **BR08** — Colunas sensíveis (`sensitive_columns`: CPF e e-mail) permanecem ocultas do DDL enviado à LLM (`describe_views`) e bloqueadas tanto na validação de SQL (`validate_read_only_sql` / `SELECT *` sem projeção segura) quanto na política de conexão (`connect_dados`).
+- **BR09** — Nenhum nome real de pessoa da base pode aparecer em código, testes, `examples.json` ou documentação.
 
 ## Non-Functional Requirements
 
@@ -49,6 +59,9 @@ A equipe de dados roda, na própria máquina, um extrator por fonte que baixa o 
 - **NFR04** — A coleta autenticada no SRC é sequencial numa única sessão (o SRC aceita uma sessão por usuário). As requisições se identificam por user-agent, e erros de limite (429) esperam antes de tentar de novo.
 - **NFR05** — Rodar a mesma extração duas vezes sobre a mesma fonte dá o mesmo bruto, salvo mudança na própria fonte. O cruzamento é determinístico para os mesmos brutos.
 - **NFR06** — Há testes automatizados para: a normalização de nomes (BR02); a regra de ambíguos (BR03); e o filtro de dado pessoal (BR01), que falha se aparecer CPF ou e-mail em qualquer arquivo de `etl/brutos/` ou `etl/trabalho/`.
+- **NFR07** — `duckdb>=1.1.0` é adicionado em `Adito/app/backend/requirements.txt`, mantendo o `app.db` em SQLite inalterado.
+- **NFR08** — A geração de `dados.duckdb` por `Adito/scripts/gerar_duckdb.py` é determinística e idempotente a partir de `Adito/etl/saida/json/`.
+- **NFR09** — Há testes automatizados validando: (a) geração do `.duckdb` e contagens das 6 tabelas fato materializadas; (b) `validate_read_only_sql` no dialeto `duckdb` (bloqueio de escrita, funções `read_*`, tabelas fora da whitelist e `sensitive_columns`); (c) carregamento de contextos (`pesquisa-extensao-ifes` ativo e `exemplo-vendas` desativado) e execução de queries via `connect_dados` / `BIAgent.execute_query`.
 
 ## User Scenarios
 
@@ -126,6 +139,7 @@ A equipe de dados roda, na própria máquina, um extrator por fonte que baixa o 
 | US-ETL-05 | FR06, A02, A05 |
 | US-ETL-06 | FR10, FR11, FR13, BR02, BR03, BR05, NFR06 (normalização, ambíguos) |
 | US-ETL-07 | FR12 |
+| US-ADITO-DUCKDB-01 | FR14, FR15, FR16, FR17, FR18, BR07, BR08, BR09, NFR07, NFR08, NFR09 |
 
 FR07–FR09, BR01, NFR01 e NFR03 valem para todos os extratores (US-ETL-01 a 05).
 
@@ -139,10 +153,11 @@ O usuario pode **aprovar, editar, adicionar, remover ou reclassificar** qualquer
 - [x] Nenhuma pergunta bloqueante aberta
 
 ### User adjustments
-- 2026-11-10: aprovado sem ajustes.
+- 2026-11-10: aprovado sem ajustes (rev. 1).
+- 2026-11-13: adicionados FR14–FR18, BR07–BR09 e NFR07–NFR09 para o banco analítico DuckDB OLAP com as 6 tabelas fato materializadas e adaptação do `Adito/app` (rev. 2).
 
 ## Gate G1 — REQUIREMENTS READY
 
-**Status:** APPROVED
+**Status:** APPROVED (rev. 2)
 
-**Aprovado pelo usuario:** sim (2026-11-10)
+**Aprovado pelo usuario:** rev. 1 sim (2026-11-10); rev. 2 sim (2026-11-13)

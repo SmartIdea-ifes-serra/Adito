@@ -2,9 +2,9 @@ import json
 from pathlib import Path
 
 from langchain_core.messages import HumanMessage
-from langchain_mistralai import ChatMistralAI
 
-from agents.config import MISTRAL_API_KEY, MISTRAL_MODEL
+from agents.config import get_chat_llm
+from core.contexts import describe_views, get_contexto
 from core.rich_logging import log_error, log_info, log_warning
 
 from ..config import (
@@ -17,8 +17,6 @@ from ..config import (
     ReflectionResult,
 )
 from ..state import MultiAgentState
-
-llm = ChatMistralAI(model=MISTRAL_MODEL, api_key=MISTRAL_API_KEY, temperature=0.0)
 
 
 def _as_entry(entry: CollectedDataEntry | dict) -> CollectedDataEntry:
@@ -118,11 +116,10 @@ async def reflection_data_node(state: MultiAgentState) -> dict:
             "iterations": iterations,
         }
 
-    schema_path = Path(__file__).resolve().parents[4] / "training" / "ddl" / "schema.sql"
-    try:
-        schema_str = schema_path.read_text(encoding="utf-8")
-    except Exception as exc:
-        log_warning("reflection", f"Schema indisponível em {schema_path}: {exc}")
+    contexto = get_contexto(state.get("contexto_id"))
+    if contexto is not None:
+        schema_str = describe_views(contexto)
+    else:
         schema_str = "Esquema indisponível."
 
     prompt = REFLECTION_DATA_PROMPT.format(
@@ -134,6 +131,7 @@ async def reflection_data_node(state: MultiAgentState) -> dict:
         unresolvable_str="\n".join(f"- {gap}" for gap in unresolvable) or "Nenhuma.",
     )
 
+    llm = get_chat_llm(temperature=0.0)
     structured_llm = llm.with_structured_output(ReflectionResult, method="function_calling")
     try:
         result: ReflectionResult = await structured_llm.ainvoke([HumanMessage(content=prompt)])

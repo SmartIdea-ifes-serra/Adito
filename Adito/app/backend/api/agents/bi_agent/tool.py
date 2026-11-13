@@ -8,9 +8,8 @@ import asyncio
 import json
 
 from langchain_core.tools import StructuredTool
-from langchain_mistralai import ChatMistralAI, MistralAIEmbeddings
 
-from agents.config import MISTRAL_API_KEY, MISTRAL_EMBEDDING_MODEL, MISTRAL_MODEL, langfuse_callbacks
+from agents.config import get_chat_llm, get_embeddings, get_gemini_api_key, langfuse_callbacks
 
 from .agent import BIAgent
 
@@ -18,15 +17,18 @@ from .agent import BIAgent
 PREVIEW_ROWS = 5
 
 _bi_agent = None
+_bi_agent_key = None
 
 
 def get_bi_agent() -> BIAgent:
-    global _bi_agent
-    if _bi_agent is None:
+    global _bi_agent, _bi_agent_key
+    current_key = get_gemini_api_key()
+    if _bi_agent is None or _bi_agent_key != current_key:
         _bi_agent = BIAgent(
-            llm_model=ChatMistralAI(model=MISTRAL_MODEL, api_key=MISTRAL_API_KEY),
-            embedder=MistralAIEmbeddings(model=MISTRAL_EMBEDDING_MODEL, api_key=MISTRAL_API_KEY),
+            llm_model=get_chat_llm(temperature=0.0),
+            embedder=get_embeddings(),
         )
+        _bi_agent_key = current_key
     return _bi_agent
 
 

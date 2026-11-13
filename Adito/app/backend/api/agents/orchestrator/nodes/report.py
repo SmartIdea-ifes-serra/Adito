@@ -1,14 +1,11 @@
 from langchain_core.messages import HumanMessage
-from langchain_mistralai import ChatMistralAI
 
-from agents.config import MISTRAL_API_KEY, MISTRAL_MODEL
+from agents.config import get_chat_llm
 from core.rich_logging import log_error, log_info, log_success
 
 from ..config import REPORT_AGENT_PROMPT
 from ..state import MultiAgentState
 from .reflection import format_collected_data_for_reflection
-
-llm = ChatMistralAI(model=MISTRAL_MODEL, api_key=MISTRAL_API_KEY, temperature=0.0)
 
 
 async def report_agent_node(state: MultiAgentState) -> dict:
@@ -46,6 +43,7 @@ async def report_agent_node(state: MultiAgentState) -> dict:
     )
 
     try:
+        llm = get_chat_llm(temperature=0.0)
         response = await llm.ainvoke([HumanMessage(content=prompt)])
         content = response.text
     except Exception as exc:

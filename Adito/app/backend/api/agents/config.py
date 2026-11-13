@@ -2,15 +2,33 @@ import os
 from dotenv import load_dotenv
 load_dotenv()
 
-# ─── Gemini ───────────────────────────────────────────────────────────────────
-GEMINI_MODEL           = os.getenv("GEMINI_MODEL", "gemini-3.5-flash-lite")
-GEMINI_API_KEY         = os.getenv("GEMINI_API_KEY")
-GEMINI_EMBEDDING_MODEL = os.getenv("GEMINI_EMBEDDING_MODEL", "gemini-embedding-2")
+# ─── Gemini (LLM de chat, SQL e embeddings) ──────────────────────────────────
+GEMINI_MODEL           = os.getenv("GEMINI_MODEL", "gemini-3.5-flash")
+GEMINI_API_KEY         = os.getenv("GEMINI_API_KEY") or os.getenv("GOOGLE_API_KEY")
+GEMINI_EMBEDDING_MODEL = os.getenv("GEMINI_EMBEDDING_MODEL", "models/gemini-embedding-001")
 
-# ─── Mistral (LLM de chat e embeddings) ──────────────────────────────────────
-MISTRAL_MODEL           = os.getenv("MISTRAL_MODEL", "ministral-14b-latest")
-MISTRAL_API_KEY         = os.getenv("MISTRAL_API_KEY")
-MISTRAL_EMBEDDING_MODEL = os.getenv("MISTRAL_EMBEDDING_MODEL", "mistral-embed")
+
+def get_gemini_api_key() -> str | None:
+    """Retorna a chave da API do Gemini ativa no ambiente."""
+    return os.environ.get("GEMINI_API_KEY") or os.environ.get("GOOGLE_API_KEY") or GEMINI_API_KEY
+
+
+def get_chat_llm(temperature: float = 0.0):
+    """Instancia o ChatGoogleGenerativeAI sob demanda com a chave ativa do Gemini."""
+    from langchain_google_genai import ChatGoogleGenerativeAI
+
+    model = os.environ.get("GEMINI_MODEL") or GEMINI_MODEL
+    api_key = get_gemini_api_key()
+    return ChatGoogleGenerativeAI(model=model, google_api_key=api_key, temperature=temperature)
+
+
+def get_embeddings():
+    """Instancia o GoogleGenerativeAIEmbeddings sob demanda com a chave ativa do Gemini."""
+    from langchain_google_genai import GoogleGenerativeAIEmbeddings
+
+    model = os.environ.get("GEMINI_EMBEDDING_MODEL") or GEMINI_EMBEDDING_MODEL
+    api_key = get_gemini_api_key()
+    return GoogleGenerativeAIEmbeddings(model=model, google_api_key=api_key)
 
 # ─── Checkpointer (estado das conversas do LangGraph) ─────────────────────────
 # Fica no app.db; se aparecer "database is locked", apontar para um arquivo próprio.

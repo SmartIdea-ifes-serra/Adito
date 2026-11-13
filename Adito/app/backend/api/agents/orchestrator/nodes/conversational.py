@@ -1,13 +1,10 @@
 from langchain_core.messages import HumanMessage, SystemMessage
-from langchain_mistralai import ChatMistralAI
 
-from agents.config import MISTRAL_API_KEY, MISTRAL_MODEL
+from agents.config import get_chat_llm
 from core.rich_logging import log_info, log_success
 
 from ..config import CONVERSATIONAL_SYSTEM_PROMPT
 from ..state import MultiAgentState
-
-llm = ChatMistralAI(model=MISTRAL_MODEL, api_key=MISTRAL_API_KEY, temperature=0.0)
 
 
 async def conversational_node(state: MultiAgentState) -> dict:
@@ -24,6 +21,7 @@ async def conversational_node(state: MultiAgentState) -> dict:
         history = [HumanMessage(content=instruction or "Olá!")]
 
     system_content = CONVERSATIONAL_SYSTEM_PROMPT.format(instruction=instruction)
+    llm = get_chat_llm(temperature=0.0)
     response = await llm.ainvoke([SystemMessage(content=system_content)] + history)
 
     log_info(

@@ -462,7 +462,7 @@ async function handleSync() {
         ? (ctx.erros || []).join(' ')
         : ctx.indexado
           ? `${ctx.rag_itens} itens de RAG, ${ctx.valores} valores`
-          : 'válido; sem indexação (falta a chave da Mistral)',
+          : 'válido; sem indexação (falta a chave do Gemini)',
       state: ctx.ativo && ctx.indexado ? 'success' : ctx.ativo ? 'pending' : 'failed',
       triggeredAt
     }))
@@ -473,7 +473,7 @@ async function handleSync() {
       timestamp: triggeredAt,
       message: data.chave_configurada
         ? `${validos} de ${contextos.length} contexto(s) válidos e indexados.`
-        : `${validos} de ${contextos.length} contexto(s) válidos. Configure a chave da Mistral para indexar o RAG.`,
+        : `${validos} de ${contextos.length} contexto(s) válidos. Configure a chave do Gemini para indexar o RAG.`,
       status: validos === contextos.length ? 'success' : 'error',
       totalRecords: contextos.length,
       changedRecords: validos,
@@ -1054,7 +1054,7 @@ onBeforeUnmount(() => {
               <div class="space-y-1">
                 <h2 class="text-xl font-semibold text-text-primary">Carregar Contextos</h2>
                 <p class="max-w-xl text-sm text-text-secondary leading-relaxed">
-                  Valida os contextos da pasta de dados contra o dados.db e, com a chave da Mistral configurada,
+                  Valida os contextos da pasta de dados contra o dados.duckdb e, com a chave do Gemini configurada,
                   gera o RAG (esquema, regras e exemplos) e o índice de valores de cada um.
                 </p>
               </div>

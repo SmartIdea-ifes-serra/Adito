@@ -66,7 +66,7 @@ onMounted(() => {
     <section class="rounded-xl border border-slate-200 bg-white p-5 dark:border-white/10 dark:bg-white/5">
       <div class="mb-3 flex items-center gap-2">
         <KeyRound class="h-5 w-5" />
-        <h2 class="font-semibold">Chave da Mistral</h2>
+        <h2 class="font-semibold">Chave da API do Gemini</h2>
         <span
           :class="[
             'ml-auto rounded-full px-2.5 py-0.5 text-xs font-medium',
@@ -80,12 +80,12 @@ onMounted(() => {
       </div>
 
       <p class="mb-4 text-sm text-slate-500 dark:text-slate-400">
-        O chat usa a API da Mistral com a sua chave. Ela fica no cofre do sistema operacional
+        O chat usa a API do Google Gemini com a sua chave. Ela fica no cofre do sistema operacional
         (Secret Service no Linux, Gerenciador de Credenciais no Windows), nunca em arquivo do app.
       </p>
 
       <p v-if="!desktop" class="text-sm text-amber-600">
-        A chave só pode ser configurada no app desktop. No navegador de desenvolvimento, use a variável MISTRAL_API_KEY do backend.
+        A chave só pode ser configurada no app desktop. No navegador de desenvolvimento, use a variável GEMINI_API_KEY do backend.
       </p>
 
       <p v-else-if="status && !status.store_available" class="flex items-start gap-2 text-sm text-red-600">
@@ -99,7 +99,7 @@ onMounted(() => {
           type="password"
           autocomplete="off"
           spellcheck="false"
-          :placeholder="configured ? 'Nova chave (substitui a atual)' : 'Cole a sua chave da Mistral'"
+          :placeholder="configured ? 'Nova chave (substitui a atual)' : 'Cole a sua chave da API do Gemini'"
           class="min-w-0 flex-1 rounded-md border border-slate-200 bg-white px-3 py-2 text-sm dark:border-white/10 dark:bg-white/5"
         />
         <button
@@ -132,7 +132,7 @@ onMounted(() => {
 
     <section class="rounded-xl border border-slate-200 bg-white p-5 text-sm dark:border-white/10 dark:bg-white/5">
       <h2 class="mb-2 font-semibold">O que sai do seu computador</h2>
-      <p class="mb-2 text-slate-500 dark:text-slate-400">Para responder, o app envia à Mistral:</p>
+      <p class="mb-2 text-slate-500 dark:text-slate-400">Para responder, o app envia ao Gemini:</p>
       <ul class="mb-3 list-disc space-y-1 pl-5">
         <li>a pergunta que você digita (nomes escritos na pergunta também vão);</li>
         <li>o esquema das views do contexto, as regras e os exemplos, sem as colunas sensíveis;</li>
