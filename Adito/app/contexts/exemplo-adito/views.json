@@ -1,0 +1,60 @@
+{
+  "contexto": "exemplo-adito",
+  "nome": "Adito — dados fictícios",
+  "descricao": "Demonstração com dados inteiramente fictícios para testar o Adito. Contém 60 iniciativas de pesquisa e extensão, 120 produções, 12 pesquisadores e 6 grupos entre 2023 e 2026. As relações analíticas são uma representação simplificada dos temas do modelo unificado. Os resultados não representam indicadores reais do IFES.",
+  "llm_row_limit": 20,
+  "views": [
+    {
+      "name": "demo_fato_iniciativa",
+      "label": "Iniciativas de pesquisa e extensão",
+      "kind": "fact",
+      "description": "Uma linha por iniciativa fictícia, com área, coordenador, grupo, ano, orçamento, carga horária e participantes. 36 pesquisas e 24 ações de extensão.",
+      "embed_columns": ["tipo", "natureza", "status"],
+      "local_search_columns": ["titulo", "coordenador", "grupo"]
+    },
+    {
+      "name": "demo_fato_producao",
+      "label": "Produções científicas e técnicas",
+      "kind": "fact",
+      "description": "Uma linha por produção fictícia com um pesquisador responsável. Inclui artigos, trabalhos em eventos, livros, capítulos e patentes.",
+      "embed_columns": ["tipo"],
+      "local_search_columns": ["titulo", "pesquisador"]
+    },
+    {
+      "name": "demo_dim_pesquisador",
+      "label": "Pesquisadores",
+      "kind": "dimension",
+      "description": "12 pesquisadores fictícios com titulação, área, orientações e indicação de bolsa de produtividade.",
+      "embed_columns": ["titulacao"],
+      "local_search_columns": ["pesquisador"]
+    },
+    {
+      "name": "demo_dim_grupo",
+      "label": "Grupos de pesquisa",
+      "kind": "dimension",
+      "description": "6 grupos fictícios com líder, situação no diretório, ano de formação, quantidade de linhas e membros ativos.",
+      "embed_columns": ["situacao"],
+      "local_search_columns": ["grupo", "lider"]
+    },
+    {
+      "name": "demo_dim_area",
+      "label": "Áreas do conhecimento",
+      "kind": "dimension",
+      "description": "4 áreas do conhecimento e suas grandes áreas.",
+      "embed_columns": ["area_conhecimento", "grande_area"]
+    },
+    {
+      "name": "demo_dim_campus",
+      "label": "Campus",
+      "kind": "dimension",
+      "description": "Campus Serra como referência geográfica da demonstração fictícia.",
+      "embed_columns": ["campus"]
+    },
+    {
+      "name": "demo_dim_ano",
+      "label": "Anos",
+      "kind": "dimension",
+      "description": "Anos de referência de 2023 a 2026."
+    }
+  ]
+}
