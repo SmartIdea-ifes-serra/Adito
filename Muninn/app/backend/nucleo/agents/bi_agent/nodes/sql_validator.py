@@ -70,35 +70,41 @@ def _column_matches(node: exp.Expression, col_name: str) -> bool:
     return False
 
 
+def _filter_clauses(tree: exp.Expression) -> list[exp.Expression]:
+    return [*tree.find_all(exp.Where), *tree.find_all(exp.Having)]
+
+
 def _has_null_handling(tree: exp.Expression, col_name: str) -> bool:
-    for is_node in tree.find_all(exp.Is):
-        if (
-            not isinstance(is_node.parent, exp.Not)
-            and isinstance(is_node.expression, exp.Null)
-            and _column_matches(is_node.this, col_name)
-        ):
-            return True
-    for coal_node in tree.find_all(exp.Coalesce):
-        if _column_matches(coal_node, col_name):
-            return True
+    for clause in _filter_clauses(tree):
+        for is_node in clause.find_all(exp.Is):
+            if (
+                not isinstance(is_node.parent, exp.Not)
+                and isinstance(is_node.expression, exp.Null)
+                and _column_matches(is_node.this, col_name)
+            ):
+                return True
+        for coal_node in clause.find_all(exp.Coalesce):
+            if _column_matches(coal_node, col_name):
+                return True
     return False
 
 
 def _filters_column_only_by_empty_text(tree: exp.Expression, col_name: str) -> bool:
-    for eq_node in tree.find_all(exp.EQ):
-        for side, other in ((eq_node.this, eq_node.expression), (eq_node.expression, eq_node.this)):
-            if _column_matches(side, col_name) and isinstance(other, exp.Literal) and other.is_string:
-                if _norm_text(other.this) in _EMPTY_TEXT_MARKERS:
+    for clause in _filter_clauses(tree):
+        for eq_node in clause.find_all(exp.EQ):
+            for side, other in ((eq_node.this, eq_node.expression), (eq_node.expression, eq_node.this)):
+                if _column_matches(side, col_name) and isinstance(other, exp.Literal) and other.is_string:
+                    if _norm_text(other.this) in _EMPTY_TEXT_MARKERS:
+                        return True
+        for like_node in clause.find_all((exp.Like, exp.ILike)):
+            if _column_matches(like_node.this, col_name) and isinstance(like_node.expression, exp.Literal) and like_node.expression.is_string:
+                if _norm_text(like_node.expression.this.strip("%")) in _EMPTY_TEXT_MARKERS:
                     return True
-    for like_node in tree.find_all((exp.Like, exp.ILike)):
-        if _column_matches(like_node.this, col_name) and isinstance(like_node.expression, exp.Literal) and like_node.expression.is_string:
-            if _norm_text(like_node.expression.this.strip("%")) in _EMPTY_TEXT_MARKERS:
-                return True
-    for in_node in tree.find_all(exp.In):
-        if _column_matches(in_node.this, col_name):
-            for arg in in_node.expressions or []:
-                if isinstance(arg, exp.Literal) and arg.is_string and _norm_text(arg.this) in _EMPTY_TEXT_MARKERS:
-                    return True
+        for in_node in clause.find_all(exp.In):
+            if _column_matches(in_node.this, col_name):
+                for arg in in_node.expressions or []:
+                    if isinstance(arg, exp.Literal) and arg.is_string and _norm_text(arg.this) in _EMPTY_TEXT_MARKERS:
+                        return True
     return False
 
 
