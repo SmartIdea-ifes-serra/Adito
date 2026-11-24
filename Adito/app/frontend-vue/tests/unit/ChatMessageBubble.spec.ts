@@ -95,10 +95,11 @@ describe('modules/chat/components/ChatMessageBubble (loading)', () => {
     wrapper.unmount()
   })
 
-  it('remove indicador de carregamento quando isLoading é false', () => {
+  it('remove indicador de carregamento e exibe aviso de IA abaixo da resposta concluída', () => {
     const wrapper = mount(ChatMessageBubble, {
       props: {
         message: makeLoadingMessage({
+          id: 'ai-1',
           isLoading: false,
           text: 'Resposta concluída.',
         }),
@@ -108,6 +109,30 @@ describe('modules/chat/components/ChatMessageBubble (loading)', () => {
 
     expect(wrapper.find('[role="status"]').exists()).toBe(false)
     expect(wrapper.find('.loading-brand-ring').exists()).toBe(false)
+    expect(wrapper.text()).toContain('O Adito é uma IA e pode cometer erros.')
     wrapper.unmount()
+  })
+
+  it('não exibe aviso de IA enquanto carrega, na mensagem de boas-vindas ou em mensagens do usuário', () => {
+    const loadingWrapper = mount(ChatMessageBubble, {
+      props: { message: makeLoadingMessage({ id: 'ai-loading', isLoading: true }) },
+      global: { stubs: { VueApexCharts: true } },
+    })
+    expect(loadingWrapper.text()).not.toContain('O Adito é uma IA e pode cometer erros.')
+    loadingWrapper.unmount()
+
+    const welcomeWrapper = mount(ChatMessageBubble, {
+      props: { message: makeLoadingMessage({ id: 'welcome', isLoading: false, text: 'Olá!' }) },
+      global: { stubs: { VueApexCharts: true } },
+    })
+    expect(welcomeWrapper.text()).not.toContain('O Adito é uma IA e pode cometer erros.')
+    welcomeWrapper.unmount()
+
+    const userWrapper = mount(ChatMessageBubble, {
+      props: { message: makeLoadingMessage({ id: 'user-1', type: 'user', isLoading: false, text: 'Oi' }) },
+      global: { stubs: { VueApexCharts: true } },
+    })
+    expect(userWrapper.text()).not.toContain('O Adito é uma IA e pode cometer erros.')
+    userWrapper.unmount()
   })
 })
