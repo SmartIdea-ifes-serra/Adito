@@ -953,14 +953,6 @@ const chartSeries = computed(() => {
         </div>
       </div>
 
-      <!-- Aviso de IA abaixo das respostas do Adito -->
-      <p
-        v-if="message.type === 'ai' && !message.isLoading && message.id !== 'welcome'"
-        class="mt-1.5 pl-1 text-[11px] leading-relaxed text-text-muted"
-      >
-        O Adito é uma IA e pode cometer erros.
-      </p>
-
       <!-- Ações para mensagem do usuário -->
       <div v-if="message.type === 'user'" class="flex justify-end mt-1.5 pr-1">
         <button

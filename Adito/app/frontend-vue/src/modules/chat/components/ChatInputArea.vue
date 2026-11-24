@@ -86,7 +86,7 @@ const handleKeydown = (event: KeyboardEvent) => {
           :value="modelValue"
           rows="1"
           aria-label="Pergunta sobre pesquisa e extensão"
-          aria-describedby="chat-ai-notice chat-input-help"
+          aria-describedby="chat-ai-notice"
           placeholder="O que você quer consultar sobre pesquisa e extensão?"
           class="min-h-[48px] w-full resize-none bg-transparent px-4 py-3 text-sm leading-relaxed text-[var(--neutral-dark)] outline-none placeholder:text-text-muted rounded-2xl"
           @input="handleInput"
@@ -118,9 +118,6 @@ const handleKeydown = (event: KeyboardEvent) => {
       </div>
       <p id="chat-ai-notice" class="mt-2 text-center text-[11px] leading-relaxed text-text-muted">
         O Adito utiliza IA e pode cometer erros
-      </p>
-      <p id="chat-input-help" class="mt-1 text-center text-[10px] text-text-muted">
-        Enter para enviar · Shift+Enter para nova linha
       </p>
     </div>
   </div>
