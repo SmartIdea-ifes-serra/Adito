@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { computed, onMounted, onBeforeUnmount, ref } from 'vue'
+import { computed, onMounted, onBeforeUnmount, ref, watch } from 'vue'
 import VueApexCharts from 'vue3-apexcharts'
 import { ArrowLeftRight, Code, Database, Lightbulb, Pin, Copy, Check, Minimize2 } from 'lucide-vue-next'
 import BrandIcon from '@/common/components/BrandIcon.vue'
@@ -29,8 +29,65 @@ const isSqlCopied = ref(false)
 let observer: MutationObserver | null = null
 
 const bubbleRef = ref<HTMLElement | null>(null)
-const isVisible = ref(false)
+const isVisible = ref(Boolean(props.message.isLoading))
 let scrollObserver: IntersectionObserver | null = null
+
+const INITIAL_LOADING_STATUS = 'Analisando sua pergunta...'
+const STREAMING_LOADING_STATUS = 'Gerando resposta...'
+const PROGRESSIVE_LOADING_STEPS = [
+  INITIAL_LOADING_STATUS,
+  'Consultando a base de dados...',
+  'Processando os resultados...',
+  'Cruzando informações e indicadores...',
+  'Preparando sua resposta...'
+]
+const LOADING_STEP_INTERVAL_MS = 3000
+
+const loadingStepIndex = ref(0)
+let loadingStepTimer: ReturnType<typeof setInterval> | null = null
+
+const stopLoadingStepTimer = () => {
+  if (loadingStepTimer !== null) {
+    clearInterval(loadingStepTimer)
+    loadingStepTimer = null
+  }
+}
+
+const shouldCycleLoadingSteps = computed(() => {
+  if (!props.message.isLoading || props.message.text) return false
+  const status = props.message.loadingStatus?.trim()
+  return !status || status === INITIAL_LOADING_STATUS
+})
+
+watch(
+  shouldCycleLoadingSteps,
+  (active) => {
+    stopLoadingStepTimer()
+    if (!active) {
+      loadingStepIndex.value = 0
+      return
+    }
+    loadingStepTimer = setInterval(() => {
+      if (loadingStepIndex.value < PROGRESSIVE_LOADING_STEPS.length - 1) {
+        loadingStepIndex.value += 1
+      } else {
+        stopLoadingStepTimer()
+      }
+    }, LOADING_STEP_INTERVAL_MS)
+  },
+  { immediate: true }
+)
+
+const displayedLoadingStatus = computed(() => {
+  const status = props.message.loadingStatus?.trim()
+  if (props.message.text) {
+    return status && status !== INITIAL_LOADING_STATUS ? status : STREAMING_LOADING_STATUS
+  }
+  if (status && status !== INITIAL_LOADING_STATUS) {
+    return status
+  }
+  return PROGRESSIVE_LOADING_STEPS[loadingStepIndex.value] ?? INITIAL_LOADING_STATUS
+})
 
 
 const copyToClipboard = async () => {
@@ -310,7 +367,7 @@ onMounted(() => {
     scrollObserver = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
-          isVisible.value = entry.isIntersecting
+          isVisible.value = Boolean(props.message.isLoading) || entry.isIntersecting
         })
       },
       {
@@ -327,6 +384,7 @@ onMounted(() => {
 onBeforeUnmount(() => {
   observer?.disconnect()
   scrollObserver?.disconnect()
+  stopLoadingStepTimer()
 })
 const chartOptions = computed<ApexOptions>(() => {
   const categories = displayedChart.value?.categories || []
@@ -523,8 +581,9 @@ const chartSeries = computed(() => {
         <div class="flex items-center gap-2">
           <div class="w-10 h-10 flex items-center justify-center relative">
             <div v-if="message.isLoading" class="loading-brand-wrapper">
+              <div class="loading-brand-pulse" aria-hidden="true" />
               <BrandIcon alt="" class="relative z-10 h-8 w-8" />
-              <div class="loading-brand-ring" />
+              <div class="loading-brand-ring" aria-hidden="true" />
             </div>
             <BrandIcon v-else alt="" class="h-9 w-9" />
           </div>
@@ -625,19 +684,34 @@ const chartSeries = computed(() => {
               v-html="renderedText"
             />
 
-            <div v-if="message.isLoading" :class="['chat-loading-container', message.text ? 'mt-4' : '']" aria-live="polite">
+            <div
+              v-if="message.isLoading"
+              :class="[
+                'chat-loading-container',
+                message.text ? 'mt-3 pt-3 border-t border-border-subtle/60' : 'min-w-[240px] sm:min-w-[300px]'
+              ]"
+              role="status"
+              aria-live="polite"
+            >
               <div class="chat-loading-status">
-                <div class="status-indicator">
+                <div class="status-indicator" aria-hidden="true">
                   <span class="status-dot" />
                   <span class="status-dot delay-100" />
                   <span class="status-dot delay-200" />
                 </div>
-                <span class="status-text">{{ message.loadingStatus || 'Consultando base de dados' }}</span>
+                <Transition name="status-fade" mode="out-in">
+                  <span :key="displayedLoadingStatus" class="status-text">
+                    {{ displayedLoadingStatus }}
+                  </span>
+                </Transition>
               </div>
-              <div v-if="!message.text" class="skeleton-group">
+              <div v-if="!message.text" class="loading-progress-track" aria-hidden="true">
+                <div class="loading-progress-bar" />
+              </div>
+              <div v-if="!message.text" class="skeleton-group" aria-hidden="true">
                 <div class="skeleton-line w-full" />
-                <div class="skeleton-line w-[92%] [animation-delay:0.1s]" />
-                <div class="skeleton-line w-[68%] [animation-delay:0.2s]" />
+                <div class="skeleton-line w-[88%] [animation-delay:0.15s]" />
+                <div class="skeleton-line w-[64%] [animation-delay:0.3s]" />
               </div>
             </div>
           </div>
@@ -976,12 +1050,19 @@ const chartSeries = computed(() => {
 }
 
 /* Loading state */
-/* Nova animação de carregamento — Estilo Profissional/Marca */
 .loading-brand-wrapper {
   position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+.loading-brand-pulse {
+  position: absolute;
+  inset: -4px;
+  border-radius: 50%;
+  background: color-mix(in srgb, var(--accent) 18%, transparent);
+  animation: brand-pulse 1.8s ease-in-out infinite;
 }
 
 .loading-brand-ring {
@@ -991,8 +1072,8 @@ const chartSeries = computed(() => {
   border: 2px solid var(--accent);
   border-top-color: transparent;
   border-right-color: transparent;
-  animation: brand-spin 0.8s cubic-bezier(0.4, 0, 0.2, 1) infinite;
-  opacity: 0.8;
+  animation: brand-spin 0.9s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+  opacity: 0.9;
 }
 
 @keyframes brand-spin {
@@ -1000,58 +1081,113 @@ const chartSeries = computed(() => {
   to { transform: rotate(360deg); }
 }
 
+@keyframes brand-pulse {
+  0%, 100% { transform: scale(0.95); opacity: 0.45; }
+  50% { transform: scale(1.12); opacity: 0.85; }
+}
+
 .chat-loading-container {
   display: flex;
   flex-direction: column;
-  gap: 1.25rem;
+  gap: 0.875rem;
 }
 
 .chat-loading-status {
   display: flex;
   align-items: center;
-  gap: 12px;
+  gap: 10px;
 }
 
 .status-indicator {
-  display: flex;
-  gap: 3px;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 2px 0;
 }
 
 .status-dot {
-  width: 4px;
-  height: 4px;
-  border-radius: 50%;
+  width: 7px;
+  height: 7px;
+  border-radius: 9999px;
   background-color: var(--accent);
-  opacity: 0.4;
-  animation: pulse-dot 1.2s ease-in-out infinite;
+  animation: wave-dot 1.2s ease-in-out infinite;
 }
 
-.delay-100 { animation-delay: 0.2s; }
-.delay-200 { animation-delay: 0.4s; }
+.delay-100 { animation-delay: 0.16s; }
+.delay-200 { animation-delay: 0.32s; }
 
-@keyframes pulse-dot {
-  0%, 100% { opacity: 0.4; transform: scale(1); }
-  50% { opacity: 1; transform: scale(1.2); }
+@keyframes wave-dot {
+  0%, 80%, 100% {
+    opacity: 0.35;
+    transform: translateY(0) scale(0.85);
+  }
+  40% {
+    opacity: 1;
+    transform: translateY(-4px) scale(1.1);
+  }
 }
 
 .status-text {
-  font-size: 12px;
-  font-weight: 600;
+  font-size: 0.84rem;
+  font-weight: 500;
   color: var(--text-secondary);
-  letter-spacing: 0.01em;
-  text-transform: uppercase;
-  font-family: var(--font-mono);
+  letter-spacing: -0.005em;
+  line-height: 1.4;
+}
+
+.status-fade-enter-active,
+.status-fade-leave-active {
+  transition: opacity 0.22s ease, transform 0.22s ease;
+}
+
+.status-fade-enter-from {
+  opacity: 0;
+  transform: translateY(4px);
+}
+
+.status-fade-leave-to {
+  opacity: 0;
+  transform: translateY(-4px);
+}
+
+.loading-progress-track {
+  position: relative;
+  width: 100%;
+  height: 3px;
+  border-radius: 9999px;
+  background: var(--bg-surface-elevated);
+  overflow: hidden;
+}
+
+.loading-progress-bar {
+  position: absolute;
+  inset: 0;
+  width: 42%;
+  border-radius: 9999px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    var(--accent),
+    color-mix(in srgb, var(--accent) 65%, white),
+    transparent
+  );
+  animation: progress-sweep 1.6s ease-in-out infinite;
+}
+
+@keyframes progress-sweep {
+  0% { transform: translateX(-110%); }
+  100% { transform: translateX(260%); }
 }
 
 .skeleton-group {
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 9px;
 }
 
 .skeleton-line {
-  height: 11px;
-  border-radius: 4px;
+  height: 10px;
+  border-radius: 9999px;
   background: var(--bg-surface-elevated);
   position: relative;
   overflow: hidden;
@@ -1065,7 +1201,7 @@ const chartSeries = computed(() => {
   background: linear-gradient(
     90deg,
     transparent,
-    rgba(255, 255, 255, 0.15),
+    color-mix(in srgb, var(--accent) 16%, transparent),
     transparent
   );
   animation: shimmer 1.8s infinite;
@@ -1075,7 +1211,7 @@ const chartSeries = computed(() => {
   background: linear-gradient(
     90deg,
     transparent,
-    rgba(255, 255, 255, 0.04),
+    color-mix(in srgb, var(--accent) 24%, transparent),
     transparent
   );
 }
@@ -1086,7 +1222,9 @@ const chartSeries = computed(() => {
 
 @media (prefers-reduced-motion: reduce) {
   .loading-brand-ring,
+  .loading-brand-pulse,
   .status-dot,
+  .loading-progress-bar,
   .skeleton-line::after {
     animation: none;
   }

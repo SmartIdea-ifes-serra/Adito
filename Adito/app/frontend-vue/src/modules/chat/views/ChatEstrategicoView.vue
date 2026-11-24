@@ -154,7 +154,7 @@ const sendQuestion = async (questionText?: string) => {
   let serverConversationId: string | null = null
   let draftCounter = 1
   let currentDraftId = `${Date.now()}-draft-${draftCounter}`
-  let currentLoadingStatus: string | undefined = undefined
+  let currentLoadingStatus = 'Analisando sua pergunta...'
 
   const createDraft = (id: string): ChatMessage => ({
     id,
@@ -189,7 +189,8 @@ const sendQuestion = async (questionText?: string) => {
         ...message,
         text: `${message.text}${token}`,
         isChat: true,
-        isLoading: true
+        isLoading: true,
+        loadingStatus: 'Gerando resposta...'
       }))
     },
     onStatus: (status, payload) => {
