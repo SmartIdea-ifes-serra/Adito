@@ -24,8 +24,11 @@ const instalandoDados = ref(false)
 const instalandoApp = ref(false)
 const progressoApp = ref(0)
 const erro = ref<string | null>(null)
+const avisoAberto = ref(false)
+const avisosExibidos = new Set<string>()
 
 let verificacao: Promise<void> | null = null
+let verificando = false
 
 function mensagem(err: unknown): string {
   if (typeof err === 'string') return err
@@ -46,11 +49,14 @@ async function verificarAgora() {
   const [remoto, update] = await Promise.allSettled([dadosVerificar(), appVerificar()])
   dadosRemoto.value = remoto.status === 'fulfilled' ? remoto.value : null
   app.value = update.status === 'fulfilled' ? update.value : null
+  avaliarAviso()
 }
 
-/** Confere uma vez por sessão; chamadas seguintes reaproveitam a mesma conferência. */
-function verificar(): Promise<void> {
-  verificacao ??= verificarAgora().catch(() => {})
+/** O padrão reutiliza a conferência; forcar permite detectar novas versões na mesma sessão. */
+function verificar({ forcar = false }: { forcar?: boolean } = {}): Promise<void> {
+  if (verificacao && (!forcar || verificando || instalandoApp.value || instalandoDados.value)) return verificacao
+  verificando = true
+  verificacao = verificarAgora().catch(() => {}).finally(() => { verificando = false })
   return verificacao
 }
 
@@ -67,13 +73,45 @@ const dadosNovos = computed(() => {
 
 const temAtualizacao = computed(() => !!app.value || !!dadosNovos.value)
 
+function versoesDisponiveis() {
+  return [app.value ? `app:${app.value.version}` : null, dadosNovos.value ? `dados:${dadosNovos.value.versao}` : null]
+    .filter((versao): versao is string => versao !== null)
+}
+
+function avaliarAviso() {
+  // A chave da primeira carga deve ser resolvida antes de qualquer outro aviso.
+  if (precisaPrimeiraCarga.value || !temAtualizacao.value) {
+    avisoAberto.value = false
+    return
+  }
+  const versoes = versoesDisponiveis()
+  if (versoes.some((versao) => !avisosExibidos.has(versao))) {
+    versoes.forEach((versao) => avisosExibidos.add(versao))
+    avisoAberto.value = true
+  }
+}
+
+function abrirAviso() {
+  if (precisaPrimeiraCarga.value || !temAtualizacao.value) return
+  versoesDisponiveis().forEach((versao) => avisosExibidos.add(versao))
+  avisoAberto.value = true
+}
+
+function adiarAviso() {
+  if (instalandoApp.value || instalandoDados.value) return
+  avisoAberto.value = false
+  erro.value = null
+}
+
 async function instalarDados(chave?: string): Promise<boolean> {
+  if (instalandoApp.value || instalandoDados.value) return false
   instalandoDados.value = true
   erro.value = null
   try {
     await dadosInstalar(chave)
     await carregarStatus()
     if (dadosRemoto.value) dadosRemoto.value = { ...dadosRemoto.value, atualizacao: false, precisa_chave: false }
+    avaliarAviso()
     return true
   } catch (err) {
     erro.value = mensagem(err)
@@ -90,14 +128,17 @@ async function instalarDados(chave?: string): Promise<boolean> {
 }
 
 async function instalarApp(): Promise<void> {
-  if (!app.value) return
+  if (!app.value || instalandoApp.value || instalandoDados.value) return
   instalandoApp.value = true
   progressoApp.value = 0
   erro.value = null
   try {
     await appInstalar(app.value, (f) => (progressoApp.value = f))
+    app.value = null
+    avaliarAviso()
   } catch (err) {
     erro.value = `Não foi possível atualizar o app: ${mensagem(err)}`
+  } finally {
     instalandoApp.value = false
   }
 }
@@ -114,6 +155,9 @@ export function useAtualizacoes() {
     instalandoApp,
     progressoApp,
     erro,
+    avisoAberto,
+    abrirAviso,
+    adiarAviso,
     verificar,
     instalarDados,
     instalarApp,
@@ -130,5 +174,8 @@ export function _resetAtualizacoes() {
   instalandoApp.value = false
   progressoApp.value = 0
   erro.value = null
+  avisoAberto.value = false
+  avisosExibidos.clear()
   verificacao = null
+  verificando = false
 }

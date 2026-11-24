@@ -7,13 +7,13 @@ withDefaults(defineProps<{ alt?: string }>(), {
 <template>
   <span class="inline-flex shrink-0">
     <img
-      src="/brand/adito-light.png"
+      src="/brand/adito-light.svg"
       :alt="alt"
       class="h-full w-full object-contain dark:hidden"
       draggable="false"
     />
     <img
-      src="/brand/adito-dark.png"
+      src="/brand/adito-dark.svg"
       :alt="alt"
       class="hidden h-full w-full object-contain dark:block"
       draggable="false"

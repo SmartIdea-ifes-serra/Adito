@@ -41,7 +41,7 @@ async function baixar() {
       </p>
       <ul class="mb-4 space-y-1.5 text-xs text-text-secondary">
         <li class="flex gap-2"><LockKeyhole class="h-4 w-4 shrink-0" /> Você digita a chave só uma vez: ela fica no cofre do sistema.</li>
-        <li class="flex gap-2"><Database class="h-4 w-4 shrink-0" /> Quando houver dados novos, o Adito avisa no canto da barra lateral.</li>
+        <li class="flex gap-2"><Database class="h-4 w-4 shrink-0" /> Quando houver dados novos, o Adito mostra um aviso para você escolher quando baixar.</li>
       </ul>
 
       <form class="flex flex-col gap-3" @submit.prevent="baixar">

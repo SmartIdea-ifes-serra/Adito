@@ -3,36 +3,30 @@ import { computed, nextTick, onMounted, ref, watch } from 'vue'
 import { useRoute } from 'vue-router'
 import { AlertCircle, CheckCircle2 } from 'lucide-vue-next'
 
-import ConfirmModal from '@/common/components/feedback/ConfirmModal.vue'
 import { useToast } from '@/common/composables/useToast'
 import ChatConversation from '@/modules/chat/components/ChatConversation.vue'
 import ChatInputArea from '@/modules/chat/components/ChatInputArea.vue'
 import DashboardPinDialog from '@/modules/dashboard/components/DashboardPinDialog.vue'
-import ChatSidebar from '@/modules/chat/components/ChatSidebar.vue'
 import ContextoSelector from '@/modules/chat/components/ContextoSelector.vue'
 import { useContextos } from '@/common/composables/useContextos'
 import { useAuth } from '@/modules/auth/composables/useAuth'
-import { useChatApi } from '@/modules/chat/composables/useChatApi'
-import { useChatHistory } from '@/modules/chat/composables/useChatHistory'
+import { useChatWorkspace } from '@/modules/chat/composables/useChatWorkspace'
 import { useChatPin } from '@/modules/chat/composables/useChatPin'
 import type { ChatMessage } from '@/modules/chat/types'
 
 const route = useRoute()
 const { toast, showToast } = useToast()
+const { history, chatApi } = useChatWorkspace()
 
 const {
-  conversations,
   currentConvId,
-  setCurrentConvId,
-  handleNewConversation,
-  handleDeleteConversation,
   updateCurrentConversation,
   replaceConversationId,
   setConversationContexto,
   currentConversation
-} = useChatHistory()
+} = history
 
-const { askQuestionStream, checkHealth, isLoading } = useChatApi()
+const { askQuestionStream, checkHealth, isLoading } = chatApi
 const { selectedId: selectedContextoId, loadContextos } = useContextos()
 
 // Conversa ainda não salva no backend: o contexto pode ser escolhido.
@@ -53,8 +47,6 @@ const {
 
 const input = ref('')
 const healthOnline = ref<boolean | null>(null)
-const isConvSidebarOpen = ref(false)
-const conversationToDelete = ref<{ id: string; title: string } | null>(null)
 
 const messages = computed(() => currentConversation.value?.messages || [])
 const starterCategories = [
@@ -303,38 +295,11 @@ const openPinModal = (message: ChatMessage) => {
   openPinModalBase(message, questionOriginal, currentConversation.value?.contextoId)
 }
 
-const requestDeleteConversation = (id: string) => {
-  const conversation = conversations.value.find(item => item.id === id)
-  if (!conversation) return
-  conversationToDelete.value = { id, title: conversation.title }
-}
-
-const confirmDeleteConversation = async () => {
-  if (!conversationToDelete.value) return
-  try {
-    await handleDeleteConversation(conversationToDelete.value.id)
-    showToast('Conversa excluida com sucesso.', 'success')
-    conversationToDelete.value = null
-  } catch (error: any) {
-    const detail = error?.response?.data?.detail || error?.message || 'Erro desconhecido.'
-    showToast(`Erro ao excluir conversa: ${detail}`, 'error')
-  }
-}
 </script>
 
 
 <template>
   <div class="flex flex-col h-full relative overflow-hidden">
-    <ConfirmModal
-      :is-open="!!conversationToDelete"
-      title="Excluir conversa"
-      :message="conversationToDelete ? `Tem certeza que deseja excluir a conversa '${conversationToDelete.title}'?` : ''"
-      confirm-text="Excluir conversa"
-      cancel-text="Cancelar"
-      @confirm="confirmDeleteConversation"
-      @close="conversationToDelete = null"
-    />
-
     <DashboardPinDialog
       :is-open="pinModalOpen"
       :title="pinTitle"
@@ -367,23 +332,7 @@ const confirmDeleteConversation = async () => {
       </div>
     </transition>
 
-    <div class="flex flex-col lg:flex-row h-full relative overflow-hidden">
-      <ChatSidebar
-        :conversations="conversations"
-        :current-conv-id="currentConvId"
-        :open="isConvSidebarOpen"
-        @select="setCurrentConvId($event); isConvSidebarOpen = false"
-        @new="handleNewConversation(); isConvSidebarOpen = false"
-        @delete="requestDeleteConversation($event)"
-        @close="isConvSidebarOpen = false"
-      />
-
-      <div
-        v-if="isConvSidebarOpen"
-        class="lg:hidden fixed inset-0 bg-black/40 z-30 animate-in fade-in"
-        @click="isConvSidebarOpen = false"
-      />
-
+    <div class="flex h-full min-h-0 flex-col relative overflow-hidden">
       <div class="flex-1 flex flex-col min-h-0 min-w-0">
         <ChatConversation
           :messages="messages"
@@ -391,7 +340,6 @@ const confirmDeleteConversation = async () => {
           :loading="isLoading"
           :health-online="healthOnline"
           :starter-categories="starterCategories"
-          @open-conversations="isConvSidebarOpen = true"
           @toggle-sql="toggleSql"
           @pin="openPinModal"
           @suggest="sendQuestion($event)"

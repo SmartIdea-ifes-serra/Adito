@@ -20,7 +20,7 @@ test.describe('Chat estratégico', () => {
     await expect(page.getByText(/SELECT grande_area/i)).toBeVisible()
 
     // Cria novo chat e confirma que o painel volta ao estado inicial limpo
-    await page.getByRole('button', { name: /Novo chat/i }).click()
+    await page.getByRole('button', { name: 'Nova conversa', exact: true }).click()
     await expect(page.getByText(/existem 236 projetos de pesquisa ativos no Campus Serra/i)).toBeHidden()
 
     expect(getErrors()).toEqual([])

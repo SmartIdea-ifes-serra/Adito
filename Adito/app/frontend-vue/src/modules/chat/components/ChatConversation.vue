@@ -1,7 +1,6 @@
 <script setup lang="ts">
 import { ref } from 'vue'
 import {
-  MessageSquare,
   FlaskConical,
   Handshake,
   Users,
@@ -30,7 +29,6 @@ const props = defineProps<{
 }>()
 
 const emit = defineEmits<{
-  (e: 'open-conversations'): void
   (e: 'toggle-sql', id: string): void
   (e: 'pin', message: ChatMessage): void
   (e: 'suggest', question: string): void
@@ -62,13 +60,6 @@ function select(key: string) {
         <BrandIcon alt="" class="h-4 w-4" />
         <h2 class="truncate text-xs font-semibold text-primary">{{ currentConversation?.title }}</h2>
       </div>
-      <button
-        class="flex shrink-0 items-center gap-1.5 rounded-md border border-accent/20 bg-accent/8 px-3 py-1.5 text-[10px] font-semibold uppercase tracking-[0.14em] text-accent transition-colors hover:bg-accent/14"
-        @click="emit('open-conversations')"
-      >
-        <MessageSquare class="h-3 w-3" />
-        Conversas
-      </button>
     </div>
 
     <div class="flex-1 overflow-y-auto p-4 min-h-[300px] bg-transparent md:p-6 scroll-fade-mask">

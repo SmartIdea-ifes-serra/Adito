@@ -406,7 +406,7 @@
     "data": {
      "status": "processing",
      "step": "orchestrator",
-     "message": "Roteando pergunta...",
+     "message": "Analisando sua pergunta...",
      "conversation_id": "<id6>",
      "user_message_id": "<id7>"
     }
@@ -416,7 +416,7 @@
     "data": {
      "status": "processing",
      "step": "orchestrator",
-     "message": "Roteando pergunta..."
+     "message": "Analisando sua pergunta..."
     }
    },
    {
@@ -473,7 +473,7 @@
     "data": {
      "status": "processing",
      "step": "orchestrator",
-     "message": "Roteando pergunta...",
+     "message": "Analisando sua pergunta...",
      "conversation_id": "<id6>",
      "user_message_id": "<id9>"
     }
@@ -483,7 +483,7 @@
     "data": {
      "status": "processing",
      "step": "orchestrator",
-     "message": "Roteando pergunta..."
+     "message": "Analisando sua pergunta..."
     }
    },
    {
@@ -534,7 +534,7 @@
     "data": {
      "status": "processing",
      "step": "orchestrator",
-     "message": "Roteando pergunta...",
+     "message": "Analisando sua pergunta...",
      "conversation_id": "<id11>",
      "user_message_id": "<id12>"
     }
@@ -544,7 +544,7 @@
     "data": {
      "status": "processing",
      "step": "orchestrator",
-     "message": "Roteando pergunta..."
+     "message": "Analisando sua pergunta..."
     }
    },
    {

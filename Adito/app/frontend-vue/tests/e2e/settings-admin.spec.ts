@@ -21,10 +21,10 @@ test.describe('Configurações e Administração', () => {
     await installTauriMock(page)
     await page.goto('/#/admin')
 
-    await expect(page.getByText('Base de conhecimento')).toBeVisible()
-    await expect(page.getByText('Auditoria SQL')).toBeVisible()
-    await expect(page.getByText('Contextos de dados')).toBeVisible()
-    await expect(page.getByText('Sistema')).toBeVisible()
+    await expect(page.getByRole('button', { name: 'Base de conhecimento', exact: true })).toBeVisible()
+    await expect(page.getByRole('button', { name: 'Auditoria SQL', exact: true })).toBeVisible()
+    await expect(page.getByRole('button', { name: 'Contextos de dados', exact: true })).toBeVisible()
+    await expect(page.getByRole('button', { name: 'Sistema', exact: true })).toBeVisible()
 
     await page.getByRole('button', { name: /Contextos de dados/i }).click()
     await expect(page.getByText('Contextos carregados')).toBeVisible()

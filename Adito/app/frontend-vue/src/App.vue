@@ -24,7 +24,7 @@ onMounted(() => {
   if (favicon) {
     const syncFavicon = () => {
       const theme = document.documentElement.classList.contains('dark') ? 'dark' : 'light'
-      favicon.href = `/brand/adito-${theme}.png`
+      favicon.href = `/brand/adito-${theme}.svg`
     }
     syncFavicon()
     themeObserver = new MutationObserver(syncFavicon)

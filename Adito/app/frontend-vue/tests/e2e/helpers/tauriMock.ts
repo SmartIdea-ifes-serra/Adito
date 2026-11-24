@@ -20,6 +20,13 @@ export interface TauriMockOptions {
   dadosNovos?: boolean
   /** Primeiro uso: ainda não há dados.db baixado. */
   semDados?: boolean
+  /** Simula falha de download/instalação mantendo a atualização disponível. */
+  dadosErro?: string
+  /** Atualização do app pelo plugin oficial, sem baixar nem reiniciar processos reais. */
+  appUpdate?: boolean
+  appErro?: string
+  /** Histórico isolado para testar busca, navegação e exclusão sem dados reais. */
+  conversations?: Array<Record<string, unknown>>
 }
 
 /**
@@ -34,6 +41,10 @@ export async function installTauriMock(page: Page, options: TauriMockOptions = {
     role: options.role ?? 'admin',
     dadosNovos: options.dadosNovos ?? false,
     semDados: options.semDados ?? false,
+    dadosErro: options.dadosErro ?? null,
+    appUpdate: options.appUpdate ?? false,
+    appErro: options.appErro ?? null,
+    conversations: options.conversations ?? null,
   }
 
   await page.addInitScript((cfg) => {
@@ -41,6 +52,10 @@ export async function installTauriMock(page: Page, options: TauriMockOptions = {
     let nextCbId = 1
     let llmConfigured = cfg.llmConfigured
     let dadosInstalados = !cfg.semDados
+    let dadosAtualizados = false
+    let appInstalado = false
+    const invocations: string[] = []
+    ;(window as unknown as Record<string, unknown>).__ADITO_MOCK_INVOKES__ = invocations
 
     const CONTEXTOS = [
       {
@@ -82,7 +97,8 @@ export async function installTauriMock(page: Page, options: TauriMockOptions = {
       ],
     }
 
-    const conversations: Array<Record<string, unknown>> = [
+    const savedConversations = sessionStorage.getItem('__adito_mock_conversations')
+    const conversations: Array<Record<string, unknown>> = savedConversations ? JSON.parse(savedConversations) : cfg.conversations ?? [
       {
         id: 'conv-1',
         title: 'Panorama de Projetos',
@@ -209,8 +225,12 @@ export async function installTauriMock(page: Page, options: TauriMockOptions = {
           return conversations
         case 'chat.message_rows':
           return { data: [{ total: 236 }] }
-        case 'chat.conversations.delete':
+        case 'chat.conversations.delete': {
+          const idx = conversations.findIndex((conversation) => conversation.id === params.id)
+          if (idx >= 0) conversations.splice(idx, 1)
+          sessionStorage.setItem('__adito_mock_conversations', JSON.stringify(conversations))
           return { ok: true }
+        }
         case 'config.test_llm_key':
           return params.key === 'chave-invalida'
             ? { ok: false, reason: 'Chave Gemini rejeitada' }
@@ -256,6 +276,7 @@ export async function installTauriMock(page: Page, options: TauriMockOptions = {
         callbacks.delete(id)
       },
       async invoke(cmd: string, args: Record<string, unknown> = {}) {
+        invocations.push(cmd)
         if (cmd === 'core_ready') return undefined
         if (cmd === 'core_cancel') return undefined
         if (cmd === 'llm_key_status') {
@@ -272,19 +293,41 @@ export async function installTauriMock(page: Page, options: TauriMockOptions = {
         // Distribuição: por padrão os dados já estão instalados e nada novo foi publicado.
         if (cmd === 'dados_status') {
           return dadosInstalados
-            ? { instalado: true, versao: '2026-11-01', desenvolvimento: false, chave_configurada: true }
+            ? { instalado: true, versao: dadosAtualizados ? '2026-11-22' : '2026-11-01', desenvolvimento: false, chave_configurada: true }
             : { instalado: false, versao: null, desenvolvimento: false, chave_configurada: false }
         }
         if (cmd === 'dados_verificar') {
-          const novos = cfg.dadosNovos || !dadosInstalados
-          return { versao: novos ? '2026-11-22' : '2026-11-01', tamanho: 8000000, atualizacao: novos, precisa_chave: !dadosInstalados }
+          const novos = (cfg.dadosNovos && !dadosAtualizados) || !dadosInstalados
+          return { versao: novos || dadosAtualizados ? '2026-11-22' : '2026-11-01', tamanho: 8000000, atualizacao: novos, precisa_chave: !dadosInstalados }
         }
         if (cmd === 'dados_instalar') {
+          if (cfg.dadosErro) throw cfg.dadosErro
           if (!dadosInstalados && args.chave !== 'a'.repeat(64)) {
             throw 'Essa chave não abre esta versão dos dados.'
           }
           dadosInstalados = true
+          dadosAtualizados = true
           return '2026-11-22'
+        }
+        if (cmd === 'plugin:updater|check') {
+          return cfg.appUpdate && !appInstalado
+            ? { rid: 91, currentVersion: '0.1.0', version: '0.2.0', date: '2026-11-24T12:00:00Z', body: 'Melhorias no Adito', rawJson: {} }
+            : null
+        }
+        if (cmd === 'plugin:updater|download_and_install') {
+          if (cfg.appErro) throw cfg.appErro
+          sendChannel(args.onEvent, [
+            { event: 'Started', data: { contentLength: 100 } },
+            { event: 'Progress', data: { chunkLength: 100 } },
+            { event: 'Finished' },
+          ])
+          await new Promise(resolve => setTimeout(resolve, 40))
+          appInstalado = true
+          return undefined
+        }
+        if (cmd === 'plugin:process|restart') {
+          sessionStorage.setItem('__adito_mock_restarted', 'true')
+          return undefined
         }
         if (cmd === 'core_call') {
           return handleRpc(String(args.method), (args.params as Record<string, unknown>) || {})

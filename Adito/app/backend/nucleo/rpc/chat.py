@@ -186,7 +186,7 @@ def persist_assistant_response(conversation: Conversation, user_message: Message
 
 
 _STATUS = {
-    "orchestrator": "Roteando pergunta...",
+    "orchestrator": "Analisando sua pergunta...",
     "mcp_tool_node": "Consultando dados...",
     "conversational_agent": "Gerando resposta...",
     "guard_node": "Gerando resposta...",
@@ -223,7 +223,7 @@ async def chat_stream(params, emit):
         await emit("status", {
             "status": "processing",
             "step": "orchestrator",
-            "message": "Roteando pergunta...",
+            "message": _STATUS["orchestrator"],
             "conversation_id": conversation.id,
             "user_message_id": user_message.id,
         })
