@@ -8,7 +8,7 @@ from pydantic import BaseModel, Field
 KNOWLEDGE_LIMITS: dict[str, int] = {
     "ddl": 3,
     "doc": 3,
-    "query_example": 10,
+    "query_example": 4,
 }
 
 KNOWLEDGE_LABELS: dict[str, str] = {

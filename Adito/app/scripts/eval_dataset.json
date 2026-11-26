@@ -4,7 +4,7 @@
     "categoria": "src_acao",
     "tipo": "analytics",
     "pergunta": "Quantas ações de extensão distintas foram cadastradas no ano de 2024?",
-    "sql_gabarito": "SELECT COUNT(DISTINCT id_acao) AS total_acoes FROM vfact_extensao_acao_resolved WHERE ano_cadastro = 2024",
+    "sql_gabarito": "SELECT COUNT(DISTINCT id_acao) AS total_acoes FROM vfact_extensao_acao_resolved WHERE ano_cadastro = 2024 AND natureza LIKE 'Extensão'",
     "ordem_importa": false
   },
   {
@@ -124,7 +124,7 @@
     "categoria": "complexa",
     "tipo": "analytics",
     "pergunta": "Em 2024, quantos projetos de pesquisa distintos foram iniciados e quantas ações de extensão distintas foram cadastradas?",
-    "sql_gabarito": "SELECT (SELECT COUNT(DISTINCT id_projeto) FROM vfact_projeto_pesquisa_resolved WHERE ano_inicio = 2024) AS projetos_2024, (SELECT COUNT(DISTINCT id_acao) FROM vfact_extensao_acao_resolved WHERE ano_cadastro = 2024) AS acoes_2024",
+    "sql_gabarito": "SELECT (SELECT COUNT(DISTINCT id_projeto) FROM vfact_projeto_pesquisa_resolved WHERE ano_inicio = 2024) AS projetos_2024, (SELECT COUNT(DISTINCT id_acao) FROM vfact_extensao_acao_resolved WHERE ano_cadastro = 2024 AND natureza LIKE 'Extensão') AS acoes_2024",
     "ordem_importa": false
   },
   {
@@ -200,7 +200,7 @@
       "Quantas ações de extensão distintas foram cadastradas em 2024?"
     ],
     "pergunta": "E em 2025?",
-    "sql_gabarito": "SELECT COUNT(DISTINCT id_acao) AS total_acoes FROM vfact_extensao_acao_resolved WHERE ano_cadastro = 2025",
+    "sql_gabarito": "SELECT COUNT(DISTINCT id_acao) AS total_acoes FROM vfact_extensao_acao_resolved WHERE ano_cadastro = 2025 AND natureza LIKE 'Extensão'",
     "ordem_importa": false
   }
 ]

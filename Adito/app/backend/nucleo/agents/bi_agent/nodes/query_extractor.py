@@ -18,12 +18,17 @@ logger = logging.getLogger(__name__)
 from ..config import KNOWLEDGE_LABELS, KNOWLEDGE_LIMITS
 from ..state import BiAgentState
 
+import os
+
+FALLBACK_EXAMPLES_LIMIT = 8
 FALLBACK_MANUAL_LIMIT = 10
 FALLBACK_MANUAL_MAX_CHARS = 800
+QUERY_EXAMPLE_MAX_DISTANCE = float(os.getenv("ADITO_EXAMPLE_MAX_DISTANCE", "1.15"))
+QUERY_EXAMPLE_MIN_RESULTS = 2
 
 
 def _fallback_examples_for_contexto(contexto_id: str | None) -> str:
-    """Se o RAG vetorial não estiver disponível, carrega os exemplos do examples.json do contexto."""
+    """Se o RAG vetorial não estiver disponível, carrega os exemplos essenciais do examples.json do contexto."""
     contexto = get_contexto(contexto_id)
     if contexto is None:
         return ""
@@ -34,7 +39,7 @@ def _fallback_examples_for_contexto(contexto_id: str | None) -> str:
                 examples = json.loads(examples_file.read_text(encoding="utf-8"))
                 formatted = "\n\n".join(
                     f"Pergunta: {ex['question']}\nSQL: {ex['sql']}"
-                    for ex in examples[:16]
+                    for ex in examples[:FALLBACK_EXAMPLES_LIMIT]
                     if "question" in ex and "sql" in ex
                 )
                 return f"### {KNOWLEDGE_LABELS['query_example']}\n{formatted}" if formatted else ""
@@ -118,6 +123,11 @@ def _search_knowledge(tenant_id: str, contexto_id: str | None, query_embedding: 
     tracker = _incompatible_hits.get()
     if tracker is not None and total_incompatible:
         tracker.append(total_incompatible)
+    if item_type == "query_example" and matches:
+        within_cutoff = [item for item, dist in matches if dist <= QUERY_EXAMPLE_MAX_DISTANCE]
+        if len(within_cutoff) >= QUERY_EXAMPLE_MIN_RESULTS:
+            return within_cutoff
+        return [item for item, _ in matches[:QUERY_EXAMPLE_MIN_RESULTS]]
     return [item for item, _ in matches]
 
 

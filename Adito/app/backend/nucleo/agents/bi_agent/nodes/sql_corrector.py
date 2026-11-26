@@ -24,8 +24,8 @@ def sql_corrector(
     system_content = (
         f"You are a SQL expert for the {dialect.upper()} database. Fix the query so it answers the question.\n\n"
         f"Write the explanation field in Brazilian Portuguese.\n\n"
-        f"RETRIEVED CONTEXT:\n{state.get('retrieved_schema', '')}\n\n"
-        f"{state.get('system_prompt', '')}"
+        f"{state.get('system_prompt', '')}\n\n"
+        f"RETRIEVED CONTEXT:\n{state.get('retrieved_schema', '')}"
     )
     prompt = (
         f"Question: {question}\n"

@@ -32,11 +32,11 @@ Rules:
 6. Percentages must use NULLIF to avoid division by zero.
 7. Return a single valid SQL query without comments or explanations.
 8. SQLite 3 dialect: you MAY use LIKE for case-insensitive and accent-insensitive matching (e.g. campus LIKE '%Vitoria%'), strftime('%Y', col), CAST(x AS INTEGER), COALESCE, COUNT(DISTINCT col), SUM, AVG, ROUND.
-9. PLURAL vs SINGULAR LIMIT:
-   - Plural questions ("quais", "liste", "mostre", "os N mais", "top N"): ORDER BY metric DESC LIMIT 10 unless the user gives N.
+9. LIMIT POLICY:
+   - Rankings ("os N mais", "top N", "maiores", "quais pessoas/grupos mais..."): ORDER BY metric DESC LIMIT N (default LIMIT 10 when N is not given).
    - Singular questions ("qual o", "o/a com maior/menor", "o principal"): LIMIT 1.
-   - Filter questions without ranking: no arbitrary LIMIT; filter with WHERE.
-10. Do NOT add extra WHERE filters (such as IS NOT NULL, year, or status) that the user did not request, except when needed for JOIN keys or excluding NULL years in time-series grouping.
+   - Complete listings, distributions, or filtered lists ("quais campi", "distribuição por...", "quais grupos no campus X"): no arbitrary LIMIT; return all matching groups/rows.
+10. Do NOT add extra WHERE filters (such as IS NOT NULL, year, or status) that the user did not request, except when needed for JOIN keys, excluding NULL years in time-series grouping, or excluding NULL dimension labels in rankings.
 11. When the user specifies an explicit tie-breaker (e.g. "desempate pelo nome do campus"), strictly follow that exact column order in ORDER BY.
 """
 
@@ -282,20 +282,29 @@ def index_contexto(contexto: Contexto, embedder, examples: list[dict], dados_pat
     cfg = resolve_active_llm_config()
     emb_meta = {"embedding_provider": cfg.provider, "embedding_model": cfg.embedding_model}
 
-    items = [("ddl", describe_views(contexto, dados_path), dict(emb_meta))]
+    # DDL e rules.md já entram integralmente no system_prompt: ficam registrados no app.db para
+    # exibição na Base de conhecimento, mas sem gerar embeddings mortos na API.
+    # Exemplos embedam apenas a pergunta (`question`), alinhado aos itens manuais de `query_example`.
+    items: list[tuple[str, str, dict, str | None]] = [
+        ("ddl", describe_views(contexto, dados_path), {}, None),
+    ]
     if contexto.rules:
-        items.append(("doc", contexto.rules, dict(emb_meta)))
+        items.append(("doc", contexto.rules, {}, None))
     for example in examples:
         items.append((
             "query_example",
             f"Pergunta: {example['question']}\nSQL: {example['sql']}",
             {"question": example["question"], **emb_meta},
+            example["question"],
         ))
 
     # Todos os embeddings (rede) saem ANTES da transação: se houver erro de cota/rede no meio,
     # o banco atual permanece intacto sem mistura parcial.
-    rows = [(item_type, content, metadata, embedder.embed_query(content)) for item_type, content, metadata in items]
-    new_dim_bytes = len(rows[0][3]) * 4 if rows and rows[0][3] is not None else None
+    rows = [
+        (item_type, content, metadata, embedder.embed_query(text_to_embed) if text_to_embed else None)
+        for item_type, content, metadata, text_to_embed in items
+    ]
+    new_dim_bytes = next((len(emb) * 4 for _, _, _, emb in rows if emb is not None), None)
 
     # Re-embedar em lote os itens manuais cuja dimensão ou provedor/modelo divergir do ativo.
     cid = to_db_id(contexto.id)

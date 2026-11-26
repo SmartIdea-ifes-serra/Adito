@@ -1396,9 +1396,108 @@ class QaAccuracyGuardsTests(unittest.TestCase):
             ok, motivo = validate_read_only_sql(ex["sql"], allowed)
             self.assertTrue(ok, f"Exemplo #{idx} inválido: {motivo}")
 
-        top16_sql = "\n".join(ex["sql"].lower() for ex in examples[:16])
+        top8_sql = "\n".join(ex["sql"].lower() for ex in examples[:8])
         for view_name in allowed:
-            self.assertIn(view_name.lower(), top16_sql, f"View {view_name} ausente do top-16 de fallback")
+            self.assertIn(view_name.lower(), top8_sql, f"View {view_name} ausente do top-8 de fallback")
+
+    def test_index_contexto_embeda_apenas_question_e_omite_embeddings_mortos(self) -> None:
+        from core.contexts import index_contexto
+        from core.records import KnowledgeItem
+        from unittest.mock import patch
+
+        with tempfile.TemporaryDirectory() as tmp:
+            old_data_dir = os.environ.get("ADITO_DATA_DIR")
+            os.environ["ADITO_DATA_DIR"] = tmp
+            db.close()
+            session.reset()
+            try:
+                ensure_schema()
+                _, tenant = session.current()
+                ctx = Contexto(
+                    tenant_id=tenant.id,
+                    slug="ctx-emb-otimizado",
+                    name="Otimizado",
+                    views=[{"name": "t"}],
+                    rules="Regra de negocio longa",
+                ).insert()
+                chamadas: list[str] = []
+
+                class FakeEmbedder:
+                    def embed_query(self, text: str):
+                        chamadas.append(text)
+                        return [0.1, 0.2, 0.3, 0.4]
+
+                examples = [
+                    {"question": "Quantos projetos?", "sql": "SELECT COUNT(*) FROM t"},
+                    {"question": "Quantas acoes?", "sql": "SELECT COUNT(*) FROM t WHERE x = 1"},
+                ]
+                with patch("core.contexts.describe_views", return_value="- t(id)"), \
+                     patch("analytics_index.services.update_text_embeddings", return_value={"created": 0}):
+                    index_contexto(ctx, FakeEmbedder(), examples)
+
+                # Apenas as 2 perguntas puras (sem SQL, sem DDL, sem rules) foram enviadas ao embedder.
+                self.assertEqual(chamadas, ["Quantos projetos?", "Quantas acoes?"])
+                itens = KnowledgeItem.select("contexto_id = ?", [db.to_db_id(ctx.id)])
+                by_type = {i.item_type: i for i in itens if i.item_type in ("ddl", "doc")}
+                self.assertIsNone(by_type["ddl"].embedding)
+                self.assertIsNone(by_type["doc"].embedding)
+                ex_itens = [i for i in itens if i.item_type == "query_example"]
+                self.assertEqual(len(ex_itens), 2)
+                self.assertTrue(all(i.embedding is not None for i in ex_itens))
+            finally:
+                db.close()
+                session.reset()
+                if old_data_dir is None:
+                    os.environ.pop("ADITO_DATA_DIR", None)
+                else:
+                    os.environ["ADITO_DATA_DIR"] = old_data_dir
+
+    def test_sql_generator_coloca_system_prompt_antes_do_retrieved_context(self) -> None:
+        from agents.bi_agent.nodes.sql_generator import sql_generator
+        from types import SimpleNamespace
+
+        capturado: list[str] = []
+
+        class FakeStructuredLLM:
+            def invoke(self, messages):
+                capturado.append(messages[0].content)
+                return SimpleNamespace(sql="SELECT 1", explanation="ok", field_formats={})
+
+        class FakeLLM:
+            def with_structured_output(self, _schema):
+                return FakeStructuredLLM()
+
+        sql_generator(
+            {
+                "user_input": "Quantos projetos?",
+                "messages": [],
+                "system_prompt": "BLOCO_FIXO_SISTEMA",
+                "retrieved_schema": "BLOCO_VARIAVEL_EXEMPLOS",
+            },
+            llm_model=FakeLLM(),
+            dialect="sqlite",
+        )
+        self.assertEqual(len(capturado), 1)
+        self.assertLess(capturado[0].index("BLOCO_FIXO_SISTEMA"), capturado[0].index("BLOCO_VARIAVEL_EXEMPLOS"))
+
+    def test_query_extractor_corta_exemplos_distantes_respeitando_piso_minimo(self) -> None:
+        import importlib
+        from types import SimpleNamespace
+        from unittest.mock import patch
+
+        qe = importlib.import_module("agents.bi_agent.nodes.query_extractor")
+        fake_matches = [
+            (SimpleNamespace(content="Ex 1", metadata={}), 0.40),
+            (SimpleNamespace(content="Ex 2", metadata={}), 1.30),
+            (SimpleNamespace(content="Ex 3", metadata={}), 1.40),
+            (SimpleNamespace(content="Ex 4", metadata={}), 1.50),
+        ]
+        with patch.object(qe.KnowledgeItem, "select", return_value=[m[0] for m in fake_matches]), \
+             patch.object(qe, "vector_matches_provider", return_value=True), \
+             patch.object(qe, "nearest_with_stats", return_value=(fake_matches, 0)):
+            out = qe._search_knowledge("00000000-0000-0000-0000-000000000001", None, [0.1, 0.2], "query_example")
+        # Apenas Ex 1 passa do corte (<= 1.15), mas piso mínimo preserva 2 exemplos (Ex 1 e Ex 2).
+        self.assertEqual([i.content for i in out], ["Ex 1", "Ex 2"])
 
     def test_examples_json_executam_com_linhas_no_dados_db(self) -> None:
         from core.datastore import connect_dados
