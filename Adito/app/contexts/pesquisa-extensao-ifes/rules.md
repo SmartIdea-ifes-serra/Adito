@@ -5,8 +5,11 @@ O banco **SQLite 3 (`dados.db`)** expõe **6 views analíticas (`vfact_*_resolve
 > **REGRA GERAL #0 — Origem / Raiz dos Dados:**
 > Em consultas consolidadas (`UNION ALL`) ou panoramas, rotule sempre a origem amigável de cada linha (`origem` / `categoria`), ex.: `'Projetos de Pesquisa (SigPesq)'`, `'Projetos de Extensão (SRC)'`, `'Ações de Extensão (SRC)'`, `'Ações de Ensino (SRC)'`, `'Orientações/Bolsas (SigPesq)'`, `'Produções Científicas (Lattes)'`, `'Grupos de Pesquisa (CNPq DGP)'`.
 
-> **REGRA CRÍTICA — `"projetos"` solto (sem especificar pesquisa, extensão ou ensino):**
-> Retorne **SEMPRE** via `UNION ALL` todas as frentes reais de projetos com origem explícita: **Projetos de Pesquisa (SigPesq)** (`vfact_projeto_pesquisa_resolved`) + **Projetos do SRC agrupados por `natureza`** (`vfact_extensao_acao_resolved WHERE tipo_acao LIKE 'Projeto' GROUP BY natureza`, cobrindo Extensão, Ensino e Desenv. Institucional). **NUNCA** some `vfact_orientacao_bolsa_resolved` na conta de projetos (orientações são planos individuais e 133 projetos de pesquisa já são inferidos delas). Para quantos projetos no SRC uma pessoa participou, faça `UNION` entre `vfact_extensao_acao_resolved` (`coordenador_nome`) e `vfact_extensao_participacao_resolved` (`nome_participante`) filtrando `tipo_acao LIKE 'Projeto'` para deduplicar por `id_acao`.
+> **REGRA CRÍTICA — `"projetos"` e `"ações"` (View Única vs. Cruzamento por Pessoa):**
+> - **Só `"projetos"` (solto):** retorne via `UNION ALL` (sem cruzamento/`JOIN`) **Projetos de Pesquisa (SigPesq)** (`vfact_projeto_pesquisa_resolved`) + **todas as ações do SRC** (`vfact_extensao_acao_resolved`, **sem** filtrar `tipo_acao` nem `natureza`). **NUNCA** some `vfact_orientacao_bolsa_resolved` na conta de projetos.
+> - **`"projetos de pesquisa"`:** retorne via `UNION ALL` (sem cruzamento/`JOIN`) **Projetos de Pesquisa (SigPesq)** (`vfact_projeto_pesquisa_resolved`) + ações do SRC com `natureza LIKE 'Pesquisa' AND tipo_acao LIKE 'Projeto'` (`vfact_extensao_acao_resolved`). *(Em consultas que pedem colunas exclusivas do SigPesq como `flag_projeto_completo`, `natureza_projeto` ou `parecer_diretoria`, consulte diretamente `vfact_projeto_pesquisa_resolved`.)*
+> - **`"projetos de extensão"`:** retorne **todas as ações** de `vfact_extensao_acao_resolved` com `natureza LIKE 'Extensão'` (sem filtrar `tipo_acao`).
+> - **`"projetos"` que uma pessoa específica participou (cruzamento):** retorne via `UNION ALL` os **Projetos de Pesquisa** em `vfact_projeto_pesquisa_resolved` (`coordenador_nome LIKE ...`) + **todas as ações** de `vfact_extensao_acao_resolved` (coordenador em `vfact_extensao_acao_resolved.coordenador_nome` ou participante via `vfact_extensao_participacao_resolved.nome_participante`, deduplicando por `id_acao`, **sem** filtrar `tipo_acao`).
 
 ---
 
@@ -15,10 +18,10 @@ O banco **SQLite 3 (`dados.db`)** expõe **6 views analíticas (`vfact_*_resolve
 1. **`vfact_extensao_acao_resolved` (1 Ação no SRC por linha — `id_acao`)**
    - Contém 4 naturezas em `natureza`: `'Extensão'`, `'Ensino'`, `'Pesquisa'` e `'Desenv. Institucional'`.
    - **Domínio exclusivo de `"ações"` (estritamente SRC — nunca consultar SigPesq):**
-     - **"ações" (solto, sem especificar natureza):** **NUNCA** filtre `natureza` — conte todas as ações do SRC (`COUNT(DISTINCT id_acao)`, abrangendo Extensão, Ensino, Pesquisa e Desenv. Institucional).
-     - **"ações/projetos/cursos/eventos de extensão" (especificado):** filtre **`natureza LIKE 'Extensão'`** (salvo quando pedirem agrupamento por `natureza`). Só filtre `tipo_acao` quando pedido (`'Projeto'`, `'Curso'`, `'Evento'`, `'Programa'`, `'Prestação de Serviço'`).
-   - **Ensino:** quando perguntarem por ações/projetos/cursos **de ensino**, filtre **`natureza LIKE 'Ensino'`**.
-   - **Pesquisa no SRC:** `natureza LIKE 'Pesquisa'` (eventos de pesquisa cadastrados no SRC).
+     - **`"ação"` / `"ações"` (solto):** **NUNCA** filtre `natureza` nem `tipo_acao` — entregue todas as ações de `vfact_extensao_acao_resolved` (`COUNT(DISTINCT id_acao)`).
+     - **`"ação de extensão"` ou `"projeto de extensão"`:** entregue todas as ações de `vfact_extensao_acao_resolved` com **`natureza LIKE 'Extensão'`** (sem filtrar `tipo_acao`, salvo quando pedirem explicitamente `'Curso'`, `'Evento'`, `'Programa'` ou `'Prestação de Serviço'`).
+     - **`"ação de pesquisa"`:** entregue todas as ações de `vfact_extensao_acao_resolved` com **`natureza LIKE 'Pesquisa'`**.
+     - **`"ação de <natureza>"`** (ex.: `"ação de ensino"`, `"ação de desenvolvimento institucional"`): entregue todas as ações de `vfact_extensao_acao_resolved` com **`natureza LIKE '<natureza>'`** (ex.: `natureza LIKE 'Ensino'`).
    - **Relatório aprovado:** `flag_relatorio_aprovado = 1`. **`campus` e `orgao_fomento`:** pré-agregados com `; ` — nesta view use **`LIKE '%Termo%'`** (ex.: `campus LIKE '%Serra%'`). **Sem valores R$**.
 
 2. **`vfact_extensao_participacao_resolved` (1 Participação em Atividade do SRC por linha — `id_participacao`)**
@@ -58,10 +61,12 @@ O banco **SQLite 3 (`dados.db`)** expõe **6 views analíticas (`vfact_*_resolve
 
 | Termo na pergunta | Regra exata |
 |---|---|
-| **`projetos`** (solto vs. especificado) | **Solto:** `UNION ALL` de `vfact_projeto_pesquisa_resolved` (SigPesq) + `vfact_extensao_acao_resolved WHERE tipo_acao LIKE 'Projeto' GROUP BY natureza` (SRC). **Especificado:** só a frente pedida (`pesquisa` → só SigPesq; `extensão` → só SRC `tipo_acao LIKE 'Projeto' AND natureza LIKE 'Extensão'`; `ensino` → só SRC `tipo_acao LIKE 'Projeto' AND natureza LIKE 'Ensino'`). Nunca somar orientações. |
-| **`ações`** (estritamente SRC) | **Solto:** todas as ações do SRC (`vfact_extensao_acao_resolved`, **sem** filtrar `natureza`, nunca SigPesq). **Especificado:** filtre `natureza` conforme pedido (`Extensão`, `Ensino` ou `Pesquisa`). |
-| **`extensão`** / **`ações de extensão`** | `vfact_extensao_acao_resolved WHERE natureza LIKE 'Extensão'` / `vfact_extensao_participacao_resolved`. |
-| **`ensino`** (ações/cursos/projetos) | `vfact_extensao_acao_resolved WHERE natureza LIKE 'Ensino'`. |
+| **`projetos`** (solto) | `UNION ALL` (sem cruzamento): `vfact_projeto_pesquisa_resolved` (SigPesq) + **todas as ações** de `vfact_extensao_acao_resolved` (SRC, sem filtrar `tipo_acao`/`natureza`). Nunca somar orientações. |
+| **`projetos de pesquisa`** | `UNION ALL` (sem cruzamento): `vfact_projeto_pesquisa_resolved` (SigPesq) + `vfact_extensao_acao_resolved WHERE natureza LIKE 'Pesquisa' AND tipo_acao LIKE 'Projeto'`. |
+| **`projetos de extensão`** | **Todas as ações** de `vfact_extensao_acao_resolved WHERE natureza LIKE 'Extensão'` (sem filtrar `tipo_acao`). |
+| **`ações`** (solto) | **Todas as ações** de `vfact_extensao_acao_resolved` (estritamente SRC, sem filtrar `natureza`, nunca SigPesq). |
+| **`ações de extensão` / `pesquisa` / `<tal_coisa>`** | `vfact_extensao_acao_resolved WHERE natureza LIKE '<natureza>'` (ex.: `'Extensão'`, `'Pesquisa'`, `'Ensino'`). |
+| **`projetos` de uma pessoa** | Cruzamento por pessoa via `UNION ALL`: `vfact_projeto_pesquisa_resolved` (`coordenador_nome`) + todas as ações de `vfact_extensao_acao_resolved` (`coordenador_nome` / `vfact_extensao_participacao_resolved.nome_participante`, sem filtrar `tipo_acao`). |
 | **`pesquisa`** (ampla, ex.: *"panorama de pesquisa no campus X"*) | `UNION ALL` rotulado: Projetos de Pesquisa + Grupos CNPq + Orientações/Bolsas + Produção Científica (Lattes) + Ações do SRC com `natureza LIKE 'Pesquisa'`. Se específica (*"projetos de pesquisa"*), consulte só a view pedida. |
 | **`extensionistas`** | Coordenadores (`vfact_extensao_acao_resolved.coordenador_nome`) + participantes (`vfact_extensao_participacao_resolved.nome_participante`) via `UNION` (total único) ou `UNION ALL` (detalhado). |
 | **`coordenadores`** | Qualificado → só a view pedida (`pesquisa` ou `extensão`). Sem qualificar → `UNION ALL` das duas. |

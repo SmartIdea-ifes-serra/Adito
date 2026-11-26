@@ -1,7 +1,7 @@
 [
   {
     "question": "Quantos projetos existem no Ifes ao todo?",
-    "sql": "SELECT 'Projetos de Pesquisa (SigPesq)' AS origem, COUNT(DISTINCT id_projeto) AS total_projetos FROM vfact_projeto_pesquisa_resolved UNION ALL SELECT 'Projetos de ' || COALESCE(natureza, 'Não Informada') || ' (SRC)' AS origem, COUNT(DISTINCT id_acao) AS total_projetos FROM vfact_extensao_acao_resolved WHERE tipo_acao LIKE 'Projeto' GROUP BY natureza"
+    "sql": "SELECT 'Projetos de Pesquisa (SigPesq)' AS origem, COUNT(DISTINCT id_projeto) AS total_projetos FROM vfact_projeto_pesquisa_resolved UNION ALL SELECT 'Ações no SRC (SRC)' AS origem, COUNT(DISTINCT id_acao) AS total_projetos FROM vfact_extensao_acao_resolved"
   },
   {
     "question": "Quantas ações existem cadastradas no Ifes ao todo?",
