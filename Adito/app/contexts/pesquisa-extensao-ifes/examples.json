@@ -4,6 +4,14 @@
     "sql": "SELECT 'Projetos de Pesquisa (SigPesq)' AS origem, COUNT(DISTINCT id_projeto) AS total_projetos FROM vfact_projeto_pesquisa_resolved UNION ALL SELECT 'Ações no SRC (SRC)' AS origem, COUNT(DISTINCT id_acao) AS total_projetos FROM vfact_extensao_acao_resolved"
   },
   {
+    "question": "Quantos projetos de pesquisa existem no Ifes ao todo?",
+    "sql": "SELECT 'Projetos de Pesquisa (SigPesq)' AS origem, COUNT(DISTINCT id_projeto) AS total_projetos FROM vfact_projeto_pesquisa_resolved UNION ALL SELECT 'Projetos de Pesquisa no SRC (SRC)' AS origem, COUNT(DISTINCT id_acao) AS total_projetos FROM vfact_extensao_acao_resolved WHERE natureza LIKE 'Pesquisa' AND tipo_acao LIKE 'Projeto'"
+  },
+  {
+    "question": "Quais projetos uma pessoa específica (ex.: Moisés Savedra Omena) participou, informando a origem e a forma de participação?",
+    "sql": "SELECT 'Projetos de Pesquisa (SigPesq)' AS origem, 'Coordenador' AS forma_participacao, titulo_projeto AS titulo, ano_inicio AS ano FROM vfact_projeto_pesquisa_resolved WHERE coordenador_nome LIKE '%Moisés%' AND coordenador_nome LIKE '%Omena%' UNION ALL SELECT 'Ações no SRC (SRC)' AS origem, 'Coordenador' AS forma_participacao, titulo_acao AS titulo, ano_cadastro AS ano FROM vfact_extensao_acao_resolved WHERE coordenador_nome LIKE '%Moisés%' AND coordenador_nome LIKE '%Omena%' UNION ALL SELECT DISTINCT 'Ações no SRC (SRC)' AS origem, 'Participante' AS forma_participacao, a.titulo_acao AS titulo, a.ano_cadastro AS ano FROM vfact_extensao_acao_resolved a INNER JOIN vfact_extensao_participacao_resolved p ON p.id_acao = a.id_acao WHERE p.nome_participante LIKE '%Moisés%' AND p.nome_participante LIKE '%Omena%' ORDER BY origem ASC, forma_participacao ASC, ano DESC, titulo ASC"
+  },
+  {
     "question": "Quantas ações existem cadastradas no Ifes ao todo?",
     "sql": "SELECT COUNT(DISTINCT id_acao) AS total_acoes FROM vfact_extensao_acao_resolved"
   },
