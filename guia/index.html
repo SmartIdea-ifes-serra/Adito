@@ -1,0 +1,255 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="Guia do Adito, assistente de inteligência de dados de pesquisa, extensão e produção científica do Ifes.">
+<title>Adito | Guia do usuário</title><link rel="icon" type="image/png" href="assets/adito-light.png" data-theme-brand><meta name="theme-color" content="#173F35"><link rel="stylesheet" href="style.css"><script src="script.js"></script>
+</head>
+<body>
+<a class="skip" href="#conteudo">Pular para o conteúdo</a>
+<header class="top"><div class="shell top-inner"><a class="brand" href="#inicio" aria-label="Adito, início"><img class="brand-icon" src="assets/adito-light.png" data-theme-brand alt="" width="40" height="40"><span>Adito</span></a><a class="repo" href="https://github.com/SmartIdea-ifes-serra/Adito">Repositório</a>
+  <button class="theme-toggle" type="button" aria-label="Ativar modo escuro" title="Ativar modo escuro" hidden>
+    <svg class="theme-moon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+      <path d="M20.985 12.486a9 9 0 1 1-9.473-9.472c.405-.022.617.46.402.803a6.5 6.5 0 0 0 8.268 8.268c.344-.215.825-.004.803.401"/>
+    </svg>
+    <svg class="theme-sun" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+      <circle cx="12" cy="12" r="4"/>
+      <path d="M12 2v2m0 16v2M4.93 4.93l1.42 1.42m11.3 11.3 1.42 1.42M2 12h2m16 0h2M4.93 19.07l1.42-1.42m11.3-11.3 1.42-1.42"/>
+    </svg>
+  </button>
+</div></header>
+<div class="shell layout" id="inicio">
+<aside class="sidebar"><nav aria-label="Seções do guia"><p class="nav-title">NESTE GUIA</p><a href="#visao-geral">01 <span>Visão geral</span></a><a href="#escopo">02 <span>O que consultar</span></a><a href="#limites">03 <span>Limitações</span></a><a href="#instalacao">04 <span>Instalação</span></a><a href="#primeiro-acesso">05 <span>Primeiro acesso</span></a><a href="#consultas">06 <span>Como perguntar</span></a><a href="#ajuda">07 <span>Ajuda e suporte</span></a></nav></aside>
+<main id="conteudo">
+
+<section class="hero" aria-labelledby="hero-title"><div class="hero-copy"><p class="eyebrow"><span class="status-dot"></span> IFES CAMPUS SERRA · SMARTIDEA</p><h1 id="hero-title">Dados acadêmicos.<br><em>Respostas em linguagem natural.</em></h1><p>Conheça o Adito, descubra quais informações estão disponíveis e aprenda a consultar os dados de pesquisa e extensão com a ajuda da inteligência artificial.</p><div class="actions"><a class="button primary" href="#instalacao">Começar a usar</a><a class="button secondary" href="#escopo">Explorar possibilidades</a></div></div><div class="hero-visual" aria-hidden="true"><div class="mini-app"><div class="mini-head"><img class="mini-brand" src="assets/adito-light.png" data-theme-brand alt="" width="22" height="22"><span>Adito / consulta</span></div><div class="mini-question">Quantos projetos de extensão foram cadastrados por ano?</div><div class="mini-response"><span class="mini-label">CADASTROS NO SRC · CAMPUS SERRA</span><strong>Projetos de extensão por ano de cadastro</strong><div class="bars"><i style="--h:83%"></i><i style="--h:100%"></i><i style="--h:67%"></i><i style="--h:67%"></i><i style="--h:50%"></i></div><div class="mini-axis"><span>2022</span><span>2023</span><span>2024</span><span>2025</span><span>2026</span></div></div></div></div></section>
+<div class="facts"><div><strong>4</strong><span>fontes integradas</span></div><div><strong>6</strong><span>views analíticas</span></div><div><strong>1</strong><span>assistente desktop</span></div></div>
+<section id="visao-geral" class="section"><p class="eyebrow">01 / ENTENDA A FERRAMENTA</p><h2>O que é o Adito?</h2><p class="intro">O Adito é um assistente que ajuda a consultar e analisar dados acadêmicos do Ifes. Com ele, você pode obter informações sobre pesquisa, extensão e produção científica fazendo perguntas em linguagem natural, sem precisar saber SQL.</p><div class="grid two"><article class="card"><span class="icon">◎</span><h3>Para quem é?</h3><p>Para qualquer pessoa que queira explorar os dados acadêmicos do Ifes.</p></article><article class="card"><span class="icon">↗</span><h3>O que faz?</h3><p>Interpreta perguntas em linguagem natural, gera e valida consultas SQL de leitura e apresenta resultados em texto, tabelas e gráficos quando apropriado.</p></article></div><h3 class="subheading">Como funciona uma consulta?</h3><div class="flow"><div><b>01</b><strong>Você pergunta</strong><small>Em linguagem natural</small></div><span aria-hidden="true">→</span><div><b>02</b><strong>IA interpreta</strong><small>Interpreta sua pergunta</small></div><span aria-hidden="true">→</span><div><b>03</b><strong>Consulta validada</strong><small>SQLite, só leitura</small></div><span aria-hidden="true">→</span><div><b>04</b><strong>Resultado</strong><small>Texto, tabela ou gráfico</small></div></div></section>
+<section id="escopo" class="section">
+  <p class="eyebrow">02 / DADOS DISPONÍVEIS</p>
+  <h2>O que o Adito consegue responder?</h2>
+  <p class="intro">O chat consulta seis visões de dados de pesquisa e extensão do Ifes. Os exemplos abaixo usam os resultados conferidos na base do levantamento. As contagens refletem aquela carga de dados.</p>
+  <div class="grid two source-grid">
+  <article class="card">
+    <span class="tag">SRC · Extensão</span>
+    <h3>Ações e projetos</h3>
+    <p>Na base validada, 56 das 207 ações são projetos de extensão, todos do campus Serra. Os 56 têm coordenador informado, com 32 nomes distintos. A carga mantém o primeiro coordenador identificado por ação.</p>
+    <div class="example"><small>PERGUNTA EXEMPLO</small>Quantos projetos de extensão estão registrados e quem os coordena?</div>
+    <details>
+      <summary>Detalhe da base</summary>
+      <p><code>vfact_extensao_acao_resolved</code></p>
+      <p>Uma linha por ação. Use tipo Projeto e natureza Extensão para contar os projetos. O ano exibido é o do cadastro. Entre 2022 e 2026, foram cadastrados 5, 6, 4, 4 e 3 projetos, respectivamente.</p>
+    </details>
+  </article>
+  <article class="card">
+    <span class="tag">SRC · Extensão</span>
+    <h3>Participações e certificados</h3>
+    <p>A base tem 9.263 participações em atividades. Destas, 8.113 têm certificado emitido. É possível consultar as datas de participação registradas.</p>
+    <div class="example"><small>PERGUNTA EXEMPLO</small>Quantos registros de participação têm certificado emitido?</div>
+    <details>
+      <summary>Detalhe da base</summary>
+      <p><code>vfact_extensao_participacao_resolved</code></p>
+      <p>Uma linha por participação em uma atividade. Uma pessoa pode aparecer em mais de uma linha. Esses registros descrevem o público atendido.</p>
+    </details>
+  </article>
+  <article class="card">
+    <span class="tag">SigPesq · Pesquisa</span>
+    <h3>Projetos de pesquisa</h3>
+    <p>Há 236 projetos. O ano de início é conhecido em 103. Os outros 133 foram incluídos a partir de registros de orientação e aparecem com ano desconhecido.</p>
+    <div class="example"><small>PERGUNTA EXEMPLO</small>Quantos projetos de pesquisa começaram em cada ano?</div>
+    <details>
+      <summary>Detalhe da base</summary>
+      <p><code>vfact_projeto_pesquisa_resolved</code></p>
+      <p>Uma linha por projeto. A contagem por ano se refere ao início dos projetos com data preenchida.</p>
+    </details>
+  </article>
+  <article class="card">
+    <span class="tag">SigPesq · Pesquisa</span>
+    <h3>Orientações e bolsas</h3>
+    <p>Há 1.203 orientações de planos, com 53 nomes de orientadores. Dos 723 registros na modalidade bolsista, 603 estão sem cancelamento e 120 foram cancelados. A base permite estimar o investimento em bolsas.</p>
+    <div class="example"><small>PERGUNTA EXEMPLO</small>Quais planos de trabalho têm registros de bolsistas?</div>
+    <details>
+      <summary>Detalhe da base</summary>
+      <p><code>vfact_orientacao_bolsa_resolved</code></p>
+      <p>Uma linha por orientação de plano. A consulta mostra o código do plano e o título do projeto. Há 134 títulos de projetos com registros de bolsistas. As tabelas de origem associam esses planos a 136 identificadores internos de projeto. Quatro títulos do cadastro de projetos se repetem.</p>
+    </details>
+  </article>
+  <article class="card">
+    <span class="tag">Lattes · Produção</span>
+    <h3>Artigos e outras obras</h3>
+    <p>A base tem 6.784 autorias de 6.171 obras e 120 autores com produção. No recorte de artigos de periódico, 103 autores somam 678 obras publicadas. Outras 16 obras estão classificadas como aceitas para publicação.</p>
+    <div class="example"><small>PERGUNTA EXEMPLO</small>Quantos artigos de periódico publicados cada autor tem na base?</div>
+    <details>
+      <summary>Detalhe da base</summary>
+      <p><code>vfact_producao_cientifica_resolved</code></p>
+      <p>Uma linha por obra ligada a um autor. Conte obras pelo identificador para não repetir publicações com vários autores. Para montar um ranking, defina quais tipos entram, como artigos, trabalhos de evento, livros e capítulos. O recorte do levantamento reúne 4.889 obras. O total chega a 4.940 ao incluir 51 obras bibliográficas registradas em outra categoria.</p>
+    </details>
+  </article>
+  <article class="card">
+    <span class="tag">CNPq DGP · Grupos</span>
+    <h3>Grupos e seus membros</h3>
+    <p>A consulta mostra 347 grupos do Diretório dos Grupos de Pesquisa com membros registrados. Os 9.493 vínculos incluem 4.867 ativos e 4.626 egressos na data da coleta. O cadastro geral reúne 353 grupos.</p>
+    <div class="example"><small>PERGUNTA EXEMPLO</small>Quais grupos aparecem no DGP e quem integra cada um?</div>
+    <details>
+      <summary>Detalhe da base</summary>
+      <p><code>vfact_grupo_pesquisa_membro_resolved</code></p>
+      <p>Uma linha por vínculo de membro com grupo. A consulta mostra nome, papel, situação e área do conhecimento registrada. Uma pessoa pode ter vínculos em mais de um grupo.</p>
+    </details>
+  </article>
+  </div>
+  <article class="card cross">
+    <span class="tag">Cruzamentos entre fontes</span>
+    <h3>Onde os mesmos nomes aparecem?</h3>
+    <ul>
+      <li><strong>SRC e SigPesq.</strong> Há 13 nomes de coordenadores em comum nas duas fontes.</li>
+      <li><strong>Projetos e Lattes.</strong> O cruzamento por nome encontra autores do Lattes em 54 projetos do SRC e 92 do SigPesq.</li>
+      <li><strong>DGP e Lattes.</strong> No recorte bibliográfico do levantamento, há 83 identificadores de autores associados por nome a pesquisadores ativos em 44 grupos. Entre egressos, são 44 identificadores em 28 grupos.</li>
+    </ul>
+    <p>Esses cruzamentos usam os nomes registrados. Nomes iguais podem pertencer a pessoas diferentes, e cada fonte tem sua própria cobertura.</p>
+  </article>
+</section>
+<section id="limites" class="section">
+  <p class="eyebrow">03 / LIMITAÇÕES</p>
+  <h2>O que o Adito não consegue responder?</h2>
+  <p class="intro">Algumas perguntas exigem dados que a base examinada não reúne. Outras podem ser respondidas consultando diretamente as tabelas de origem, fora das seis visões acessadas pelo chat.</p>
+  <h3 id="dados-faltantes">Perguntas que exigem dados adicionais</h3>
+  <div class="table-wrap">
+    <table aria-labelledby="dados-faltantes">
+      <thead><tr><th scope="col">Pergunta</th><th scope="col">Por que a base não responde</th></tr></thead>
+      <tbody>
+        <tr><th scope="row">Qual foi o período completo de execução de um projeto de extensão?</th><td>O SRC oferece o ano de cadastro do projeto e datas de participações em atividades. Faltam as datas de início e fim da execução do projeto como um todo.</td></tr>
+        <tr><th scope="row">Qual é o resumo ou o tema detalhado de uma ação de extensão?</th><td>A extração do SRC aceita resumo e áreas temáticas. A carga das ações guarda título, tipo e natureza e deixa de fora o resumo e as áreas temáticas.</td></tr>
+        <tr><th scope="row">Quem coorientou cada plano de pesquisa do SigPesq?</th><td>O SigPesq registra orientador e orientado. O nome de coorientador em algumas formações do Lattes pertence a outro tipo de registro.</td></tr>
+        <tr><th scope="row">Qual é o currículo Lattes completo de um pesquisador?</th><td>A carga seleciona partes do currículo, como produção, formação, atuação, projetos e bancas. O currículo integral fica indisponível.</td></tr>
+        <tr><th scope="row">Qual é o cargo funcional oficial de um pesquisador?</th><td>A base não tem cadastro oficial de RH. A carga Lattes registra atuação e enquadramento declarados e deixa de fora o campo de cargo ou função.</td></tr>
+        <tr><th scope="row">Quais bolsas foram pagas e quanto foi desembolsado?</th><td>Na base validada, o valor mensal, as datas e o cancelamento permitem calcular R$ 4.094.564,00 de previsão original e R$ 3.930.064,00 de investimento estimado. Faltam transações ou comprovantes de pagamento.</td></tr>
+        <tr><th scope="row">Quais obras foram produzidas por cada projeto ou grupo?</th><td>É possível cruzar nomes de autores, coordenadores e integrantes. Falta um vínculo da obra com o projeto ou grupo para confirmar a origem da produção.</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <h3 id="tabelas-origem">Informações disponíveis somente nas tabelas de origem</h3>
+  <div class="table-wrap">
+    <table aria-labelledby="tabelas-origem">
+      <thead><tr><th scope="col">Pergunta</th><th scope="col">O que foi encontrado no banco</th></tr></thead>
+      <tbody>
+        <tr><th scope="row">Quem faz parte da equipe de execução de cada projeto de extensão?</th><td>A tabela de equipes registra 801 vínculos de 399 identificadores de pessoa em 43 dos 56 projetos de extensão. A consulta de participações mostra o público atendido.</td></tr>
+        <tr><th scope="row">Qual é a formação acadêmica de cada pesquisador?</th><td>O banco guarda 515 registros de formação de 126 titulares, com curso, instituição e período quando preenchidos. Essas informações estão nas tabelas do Lattes.</td></tr>
+        <tr><th scope="row">Quais são as linhas de pesquisa de cada grupo?</th><td>O banco associa 346 grupos a 1.232 linhas distintas em 1.310 vínculos. O chat pode consultar a área do conhecimento, que é mais ampla.</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+<section id="instalacao" class="section"><p class="eyebrow">04 / COMECE A USAR</p><h2>Instalação do Adito</h2><p class="intro">Baixe o instalador oficial do Adito pelo GitHub Releases. O banco de dados já é disponibilizado pelo aplicativo na primeira abertura.</p>
+<article class="card install"><div><span class="tag">DOWNLOAD OFICIAL</span><h3>Baixe o Adito</h3><p>Acesse a página de Releases, escolha a versão indicada pela equipe e baixe o instalador correspondente ao seu sistema operacional.</p></div><a class="button outline" href="https://github.com/SmartIdea-ifes-serra/Adito/releases/latest">Baixar Adito</a></article>
+<h3 class="subheading">Passo a passo</h3>
+<details class="step" open><summary><span class="num">1</span> Baixar o instalador</summary><div class="step-body"><p>Na página de Releases, localize a seção <strong>Assets</strong> da versão desejada. Escolha o pacote disponível para Windows ou Linux, de acordo com seu sistema.</p></div></details>
+<details class="step"><summary><span class="num">2</span> Instalar o aplicativo</summary><div class="step-body"><h4>Windows</h4><p>Se o pacote disponível for <code>.exe</code> ou <code>.msi</code>, abra o arquivo baixado e siga as instruções do instalador até concluir.</p>
+<h4>Linux</h4>
+
+<p>Se estiver usando Ubuntu ou Debian, baixe o pacote
+<code>.deb</code> disponível na página de Releases.</p>
+
+<h4>Instalação pela interface gráfica</h4>
+
+<p>Abra o arquivo baixado no instalador de aplicativos
+do sistema e selecione Instalar.</p>
+
+<h4>Instalação pelo terminal (.deb)</h4>
+
+<ol>
+    <li>Baixe o pacote .deb do Adito.</li>
+    <li>Abra o terminal.</li>
+    <li>Acesse a pasta onde o arquivo foi baixado.</li>
+</ol>
+
+<div class="example">
+    <code>cd ~/Downloads</code>
+</div>
+
+<p>Execute o seguinte comando:</p>
+
+<div class="example">
+    <code>sudo apt install ./adito.deb</code>
+</div>
+
+<p>Substitua <code>adito.deb</code> pelo nome exato
+do arquivo baixado.</p>
+
+<p>Informe sua senha de administrador e confirme
+a instalação, caso solicitado.</p>
+
+<p>Após a instalação, abra o Adito pelo menu
+de aplicativos do sistema.</p>
+
+<h4>AppImage</h4>
+
+<p>Se escolher uma versão <code>.AppImage</code>,
+nas propriedades do arquivo permita sua execução
+como programa e abra-o.</p>
+
+<p>Use somente o instalador oficial indicado pela equipe.</p></div></details>
+<details class="step"><summary><span class="num">3</span> Abrir o Adito</summary><div class="step-body"><p>Abra o aplicativo pelo menu do sistema ou pelo arquivo AppImage. Na primeira abertura, os dados já estarão disponíveis e o Adito apresentará a tela de configuração da chave de IA.</p><p>Não é necessário baixar o banco de dados separadamente, executar ETL, clonar o repositório ou instalar ferramentas de desenvolvimento.</p><a href="#primeiro-acesso">Ir para a configuração inicial</a></div></details>
+</section>
+<section id="primeiro-acesso" class="section"><p class="eyebrow">05 / CONFIGURAÇÃO INICIAL</p><h2>Prepare sua primeira consulta</h2><div class="grid two"><article class="card"><span class="big-num">01</span><h3>Configure a IA</h3><p>Na primeira abertura, escolha o provedor de IA compatível e informe sua chave de API na tela inicial. Siga as instruções exibidas pelo aplicativo para concluir a configuração.</p><p>O Adito aceita diferentes provedores de IA; Claude não é compatível.</p></article><article class="card"><span class="big-num">02</span><h3>Inicie o chat</h3><p>Abra o <strong>Chat</strong>, digite sua pergunta sobre os dados acadêmicos e envie. Confira a resposta e, quando disponível, consulte a tabela ou o gráfico apresentado.</p></article></div><div class="callout"><strong>Segurança:</strong> informe sua chave de API somente no campo apropriado do aplicativo. Não compartilhe a chave em mensagens ou capturas de tela. O provedor de IA escolhido pode ter limites de uso e custos.</div></section>
+<section id="consultas" class="section"><p class="eyebrow">06 / PERGUNTAS NA PRÁTICA</p><h2>Faça perguntas melhores</h2><p class="intro">Especifique o indicador, o assunto, o campus, o período e o tipo de resultado desejado. Confira se o resultado representa registros, pessoas ou obras distintas e se existem dados ausentes.</p><div class="compare"><div><span class="tag muted">PERGUNTA VAGA</span><p>Quantos projetos existem?</p></div><div><span class="tag">PERGUNTA MAIS PRECISA</span><p>Quantos projetos de extensão do campus Serra foram cadastrados em 2025?</p></div></div><p>Diga se você quer projetos de pesquisa ou de extensão. Para perguntas por ano, indique se você quer o ano de cadastro ou de início, conforme o dado disponível.</p><div class="catalog-head"><h3>Experimente estas perguntas</h3><label class="search-label" for="search">Buscar por tema</label><input id="search" type="search" placeholder="Ex.: bolsas, campus, artigos" autocomplete="off"></div><div class="filters" aria-label="Filtrar exemplos"><button class="filter active" type="button" data-filter="todos" aria-pressed="true">Todas</button><button class="filter" type="button" data-filter="extensao" aria-pressed="false">Extensão</button><button class="filter" type="button" data-filter="pesquisa" aria-pressed="false">Pesquisa</button><button class="filter" type="button" data-filter="lattes" aria-pressed="false">Lattes</button><button class="filter" type="button" data-filter="grupos" aria-pressed="false">Grupos</button><button class="filter" type="button" data-filter="cruzamentos" aria-pressed="false">Cruzamentos</button></div><div class="questions" id="question-list">
+  <div class="question" data-category="extensao">
+    <div><small>Extensão</small><p>Quantos projetos de extensão do campus Serra estão cadastrados no SRC?</p></div>
+    <button type="button" class="copy">Copiar</button>
+  </div>
+  <div class="question" data-category="extensao">
+    <div><small>Extensão</small><p>Quem coordena os projetos de extensão do campus Serra no SRC?</p></div>
+    <button type="button" class="copy">Copiar</button>
+  </div>
+  <div class="question" data-category="extensao">
+    <div><small>Extensão</small><p>Quantos registros de participação em atividades têm certificado emitido no SRC?</p></div>
+    <button type="button" class="copy">Copiar</button>
+  </div>
+  <div class="question" data-category="pesquisa">
+    <div><small>Pesquisa</small><p>Quantos projetos de pesquisa do SigPesq começaram em cada ano? Mostre também os projetos sem ano de início.</p></div>
+    <button type="button" class="copy">Copiar</button>
+  </div>
+  <div class="question" data-category="pesquisa">
+    <div><small>Pesquisa</small><p>Quais são os planos de trabalho com orientações na modalidade bolsista no SigPesq? Separe os registros cancelados dos que estão sem cancelamento.</p></div>
+    <button type="button" class="copy">Copiar</button>
+  </div>
+  <div class="question" data-category="lattes">
+    <div><small>Lattes</small><p>Quantos artigos de periódico publicados cada autor tem na base Lattes? Exclua os artigos aceitos para publicação.</p></div>
+    <button type="button" class="copy">Copiar</button>
+  </div>
+  <div class="question" data-category="lattes">
+    <div><small>Lattes</small><p>Quais são os dez autores com mais obras no recorte de artigos publicados, trabalhos em eventos, livros e capítulos do Lattes?</p></div>
+    <button type="button" class="copy">Copiar</button>
+  </div>
+  <div class="question" data-category="grupos">
+    <div><small>CNPq DGP</small><p>Quais grupos do CNPq DGP têm membros registrados na base?</p></div>
+    <button type="button" class="copy">Copiar</button>
+  </div>
+  <div class="question" data-category="grupos">
+    <div><small>CNPq DGP</small><p>Quem integra cada grupo do CNPq DGP? Mostre o nome, o papel e a situação de cada vínculo.</p></div>
+    <button type="button" class="copy">Copiar</button>
+  </div>
+  <div class="question" data-category="cruzamentos">
+    <div><small>Cruzamentos</small><p>Quais nomes aparecem como coordenadores tanto em projetos de extensão do SRC quanto em projetos de pesquisa do SigPesq?</p></div>
+    <button type="button" class="copy">Copiar</button>
+  </div>
+  <div class="question" data-category="cruzamentos">
+    <div><small>Cruzamentos</small><p>Quais nomes de coordenadores de projetos também aparecem entre os autores com produção no Lattes?</p></div>
+    <button type="button" class="copy">Copiar</button>
+  </div>
+</div><p id="empty" hidden>Nenhuma pergunta encontrada. Tente outro termo ou filtro.</p><p id="feedback" class="sr-only" role="status"></p></section>
+
+<section id="ajuda" class="section"><p class="eyebrow">07 / SUPORTE</p><h2>Precisa de ajuda?</h2><div class="faq"><details><summary>O chat está desativado ou a chave não é aceita.</summary><p>Verifique se a chave de API do provedor escolhido é válida, se o provedor é compatível com o Adito e se a configuração foi concluída. Confira sua conexão com a internet e eventuais limites do serviço. Claude não é compatível.</p></details><details><summary>Os dados não carregam.</summary><p>Confira se está usando a versão oficial atualizada. Se o problema continuar, informe à equipe a versão instalada e a mensagem exibida.</p></details><details><summary>O app não abre ou a janela fica branca.</summary><p>Confira se o instalador corresponde ao seu sistema operacional e se a instalação foi concluída. Tente abrir o aplicativo novamente. Se o problema continuar, informe à equipe a versão instalada, seu sistema operacional e a mensagem de erro, se houver.</p></details><details><summary>Uma resposta parece errada ou não tem resultados.</summary><p>Reformule com campus, período e indicador explícitos. Verifique se o dado existe na base e se a unidade de contagem está correta. Compare com a fonte institucional e informe a equipe caso a divergência persista.</p></details></div>
+<h3 class="subheading">Links úteis</h3>
+
+<div class="source-links">
+    <a href="https://github.com/SmartIdea-ifes-serra/Adito#readme">
+        README do projeto
+    </a>
+
+    <a href="mailto:smartideaifes@gmail.com">
+        Reportar problema
+    </a>
+</div>
+</section>
+<footer><span><strong>Adito</strong> · SmartIdea / Ifes Campus Serra</span><a href="#inicio">Voltar ao início</a></footer>
+</main></div></body></html>
