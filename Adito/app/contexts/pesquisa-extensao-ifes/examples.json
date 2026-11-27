@@ -16,6 +16,14 @@
     "sql": "SELECT COUNT(DISTINCT id_acao) AS total_acoes FROM vfact_extensao_acao_resolved"
   },
   {
+    "question": "Quantas ações de pesquisa existem cadastradas no Ifes?",
+    "sql": "SELECT COUNT(DISTINCT id_acao) AS total_acoes_pesquisa FROM vfact_extensao_acao_resolved WHERE natureza LIKE 'Pesquisa'"
+  },
+  {
+    "question": "Quantos projetos de extensão existem cadastrados no Ifes?",
+    "sql": "SELECT COUNT(DISTINCT id_acao) AS total_projetos_extensao FROM vfact_extensao_acao_resolved WHERE natureza LIKE 'Extensão'"
+  },
+  {
     "question": "Qual o panorama geral consolidado das 4 bases (SRC, SigPesq, Lattes e CNPq) com o total de registros em cada uma das 6 tabelas fato?",
     "sql": "SELECT '1. SRC - Ações de Extensão' AS base_e_fato, COUNT(DISTINCT id_acao) AS total_registros FROM vfact_extensao_acao_resolved UNION ALL SELECT '1. SRC - Participações em Extensão' AS base_e_fato, COUNT(DISTINCT id_participacao) AS total_registros FROM vfact_extensao_participacao_resolved UNION ALL SELECT '2. SigPesq - Projetos de Pesquisa' AS base_e_fato, COUNT(DISTINCT id_projeto) AS total_registros FROM vfact_projeto_pesquisa_resolved UNION ALL SELECT '2. SigPesq - Bolsas e Orientações' AS base_e_fato, COUNT(DISTINCT id_orientacao) AS total_registros FROM vfact_orientacao_bolsa_resolved UNION ALL SELECT '3. Lattes - Produções Científicas (Obras)' AS base_e_fato, COUNT(DISTINCT id_producao) AS total_registros FROM vfact_producao_cientifica_resolved UNION ALL SELECT '4. CNPq DGP - Grupos de Pesquisa (Membros)' AS base_e_fato, COUNT(DISTINCT id_membro_grupo) AS total_registros FROM vfact_grupo_pesquisa_membro_resolved"
   },
@@ -28,7 +36,7 @@
     "sql": "SELECT 'Pesquisador (CNPq DGP)' AS papel_e_base, COUNT(DISTINCT nome_membro) AS total_pessoas FROM vfact_grupo_pesquisa_membro_resolved WHERE papel_membro LIKE 'Pesquisador' UNION ALL SELECT 'Coordenador de Extensão (SRC)' AS papel_e_base, COUNT(DISTINCT coordenador_nome) AS total_pessoas FROM vfact_extensao_acao_resolved WHERE coordenador_nome IS NOT NULL AND natureza LIKE 'Extensão' UNION ALL SELECT 'Coordenador de Pesquisa (SigPesq)' AS papel_e_base, COUNT(DISTINCT coordenador_nome) AS total_pessoas FROM vfact_projeto_pesquisa_resolved WHERE coordenador_nome IS NOT NULL"
   },
   {
-    "question": "Qual o resumo de atuação, projetos, orientações, produções e grupos de pesquisa de uma pessoa específica (ex.: Moisés Savedra Omena), separando cada base e papel?",
+    "question": "Quantas atuações e qual o perfil geral de uma pessoa específica (ex.: Moisés Savedra Omena) no Ifes, separando cada base e papel?",
     "sql": "SELECT 'Projetos de Pesquisa coordenados (SigPesq)' AS origem_e_papel, COUNT(DISTINCT id_projeto) AS total FROM vfact_projeto_pesquisa_resolved WHERE coordenador_nome LIKE '%Moisés%' AND coordenador_nome LIKE '%Omena%' UNION ALL SELECT 'Ações/Projetos no SRC como coordenador (SRC)' AS origem_e_papel, COUNT(DISTINCT id_acao) AS total FROM vfact_extensao_acao_resolved WHERE coordenador_nome LIKE '%Moisés%' AND coordenador_nome LIKE '%Omena%' UNION ALL SELECT 'Participações em atividades de extensão (SRC)' AS origem_e_papel, COUNT(DISTINCT id_participacao) AS total FROM vfact_extensao_participacao_resolved WHERE nome_participante LIKE '%Moisés%' AND nome_participante LIKE '%Omena%' UNION ALL SELECT 'Orientações como orientador (SigPesq)' AS origem_e_papel, COUNT(DISTINCT id_orientacao) AS total FROM vfact_orientacao_bolsa_resolved WHERE nome_orientador LIKE '%Moisés%' AND nome_orientador LIKE '%Omena%' UNION ALL SELECT 'Produções Científicas (Lattes)' AS origem_e_papel, COUNT(DISTINCT id_producao) AS total FROM vfact_producao_cientifica_resolved WHERE nome_autor LIKE '%Moisés%' AND nome_autor LIKE '%Omena%' UNION ALL SELECT 'Grupos de Pesquisa (CNPq DGP)' AS origem_e_papel, COUNT(DISTINCT id_grupo_pesquisa) AS total FROM vfact_grupo_pesquisa_membro_resolved WHERE nome_membro LIKE '%Moisés%' AND nome_membro LIKE '%Omena%'"
   },
   {

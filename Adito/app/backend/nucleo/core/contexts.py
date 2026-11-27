@@ -286,10 +286,10 @@ def index_contexto(contexto: Contexto, embedder, examples: list[dict], dados_pat
     # exibição na Base de conhecimento, mas sem gerar embeddings mortos na API.
     # Exemplos embedam apenas a pergunta (`question`), alinhado aos itens manuais de `query_example`.
     items: list[tuple[str, str, dict, str | None]] = [
-        ("ddl", describe_views(contexto, dados_path), {}, None),
+        ("ddl", describe_views(contexto, dados_path), {"sem_embedding": "system_prompt"}, None),
     ]
     if contexto.rules:
-        items.append(("doc", contexto.rules, {}, None))
+        items.append(("doc", contexto.rules, {"sem_embedding": "system_prompt"}, None))
     for example in examples:
         items.append((
             "query_example",

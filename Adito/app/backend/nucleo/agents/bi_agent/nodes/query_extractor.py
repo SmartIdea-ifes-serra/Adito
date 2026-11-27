@@ -23,7 +23,7 @@ import os
 FALLBACK_EXAMPLES_LIMIT = 8
 FALLBACK_MANUAL_LIMIT = 10
 FALLBACK_MANUAL_MAX_CHARS = 800
-QUERY_EXAMPLE_MAX_DISTANCE = float(os.getenv("ADITO_EXAMPLE_MAX_DISTANCE", "1.15"))
+QUERY_EXAMPLE_MAX_RATIO = float(os.getenv("ADITO_EXAMPLE_MAX_RATIO", "1.3"))
 QUERY_EXAMPLE_MIN_RESULTS = 2
 
 
@@ -124,7 +124,9 @@ def _search_knowledge(tenant_id: str, contexto_id: str | None, query_embedding: 
     if tracker is not None and total_incompatible:
         tracker.append(total_incompatible)
     if item_type == "query_example" and matches:
-        within_cutoff = [item for item, dist in matches if dist <= QUERY_EXAMPLE_MAX_DISTANCE]
+        best_dist = matches[0][1]
+        cutoff = best_dist * QUERY_EXAMPLE_MAX_RATIO
+        within_cutoff = [item for item, dist in matches if dist <= cutoff]
         if len(within_cutoff) >= QUERY_EXAMPLE_MIN_RESULTS:
             return within_cutoff
         return [item for item, _ in matches[:QUERY_EXAMPLE_MIN_RESULTS]]

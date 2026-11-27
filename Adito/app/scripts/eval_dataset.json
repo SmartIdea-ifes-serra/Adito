@@ -44,7 +44,7 @@
     "categoria": "sigpesq_projeto",
     "tipo": "analytics",
     "pergunta": "Quantos projetos de pesquisa distintos pertencem à grande área Engenharias?",
-    "sql_gabarito": "SELECT COUNT(DISTINCT id_projeto) AS total_projetos FROM vfact_projeto_pesquisa_resolved WHERE grande_area LIKE '%Engenharias%'",
+    "sql_gabarito": "SELECT 'Projetos de Pesquisa (SigPesq)' AS origem, COUNT(DISTINCT id_projeto) AS total_projetos FROM vfact_projeto_pesquisa_resolved WHERE grande_area LIKE '%Engenharias%' UNION ALL SELECT 'Projetos de Pesquisa no SRC (SRC)' AS origem, COUNT(DISTINCT id_acao) AS total_projetos FROM vfact_extensao_acao_resolved WHERE natureza LIKE 'Pesquisa' AND tipo_acao LIKE 'Projeto' AND grande_area LIKE '%Engenharias%'",
     "ordem_importa": false
   },
   {
@@ -124,7 +124,7 @@
     "categoria": "complexa",
     "tipo": "analytics",
     "pergunta": "Em 2024, quantos projetos de pesquisa distintos foram iniciados e quantas ações de extensão distintas foram cadastradas?",
-    "sql_gabarito": "SELECT (SELECT COUNT(DISTINCT id_projeto) FROM vfact_projeto_pesquisa_resolved WHERE ano_inicio = 2024) AS projetos_2024, (SELECT COUNT(DISTINCT id_acao) FROM vfact_extensao_acao_resolved WHERE ano_cadastro = 2024 AND natureza LIKE 'Extensão') AS acoes_2024",
+    "sql_gabarito": "SELECT (SELECT COUNT(DISTINCT id_projeto) FROM vfact_projeto_pesquisa_resolved WHERE ano_inicio = 2024) + (SELECT COUNT(DISTINCT id_acao) FROM vfact_extensao_acao_resolved WHERE ano_cadastro = 2024 AND natureza LIKE 'Pesquisa' AND tipo_acao LIKE 'Projeto') AS projetos_2024, (SELECT COUNT(DISTINCT id_acao) FROM vfact_extensao_acao_resolved WHERE ano_cadastro = 2024 AND natureza LIKE 'Extensão') AS acoes_2024",
     "ordem_importa": false
   },
   {
@@ -189,7 +189,7 @@
       "Quantos projetos de pesquisa distintos foram iniciados em 2024?"
     ],
     "pergunta": "E quantos deles são da grande área Engenharias?",
-    "sql_gabarito": "SELECT COUNT(DISTINCT id_projeto) AS total_projetos FROM vfact_projeto_pesquisa_resolved WHERE ano_inicio = 2024 AND grande_area LIKE '%Engenharias%'",
+    "sql_gabarito": "SELECT 'Projetos de Pesquisa (SigPesq)' AS origem, COUNT(DISTINCT id_projeto) AS total_projetos FROM vfact_projeto_pesquisa_resolved WHERE ano_inicio = 2024 AND grande_area LIKE '%Engenharias%' UNION ALL SELECT 'Projetos de Pesquisa no SRC (SRC)' AS origem, COUNT(DISTINCT id_acao) AS total_projetos FROM vfact_extensao_acao_resolved WHERE ano_cadastro = 2024 AND natureza LIKE 'Pesquisa' AND tipo_acao LIKE 'Projeto' AND grande_area LIKE '%Engenharias%'",
     "ordem_importa": false
   },
   {

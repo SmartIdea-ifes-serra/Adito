@@ -1717,18 +1717,67 @@ class QaAccuracyGuardsTests(unittest.TestCase):
         from unittest.mock import patch
 
         qe = importlib.import_module("agents.bi_agent.nodes.query_extractor")
-        fake_matches = [
+        # Caso 1: corte relativo (dist <= best * 1.3 -> 0.40 * 1.3 = 0.52) mantém 3 próximos e descarta o distante.
+        fake_matches_3 = [
             (SimpleNamespace(content="Ex 1", metadata={}), 0.40),
-            (SimpleNamespace(content="Ex 2", metadata={}), 1.30),
-            (SimpleNamespace(content="Ex 3", metadata={}), 1.40),
-            (SimpleNamespace(content="Ex 4", metadata={}), 1.50),
+            (SimpleNamespace(content="Ex 2", metadata={}), 0.48),
+            (SimpleNamespace(content="Ex 3", metadata={}), 0.50),
+            (SimpleNamespace(content="Ex 4", metadata={}), 0.90),
         ]
-        with patch.object(qe.KnowledgeItem, "select", return_value=[m[0] for m in fake_matches]), \
+        with patch.object(qe.KnowledgeItem, "select", return_value=[m[0] for m in fake_matches_3]), \
              patch.object(qe, "vector_matches_provider", return_value=True), \
-             patch.object(qe, "nearest_with_stats", return_value=(fake_matches, 0)):
-            out = qe._search_knowledge("00000000-0000-0000-0000-000000000001", None, [0.1, 0.2], "query_example")
-        # Apenas Ex 1 passa do corte (<= 1.15), mas piso mínimo preserva 2 exemplos (Ex 1 e Ex 2).
-        self.assertEqual([i.content for i in out], ["Ex 1", "Ex 2"])
+             patch.object(qe, "nearest_with_stats", return_value=(fake_matches_3, 0)):
+            out_3 = qe._search_knowledge("00000000-0000-0000-0000-000000000001", None, [0.1, 0.2], "query_example")
+        self.assertEqual([i.content for i in out_3], ["Ex 1", "Ex 2", "Ex 3"])
+
+        # Caso 2: apenas Ex 1 passa do corte relativo (<= 0.52), mas piso mínimo preserva 2 exemplos (Ex 1 e Ex 2).
+        fake_matches_floor = [
+            (SimpleNamespace(content="Ex 1", metadata={}), 0.40),
+            (SimpleNamespace(content="Ex 2", metadata={}), 0.90),
+            (SimpleNamespace(content="Ex 3", metadata={}), 1.10),
+            (SimpleNamespace(content="Ex 4", metadata={}), 1.20),
+        ]
+        with patch.object(qe.KnowledgeItem, "select", return_value=[m[0] for m in fake_matches_floor]), \
+             patch.object(qe, "vector_matches_provider", return_value=True), \
+             patch.object(qe, "nearest_with_stats", return_value=(fake_matches_floor, 0)):
+            out_floor = qe._search_knowledge("00000000-0000-0000-0000-000000000001", None, [0.1, 0.2], "query_example")
+        self.assertEqual([i.content for i in out_floor], ["Ex 1", "Ex 2"])
+
+    def test_training_json_marca_ddl_e_doc_sem_embedding_como_indexados(self) -> None:
+        from core.records import KnowledgeItem
+        from rpc.admin import training_json
+
+        ctx = Contexto(id="ctx-1", tenant_id="t-1", slug="pesquisa-extensao-ifes", name="Pesquisa e Extensão")
+        ddl_item = KnowledgeItem(
+            id="k-ddl",
+            tenant_id="t-1",
+            contexto_id="ctx-1",
+            item_type="ddl",
+            content="- vfact_a(id)",
+            metadata={"sem_embedding": "system_prompt"},
+            embedding=None,
+        )
+        doc_item = KnowledgeItem(
+            id="k-doc",
+            tenant_id="t-1",
+            contexto_id="ctx-1",
+            item_type="doc",
+            content="Regras",
+            metadata={"sem_embedding": "system_prompt"},
+            embedding=None,
+        )
+        ex_sem_vetor = KnowledgeItem(
+            id="k-ex",
+            tenant_id="t-1",
+            contexto_id="ctx-1",
+            item_type="query_example",
+            content="Pergunta: Q?\nSQL: SELECT 1",
+            metadata={"question": "Q?"},
+            embedding=None,
+        )
+        self.assertTrue(training_json(ddl_item, ctx)["indexado"])
+        self.assertTrue(training_json(doc_item, ctx)["indexado"])
+        self.assertFalse(training_json(ex_sem_vetor, ctx)["indexado"])
 
     def test_examples_json_executam_com_linhas_no_dados_db(self) -> None:
         from core.datastore import connect_dados

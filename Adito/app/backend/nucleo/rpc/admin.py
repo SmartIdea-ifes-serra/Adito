@@ -246,6 +246,7 @@ def training_json(item: KnowledgeItem, ctx: Contexto | None = None) -> dict:
     else:
         content = item.content
     manual = meta.get("source") == ORIGEM_MANUAL or item.contexto_id is None
+    sem_embedding_esperado = bool(meta.get("sem_embedding")) or (not manual and item.item_type in ("ddl", "doc"))
     return {
         "id": item.id,
         "type": public_type,
@@ -258,7 +259,7 @@ def training_json(item: KnowledgeItem, ctx: Contexto | None = None) -> dict:
         "contexto_slug": ctx.slug if ctx else None,
         "contexto_nome": ctx.name if ctx else None,
         "origem": "manual" if manual else "contexto",
-        "indexado": item.embedding is not None,
+        "indexado": item.embedding is not None or sem_embedding_esperado,
         "created_at": api_dt(item.created_at),
         "updated_at": api_dt(item.updated_at),
     }
