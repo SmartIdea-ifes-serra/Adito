@@ -188,48 +188,101 @@ class DatastoreSQLiteSecurityTests(unittest.TestCase):
     def test_campos_novos_v2_fatos(self):
         conn = connect_dados(path=DADOS_DB_PATH)
         try:
-            # 1. Producao cientifica: qtd_autorias, flag_obra_unica, flag_software_sem_patente, instituicao_vinculo
+            # 1. Producao cientifica: id_pessoa_autor, flag_obra_unica, flag_software_sem_patente, instituicao_vinculo
             cur = conn.execute(
-                "SELECT qtd_autorias, flag_obra_unica, flag_software_sem_patente, instituicao_vinculo "
+                "SELECT id_pessoa_autor, flag_obra_unica, flag_software_sem_patente, instituicao_vinculo "
                 "FROM vfact_producao_cientifica_resolved LIMIT 1"
             )
             row = cur.fetchone()
             self.assertIsNotNone(row)
-            self.assertIn("qtd_autorias", row.keys())
+            self.assertIn("id_pessoa_autor", row.keys())
             self.assertIn("flag_obra_unica", row.keys())
             self.assertIn("flag_software_sem_patente", row.keys())
             self.assertIn("instituicao_vinculo", row.keys())
 
-            # 2. Orientacao bolsa: duracao_meses_efetiva, investimento_total_estimado, investimento_previsto_original, titulacao_orientador
+            # 2. Orientacao bolsa: id_projeto, id_plano_trabalho, id_pessoa_orientador, id_pessoa_orientado, metricas efetivas
             cur = conn.execute(
-                "SELECT duracao_meses_efetiva, investimento_total_estimado, investimento_previsto_original, titulacao_orientador "
+                "SELECT id_projeto, id_plano_trabalho, id_pessoa_orientador, id_pessoa_orientado, "
+                "duracao_meses_efetiva, investimento_total_estimado, investimento_previsto_original, "
+                "titulacao_orientador, flag_cancelado, flag_relatorio_enviado "
                 "FROM vfact_orientacao_bolsa_resolved LIMIT 1"
             )
             row = cur.fetchone()
             self.assertIsNotNone(row)
-            self.assertIn("duracao_meses_efetiva", row.keys())
-            self.assertIn("investimento_total_estimado", row.keys())
-            self.assertIn("investimento_previsto_original", row.keys())
-            self.assertIn("titulacao_orientador", row.keys())
+            for col in (
+                "id_projeto", "id_plano_trabalho", "id_pessoa_orientador", "id_pessoa_orientado",
+                "duracao_meses_efetiva", "investimento_total_estimado", "investimento_previsto_original",
+                "titulacao_orientador", "flag_cancelado", "flag_relatorio_enviado",
+            ):
+                self.assertIn(col, row.keys())
 
-            # 3. Extensao acao: qtd_atividades_vinculadas, flag_relatorio_aprovado
+            # 3. Extensao acao: id_acao_pai, titulo_acao_pai, id_pessoa_coordenador, qtd_atividades_vinculadas, qtd_equipe_execucao, flag_relatorio_aprovado
             cur = conn.execute(
-                "SELECT qtd_atividades_vinculadas, flag_relatorio_aprovado FROM vfact_extensao_acao_resolved LIMIT 1"
+                "SELECT id_acao_pai, titulo_acao_pai, id_pessoa_coordenador, "
+                "qtd_atividades_vinculadas, qtd_equipe_execucao, flag_relatorio_aprovado "
+                "FROM vfact_extensao_acao_resolved LIMIT 1"
             )
             row = cur.fetchone()
             self.assertIsNotNone(row)
-            self.assertIn("qtd_atividades_vinculadas", row.keys())
-            self.assertIn("flag_relatorio_aprovado", row.keys())
+            for col in (
+                "id_acao_pai", "titulo_acao_pai", "id_pessoa_coordenador",
+                "qtd_atividades_vinculadas", "qtd_equipe_execucao", "flag_relatorio_aprovado",
+            ):
+                self.assertIn(col, row.keys())
 
-            # 4. Projeto pesquisa: duracao_meses_prevista, flag_projeto_completo, parceiros_demandantes
+            # 4. Extensao participacao: id_pessoa_participante, flag_certificado, flag_aprovado
             cur = conn.execute(
-                "SELECT duracao_meses_prevista, flag_projeto_completo, parceiros_demandantes FROM vfact_projeto_pesquisa_resolved LIMIT 1"
+                "SELECT id_pessoa_participante, flag_certificado, flag_aprovado "
+                "FROM vfact_extensao_participacao_resolved LIMIT 1"
             )
             row = cur.fetchone()
             self.assertIsNotNone(row)
-            self.assertIn("duracao_meses_prevista", row.keys())
-            self.assertIn("flag_projeto_completo", row.keys())
-            self.assertIn("parceiros_demandantes", row.keys())
+            for col in ("id_pessoa_participante", "flag_certificado", "flag_aprovado"):
+                self.assertIn(col, row.keys())
+
+            # 5. Projeto pesquisa: flag_sigilo, id_pessoa_coordenador, id_grupo_pesquisa, grupos_pesquisa, grupos_externos, equipes
+            cur = conn.execute(
+                "SELECT duracao_meses_prevista, flag_projeto_completo, flag_sigilo, id_pessoa_coordenador, "
+                "parceiros_demandantes, id_grupo_pesquisa, grupos_pesquisa, grupos_externos, "
+                "qtd_pesquisadores_equipe, qtd_estudantes_equipe "
+                "FROM vfact_projeto_pesquisa_resolved LIMIT 1"
+            )
+            row = cur.fetchone()
+            self.assertIsNotNone(row)
+            for col in (
+                "duracao_meses_prevista", "flag_projeto_completo", "flag_sigilo", "id_pessoa_coordenador",
+                "parceiros_demandantes", "id_grupo_pesquisa", "grupos_pesquisa", "grupos_externos",
+                "qtd_pesquisadores_equipe", "qtd_estudantes_equipe",
+            ):
+                self.assertIn(col, row.keys())
+
+            # 6. Grupo pesquisa membro: id_pessoa_membro, linhas_pesquisa, instituicoes_parceiras, data_situacao, data_ultimo_envio, status_participacao, flag_ativo
+            cur = conn.execute(
+                "SELECT id_pessoa_membro, linhas_pesquisa, instituicoes_parceiras, "
+                "data_situacao, data_ultimo_envio, status_participacao, flag_ativo "
+                "FROM vfact_grupo_pesquisa_membro_resolved LIMIT 1"
+            )
+            row = cur.fetchone()
+            self.assertIsNotNone(row)
+            for col in (
+                "id_pessoa_membro", "linhas_pesquisa", "instituicoes_parceiras",
+                "data_situacao", "data_ultimo_envio", "status_participacao", "flag_ativo",
+            ):
+                self.assertIn(col, row.keys())
+
+            # 7. Colunas redundantes removidas nao devem existir nas 6 views
+            removidas = {
+                "vfact_extensao_acao_resolved": ("relatorio_aprovado", "qtd_acoes"),
+                "vfact_extensao_participacao_resolved": ("certificado_emitido", "qtd_participacoes"),
+                "vfact_projeto_pesquisa_resolved": ("sigilo", "qtd_projetos"),
+                "vfact_orientacao_bolsa_resolved": ("cancelado", "relatorio_enviado", "qtd_orientacoes"),
+                "vfact_producao_cientifica_resolved": ("qtd_autorias",),
+                "vfact_grupo_pesquisa_membro_resolved": ("qtd_membros",),
+            }
+            for view, cols in removidas.items():
+                presentes = {r["name"] for r in conn.execute(f'PRAGMA table_info("{view}")').fetchall()}
+                for col in cols:
+                    self.assertNotIn(col, presentes, f"{view}.{col} deveria ter sido removida")
         finally:
             conn.close()
 

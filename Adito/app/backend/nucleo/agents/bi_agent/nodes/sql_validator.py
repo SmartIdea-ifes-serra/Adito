@@ -109,7 +109,11 @@ def _filters_column_only_by_empty_text(tree: exp.Expression, col_name: str) -> b
 
 
 def check_missing_null_guard(question: str, sql: str, dialect: str = "sqlite") -> str | None:
-    """Garante checagem de IS NULL quando a pergunta pede registros ausentes e a SQL testa só strings."""
+    """Garante checagem de 'Não Informado' quando a pergunta pede registros ausentes em colunas padronizadas.
+
+    Nas views refatoradas (Issue #138), `coordenador_nome` e `programa_fomento` sempre usam
+    'Não Informado' em vez de NULL real; filtrar apenas `col IS NULL` retornaria 0 linhas.
+    """
     q_norm = _norm_text(question)
     if not q_norm or any(re.search(pat, q_norm) for pat in _EXCLUSION_PATTERNS):
         return None
@@ -127,10 +131,10 @@ def check_missing_null_guard(question: str, sql: str, dialect: str = "sqlite") -
         return None
 
     for col in target_cols:
-        if _filters_column_only_by_empty_text(tree, col) and not _has_null_handling(tree, col):
+        if _has_null_handling(tree, col) and not _filters_column_only_by_empty_text(tree, col):
             return (
-                f"A consulta filtra registros sem '{col}' apenas por texto padronizado/vazio, "
-                f"ignorando valores NULL reais. Inclua '{col} IS NULL' na condição."
+                f"A consulta filtra registros sem '{col}' apenas por IS NULL, mas nas views "
+                f"essa coluna usa o texto padronizado 'Não Informado'. Inclua \"{col} = 'Não Informado'\" na condição."
             )
     return None
 

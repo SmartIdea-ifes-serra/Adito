@@ -52,7 +52,7 @@ VIEW_BENCH_QUERIES: list[tuple[str, str]] = [
     ),
     (
         "vfact_extensao_participacao_resolved",
-        "SELECT tipo_atividade, SUM(qtd_participacoes) AS total, ROUND(SUM(carga_horaria), 2) AS horas "
+        "SELECT tipo_atividade, COUNT(*) AS total, ROUND(SUM(carga_horaria), 2) AS horas "
         "FROM vfact_extensao_participacao_resolved GROUP BY tipo_atividade ORDER BY total DESC LIMIT 10",
     ),
     (
