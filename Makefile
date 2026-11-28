@@ -97,10 +97,10 @@ dev-tauri: check-desktop ## Roda a casca desktop Tauri diretamente via cargo run
 # ------------------------------------------------------------------------------
 db: check-setup check-brutos ## Reconstrói o banco SQLite (dados.db) com tabelas relacionais e 6 Views dinâmicas das fatos
 	@echo -e "$(COLOR_CYAN)→ Processando carga e populando banco SQLite nativo (dados.db)...$(COLOR_RESET)"
-	@if [ -f "$(ETL_DIR)/trabalho/pessoas.json" ]; then \
-		echo -e "  [1/2] Usando trabalho/pessoas.json existente para carga rápida..."; \
+	@if [ -f "$(ETL_DIR)/trabalho/pessoas.json" ] && [ -z "$$(find "$(ETL_DIR)/brutos" -type f ! -name '.*' -newer "$(ETL_DIR)/trabalho/pessoas.json" 2>/dev/null | head -n 1)" ]; then \
+		echo -e "  [1/2] Usando trabalho/pessoas.json atualizado para carga rápida..."; \
 	else \
-		echo -e "  [1/2] Gerando cruzamento inicial de identidades..."; \
+		echo -e "  [1/2] Gerando/atualizando cruzamento de identidades (brutos mais recentes que pessoas.json)..."; \
 		cd "$(ETL_DIR)" && "$(ETL_CLI)" cruzar; \
 	fi
 	@echo -e "  [2/2] Inserindo tabelas relacionais e gerando 6 Views de fatos analíticas v2.0..."
