@@ -614,17 +614,41 @@ class Carga:
             fin = None if forma(o.get("AgFinanciadora")) in ("", "voluntario") else \
                 self.org(o.get("AgFinanciadora"), "AgenciaFinanciamento")
             nome_canc, data_canc = self.cancelamento(o.get("CanceladoPor"))
-            self.novo("orientacao", id_origem=inteiro(o.get("Id")), ano=ano(o.get("Ano")),
-                       valor_bolsa=dinheiro(o.get("Valor")), data_inicio=data(o.get("Inicio")),
-                       data_fim=data(o.get("Fim")), cancelado=booleano(o.get("Cancelado")),
-                       nome_cancelador=nome_canc, data_cancelado=data_canc,
-                       relatorio_enviado=None if not texto(o.get("AvaliacaoRelatorio")) else
-                       forma(o.get("AvaliacaoRelatorio")) != "nao enviado",
-                       modalidade=self.enum("tipo_modalidade", o.get("Modalidade")),
-                       gerenciamento=self.enum("tipo_gerenciamento", o.get("Gerenciamento")),
-                       id_programa=self.dominio("programa", o.get("Programa")), id_plano_trabalho=plano,
-                       id_orientador=orientador, id_orientado=orientado,
-                       id_campus=self.campus(o.get("CampusExecucao")), id_financiador=fin)
+            id_orig = inteiro(o.get("Id"))
+            dados_orient = {
+                "id_origem": id_orig,
+                "ano": ano(o.get("Ano")),
+                "valor_bolsa": dinheiro(o.get("Valor")),
+                "data_inicio": data(o.get("Inicio")),
+                "data_fim": data(o.get("Fim")),
+                "cancelado": booleano(o.get("Cancelado")),
+                "nome_cancelador": nome_canc,
+                "data_cancelado": data_canc,
+                "relatorio_enviado": None if not texto(o.get("AvaliacaoRelatorio")) else
+                forma(o.get("AvaliacaoRelatorio")) != "nao enviado",
+                "modalidade": self.enum("tipo_modalidade", o.get("Modalidade")),
+                "gerenciamento": self.enum("tipo_gerenciamento", o.get("Gerenciamento")),
+                "id_programa": self.dominio("programa", o.get("Programa")),
+                "id_plano_trabalho": plano,
+                "id_orientador": orientador,
+                "id_orientado": orientado,
+                "id_campus": self.campus(o.get("CampusExecucao")),
+                "id_financiador": fin,
+            }
+            if id_orig is not None:
+                k_orient = ("orientacao_id_origem", id_orig)
+                if k_orient not in self.cache:
+                    self.cache[k_orient] = self.novo("orientacao", **dados_orient)
+                else:
+                    # Mesma orientação presente em dois arquivos anuais (ex.: 2025.json e 2026.json):
+                    # consolida em 1 linha preservando o estado mais recente sem sobrescrever valores com None.
+                    atual = self.linhas["orientacao"][self.cache[k_orient]]
+                    for campo, valor in dados_orient.items():
+                        if valor is not None:
+                            atual[campo] = valor
+                    self.avisos["orientações duplicadas entre arquivos anuais consolidadas por id_origem"] += 1
+            else:
+                self.novo("orientacao", **dados_orient)
         self.avisos["projetos SigPesq mínimos criados para orientações (só título)"] += minimos
 
     # ================================================================ Lattes
@@ -1098,6 +1122,15 @@ def validar_sanidade_banco(conn: sqlite3.Connection) -> dict[str, Any]:
     fk_erros = list(conn.execute("PRAGMA foreign_key_check;"))
     if fk_erros:
         raise RuntimeError(f"Violação de chaves estrangeiras pós-carga: {fk_erros}")
+
+    # 1b. Unicidade de orientacao por id_origem (evita duplicação entre arquivos anuais SigPesq)
+    dup_orient = conn.execute(
+        "SELECT COUNT(*) FROM ("
+        "SELECT id_origem FROM orientacao WHERE id_origem IS NOT NULL GROUP BY id_origem HAVING COUNT(*) > 1"
+        ");"
+    ).fetchone()[0]
+    if dup_orient > 0:
+        raise AssertionError(f"orientacao: {dup_orient} id_origem duplicado(s) encontrado(s)")
 
     # 2. Validações das views analíticas
     res_lider = conn.execute("SELECT SUM(flag_lider) FROM vfact_grupo_pesquisa_membro_resolved;").fetchone()[0] or 0

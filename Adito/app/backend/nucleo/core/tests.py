@@ -1709,29 +1709,52 @@ class QaAccuracyGuardsTests(unittest.TestCase):
         retrieved = self._run_extractor("", fake_items)
         self.assertIn(ddl_text, retrieved)
 
-    def test_reprova_sql_sem_is_null_em_pergunta_de_projetos_sem_coordenador(self) -> None:
+    def test_reprova_sql_apenas_com_is_null_em_pergunta_de_projetos_sem_coordenador(self) -> None:
         from agents.bi_agent.nodes.sql_validator import check_missing_null_guard
 
         sql = (
             "SELECT COUNT(DISTINCT id_projeto) FROM vfact_projeto_pesquisa_resolved "
-            "WHERE coordenador_nome IN ('Não Informado', '')"
+            "WHERE coordenador_nome IS NULL"
         )
         err = check_missing_null_guard("Quantos projetos estão sem coordenador informado?", sql)
         self.assertIsNotNone(err)
-        self.assertIn("coordenador_nome IS NULL", err)
+        self.assertIn("Não Informado", err)
 
-    def test_reprova_sql_com_is_not_null_e_texto_vazio_sem_is_null(self) -> None:
+    def test_reprova_sql_apenas_com_is_null_para_orientacoes_sem_programa(self) -> None:
+        from agents.bi_agent.nodes.sql_validator import check_missing_null_guard
+
+        sql = (
+            "SELECT COUNT(DISTINCT id_orientacao) FROM vfact_orientacao_bolsa_resolved "
+            "WHERE programa_fomento IS NULL"
+        )
+        err = check_missing_null_guard("Quantas orientações estão sem programa de fomento informado?", sql)
+        self.assertIsNotNone(err)
+        self.assertIn("Não Informado", err)
+
+    def test_reprova_sql_com_rotulo_legado_sem_nao_informado(self) -> None:
+        from agents.bi_agent.nodes.sql_validator import check_missing_null_guard
+
+        for sql in (
+            "SELECT COUNT(DISTINCT id_orientacao) FROM vfact_orientacao_bolsa_resolved "
+            "WHERE programa_fomento IS NULL OR programa_fomento = 'Não Especificado'",
+            "SELECT COUNT(DISTINCT id_orientacao) FROM vfact_orientacao_bolsa_resolved "
+            "WHERE programa_fomento = 'Não Especificado'",
+        ):
+            err = check_missing_null_guard("Quantas orientações estão sem programa de fomento informado?", sql)
+            self.assertIsNotNone(err)
+            self.assertIn("Não Informado", err)
+
+    def test_aprova_sql_com_nao_informado_para_projetos_sem_coordenador(self) -> None:
         from agents.bi_agent.nodes.sql_validator import check_missing_null_guard
 
         sql = (
             "SELECT COUNT(DISTINCT id_projeto) FROM vfact_projeto_pesquisa_resolved "
-            "WHERE coordenador_nome IS NOT NULL AND coordenador_nome = 'Não Informado'"
+            "WHERE coordenador_nome = 'Não Informado'"
         )
         err = check_missing_null_guard("Quantos projetos estão sem coordenador informado?", sql)
-        self.assertIsNotNone(err)
-        self.assertIn("coordenador_nome IS NULL", err)
+        self.assertIsNone(err)
 
-    def test_reprova_sql_com_like_nao_informado_sem_is_null(self) -> None:
+    def test_aprova_sql_com_like_nao_informado(self) -> None:
         from agents.bi_agent.nodes.sql_validator import check_missing_null_guard
 
         sql = (
@@ -1739,27 +1762,16 @@ class QaAccuracyGuardsTests(unittest.TestCase):
             "WHERE coordenador_nome LIKE '%Não Informado%'"
         )
         err = check_missing_null_guard("Quantos projetos não possuem coordenador?", sql)
-        self.assertIsNotNone(err)
-        self.assertIn("coordenador_nome IS NULL", err)
-
-    def test_aprova_sql_com_is_null_para_projetos_sem_coordenador(self) -> None:
-        from agents.bi_agent.nodes.sql_validator import check_missing_null_guard
-
-        sql = (
-            "SELECT COUNT(DISTINCT id_projeto) FROM vfact_projeto_pesquisa_resolved "
-            "WHERE coordenador_nome IS NULL OR TRIM(coordenador_nome) = '' OR coordenador_nome = 'Não Informado'"
-        )
-        err = check_missing_null_guard("Quantos projetos estão sem coordenador informado?", sql)
         self.assertIsNone(err)
 
-    def test_aprova_sql_com_coalesce(self) -> None:
+    def test_aprova_sql_com_is_null_e_nao_informado_juntos(self) -> None:
         from agents.bi_agent.nodes.sql_validator import check_missing_null_guard
 
         sql = (
             "SELECT COUNT(DISTINCT id_projeto) FROM vfact_projeto_pesquisa_resolved "
-            "WHERE COALESCE(coordenador_nome, 'Não Informado') = 'Não Informado'"
+            "WHERE coordenador_nome IS NULL OR coordenador_nome = 'Não Informado'"
         )
-        err = check_missing_null_guard("Quantos projetos não possuem coordenador?", sql)
+        err = check_missing_null_guard("Quantos projetos estão sem coordenador informado?", sql)
         self.assertIsNone(err)
 
     def test_nao_gera_falso_positivo_em_exclusao(self) -> None:
@@ -1767,7 +1779,7 @@ class QaAccuracyGuardsTests(unittest.TestCase):
 
         sql = (
             "SELECT COUNT(DISTINCT id_projeto) FROM vfact_projeto_pesquisa_resolved "
-            "WHERE coordenador_nome IS NOT NULL"
+            "WHERE coordenador_nome <> 'Não Informado'"
         )
         err = check_missing_null_guard("Exclua projetos sem coordenador e conte os restantes", sql)
         self.assertIsNone(err)
@@ -1781,18 +1793,6 @@ class QaAccuracyGuardsTests(unittest.TestCase):
         )
         err = check_missing_null_guard("Quantos projetos cada coordenador possui?", sql)
         self.assertIsNone(err)
-
-    def test_reprova_coalesce_no_select_quando_where_ignora_is_null(self) -> None:
-        from agents.bi_agent.nodes.sql_validator import check_missing_null_guard
-
-        sql = (
-            "SELECT COALESCE(coordenador_nome, 'N/A'), COUNT(*) "
-            "FROM vfact_projeto_pesquisa_resolved "
-            "WHERE coordenador_nome = 'Não Informado'"
-        )
-        err = check_missing_null_guard("Quantos projetos estão sem coordenador informado?", sql)
-        self.assertIsNotNone(err)
-        self.assertIn("coordenador_nome IS NULL", err)
 
 
 class SemanticValueResolverTests(AppDbTestCase):

@@ -12,7 +12,7 @@
     "categoria": "src_acao",
     "tipo": "analytics",
     "pergunta": "Qual a quantidade de ações de extensão distintas agrupadas por natureza da ação?",
-    "sql_gabarito": "SELECT natureza, COUNT(DISTINCT id_acao) AS total_acoes FROM vfact_extensao_acao_resolved WHERE natureza IS NOT NULL GROUP BY natureza ORDER BY total_acoes DESC",
+    "sql_gabarito": "SELECT natureza, COUNT(DISTINCT id_acao) AS total_acoes FROM vfact_extensao_acao_resolved WHERE natureza <> 'Não Informado' GROUP BY natureza ORDER BY total_acoes DESC",
     "ordem_importa": false
   },
   {
@@ -28,7 +28,7 @@
     "categoria": "src_participacao",
     "tipo": "analytics",
     "pergunta": "Quantas participações em atividades de extensão ocorreram por ano nos 5 anos mais recentes com registro?",
-    "sql_gabarito": "SELECT ano_participacao, SUM(qtd_participacoes) AS total_participacoes FROM vfact_extensao_participacao_resolved WHERE ano_participacao IS NOT NULL GROUP BY ano_participacao ORDER BY ano_participacao DESC LIMIT 5",
+    "sql_gabarito": "SELECT ano_participacao, COUNT(*) AS total_participacoes FROM vfact_extensao_participacao_resolved WHERE ano_participacao IS NOT NULL GROUP BY ano_participacao ORDER BY ano_participacao DESC LIMIT 5",
     "ordem_importa": true
   },
   {
@@ -92,7 +92,7 @@
     "categoria": "cnpq_grupo",
     "tipo": "analytics",
     "pergunta": "Quantos membros ativos existem nos grupos de pesquisa do CNPq agrupados por papel do membro?",
-    "sql_gabarito": "SELECT papel_membro, COUNT(*) AS membros_ativos FROM vfact_grupo_pesquisa_membro_resolved WHERE flag_ativo = 1 AND papel_membro IS NOT NULL GROUP BY papel_membro ORDER BY membros_ativos DESC",
+    "sql_gabarito": "SELECT papel_membro, COUNT(*) AS membros_ativos FROM vfact_grupo_pesquisa_membro_resolved WHERE flag_ativo = 1 AND papel_membro <> 'Não Informado' GROUP BY papel_membro ORDER BY membros_ativos DESC",
     "ordem_importa": false
   },
   {

@@ -82,4 +82,122 @@ def test_popular_banco_sqlite_execution(tmp_path):
     ).fetchone()
     assert row_prod[0] == row_prod[1], f"P4 violado: flag_obra_unica ({row_prod[0]}) != distinct id_producao ({row_prod[1]})"
 
+    # Unicidade de orientacao por id_origem
+    dup_orient = conn.execute(
+        "SELECT COUNT(*) FROM (SELECT id_origem FROM orientacao WHERE id_origem IS NOT NULL GROUP BY id_origem HAVING COUNT(*) > 1);"
+    ).fetchone()[0]
+    assert dup_orient == 0, f"orientacao possui {dup_orient} id_origem duplicado(s)"
+
     conn.close()
+
+
+def test_deduplicacao_orientacao_por_id_origem_preserva_estado_mais_recente(tmp_path):
+    """Mesma orientação em dois arquivos anuais deve virar 1 registro com o estado mais recente."""
+    import importlib.util
+    import json
+
+    repo_root = Path(__file__).resolve().parents[2]
+    script_path = repo_root / "scripts" / "popular_banco.py"
+    spec = importlib.util.spec_from_file_location("popular_banco_mod", script_path)
+    mod = importlib.util.module_from_spec(spec)
+    assert spec and spec.loader
+    spec.loader.exec_module(mod)
+
+    etl_dir = tmp_path / "etl"
+    (etl_dir / "brutos" / "sigpesq" / "orientacoes").mkdir(parents=True)
+    (etl_dir / "trabalho").mkdir(parents=True)
+
+    pessoas = [
+        {
+            "nome": "Thiago Meireles Paixão",
+            "nome_normalizado": "thiago meireles paixao",
+            "variantes": [],
+            "fontes": {"sigpesq": [{"id_fonte": None}]},
+        },
+        {
+            "nome": "Gabriela Prajo Beretta",
+            "nome_normalizado": "gabriela prajo beretta",
+            "variantes": [],
+            "fontes": {"sigpesq": [{"id_fonte": None}]},
+        },
+        {
+            "nome": "Aluno Exemplo Segundo",
+            "nome_normalizado": "aluno exemplo segundo",
+            "variantes": [],
+            "fontes": {"sigpesq": [{"id_fonte": None}]},
+        },
+    ]
+    (etl_dir / "trabalho" / "pessoas.json").write_text(json.dumps(pessoas, ensure_ascii=False), encoding="utf-8")
+
+    linha_base = {
+        "Id": 9636,
+        "Ano": 2025,
+        "Gerenciamento": "Reitoria",
+        "Modalidade": "Bolsista",
+        "Programa": "Pibic",
+        "Valor": "900,00",
+        "Inicio": "01-09-25",
+        "Fim": "31-08-26",
+        "AgFinanciadora": "Fapes",
+        "Cancelado": False,
+        "CanceladoPor": None,
+        "AvaliacaoRelatorio": "Não enviado",
+        "CampusExecucao": "Serra",
+        "Orientador": "Thiago Meireles Paixão",
+        "CampusOrientador": "Serra",
+        "Orientado": "Gabriela Prajo Beretta",
+        "Curso": "Sistemas de Informação",
+        "Campus": "Serra",
+        "Edital": "04/2025 - Picti",
+        "CodPT": "PT 17339",
+        "TituloPT": "Plano de Trabalho A",
+        "CodPJ": "PJ 8302",
+        "TituloPJ": "Projeto A",
+        "AreaConhecimento": "Ciência da Computação",
+        "GradeArea": "Ciências Exatas e da Terra",
+    }
+    linha_atualizada = dict(
+        linha_base,
+        Cancelado=True,
+        CanceladoPor="Por Fulano em 15/03/2026",
+        AvaliacaoRelatorio="Enviado",
+    )
+    linha_distinta = dict(
+        linha_base,
+        Id=9637,
+        Orientado="Aluno Exemplo Segundo",
+    )
+    (etl_dir / "brutos" / "sigpesq" / "orientacoes" / "2025.json").write_text(
+        json.dumps({"linhas": [linha_base]}, ensure_ascii=False), encoding="utf-8"
+    )
+    (etl_dir / "brutos" / "sigpesq" / "orientacoes" / "2026.json").write_text(
+        json.dumps({"linhas": [linha_atualizada, linha_distinta]}, ensure_ascii=False), encoding="utf-8"
+    )
+
+    carga = mod.Carga(etl_dir)
+    carga.carregar_pessoas()
+    carga.sigpesq()
+    carga.completar_areas()
+
+    db_path = tmp_path / "orient_dedup.db"
+    conn = mod.inicializar_banco_sqlite(db_path)
+    try:
+        conn.executescript(carga.sql())
+        rows = conn.execute(
+            "SELECT id_origem, cancelado, relatorio_enviado, nome_cancelador, data_cancelado "
+            "FROM orientacao ORDER BY id_origem"
+        ).fetchall()
+        assert len(rows) == 2
+        assert rows[0] == (9636, 1, 1, "Fulano", "2026-03-15")
+        assert rows[1][0] == 9637
+        assert rows[1][1] == 0
+    finally:
+        conn.close()
+
+
+def test_makefile_db_dispara_cruzar_quando_brutos_mais_novo():
+    """Garante que o alvo `db` do Makefile checa arquivos em brutos/ mais novos que pessoas.json."""
+    makefile_path = Path(__file__).resolve().parents[3] / "Makefile"
+    text = makefile_path.read_text(encoding="utf-8")
+    assert '-newer "$(ETL_DIR)/trabalho/pessoas.json"' in text
+
