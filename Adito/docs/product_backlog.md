@@ -174,6 +174,19 @@ Exportação direta dos dados completos retornados em tabelas e gráficos das re
 > - **Vertical Slice 1 (5 pts):** `US-EXP-01` (gerador CSV PT-BR + OOXML `.xlsx` em TS puro sem dependências npm/Python, comando Rust `exportar_arquivo` com diálogo nativo "Salvar como..." via `tauri-plugin-dialog = "2"` + fallback navegador, testes Rust e Vitest).  
 > - **Vertical Slice 2 (3 pts):** `US-EXP-02` (botão dropdown acessível **"Exportar"** teleportado no Chat, toast de confirmação/erro com cancelamento silencioso e testes Vitest + Playwright E2E).
 
+---
+
+### 🗂️ EPIC-16 — Refatoração de Carga ETL e das 6 Views Analíticas (Aprovado em 28/11/2026 — Issue #138)
+
+| ID | Título | Epic | Estimativa (pts) | Prioridade | Depende de | Requisitos | Status |
+|----|--------|------|------------------|------------|------------|------------|--------|
+| [US-ETL-08](stories/US-ETL-08_deduplicacao-orientacao-e-cruzar-automatico.md) | Deduplicação de orientações na carga e `etl-cruzar` automático no `make db` | EPIC-16 | 3 | 🔴 Alta (slice 1) | — | FR01, FR02, FR08, NFR02, NFR03, A02, KD01 | 🔍 Review |
+| [US-SQLITE-05](stories/US-SQLITE-05_refatoracao-seis-views-analiticas-e-consistencia.md) | Refatoração das 6 views analíticas e consistência de contexto, validador e testes | EPIC-16 | 5 | 🔴 Alta (slice 2) | — | FR03–FR08, BR01–BR05, NFR01, NFR03, NFR04, A01, KD02, KD03 | 🔍 Review |
+
+> Total EPIC-16: 8 pts (branch `refactor/138-etl-views-analiticas`, Discovery: `docs/discovery/refatoracao-etl-views-analiticas.md`, Requirements: `docs/requirements/refatoracao-etl-views-analiticas.md`).  
+> - **Vertical Slice 1 (3 pts):** `US-ETL-08` (deduplicação de `orientacao` por `id_origem` preservando estado mais recente em `popular_banco.py` + `etl-cruzar` automático no `make db` quando `brutos/` for mais novo que `pessoas.json`).  
+> - **Vertical Slice 2 (5 pts):** `US-SQLITE-05` (limpeza de colunas redundantes, `flag_*`, IDs estruturais + `id_pessoa_<papel>`, novos atributos, política única de nulos e atualização de consistência em `views.json`, `rules.md`, `examples.json`, `eval_dataset.json`, `sql_validator.py` e `core/tests.py`).
+
 > 10/11/2026: o usuário pediu para implementar os slices 1 e 2 direto, sem sprint planning ("sem esse trem de sprint"). Status por story na própria story.
 >
 > Total: 34 pts. Primeiro vertical slice: US-ETL-01 + US-ETL-02 (SRC completo até o bruto, 8 pts). Segundo: US-ETL-03 + US-ETL-06 (primeiro cruzamento SRC ↔ SigPesq, 10 pts). Terceiro: US-ETL-08 (ponte PostgreSQL `unificado` → JSON para as 6 views de fatos, 5 pts). Todas Nível ScrumAIDev 1, sem Spec nem Contract governados.
