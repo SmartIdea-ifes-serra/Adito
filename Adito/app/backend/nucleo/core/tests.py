@@ -1731,6 +1731,19 @@ class QaAccuracyGuardsTests(unittest.TestCase):
         self.assertIsNotNone(err)
         self.assertIn("Não Informado", err)
 
+    def test_reprova_sql_com_rotulo_legado_sem_nao_informado(self) -> None:
+        from agents.bi_agent.nodes.sql_validator import check_missing_null_guard
+
+        for sql in (
+            "SELECT COUNT(DISTINCT id_orientacao) FROM vfact_orientacao_bolsa_resolved "
+            "WHERE programa_fomento IS NULL OR programa_fomento = 'Não Especificado'",
+            "SELECT COUNT(DISTINCT id_orientacao) FROM vfact_orientacao_bolsa_resolved "
+            "WHERE programa_fomento = 'Não Especificado'",
+        ):
+            err = check_missing_null_guard("Quantas orientações estão sem programa de fomento informado?", sql)
+            self.assertIsNotNone(err)
+            self.assertIn("Não Informado", err)
+
     def test_aprova_sql_com_nao_informado_para_projetos_sem_coordenador(self) -> None:
         from agents.bi_agent.nodes.sql_validator import check_missing_null_guard
 

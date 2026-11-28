@@ -32,11 +32,11 @@ Nenhum ponto pendente.
 
 ## Criterios de Aceitacao
 
-- [ ] **Criterio 1 (Limpeza — `FR03`):** Em `Adito/scripts/sql/04_fatos_views.sql`, removidas `relatorio_aprovado`, `certificado_emitido`, `cancelado`, `relatorio_enviado` e todas as 6 colunas constantes `qtd_* = 1`; `sigilo` renomeada para `flag_sigilo`; mantidos `flag_aprovado`, `status_participacao` + `flag_ativo` e `qtd_atividades_vinculadas`.
-- [ ] **Criterio 2 (IDs — `FR04`, `BR02`):** Expostos ao lado dos nomes: `id_pessoa_coordenador`, `id_pessoa_participante`, `id_pessoa_orientador`, `id_pessoa_orientado`, `id_pessoa_autor`, `id_pessoa_membro`, além de `id_projeto` e `id_plano_trabalho` (Bolsas), `id_acao_pai` (Extensão Ação) e `id_grupo_pesquisa` (Projetos, com `MIN` para preservar grão 1:1 — `BR01`). Nenhum ID de domínio auxiliar exposto (`NFR04`).
-- [ ] **Criterio 3 (Novos atributos — `FR05`, `BR01`, `KD02`):** Adicionados `titulo_acao_pai` e `qtd_equipe_execucao` (`vfact_extensao_acao_resolved`); `grupos_pesquisa` no formato `"Nome Completo (SIGLA)"` sem repetir sigla já contida no nome, `grupos_externos`, `qtd_pesquisadores_equipe` e `qtd_estudantes_equipe` (`vfact_projeto_pesquisa_resolved`); `linhas_pesquisa`, `instituicoes_parceiras`, `data_situacao` e `data_ultimo_envio` (`vfact_grupo_pesquisa_membro_resolved`), com zero *fan-out* (contagem de linhas de cada view preservada).
-- [ ] **Criterio 4 (Padronização de nulos — `FR06`, `BR03`):** Textos categóricos sem rótulo específico unificados em `'Não Informado'` (eliminando `'Não Informada'`, `'Campus Não Informado'`, `'Não Especificado'`, `'Não Classificado'`, `'Não Vinculada'` e `NULL` em textos categóricos); rótulos próprios aplicados (`'Recurso Próprio / Sem Fomento'`, `'Recurso Institucional Ifes'`, `'Sem Parceiro Demandante'`, `'Sem Edital Vinculado'`, `'Externo / Não Vinculado'`, `'Sem Ação Vinculante'`, `'Sem Instituição Parceira'`, `'Sem Grupo de Pesquisa Vinculado'`, `'Sem Grupo Externo Vinculado'`, `'Sem Linha de Pesquisa Informada'`); `NULL` real preservado em datas, anos/meses, números/durações, IDs e `nome_cancelador` quando `flag_cancelado = 0` (`'Não Informado'` apenas se `flag_cancelado = 1` sem nome).
-- [ ] **Criterio 5 (Consistência e testes — `FR07`, `FR08`, `BR05`, `NFR01`, `KD03`):** `views.json`, `rules.md`, `examples.json`, `eval_dataset.json`, `sql_validator.py` e `core/tests.py` atualizados sem referências a colunas removidas (mantendo zero *data leakage* e cobertura das 6 views no Top-16), e `make test-core` 100% verde sobre cópia de `~/Downloads/dados.db` em `Adito/app/data/dados.db` com `04_fatos_views.sql` aplicado (sem modificar o arquivo original em `~/Downloads`).
+- [x] **Criterio 1 (Limpeza — `FR03`):** Em `Adito/scripts/sql/04_fatos_views.sql`, removidas `relatorio_aprovado`, `certificado_emitido`, `cancelado`, `relatorio_enviado` e todas as 6 colunas constantes `qtd_* = 1`; `sigilo` renomeada para `flag_sigilo`; mantidos `flag_aprovado`, `status_participacao` + `flag_ativo` e `qtd_atividades_vinculadas`.
+- [x] **Criterio 2 (IDs — `FR04`, `BR02`):** Expostos ao lado dos nomes: `id_pessoa_coordenador`, `id_pessoa_participante`, `id_pessoa_orientador`, `id_pessoa_orientado`, `id_pessoa_autor`, `id_pessoa_membro`, além de `id_projeto` e `id_plano_trabalho` (Bolsas), `id_acao_pai` (Extensão Ação) e `id_grupo_pesquisa` (Projetos, com `MIN` para preservar grão 1:1 — `BR01`). Nenhum ID de domínio auxiliar exposto (`NFR04`).
+- [x] **Criterio 3 (Novos atributos — `FR05`, `BR01`, `KD02`):** Adicionados `titulo_acao_pai` e `qtd_equipe_execucao` (`vfact_extensao_acao_resolved`); `grupos_pesquisa` no formato `"Nome Completo (SIGLA)"` sem repetir sigla já contida no nome, `grupos_externos`, `qtd_pesquisadores_equipe` e `qtd_estudantes_equipe` (`vfact_projeto_pesquisa_resolved`); `linhas_pesquisa`, `instituicoes_parceiras`, `data_situacao` e `data_ultimo_envio` (`vfact_grupo_pesquisa_membro_resolved`), com zero *fan-out* (contagem de linhas de cada view preservada).
+- [x] **Criterio 4 (Padronização de nulos — `FR06`, `BR03`):** Textos categóricos sem rótulo específico unificados em `'Não Informado'` (eliminando `'Não Informada'`, `'Campus Não Informado'`, `'Não Especificado'`, `'Não Classificado'`, `'Não Vinculada'` e `NULL` em textos categóricos); rótulos próprios aplicados (`'Recurso Próprio / Sem Fomento'`, `'Recurso Institucional Ifes'`, `'Sem Parceiro Demandante'`, `'Sem Edital Vinculado'`, `'Externo / Não Vinculado'`, `'Sem Ação Vinculante'`, `'Sem Instituição Parceira'`, `'Sem Grupo de Pesquisa Vinculado'`, `'Sem Grupo Externo Vinculado'`, `'Sem Linha de Pesquisa Informada'`); `NULL` real preservado em datas, anos/meses, números/durações, IDs e `nome_cancelador` quando `flag_cancelado = 0` (`'Não Informado'` apenas se `flag_cancelado = 1` sem nome).
+- [x] **Criterio 5 (Consistência e testes — `FR07`, `FR08`, `BR05`, `NFR01`, `KD03`):** `views.json`, `rules.md`, `examples.json`, `eval_dataset.json`, `sql_validator.py` e `core/tests.py` atualizados sem referências a colunas removidas (mantendo zero *data leakage* e cobertura das 6 views no Top-16), e `make test-core` 100% verde sobre cópia de `~/Downloads/dados.db` em `Adito/app/data/dados.db` com `04_fatos_views.sql` aplicado (sem modificar o arquivo original em `~/Downloads`).
 
 ---
 
@@ -70,7 +70,7 @@ Nenhum ponto pendente.
 
 ### Dependencias
 
-- [ ] Cópia de `~/Downloads/dados.db` em `Adito/app/data/dados.db` (somente leitura do original) para validação integral das 6 views, incluindo Produções Lattes.
+- [x] Cópia de `~/Downloads/dados.db` em `Adito/app/data/dados.db` (somente leitura do original) para validação integral das 6 views, incluindo Produções Lattes.
 
 ### Consideracoes de Performance
 
@@ -81,36 +81,36 @@ Nenhum ponto pendente.
 ## Plano de Testes
 
 ### Testes Unitarios
-- [ ] `make test-core` (valida segurança SQL, `views.json`, `rules.md`, `BASE_SQL_RULES`, `examples.json` com linhas no `dados.db`, cobertura Top-16, zero *data leakage* com `eval_dataset.json`, `sql_validator.py` e contratos das views).
-- [ ] Conferência automatizada de ausência das colunas removidas, presença de todos os novos IDs/atributos e preservação exata da contagem de linhas (zero *fan-out*) nas 6 views antes vs. depois de aplicar `04_fatos_views.sql`.
+- [x] `make test-core` (valida segurança SQL, `views.json`, `rules.md`, `BASE_SQL_RULES`, `examples.json` com linhas no `dados.db`, cobertura Top-16, zero *data leakage* com `eval_dataset.json`, `sql_validator.py` e contratos das views).
+- [x] Conferência automatizada de ausência das colunas removidas, presença de todos os novos IDs/atributos e preservação exata da contagem de linhas (zero *fan-out*) nas 6 views antes vs. depois de aplicar `04_fatos_views.sql`.
 
 ### Testes de Integracao
-- [ ] Aplicar `04_fatos_views.sql` sobre cópia de `~/Downloads/dados.db` em `Adito/app/data/dados.db` e executar `validar_sanidade_banco` + `make test-core`.
+- [x] Aplicar `04_fatos_views.sql` sobre cópia de `~/Downloads/dados.db` em `Adito/app/data/dados.db` e executar `validar_sanidade_banco` + `make test-core`.
 
 ### Testes de Contract
-- [ ] N/A
+- N/A
 
 ### Testes Manuais
-- [ ] Conferir amostras de `grupos_pesquisa` (`"Nome (SIGLA)"` sem repetição), `nome_cancelador` (`NULL` quando `flag_cancelado = 0`), rótulos `'Sem ...'` e `'Não Informado'`.
-- [ ] Confirmar que `~/Downloads/dados.db` não foi modificado.
+- [x] Conferir amostras de `grupos_pesquisa` (`"Nome (SIGLA)"` sem repetição), `nome_cancelador` (`NULL` quando `flag_cancelado = 0`), rótulos `'Sem ...'` e `'Não Informado'`.
+- [x] Confirmar que `~/Downloads/dados.db` não foi modificado.
 
 ---
 
 ## Tasks (Breakdown)
 
-- [ ] **[TASK-SQLITE-05.1]** Refatorar as 6 views em `Adito/scripts/sql/04_fatos_views.sql` (limpeza, IDs, novos atributos e política de nulos).
-- [ ] **[TASK-SQLITE-05.2]** Atualizar `views.json`, `rules.md`, `examples.json`, `eval_dataset.json` e `sql_validator.py` para total consistência.
-- [ ] **[TASK-SQLITE-05.3]** Atualizar `core/tests.py`, aplicar `04_fatos_views.sql` sobre cópia de `~/Downloads/dados.db` e validar `make test-core`.
+- [x] **[TASK-SQLITE-05.1]** Refatorar as 6 views em `Adito/scripts/sql/04_fatos_views.sql` (limpeza, IDs, novos atributos e política de nulos).
+- [x] **[TASK-SQLITE-05.2]** Atualizar `views.json`, `rules.md`, `examples.json`, `eval_dataset.json` e `sql_validator.py` para total consistência.
+- [x] **[TASK-SQLITE-05.3]** Atualizar `core/tests.py`, aplicar `04_fatos_views.sql` sobre cópia de `~/Downloads/dados.db` e validar `make test-core`.
 
 ---
 
 ## Definition of Done Checklist
 
-- [ ] Codigo implementado conforme criterios de aceitacao
-- [ ] Decisao sobre Spec governada foi registrada
-- [ ] Decisao sobre Contract governado foi registrada
-- [ ] Nivel ScrumAIDev foi registrado
-- [ ] Testes unitarios com cobertura adequada
-- [ ] Testes de integracao passando
-- [ ] Documentacao atualizada
-- [ ] `Behavior change` documentado no PR
+- [x] Codigo implementado conforme criterios de aceitacao
+- [x] Decisao sobre Spec governada foi registrada
+- [x] Decisao sobre Contract governado foi registrada
+- [x] Nivel ScrumAIDev foi registrado
+- [x] Testes unitarios com cobertura adequada
+- [x] Testes de integracao passando
+- [x] Documentacao atualizada
+- [x] `Behavior change` documentado no PR

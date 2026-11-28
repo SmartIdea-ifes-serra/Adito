@@ -47,9 +47,12 @@ _EXCLUSION_PATTERNS: tuple[str, ...] = (
     r"\bsomente\s+com\b",
 )
 
-_EMPTY_TEXT_MARKERS: frozenset[str] = frozenset({
-    "",
+_STANDARD_MISSING_MARKERS: frozenset[str] = frozenset({
     "nao informado",
+})
+
+_LEGACY_MISSING_MARKERS: frozenset[str] = frozenset({
+    "",
     "nao informada",
     "nao especificado",
     "nao especificada",
@@ -89,21 +92,25 @@ def _has_null_handling(tree: exp.Expression, col_name: str) -> bool:
     return False
 
 
-def _filters_column_only_by_empty_text(tree: exp.Expression, col_name: str) -> bool:
+def _filters_column_by_markers(
+    tree: exp.Expression,
+    col_name: str,
+    markers: frozenset[str],
+) -> bool:
     for clause in _filter_clauses(tree):
         for eq_node in clause.find_all(exp.EQ):
             for side, other in ((eq_node.this, eq_node.expression), (eq_node.expression, eq_node.this)):
                 if _column_matches(side, col_name) and isinstance(other, exp.Literal) and other.is_string:
-                    if _norm_text(other.this) in _EMPTY_TEXT_MARKERS:
+                    if _norm_text(other.this) in markers:
                         return True
         for like_node in clause.find_all((exp.Like, exp.ILike)):
             if _column_matches(like_node.this, col_name) and isinstance(like_node.expression, exp.Literal) and like_node.expression.is_string:
-                if _norm_text(like_node.expression.this.strip("%")) in _EMPTY_TEXT_MARKERS:
+                if _norm_text(like_node.expression.this.strip("%")) in markers:
                     return True
         for in_node in clause.find_all(exp.In):
             if _column_matches(in_node.this, col_name):
                 for arg in in_node.expressions or []:
-                    if isinstance(arg, exp.Literal) and arg.is_string and _norm_text(arg.this) in _EMPTY_TEXT_MARKERS:
+                    if isinstance(arg, exp.Literal) and arg.is_string and _norm_text(arg.this) in markers:
                         return True
     return False
 
@@ -112,7 +119,8 @@ def check_missing_null_guard(question: str, sql: str, dialect: str = "sqlite") -
     """Garante checagem de 'Não Informado' quando a pergunta pede registros ausentes em colunas padronizadas.
 
     Nas views refatoradas (Issue #138), `coordenador_nome` e `programa_fomento` sempre usam
-    'Não Informado' em vez de NULL real; filtrar apenas `col IS NULL` retornaria 0 linhas.
+    'Não Informado' em vez de NULL real ou rótulos legados ('Não Especificado', 'Não Informada', '');
+    filtrar apenas por IS NULL ou rótulos legados retornaria 0 linhas.
     """
     q_norm = _norm_text(question)
     if not q_norm or any(re.search(pat, q_norm) for pat in _EXCLUSION_PATTERNS):
@@ -131,9 +139,14 @@ def check_missing_null_guard(question: str, sql: str, dialect: str = "sqlite") -
         return None
 
     for col in target_cols:
-        if _has_null_handling(tree, col) and not _filters_column_only_by_empty_text(tree, col):
+        uses_standard = _filters_column_by_markers(tree, col, _STANDARD_MISSING_MARKERS)
+        uses_null_or_legacy = (
+            _has_null_handling(tree, col)
+            or _filters_column_by_markers(tree, col, _LEGACY_MISSING_MARKERS)
+        )
+        if uses_null_or_legacy and not uses_standard:
             return (
-                f"A consulta filtra registros sem '{col}' apenas por IS NULL, mas nas views "
+                f"A consulta filtra registros sem '{col}' apenas por IS NULL ou rótulo legado, mas nas views "
                 f"essa coluna usa o texto padronizado 'Não Informado'. Inclua \"{col} = 'Não Informado'\" na condição."
             )
     return None

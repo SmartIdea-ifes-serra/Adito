@@ -42,10 +42,10 @@
 - **BDD:** -
 - **Behavior change esperado:** YES
 - **Criterios de Aceitacao:**
-  - [ ] `popular_banco.py` grava no máximo 1 registro por `id_origem` em `orientacao`, mantendo o estado atualizado (`cancelado`, `nome_cancelador`, `data_cancelado`, `relatorio_enviado`) do ano mais recente (`FR01`, `KD01`).
-  - [ ] `validar_sanidade_banco` garante ausência de `id_origem` duplicado em `orientacao`.
-  - [ ] `make db` no `Makefile` executa `adito-etl cruzar` automaticamente sempre que `pessoas.json` não existir ou algum arquivo em `Adito/etl/brutos/` for mais novo que `pessoas.json` (`FR02`).
-  - [ ] Teste automatizado cobre deduplicação por `id_origem`, validado em banco temporário sem alterar `~/Downloads/dados.db` nem sobrescrever `Adito/app/data/dados.db` (`NFR01`, `NFR02`).
+  - [x] `popular_banco.py` grava no máximo 1 registro por `id_origem` em `orientacao`, mantendo o estado atualizado (`cancelado`, `nome_cancelador`, `data_cancelado`, `relatorio_enviado`) do ano mais recente (`FR01`, `KD01`).
+  - [x] `validar_sanidade_banco` garante ausência de `id_origem` duplicado em `orientacao`.
+  - [x] `make db` no `Makefile` executa `adito-etl cruzar` automaticamente sempre que `pessoas.json` não existir ou algum arquivo em `Adito/etl/brutos/` for mais novo que `pessoas.json` (`FR02`).
+  - [x] Teste automatizado cobre deduplicação por `id_origem`, validado em banco temporário sem alterar `~/Downloads/dados.db` nem sobrescrever `Adito/app/data/dados.db` (`NFR01`, `NFR02`).
 
 ### [US-SQLITE-05] Refatoração das 6 views analíticas e consistência de contexto, validador e testes
 
@@ -62,11 +62,11 @@
 - **BDD:** -
 - **Behavior change esperado:** YES
 - **Criterios de Aceitacao:**
-  - [ ] Limpeza aplicada em `04_fatos_views.sql`: removidas `relatorio_aprovado`, `certificado_emitido`, `cancelado`, `relatorio_enviado` e todas as 6 `qtd_* = 1`; `sigilo` → `flag_sigilo`; mantidos `flag_aprovado`, `status_participacao` + `flag_ativo` e `qtd_atividades_vinculadas` (`FR03`).
-  - [ ] IDs expostos ao lado dos nomes: `id_pessoa_coordenador`, `id_pessoa_participante`, `id_pessoa_orientador`, `id_pessoa_orientado`, `id_pessoa_autor`, `id_pessoa_membro`, `id_projeto`, `id_plano_trabalho`, `id_acao_pai`, `id_grupo_pesquisa` (`FR04`, `BR02`).
-  - [ ] Novos atributos adicionados sem *fan-out*: `titulo_acao_pai` e `qtd_equipe_execucao` (Extensão Ação); `grupos_pesquisa` (`"Nome Completo (SIGLA)"` sem repetir sigla), `grupos_externos`, `qtd_pesquisadores_equipe`, `qtd_estudantes_equipe` (Projetos); `linhas_pesquisa`, `instituicoes_parceiras`, `data_situacao`, `data_ultimo_envio` (Grupos CNPq) (`FR05`, `BR01`, `KD02`).
-  - [ ] Política de nulos padronizada: `'Não Informado'` para textos categóricos ausentes sem rótulo próprio; rótulos semânticos próprios mantidos/adicionados; `NULL` real preservado em datas, anos/meses, números/durações, IDs e `nome_cancelador` quando `flag_cancelado = 0` (`FR06`, `BR03`).
-  - [ ] `views.json`, `rules.md`, `examples.json`, `eval_dataset.json`, `sql_validator.py` (NULL guard) e `core/tests.py` atualizados e consistentes, com `make test-core` 100% verde sobre cópia de `~/Downloads/dados.db` em `Adito/app/data/dados.db` (`FR07`, `FR08`, `BR05`, `NFR01`, `KD03`).
+  - [x] Limpeza aplicada em `04_fatos_views.sql`: removidas `relatorio_aprovado`, `certificado_emitido`, `cancelado`, `relatorio_enviado` e todas as 6 `qtd_* = 1`; `sigilo` → `flag_sigilo`; mantidos `flag_aprovado`, `status_participacao` + `flag_ativo` e `qtd_atividades_vinculadas` (`FR03`).
+  - [x] IDs expostos ao lado dos nomes: `id_pessoa_coordenador`, `id_pessoa_participante`, `id_pessoa_orientador`, `id_pessoa_orientado`, `id_pessoa_autor`, `id_pessoa_membro`, `id_projeto`, `id_plano_trabalho`, `id_acao_pai`, `id_grupo_pesquisa` (`FR04`, `BR02`).
+  - [x] Novos atributos adicionados sem *fan-out*: `titulo_acao_pai` e `qtd_equipe_execucao` (Extensão Ação); `grupos_pesquisa` (`"Nome Completo (SIGLA)"` sem repetir sigla), `grupos_externos`, `qtd_pesquisadores_equipe`, `qtd_estudantes_equipe` (Projetos); `linhas_pesquisa`, `instituicoes_parceiras`, `data_situacao`, `data_ultimo_envio` (Grupos CNPq) (`FR05`, `BR01`, `KD02`).
+  - [x] Política de nulos padronizada: `'Não Informado'` para textos categóricos ausentes sem rótulo próprio; rótulos semânticos próprios mantidos/adicionados; `NULL` real preservado em datas, anos/meses, números/durações, IDs e `nome_cancelador` quando `flag_cancelado = 0` (`FR06`, `BR03`).
+  - [x] `views.json`, `rules.md`, `examples.json`, `eval_dataset.json`, `sql_validator.py` (NULL guard) e `core/tests.py` atualizados e consistentes, com `make test-core` 100% verde sobre cópia de `~/Downloads/dados.db` em `Adito/app/data/dados.db` (`FR07`, `FR08`, `BR05`, `NFR01`, `KD03`).
 
 ---
 
@@ -84,14 +84,14 @@
 
 ## Definition of Done
 
-- [ ] Código revisado e implementado na branch `refactor/138-etl-views-analiticas`
-- [ ] Decisões sobre Spec e Contract registradas nas 2 US
-- [ ] Nível ScrumAIDev registrado nas 2 US
-- [ ] Testes unitários e `make test-core` 100% verdes (sobre cópia de `~/Downloads/dados.db`, preservando o original intacto)
-- [ ] Deduplicação de `orientacao` validada em teste automatizado e carga isolada
-- [ ] Pequenos ajustes óbvios em `rules.md`/`examples.json` reportados explicitamente ao usuário
-- [ ] Lembrete final emitido ao usuário sobre a próxima etapa: definição da matriz de cruzamento, novas regras e novos exemplos
-- [ ] Documentação atualizada e `Behavior change` documentado no PR
+- [x] Código revisado e implementado na branch `refactor/138-etl-views-analiticas`
+- [x] Decisões sobre Spec e Contract registradas nas 2 US
+- [x] Nível ScrumAIDev registrado nas 2 US
+- [x] Testes unitários e `make test-core` 100% verdes (sobre cópia de `~/Downloads/dados.db`, preservando o original intacto)
+- [x] Deduplicação de `orientacao` validada em teste automatizado e carga isolada
+- [x] Pequenos ajustes óbvios em `rules.md`/`examples.json` reportados explicitamente ao usuário
+- [x] Lembrete final emitido ao usuário sobre a próxima etapa: definição da matriz de cruzamento, novas regras e novos exemplos
+- [x] Documentação atualizada e `Behavior change` documentado no PR
 
 ---
 

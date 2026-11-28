@@ -14,7 +14,7 @@
 ## Historia
 
 **Como** mantenedor da base analítica do Adito
-**Eu quero** que `popular_banco.py` deduplicar registros de `orientacao` por `id_origem` (preservando o estado do ano mais recente) e que `make db` execute `etl-cruzar` automaticamente sempre que houver arquivos em `brutos/` mais novos que `pessoas.json`
+**Eu quero** que `popular_banco.py` deduplique registros de `orientacao` por `id_origem` (preservando o estado do ano mais recente) e que `make db` execute `etl-cruzar` automaticamente sempre que houver arquivos em `brutos/` mais novos que `pessoas.json`
 **Para que** o `dados.db` reflita 100% das extrações sem duplicar bolsas/investimentos nem descartar pessoas silenciosamente
 
 ### Contexto Adicional
@@ -32,10 +32,10 @@ Nenhum ponto pendente.
 
 ## Criterios de Aceitacao
 
-- [ ] **Criterio 1:** Ao carregar múltiplos arquivos anuais de `brutos/sigpesq/orientacoes/` contendo o mesmo `Id`, a tabela `orientacao` no SQLite contém no máximo **1 linha por `id_origem`**, mantendo os campos atualizados (`cancelado`, `nome_cancelador`, `data_cancelado`, `relatorio_enviado`, etc.) da ocorrência mais recente (`FR01`, `KD01`).
-- [ ] **Criterio 2:** A validação pós-carga em `popular_banco.py` (`validar_sanidade_banco`) garante que não há `id_origem` duplicado em `orientacao` quando `id_origem IS NOT NULL`.
-- [ ] **Criterio 3:** No `Makefile`, `make db` executa `adito-etl cruzar` automaticamente quando `Adito/etl/trabalho/pessoas.json` não existe **ou** quando qualquer arquivo regular em `Adito/etl/brutos/` tem data de modificação mais recente que `pessoas.json`; caso contrário, reutiliza `pessoas.json` para carga rápida (`FR02`).
-- [ ] **Criterio 4:** Existe teste automatizado cobrindo deduplicação de `orientacao` por `id_origem` (incluindo atualização de estado entre anos), e a validação com `brutos/` locais roda em banco temporário sem alterar `~/Downloads/dados.db` nem sobrescrever a cópia completa com Lattes em `Adito/app/data/dados.db` (`NFR01`, `NFR02`).
+- [x] **Criterio 1:** Ao carregar múltiplos arquivos anuais de `brutos/sigpesq/orientacoes/` contendo o mesmo `Id`, a tabela `orientacao` no SQLite contém no máximo **1 linha por `id_origem`**, mantendo os campos atualizados (`cancelado`, `nome_cancelador`, `data_cancelado`, `relatorio_enviado`, etc.) da ocorrência mais recente (`FR01`, `KD01`).
+- [x] **Criterio 2:** A validação pós-carga em `popular_banco.py` (`validar_sanidade_banco`) garante que não há `id_origem` duplicado em `orientacao` quando `id_origem IS NOT NULL`.
+- [x] **Criterio 3:** No `Makefile`, `make db` executa `adito-etl cruzar` automaticamente quando `Adito/etl/trabalho/pessoas.json` não existe **ou** quando qualquer arquivo regular em `Adito/etl/brutos/` tem data de modificação mais recente que `pessoas.json`; caso contrário, reutiliza `pessoas.json` para carga rápida (`FR02`).
+- [x] **Criterio 4:** Existe teste automatizado cobrindo deduplicação de `orientacao` por `id_origem` (incluindo atualização de estado entre anos), e a validação com `brutos/` locais roda em banco temporário sem alterar `~/Downloads/dados.db` nem sobrescrever a cópia completa com Lattes em `Adito/app/data/dados.db` (`NFR01`, `NFR02`).
 
 ---
 
@@ -69,7 +69,7 @@ Nenhum ponto pendente.
 
 ### Dependencias
 
-- [ ] Nenhuma dependência bloqueante externa (Lattes não é necessário para validar esta story).
+- [x] Nenhuma dependência bloqueante externa (Lattes não é necessário para validar esta story).
 
 ### Consideracoes de Performance
 
@@ -80,36 +80,36 @@ Nenhum ponto pendente.
 ## Plano de Testes
 
 ### Testes Unitarios
-- [ ] Carregar dois arquivos anuais (`2025.json` e `2026.json`) com o mesmo `Id` de orientação (alterando `AvaliacaoRelatorio`/`Cancelado` no ano mais recente) e confirmar 1 único registro gravado com o estado mais recente.
-- [ ] Carregar duas orientações com `Id` distintos no mesmo plano de trabalho e confirmar ambos os registros preservados.
+- [x] Carregar dois arquivos anuais (`2025.json` e `2026.json`) com o mesmo `Id` de orientação (alterando `AvaliacaoRelatorio`/`Cancelado` no ano mais recente) e confirmar 1 único registro gravado com o estado mais recente.
+- [x] Carregar duas orientações com `Id` distintos no mesmo plano de trabalho e confirmar ambos os registros preservados.
 
 ### Testes de Integracao
-- [ ] Executar `popular_banco.py --banco /tmp/dados_teste_etl.db` sobre `Adito/etl/brutos/` (após `etl-cruzar`) e confirmar `COUNT(*) == COUNT(DISTINCT id_origem)` em `orientacao` (0 duplicidades) e `PRAGMA foreign_key_check` limpo.
-- [ ] Simular arquivo mais novo em `brutos/` (ou checar comando condicional do `Makefile`) confirmando disparo automático de `etl-cruzar`.
+- [x] Executar `popular_banco.py --banco /tmp/dados_teste_etl.db` sobre `Adito/etl/brutos/` (após `etl-cruzar`) e confirmar `COUNT(*) == COUNT(DISTINCT id_origem)` em `orientacao` (0 duplicidades) e `PRAGMA foreign_key_check` limpo.
+- [x] Simular arquivo mais novo em `brutos/` (ou checar comando condicional do `Makefile`) confirmando disparo automático de `etl-cruzar`.
 
 ### Testes de Contract
-- [ ] N/A
+- N/A
 
 ### Testes Manuais
-- [ ] Confirmar que `~/Downloads/dados.db` não foi modificado.
+- [x] Confirmar que `~/Downloads/dados.db` não foi modificado.
 
 ---
 
 ## Tasks (Breakdown)
 
-- [ ] **[TASK-ETL-08.1]** Implementar deduplicação de `orientacao` por `id_origem` (preservando estado mais recente) e guarda em `validar_sanidade_banco` em `Adito/scripts/popular_banco.py`.
-- [ ] **[TASK-ETL-08.2]** Atualizar alvo `db` no `Makefile` para rodar `adito-etl cruzar` automaticamente quando `brutos/` tiver arquivos mais novos que `pessoas.json`.
-- [ ] **[TASK-ETL-08.3]** Adicionar testes automatizados e validar em banco temporário.
+- [x] **[TASK-ETL-08.1]** Implementar deduplicação de `orientacao` por `id_origem` (preservando estado mais recente) e guarda em `validar_sanidade_banco` em `Adito/scripts/popular_banco.py`.
+- [x] **[TASK-ETL-08.2]** Atualizar alvo `db` no `Makefile` para rodar `adito-etl cruzar` automaticamente quando `brutos/` tiver arquivos mais novos que `pessoas.json`.
+- [x] **[TASK-ETL-08.3]** Adicionar testes automatizados e validar em banco temporário.
 
 ---
 
 ## Definition of Done Checklist
 
-- [ ] Codigo implementado conforme criterios de aceitacao
-- [ ] Decisao sobre Spec governada foi registrada
-- [ ] Decisao sobre Contract governado foi registrada
-- [ ] Nivel ScrumAIDev foi registrado
-- [ ] Testes unitarios com cobertura adequada
-- [ ] Testes de integracao passando
-- [ ] Documentacao atualizada
-- [ ] `Behavior change` documentado no PR
+- [x] Codigo implementado conforme criterios de aceitacao
+- [x] Decisao sobre Spec governada foi registrada
+- [x] Decisao sobre Contract governado foi registrada
+- [x] Nivel ScrumAIDev foi registrado
+- [x] Testes unitarios com cobertura adequada
+- [x] Testes de integracao passando
+- [x] Documentacao atualizada
+- [x] `Behavior change` documentado no PR
